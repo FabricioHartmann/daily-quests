@@ -7,7 +7,6 @@ export type TextProps = {
   color?: string;
   weight?: CSSProperties["fontWeight"];
   underline?: boolean;
-  italic?: boolean;
   align?: CSSProperties["textAlign"];
   className?: string;
   style?: CSSProperties;

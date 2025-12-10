@@ -1,0 +1,14 @@
+.quest-card {
+  border: 2px solid #3498db;
+  padding: 16px;
+  margin: 12px 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.quest-card:hover {
+  transform: translateY(-2px);
+}
+
+

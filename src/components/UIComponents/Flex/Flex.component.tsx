@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import type { FlexProps } from "./Flex.types";
-import './Flex.styles.css'
+import "./Flex.styles.css";
 
 export function Flex({
   children,
@@ -11,6 +11,8 @@ export function Flex({
   gap = "4px",
   padding = "0",
   margin = "0",
+  mt = "0",
+  mb = "0",
   width = "auto",
   height = "auto",
   className = "",
@@ -28,6 +30,8 @@ export function Flex({
           "--gap": gap,
           "--padding": padding,
           "--margin": margin,
+          "--mt": mt,
+          "--mb": mb,
           "--width": width,
           "--height": height,
           ...style,

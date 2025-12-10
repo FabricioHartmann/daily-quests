@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
-import "./Text.styles.css";
 import type { TextProps } from "./Text.types";
+import "./Text.styles.css";
 
 export function Text({
   children,
@@ -9,6 +9,7 @@ export function Text({
   color = "",
   weight = "normal",
   underline = false,
+  italic = false,
   align = "left",
   className = "",
   style,
@@ -22,6 +23,7 @@ export function Text({
           "--color": color,
           "--weight": weight,
           "--align": align,
+          "--italic": italic ? "italic" : "normal",
           "--underline": underline ? "underline" : "none",
           ...style,
         } as CSSProperties

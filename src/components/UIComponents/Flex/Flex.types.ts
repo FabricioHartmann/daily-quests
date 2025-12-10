@@ -9,6 +9,8 @@ export type FlexProps = {
   gap?: string;
   padding?: string;
   margin?: string;
+  mt?: string;
+  mb?: string;
   width?: string;
   height?: string;
   className?: string;
