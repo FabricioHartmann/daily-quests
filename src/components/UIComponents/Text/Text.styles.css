@@ -3,6 +3,7 @@
   font-weight: var(--weight, normal);
   color: var(--color, --text-primary);
   text-decoration: var(--underline, none);
+  font-style: var(--italic, normal);
   font-size: var(--text-size, var(--text-md));
 }
 
@@ -10,6 +11,6 @@
   --text-xs: 8px;
   --text-sm: 12px;
   --text-md: 16px;
-  --text-lg: 24px;
-  --text-xl: 28px;
+  --text-lg: 20px;
+  --text-xl: 24px;
 }

@@ -1,4 +1,4 @@
-type QuestProps = {
+export type QuestProps = {
   title: string;
   description: string;
   status: "open" | "completed" | "canceled";

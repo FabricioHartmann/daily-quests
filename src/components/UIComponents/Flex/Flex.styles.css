@@ -7,6 +7,8 @@
   gap: var(--gap);
   padding: var(--padding);
   margin: var(--margin);
+  margin-top: var(--mt);
+  margin-bottom: var(--mb);
   width: var(--width);
   height: var(--height);
 }
