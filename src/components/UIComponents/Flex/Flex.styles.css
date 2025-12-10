@@ -1,0 +1,12 @@
+.flex-ui {
+  display: flex;
+  flex-direction: var(--direction);
+  justify-content: var(--justify);
+  align-items: var(--align);
+  flex-wrap: var(--wrap);
+  gap: var(--gap);
+  padding: var(--padding);
+  margin: var(--margin);
+  width: var(--width);
+  height: var(--height);
+}

@@ -1,0 +1,15 @@
+.text-ui {
+  text-align: var(--align, left);
+  font-weight: var(--weight, normal);
+  color: var(--color, --text-primary);
+  text-decoration: var(--underline, none);
+  font-size: var(--text-size, var(--text-md));
+}
+
+:root {
+  --text-xs: 8px;
+  --text-sm: 12px;
+  --text-md: 16px;
+  --text-lg: 24px;
+  --text-xl: 28px;
+}

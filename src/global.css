@@ -1,0 +1,27 @@
+@import '@joacod/pixel-ui/components';
+@import '@joacod/pixel-ui/font';
+
+@font-face {
+  font-family: "Unifontex";
+  src: url("/src/assets/fonts/UnifontExMono.ttf") format("truetype");
+}
+
+:root {
+  --bg-primary: #1a1830;
+  --bg-secondary: #1a1925;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a7a7a7;
+
+  min-height: 100vh;
+  --font-main: "Unifontex", monospace;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: var(--font-main);
+  color: var(--text-primary);
+  height: 100%;
+  margin: 4;
+  padding: 4;
+}
