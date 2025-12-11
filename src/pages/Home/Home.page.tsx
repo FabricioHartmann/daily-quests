@@ -1,13 +1,20 @@
-import { Flex, QuestCard, Text } from "../../components/UIComponents";
-import { useQuestStore } from "../../store/quests/quests.store";
+import { QuestCardList } from "../../components/QuestCardList";
+import { Flex, Text } from "../../components/UIComponents";
+import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
+import "./Home.styles.css";
 
 export function Home() {
-  const { quests } = useQuestStore();
+  const isMobile = useIsMobile();
+
   return (
     <>
       <Flex justify="center" align="center" direction="column">
-        <Text size="lg">Home PAGE</Text>
-        <QuestCard quest={quests[0]} />
+        <Text size="xl">HOME</Text>
+        <div className="main-box"></div>
+        <Flex gap="16px" direction={isMobile ? "column" : "row"} justify="start" width="100%">
+          <QuestCardList questType={"daily"} />
+          <QuestCardList questType={"weekly"} />
+        </Flex>
       </Flex>
     </>
   );

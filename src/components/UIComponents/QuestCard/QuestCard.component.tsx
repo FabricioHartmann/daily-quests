@@ -1,25 +1,35 @@
-import "./QuestCard.styles.css";
 import type { QuestCardProps } from "./QuestCard.types";
-import { Chip, Flex, Text } from "..";
+import { Chip, Text } from "..";
+import { Checkbox } from "@joacod/pixel-ui";
+import "./QuestCard.styles.css";
 
 export function QuestCard({ quest }: QuestCardProps) {
   return (
     <div className="quest-card">
-      <Flex justify="space-between" align="center" mb="8px">
-        <Text color="black">{quest.title}</Text>
-        <Chip size="sm" label={quest.status} />
-      </Flex>
-      <Flex mb="8px">
-        <Text color="#4b4b4b">{quest.description}</Text>
-      </Flex>
-      <Flex justify="space-between">
-        <Text color="#888" italic>
-          {quest.category}
+      <div className="checkbox-area">
+        <Checkbox.Root size="xs" variant="primary">
+          <Checkbox.Indicator />
+        </Checkbox.Root>
+      </div>
+      <div className="card-content">
+        <div className="card-header">
+          <Text weight={600} color="#3b3b3bff">
+            {quest.title}
+          </Text>
+          <Chip size="sm" label={quest.status} />
+        </div>
+        <Text className="card-description" color="#4b4b4b">
+          {quest.description}
         </Text>
-        <Text weight={"bold"} color="#888">
-          {quest.points} pts
-        </Text>
-      </Flex>
+        <div className="card-footer">
+          <Text color="#888" italic>
+            {quest.category}
+          </Text>
+          <Text weight={"bold"} color="#888">
+            {quest.points} pts
+          </Text>
+        </div>
+      </div>
     </div>
   );
 }

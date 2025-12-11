@@ -1,5 +1,5 @@
-@import '@joacod/pixel-ui/components';
-@import '@joacod/pixel-ui/font';
+@import "@joacod/pixel-ui/components";
+@import "@joacod/pixel-ui/font";
 
 @font-face {
   font-family: "Unifontex";
@@ -7,7 +7,7 @@
 }
 
 :root {
-  --bg-primary: #1a1830;
+  --bg-primary: #090720;
   --bg-secondary: #1a1925;
 
   --text-primary: #ffffff;
@@ -22,6 +22,9 @@ body {
   font-family: var(--font-main);
   color: var(--text-primary);
   height: 100%;
-  margin: 4;
-  padding: 4;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+   padding: 8px;
+  }
 }

@@ -16,4 +16,4 @@
 .chip-sm { --chip-text-size: 12px; --chip-padding: 0.25rem 0.75rem; }
 .chip-md { --chip-text-size: 16px; --chip-padding: 0.35rem 1rem; }
 .chip-lg { --chip-text-size: 20px; --chip-padding: 0.5rem 1.25rem; }
-.chip-xl { --chip-text-size: 24px; --chip-padding: 0.75rem 1.5rem; }
+.chip-xl { --chip-text-size: 28px; --chip-padding: 0.75rem 1.5rem; }
