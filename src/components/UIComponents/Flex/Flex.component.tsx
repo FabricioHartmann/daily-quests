@@ -8,7 +8,7 @@ export function Flex({
   justify = "flex-start",
   align = "center",
   wrap = "nowrap",
-  gap = "4px",
+  gap = "",
   padding = "0",
   margin = "0",
   mt = "0",

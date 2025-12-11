@@ -1,10 +1,11 @@
 export type QuestProps = {
   title: string;
   description: string;
-  status: "open" | "completed" | "canceled";
-  points: number
-  category: "Estudo" | 'Saúde' | "Casa" | "Trabalho"
-  createdAt: string
+  status: "open" | "completed" | "canceled" | "failed";
+  points: number;
+  category: "Estudo" | "Saúde" | "Casa" | "Trabalho";
+  createdAt: string;
+  type: "daily" | "weekly";
 };
 
 export type QuestState = {
@@ -13,4 +14,4 @@ export type QuestState = {
   completeQuest: (title: string) => void;
   cancelQuest: (title: string) => void;
   removeQuest: (title: string) => void;
-}
+};

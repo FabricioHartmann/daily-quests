@@ -1,37 +1,12 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { QuestState } from "./quests.types";
+import { MOCKED_QUESTS } from "./constants";
 
 export const useQuestStore = create(
   persist<QuestState>(
     (set) => ({
-      quests: [
-        {
-          title: "Ir à academia",
-          description: "Treino de 1 hora na academia",
-          status: "open",
-          points: 10,
-          category: "Saúde",
-          createdAt: new Date().toISOString(),
-        },
-        {
-          title: "Lavar roupa",
-          description: "Separar, lavar e secar roupas",
-          status: "open",
-          points: 5,
-          category: "Casa",
-          createdAt: new Date().toISOString(),
-        },
-        {
-          title: "Estudar TypeScript",
-          description: "Praticar 1 hora de TypeScript",
-          status: "open",
-          points: 14,
-          category: "Estudo",
-          createdAt: new Date().toISOString(),
-        },
-      ],
-
+      quests: MOCKED_QUESTS,
       addQuest: (quest) =>
         set((state) => ({ quests: [...state.quests, quest] })),
 
