@@ -15,6 +15,12 @@
 
   min-height: 100vh;
   --font-main: "Unifontex", monospace;
+
+  --success-color: #58f558;
+  --fail-color: #ff6767;
+
+  --daily-list-bg-color: #41679c;
+  --weekly-list-bg-color: #e09a49;
 }
 
 body {

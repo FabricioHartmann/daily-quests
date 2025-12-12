@@ -1,4 +1,5 @@
 export type QuestProps = {
+  id: number;
   title: string;
   description: string;
   status: "open" | "completed" | "canceled" | "failed";
@@ -11,7 +12,8 @@ export type QuestProps = {
 export type QuestState = {
   quests: QuestProps[];
   addQuest: (quest: QuestProps) => void;
-  completeQuest: (title: string) => void;
-  cancelQuest: (title: string) => void;
-  removeQuest: (title: string) => void;
+  completeQuest: (id: number) => void;
+  openQuest: (id: number) => void;
+  cancelQuest: (id: number) => void;
+  removeQuest: (id: number) => void;
 };

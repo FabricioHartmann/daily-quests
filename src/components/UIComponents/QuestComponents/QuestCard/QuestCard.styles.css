@@ -1,5 +1,4 @@
 .quest-card {
-  width: 100%;
   border: 2px solid #ffffff;
   padding: 8px;
   width: 334px;
@@ -10,16 +9,18 @@
 }
 
 .quest-card:hover {
-  border-color: #3498db;
+  border-color: #000;
 }
 
 .checkbox-area {
-  padding-right: 8px;
+  height: 100%;
+  align-items: center;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 8px;
 }
 
@@ -47,4 +48,9 @@
   .checkbox-area {
     padding-right: 4px;
   }
+}
+
+.quest-card.status-completed {
+  background-color: #d4d4d4;
+  border-color: #c7c7c7;
 }

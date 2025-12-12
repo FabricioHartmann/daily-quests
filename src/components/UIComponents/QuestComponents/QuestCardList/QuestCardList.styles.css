@@ -6,7 +6,7 @@
   overflow-y: scroll;
   height: 440px;
   border: 2px solid #ffffff;
-  background-color: #1F3656;
+  background-color: var(--quest-bg-color);
 }
 
 .quest-list::-webkit-scrollbar {
@@ -16,12 +16,20 @@
 
 .quest-list::-webkit-scrollbar-thumb {
   background: #fff;
-  border: 2px solid #000;
+  border: 2px solid #fff;
 }
 
 .quest-list::-webkit-scrollbar-track {
-  background: #1F3656;
-  border: 2px solid #000;
+  background: var(--quest-bg-color);
+  border: none;
+  border-left: 2px solid #fff;
+}
+
+.daily-bg-color {
+  background-color: var(--weekly-list-bg-color);
+}
+.weekly-bg-color {
+  background-color: var(--daily-list-bg-color);
 }
 
 @media (max-width: 768px) {
