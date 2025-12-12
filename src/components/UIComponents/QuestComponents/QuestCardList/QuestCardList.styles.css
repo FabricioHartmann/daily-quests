@@ -5,8 +5,8 @@
   gap: 8px;
   overflow-y: scroll;
   height: 440px;
-  border: 2px solid #ffffff; /* estilo retrô */
-  background-color: #222;
+  border: 2px solid #ffffff;
+  background-color: #1F3656;
 }
 
 .quest-list::-webkit-scrollbar {
@@ -20,7 +20,7 @@
 }
 
 .quest-list::-webkit-scrollbar-track {
-  background: #222;
+  background: #1F3656;
   border: 2px solid #000;
 }
 

@@ -1,8 +1,8 @@
-import { useQuestStore } from "../../store/quests/quests.store";
-import { QuestCard, Text } from "../UIComponents";
+import { useQuestStore } from "../../../../store/quests/quests.store";
+import { QuestCard, Text } from "../..";
 import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";
-import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
+import useIsMobile from "../../../../hooks/useIsMobile/useIsMobile";
 
 export function QuestCardList({ questType }: QuestCardListProps) {
   const { quests } = useQuestStore();

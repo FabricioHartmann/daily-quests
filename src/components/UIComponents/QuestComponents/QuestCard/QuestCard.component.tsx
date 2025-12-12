@@ -1,5 +1,5 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Chip, Text } from "..";
+import { Chip, Text } from "../..";
 import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
 
