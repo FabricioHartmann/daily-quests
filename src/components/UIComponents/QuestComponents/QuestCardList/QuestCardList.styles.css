@@ -1,0 +1,51 @@
+.quest-board {
+  position: relative;
+}
+
+.effects-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+.list {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: scroll;
+  height: 440px;
+  border: 2px solid #ffffff;
+  background-color: var(--quest-bg-color);
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.list::-webkit-scrollbar-track {
+  background: var(--quest-bg-color);
+  border: none;
+  border-left: 2px solid #fff;
+}
+
+.daily-bg-color {
+  background-color: var(--daily-list-bg-color);
+}
+.weekly-bg-color {
+  background-color: var(--weekly-list-bg-color);
+}
+
+@media (max-width: 768px) {
+  .list {
+    height: 360px;
+  }
+}

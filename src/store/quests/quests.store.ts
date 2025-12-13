@@ -10,23 +10,30 @@ export const useQuestStore = create(
       addQuest: (quest) =>
         set((state) => ({ quests: [...state.quests, quest] })),
 
-      completeQuest: (title) =>
+      completeQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.title === title ? { ...quest, status: "completed" } : quest
+            quest.id === id ? { ...quest, status: "completed" } : quest
           ),
         })),
 
-      cancelQuest: (title) =>
+      openQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.title === title ? { ...quest, status: "canceled" } : quest
+            quest.id === id ? { ...quest, status: "open" } : quest
           ),
         })),
 
-      removeQuest: (title) =>
+      cancelQuest: (id) =>
         set((state) => ({
-          quests: state.quests.filter((quest) => quest.title !== title),
+          quests: state.quests.map((quest) =>
+            quest.id === id ? { ...quest, status: "canceled" } : quest
+          ),
+        })),
+
+      removeQuest: (id) =>
+        set((state) => ({
+          quests: state.quests.filter((quest) => quest.id !== id),
         })),
     }),
     {
