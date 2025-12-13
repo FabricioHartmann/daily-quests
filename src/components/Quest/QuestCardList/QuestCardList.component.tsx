@@ -19,7 +19,7 @@ export function QuestCardList({ questType }: QuestCardListProps) {
   };
 
   return (
-    <div>
+    <div className="list-wrapper">
       <Text size="lg">{questType === "daily" ? "Diárias" : "Semanais"}</Text>
       <div className={`quest-board ${questType}-bg-color`}>
         <div className="effects-layer">

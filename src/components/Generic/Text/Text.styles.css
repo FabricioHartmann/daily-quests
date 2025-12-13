@@ -5,6 +5,7 @@
   text-decoration: var(--underline, none);
   font-style: var(--italic, normal);
   font-size: var(--text-size, var(--text-md));
+  line-height: var(--text-size);
 }
 
 :root {

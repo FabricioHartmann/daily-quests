@@ -1,0 +1,12 @@
+.experience-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.experience-bar {
+  background-color: #f3c600fd;
+  border: 2px solid var(--black);
+  width: 180px;
+  height: 18px;
+}
