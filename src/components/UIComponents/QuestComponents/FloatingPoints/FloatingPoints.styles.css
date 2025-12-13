@@ -1,0 +1,40 @@
+.floating-points {
+  position: absolute;
+  right: -20px;
+  font-weight: bold;
+  text-shadow: 2px 2px #000;
+  pointer-events: none;
+  animation: var(--float-animation, floatUp) 1s ease-out forwards;
+}
+
+.floating-points.gain {
+  color: var(--success-color);
+  --float-animation: floatUp;
+}
+
+.floating-points.loss {
+  color: var(--fail-color);
+  --float-animation: floatDown;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -30px);
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -30px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -20px);
+  }
+}

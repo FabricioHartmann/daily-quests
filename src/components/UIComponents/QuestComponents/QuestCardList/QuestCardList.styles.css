@@ -1,4 +1,16 @@
-.quest-list {
+.quest-board {
+  position: relative;
+}
+
+.effects-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+.list {
   display: flex;
   padding: 8px;
   flex-direction: column;
@@ -9,31 +21,31 @@
   background-color: var(--quest-bg-color);
 }
 
-.quest-list::-webkit-scrollbar {
+.list::-webkit-scrollbar {
   width: 8px;
   border-radius: 0;
 }
 
-.quest-list::-webkit-scrollbar-thumb {
+.list::-webkit-scrollbar-thumb {
   background: #fff;
   border: 2px solid #fff;
 }
 
-.quest-list::-webkit-scrollbar-track {
+.list::-webkit-scrollbar-track {
   background: var(--quest-bg-color);
   border: none;
   border-left: 2px solid #fff;
 }
 
 .daily-bg-color {
-  background-color: var(--weekly-list-bg-color);
+  background-color: var(--daily-list-bg-color);
 }
 .weekly-bg-color {
-  background-color: var(--daily-list-bg-color);
+  background-color: var(--weekly-list-bg-color);
 }
 
 @media (max-width: 768px) {
-  .quest-list {
+  .list {
     height: 360px;
   }
 }
