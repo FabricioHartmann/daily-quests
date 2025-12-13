@@ -1,0 +1,56 @@
+.profile-card {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  width: 420px;
+  background-color: var(--white);
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-wrapper {
+  background: var(--black);
+  border: 2px solid var(--black);
+}
+
+.level-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px
+}
+
+.buffs-wrapper {
+  display: flex;
+  gap: 4px
+}
+
+.buff-icon {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(57, 17, 235);
+}
+
+.achievments-wrapper {
+  align-content: end;
+}
+
+@media (max-width: 768px) {
+}

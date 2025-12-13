@@ -19,8 +19,12 @@
   --success-color: #51ff51;
   --fail-color: #ff4444;
 
+  --white: #f7f7f7;
+  --black: #242424;
+  --light-gray: #a1a1a1;
+
   --daily-list-bg-color: #41679c;
-  --weekly-list-bg-color: #e09a49;
+  --weekly-list-bg-color: #ac5e1f;
 }
 
 body {
@@ -31,7 +35,6 @@ body {
   padding: 16px;
 
   @media (max-width: 768px) {
-   padding: 8px;
+    padding: 8px;
   }
 }
-
