@@ -1,4 +1,4 @@
-import type { QuestProps } from "../../../../store/quests/quests.types";
+import type { QuestProps } from "../../../store/quests/quests.types";
 
 export type QuestTogglePayload = {
   points: number;

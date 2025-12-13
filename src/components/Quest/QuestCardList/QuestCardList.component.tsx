@@ -1,4 +1,4 @@
-import { useQuestStore } from "../../../../store/quests/quests.store";
+import { useQuestStore } from "../../../store/quests/quests.store";
 import { FloatingPoints, QuestCard, Text } from "../..";
 import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";

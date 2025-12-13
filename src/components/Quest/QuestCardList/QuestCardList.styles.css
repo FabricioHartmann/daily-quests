@@ -27,7 +27,7 @@
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: #000000;
   border: 2px solid #fff;
 }
 

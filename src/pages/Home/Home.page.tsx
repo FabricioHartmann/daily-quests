@@ -1,5 +1,5 @@
-import { QuestCardList } from "../../components/UIComponents";
-import { Flex, Text } from "../../components/UIComponents";
+import { QuestCardList } from "../../components";
+import { Flex, Text } from "../../components";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import "./Home.styles.css";
 

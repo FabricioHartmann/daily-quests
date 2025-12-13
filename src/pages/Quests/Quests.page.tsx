@@ -1,4 +1,4 @@
-import { Flex, Text } from "../../components/UIComponents";
+import { Flex, Text } from "../../components";
 
 export function Quests() {
   return (

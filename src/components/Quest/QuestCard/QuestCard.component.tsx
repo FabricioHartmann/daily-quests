@@ -2,7 +2,7 @@ import type { QuestCardProps } from "./QuestCard.types";
 import { Text } from "../..";
 import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
-import { useQuestStore } from "../../../../store/quests/quests.store";
+import { useQuestStore } from "../../../store/quests/quests.store";
 
 
 export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
