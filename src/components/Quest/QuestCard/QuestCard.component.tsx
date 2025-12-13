@@ -3,21 +3,28 @@ import { Text } from "../..";
 import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
-
+import { useProfileStore } from "../../../store/profile/profile.store";
 
 export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
   const { completeQuest, openQuest } = useQuestStore();
+  const { addExp, removeExp } = useProfileStore();
 
   const handleCheckboxChange = () => {
-    let isCompleting = quest?.status === "open";
+    if (!quest) return
+    let isCompleting = quest.status === "open";
 
     onToggleQuest({
       points: quest.points,
       variant: isCompleting ? "gain" : "loss",
     });
 
-    if (isCompleting) completeQuest(quest?.id);
-    else openQuest(quest?.id);
+    if (isCompleting) {
+      completeQuest(quest.id);
+      addExp(quest.points);
+    } else {
+      removeExp(quest.points)
+      openQuest(quest.id);
+    }
   };
 
   return (
