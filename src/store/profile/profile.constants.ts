@@ -1,4 +1,5 @@
 import type { Profile } from "./profile.types";
+import profileImage from "../../assets/images/profile-test-image-2.svg";
 
 export const MOCKED_ACHIEVMENTS_LIST = [];
 
@@ -7,6 +8,6 @@ export const MOCKED_PROFILE_DATA: Profile = {
   experience: 0,
   level: 1,
   title: "Iniciante",
-  photo: "images/profile-test-image-2.svg",
-  achievments: MOCKED_ACHIEVMENTS_LIST, 
+  photo: profileImage,
+  achievments: MOCKED_ACHIEVMENTS_LIST,
 };

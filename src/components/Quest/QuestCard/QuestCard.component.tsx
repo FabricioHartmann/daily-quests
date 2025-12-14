@@ -4,13 +4,15 @@ import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
+import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 
 export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
   const { completeQuest, openQuest } = useQuestStore();
   const { addExp, removeExp } = useProfileStore();
+  const { playQuestMarkSound } = useQuestMarkSound();
 
   const handleCheckboxChange = () => {
-    if (!quest) return
+    if (!quest) return;
     let isCompleting = quest.status === "open";
 
     onToggleQuest({
@@ -19,10 +21,11 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
     });
 
     if (isCompleting) {
+      playQuestMarkSound();
       completeQuest(quest.id);
       addExp(quest.points);
     } else {
-      removeExp(quest.points)
+      removeExp(quest.points);
       openQuest(quest.id);
     }
   };
