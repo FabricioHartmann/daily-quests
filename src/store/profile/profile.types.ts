@@ -1,7 +1,7 @@
 export type Achievement = {
-  acquireDate: string
-  name: string
-}
+  acquireDate: string;
+  name: string;
+};
 
 export type Profile = {
   name: string;
@@ -9,11 +9,13 @@ export type Profile = {
   experience: number;
   title: string;
   photo: string;
-  achievments: Achievement[]
+  achievments: Achievement[];
 };
 
 export type ProfileState = {
   profile: Profile;
+  leveledUp: boolean;
+  clearLevelUp: () => void;
   setProfile: (profile: Profile) => void;
   addExp: (points: number) => void;
   removeExp: (points: number) => void;
