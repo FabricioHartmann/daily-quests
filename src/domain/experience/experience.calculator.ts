@@ -1,8 +1,7 @@
-import { BASE_EXP, EXPONENT } from "./experience.constants";
 import type { ExperienceTypes } from "./experience.types";
 
-export function getExpForNextLevel(level: number): number {
-  return Math.floor(BASE_EXP * Math.pow(level, EXPONENT));
+export function expForNextLevel(level: number): number {
+  return 100 + (level - 1) * (20 + level);
 }
 
 export function calculateExperience({
@@ -17,8 +16,8 @@ export function calculateExperience({
   if (experience < 0) experience = 0;
 
   if (changedExp > 0) {
-    while (experience >= getExpForNextLevel(level)) {
-      experience -= getExpForNextLevel(level);
+    while (experience >= expForNextLevel(level)) {
+      experience -= expForNextLevel(level);
       level++;
       leveledUp = true;
     }

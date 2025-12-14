@@ -5,8 +5,14 @@
 }
 
 .experience-bar {
-  background-color: #f3c600fd;
+  background-color: #413834fd;
   border: 2px solid var(--black);
   width: 180px;
   height: 18px;
+}
+
+@media (max-width: 360px) {
+  .experience-bar {
+    width: 100%;
+  }
 }

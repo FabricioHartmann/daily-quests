@@ -7,6 +7,6 @@ export const MOCKED_PROFILE_DATA: Profile = {
   experience: 0,
   level: 1,
   title: "Iniciante",
-  photo: "images/profile-test-image.svg",
+  photo: "images/profile-test-image-2.svg",
   achievments: MOCKED_ACHIEVMENTS_LIST,
 };

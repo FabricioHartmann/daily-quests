@@ -27,10 +27,13 @@ export function ProfileCard() {
 
         <div className="level-wrapper">
           <Text color="var(--black)" renderAs="span">
-            Lv: 1{" "}
+            Lv: {profile?.level}
           </Text>
 
-          <ExperienceBar />
+          <ExperienceBar
+            experience={profile?.experience}
+            level={profile?.level}
+          />
         </div>
         <div className="footer">
           <div className="buffs-wrapper">

@@ -24,6 +24,12 @@
   border: 2px solid var(--black);
 }
 
+@media (max-width: 300px) {
+  .photo-wrapper {
+    display: none;
+  }
+}
+
 .level-wrapper {
   display: flex;
   flex-direction: column;
@@ -54,10 +60,4 @@
 
 .achievments-wrapper {
   align-content: end;
-}
-
-@media (max-width: 300px) {
-  .photo-wrapper {
-    display: none;
-  }
 }
