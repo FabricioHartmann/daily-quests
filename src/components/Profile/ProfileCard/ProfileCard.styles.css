@@ -24,22 +24,32 @@
   border: 2px solid var(--black);
 }
 
+@media (max-width: 340px) {
+  .photo-wrapper {
+    display: none;
+  }
+}
+
 .level-wrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
+.level-label {
+  margin-right: 8px;
+}
+
 .footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 4px
+  gap: 4px;
 }
 
 .buffs-wrapper {
   display: flex;
-  gap: 4px
+  gap: 4px;
 }
 
 .buff-icon {
@@ -50,7 +60,4 @@
 
 .achievments-wrapper {
   align-content: end;
-}
-
-@media (max-width: 768px) {
 }

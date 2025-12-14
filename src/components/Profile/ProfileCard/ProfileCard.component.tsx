@@ -1,30 +1,39 @@
 import { ExperienceBar, Text } from "../..";
+import { useProfileStore } from "../../../store/profile/profile.store";
 import "./ProfileCard.styles.css";
 
 export function ProfileCard() {
+  const { profile } = useProfileStore();
+
   return (
     <div className={`profile-card`}>
       <div className="photo-wrapper">
         <img
           height="120px"
           width="120px"
-          src="images/profile-test-image.svg"
+          src={profile?.photo ?? null}
           alt="profile-photo"
         />
       </div>
       <div className="card-content">
         <div className="header">
           <Text size="lg" color="var(--black)">
-            Fabrício Hartmann
+            {profile?.name}
           </Text>
-          <Text color="var(--black)" italic>
-            Iniciante
+          <Text size="sm" color="var(--black)" italic>
+            {profile?.title}
           </Text>
         </div>
 
         <div className="level-wrapper">
-          <Text color="var(--black)">Lv: 1</Text>
-          <ExperienceBar />
+          <Text color="var(--black)" renderAs="span">
+            Lv: {profile?.level}
+          </Text>
+
+          <ExperienceBar
+            experience={profile?.experience}
+            level={profile?.level}
+          />
         </div>
         <div className="footer">
           <div className="buffs-wrapper">
@@ -33,7 +42,9 @@ export function ProfileCard() {
             <div className="buff-icon" />
           </div>
           <div className="achievments-wrapper">
-            <Text size="sm" color="var(--black)">Conquistas: 0</Text>
+            <Text size="sm" color="var(--black)">
+              Conquistas: {profile?.achievments?.length}
+            </Text>
           </div>
         </div>
       </div>

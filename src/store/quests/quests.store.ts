@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { QuestState } from "./quests.types";
-import { MOCKED_QUESTS } from "./constants";
+import { MOCKED_QUESTS } from "./quests.constants";
 
 export const useQuestStore = create(
   persist<QuestState>(

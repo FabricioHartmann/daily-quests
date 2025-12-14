@@ -1,12 +1,26 @@
-.experience-wrapper {
+.exp-wrapper {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.experience-bar {
-  background-color: #f3c600fd;
-  border: 2px solid var(--black);
+.exp-bar {
+  background-color: #463c38fd;
+  border: 2px solid #463c38fd;
+  overflow: hidden;
   width: 180px;
   height: 18px;
+}
+@media (max-width: 360px) {
+  .exp-bar {
+    width: 100%;
+  }
+}
+
+.exp-bar__fill {
+  background: linear-gradient(to right, #f5f254, #ffe600);
+  width: var(--exp-progress, 0%);
+  height: 18px;
+  image-rendering: pixelated;
+  transition: width 0.75s ease-out;
 }
