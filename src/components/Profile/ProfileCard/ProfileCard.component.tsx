@@ -3,7 +3,7 @@ import { useProfileStore } from "../../../store/profile/profile.store";
 import "./ProfileCard.styles.css";
 
 export function ProfileCard() {
-  const { profile } = useProfileStore();
+  const { profile, leveledUp } = useProfileStore();
 
   return (
     <div className={`profile-card`}>
@@ -33,6 +33,7 @@ export function ProfileCard() {
           <ExperienceBar
             experience={profile?.experience}
             level={profile?.level}
+            leveledUp={leveledUp}
           />
         </div>
         <div className="footer">

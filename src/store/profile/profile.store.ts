@@ -4,16 +4,17 @@ import type { ProfileState } from "./profile.types";
 import { MOCKED_PROFILE_DATA } from "./profile.constants";
 import { calculateExperience } from "../../domain/experience";
 
-export const useProfileStore = create(
-  persist<ProfileState>(
+export const useProfileStore = create<ProfileState>()(
+  persist(
     (set) => ({
       profile: MOCKED_PROFILE_DATA,
+      leveledUp: false,
+
       setProfile: (profile) => set({ profile }),
+
       addExp: (points) =>
         set((state) => {
-          console.log("ADD EXP CALLED", points);
-          console.log("STATE BEFORE", state.profile);
-          const { level, experience } = calculateExperience({
+          const { level, experience, leveledUp } = calculateExperience({
             currentLevel: state.profile.level,
             currentExp: state.profile.experience,
             changedExp: points,
@@ -25,6 +26,7 @@ export const useProfileStore = create(
               level,
               experience,
             },
+            leveledUp,
           };
         }),
       removeExp: (points) =>
@@ -41,12 +43,15 @@ export const useProfileStore = create(
               level,
               experience,
             },
+            leveledUp: false,
           };
         }),
+      clearLevelUp: () => set({ leveledUp: false }),
     }),
     {
       name: "profile-store",
       storage: createJSONStorage(() => sessionStorage),
+      partialize: (state) => ({ profile: state.profile }),
     }
   )
 );
