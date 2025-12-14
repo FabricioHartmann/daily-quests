@@ -20,7 +20,7 @@ export function ProfileCard() {
           <Text size="lg" color="var(--black)">
             {profile?.name}
           </Text>
-          <Text color="var(--black)" italic>
+          <Text size="sm" color="var(--black)" italic>
             {profile?.title}
           </Text>
         </div>

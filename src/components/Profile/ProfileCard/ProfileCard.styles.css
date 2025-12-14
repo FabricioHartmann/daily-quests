@@ -24,7 +24,7 @@
   border: 2px solid var(--black);
 }
 
-@media (max-width: 300px) {
+@media (max-width: 340px) {
   .photo-wrapper {
     display: none;
   }

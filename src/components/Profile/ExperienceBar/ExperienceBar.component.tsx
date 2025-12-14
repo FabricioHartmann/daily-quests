@@ -7,8 +7,17 @@ export function ExperienceBar({ experience, level }: ExperienceBarProps) {
   const { percentage, maxExperience } = getExpProgress(level, experience);
 
   return (
-    <div className="experience-wrapper">
-      <div className="experience-bar"></div>
+    <div className="exp-wrapper">
+      <div className="exp-bar">
+        <div
+          className="exp-bar__fill"
+          style={
+            {
+              "--exp-progress": `${percentage}%`,
+            } as React.CSSProperties
+          }
+        />
+      </div>
       <Text weight={"bold"} size="sm" color="var(--black)">
         {experience}/{maxExperience} xp
       </Text>
