@@ -14,14 +14,14 @@ export function Modal({ title, children }: ModalProps) {
 
   return (
     <div className="modal">
-      <header className="header">
+      <header className="modal-header">
         <Text>{title}</Text>
         <button className="close-btn" onClick={closeModal}>
           X
         </button>
       </header>
       <main className="modal-content">{children}</main>
-      <footer className="footer">
+      <footer className="modal-footer">
         <Button size="sm" onClick={closeModal}>Fechar</Button>
       </footer>
     </div>
