@@ -9,7 +9,7 @@
   border: 2px solid #463c38fd;
   overflow: hidden;
   width: 180px;
-  height: 18px;
+  height: 16px;
 }
 @media (max-width: 360px) {
   .exp-bar {
@@ -20,7 +20,7 @@
 .exp-bar__fill {
   background: linear-gradient(to right, #f5f254, #ffe600);
   width: var(--exp-progress, 0%);
-  height: 18px;
+  height: 16px;
   transition: width 0.5s ease-out;
 }
 

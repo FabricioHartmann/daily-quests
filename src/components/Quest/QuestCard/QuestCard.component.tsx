@@ -32,7 +32,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
 
   return (
     <div className={`quest-card status-${quest?.status}`}>
-      <div className="card-content">
+      <div className="quest-card-content">
         <div className="card-header">
           <Text weight={600} color="#3b3b3bff">
             {quest.title}

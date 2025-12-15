@@ -10,14 +10,14 @@ export function ProfileCard() {
     <div className={`profile-card`}>
       <div className="photo-wrapper">
         <img
-          height="120px"
-          width="120px"
+          height="112px"
+          width="112px"
           src={profile?.photo ?? ""}
           alt="profile-photo"
         />
       </div>
       <div className="card-content">
-        <div className="header">
+        <div className="profile-card-header">
           <Text size="lg" color="var(--black)">
             {profile?.name}
           </Text>
@@ -37,7 +37,7 @@ export function ProfileCard() {
             leveledUp={leveledUp}
           />
         </div>
-        <div className="footer">
+        <div className="profile-footer">
           <div className="buffs-wrapper">
             <div className="buff-icon" />
             <div className="buff-icon" />

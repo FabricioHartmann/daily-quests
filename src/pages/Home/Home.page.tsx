@@ -2,14 +2,12 @@ import { useEffect } from "react";
 import { QuestCardList } from "../../components/Quest";
 import { ProfileCard } from "../../components/Profile";
 import { Flex } from "../../components/Generic";
-import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
-import "./Home.styles.css";
 import { useModalStore } from "../../store/modal/modalStore";
 import { WelcomeModal } from "../../components/Modal/variants/WelcomeModal";
 import { useProfileStore } from "../../store/profile/profile.store";
+import "./Home.styles.css";
 
 export function Home() {
-  const isMobile = useIsMobile();
   const { openModal, closeModal } = useModalStore();
   const { profile, setProfile } = useProfileStore();
 
