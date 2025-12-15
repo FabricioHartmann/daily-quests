@@ -1,3 +1,17 @@
 .header {
   width: 100%;
 }
+
+.quests-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+  gap: 16px
+}
+
+@media (max-width: 768px) {
+  .quests-wrapper {
+    flex-direction: column;
+  }
+}

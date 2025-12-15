@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  padding: 12px;
+  background: #979696;
+}
+
+.navbar-item {
+  padding: 4px 8px;
+  border: 2px solid transparent;
+}
+
+.navbar-item.active {
+  border-color: #fff;
+  background: #111;
+}

@@ -25,15 +25,10 @@ export function Home() {
       <div className="header">
         <ProfileCard />
       </div>
-      <Flex
-        gap="16px"
-        direction={isMobile ? "column" : "row"}
-        justify="start"
-        width="100%"
-      >
+      <div className="quests-wrapper">
         <QuestCardList questType={"daily"} />
         <QuestCardList questType={"weekly"} />
-      </Flex>
+      </div>
     </Flex>
   );
 }

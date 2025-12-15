@@ -6,6 +6,12 @@
   background-color: var(--white);
 }
 
+@media (max-width: 768px) {
+  .profile-card {
+    width: 100%;
+  }
+}
+
 .card-content {
   display: flex;
   width: 100%;

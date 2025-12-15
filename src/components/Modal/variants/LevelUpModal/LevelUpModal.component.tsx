@@ -19,7 +19,7 @@ export function LevelUpModal({ level }: LevelUpModalProps) {
     <Modal title="Level UP!">
       <Flex direction="column" align="start" gap="8px">
         <TextWriterGroup>
-          <Text>Parabéns por ter subido de nível</Text>
+          <Text>Você subiu de nível</Text>
           <Text>{memoedLevelText}</Text>
         </TextWriterGroup>
       </Flex>

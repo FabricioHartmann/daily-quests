@@ -41,18 +41,17 @@
   justify-content: space-between;
 }
 
+.quest-card.status-completed {
+  background-color: var(--light-gray);
+  border-color: var(--light-gray);
+}
+
 @media (max-width: 768px) {
   .quest-card {
     width: 100%;
-    max-width: 470px;
   }
 
   .checkbox-area {
     padding-right: 4px;
   }
-}
-
-.quest-card.status-completed {
-  background-color: var(--light-gray);
-  border-color: var(--light-gray);
 }
