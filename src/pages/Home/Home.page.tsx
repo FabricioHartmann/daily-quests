@@ -4,15 +4,18 @@ import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import "./Home.styles.css";
 import { useModalStore } from "../../store/modal/modalStore";
 import { WelcomeModal } from "../../components/Modal/variants/WelcomeModal";
+import { useProfileStore } from "../../store/profile/profile.store";
 
 export function Home() {
   const isMobile = useIsMobile();
   const { openModal, closeModal } = useModalStore();
+  const { profile, setProfile } = useProfileStore();
 
   useEffect(() => {
-    openModal(
-      <WelcomeModal />
-    );
+    if (profile.firstAccess === true) {
+      openModal(<WelcomeModal />);
+      setProfile({...profile, firstAccess: false});
+    }
   }, [openModal, closeModal]);
 
   return (

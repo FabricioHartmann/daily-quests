@@ -4,7 +4,6 @@ import "./ProfileCard.styles.css";
 
 export function ProfileCard() {
   const { profile, leveledUp } = useProfileStore();
-  console.log(profile.photo)
 
   return (
     <div className={`profile-card`}>

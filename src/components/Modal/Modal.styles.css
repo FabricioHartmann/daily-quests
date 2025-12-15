@@ -1,14 +1,14 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: #000000be;
+  background: #000000a1;
   display: grid;
   place-items: center;
   z-index: 1000;
 }
 
 .modal {
-  background: var(--black);
+  background: #222121;
   border: 2px solid var(--white);
   padding: 12px;
   width: 420px;

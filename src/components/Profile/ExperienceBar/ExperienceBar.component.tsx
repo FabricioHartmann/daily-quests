@@ -4,7 +4,6 @@ import { getExpProgress } from "../../../domain/experience/getExpProgress";
 import type { ExperienceBarProps } from "./ExperienceBar.types";
 import { useEffect, useState } from "react";
 import { useProfileStore } from "../../../store/profile/profile.store";
-import { useLevelUpSound } from "../../../hooks/sounds/levelUpSound/useLevelUpSound";
 
 export function ExperienceBar({
   experience,
@@ -13,7 +12,6 @@ export function ExperienceBar({
 }: ExperienceBarProps) {
   const { percentage, maxExperience } = getExpProgress(level, experience);
   const { clearLevelUp } = useProfileStore();
-  const { playLevelUpSound } = useLevelUpSound();
   const [fill, setFill] = useState(0);
   const [reseting, setReseting] = useState(false);
 
@@ -23,7 +21,6 @@ export function ExperienceBar({
       const timeout = setTimeout(() => {
         setReseting(true);
         setFill(0);
-        playLevelUpSound();
 
         requestAnimationFrame(() => {
           setReseting(false);
