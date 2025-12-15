@@ -1,5 +1,6 @@
 import { useQuestStore } from "../../../store/quests/quests.store";
-import { FloatingPoints, QuestCard, Text } from "../..";
+import { FloatingPoints, QuestCard } from "../../Quest";
+import { Text } from "../../Generic";
 import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";
 import { useState } from "react";

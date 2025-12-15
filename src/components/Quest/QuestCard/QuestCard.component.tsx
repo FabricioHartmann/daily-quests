@@ -1,5 +1,5 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Text } from "../..";
+import { Text } from "../../Generic";
 import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";

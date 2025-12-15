@@ -1,4 +1,4 @@
-import { Flex, Text } from "../../components";
+import { Flex, Text } from "../../components/Generic";
 
 export function Quests() {
   return (
