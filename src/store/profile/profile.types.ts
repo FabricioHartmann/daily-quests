@@ -10,6 +10,7 @@ export type Profile = {
   title: string;
   photo: string;
   achievments: Achievement[];
+  firstAccess: boolean
 };
 
 export type ProfileState = {

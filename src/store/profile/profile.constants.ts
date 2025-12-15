@@ -10,4 +10,5 @@ export const MOCKED_PROFILE_DATA: Profile = {
   title: "Iniciante",
   photo: profileImage,
   achievments: MOCKED_ACHIEVMENTS_LIST,
+  firstAccess: true,
 };
