@@ -12,9 +12,9 @@ export function Home() {
   const { profile, setProfile } = useProfileStore();
 
   useEffect(() => {
-    if (!profile.firstAccess) {
+    if (profile.firstAccess === true) {
       openModal(<WelcomeModal />);
-      setProfile({...profile, firstAccess: true});
+      setProfile({...profile, firstAccess: false});
     }
   }, [openModal, closeModal]);
 
