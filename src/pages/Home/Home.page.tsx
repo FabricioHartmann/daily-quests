@@ -10,9 +10,7 @@ export function Home() {
   const { openModal, closeModal } = useModalStore();
 
   useEffect(() => {
-    openModal(
-      <WelcomeModal />
-    );
+    openModal(<WelcomeModal />);
   }, [openModal, closeModal]);
 
   return (
