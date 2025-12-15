@@ -1,5 +1,5 @@
 import { Modal } from "../..";
-import { Flex, Text } from "../../..";
+import { Flex, Text } from "../../../Generic";
 import { TextWriterGroup } from "../../../Generic/TextWriterGroup";
 
 export function WelcomeModal() {

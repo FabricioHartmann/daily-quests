@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Text } from "../..";
+import { Text } from "../../Generic";
 import type { FloatingPointsProps } from "./FloatingPoints.types";
 import "./FloatingPoints.styles.css";
 

@@ -1,4 +1,5 @@
-import { ExperienceBar, Text } from "../..";
+import { ExperienceBar } from "../";
+import { Text } from "../../Generic";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import "./ProfileCard.styles.css";
 
