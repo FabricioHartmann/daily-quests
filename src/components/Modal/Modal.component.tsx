@@ -16,13 +16,13 @@ export function Modal({ title, children }: ModalProps) {
     <div className="modal">
       <header className="modal-header">
         <Text>{title}</Text>
-        <button className="close-btn" onClick={closeModal}>
+        <button className="modal-close-btn" onClick={closeModal}>
           X
         </button>
       </header>
       <main className="modal-content">{children}</main>
       <footer className="modal-footer">
-        <Button size="sm" onClick={closeModal}>Fechar</Button>
+        <Button onClick={closeModal}>Fechar</Button>
       </footer>
     </div>
   );
