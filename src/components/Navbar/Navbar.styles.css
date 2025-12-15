@@ -1,15 +1,25 @@
 .navbar {
   display: flex;
   padding: 12px;
-  background: #979696;
+  background: #2e2869;
 }
 
 .navbar-item {
   padding: 4px 8px;
-  border: 2px solid transparent;
+  border: transparent 2px solid;
 }
 
 .navbar-item.active {
   border-color: #fff;
   background: #111;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    z-index: 100;
+  }
 }

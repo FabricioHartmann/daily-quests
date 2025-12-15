@@ -1,9 +1,9 @@
 import { Text } from "../../components/Generic";
 
-export function Quests() {
+export function Inventory() {
   return (
     <div>
-      <Text size="lg">Quests</Text>
+      <Text size="lg">Inventário</Text>
     </div>
   );
 }

@@ -12,5 +12,6 @@
 @media (max-width: 768px) {
   .app-content {
     padding: 8px;
+    padding-bottom: 72px;
   }
 }
