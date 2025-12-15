@@ -1,5 +1,5 @@
 import "./ExperienceBar.styles.css";
-import { Text } from "../..";
+import { Text } from "../../Generic";
 import { getExpProgress } from "../../../domain/experience/getExpProgress";
 import type { ExperienceBarProps } from "./ExperienceBar.types";
 import { useEffect, useState } from "react";

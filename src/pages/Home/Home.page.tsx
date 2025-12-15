@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { Flex, ProfileCard, QuestCardList } from "../../components";
+import { QuestCardList } from "../../components/Quest";
+import { ProfileCard } from "../../components/Profile";
+import { Flex } from "../../components/Generic";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import "./Home.styles.css";
 import { useModalStore } from "../../store/modal/modalStore";
@@ -14,7 +16,7 @@ export function Home() {
   useEffect(() => {
     if (profile.firstAccess === true) {
       openModal(<WelcomeModal />);
-      setProfile({...profile, firstAccess: false});
+      setProfile({ ...profile, firstAccess: false });
     }
   }, [openModal, closeModal]);
 

@@ -2,7 +2,7 @@ import { type ReactNode } from "react";
 import { useModalStore } from "../../store/modal/modalStore";
 import "./Modal.styles.css";
 import { Button } from "@joacod/pixel-ui";
-import { Text } from "../../components";
+import { Text } from "../../components/Generic";
 
 type ModalProps = {
   title: string;
