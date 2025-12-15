@@ -1,12 +1,15 @@
 import { Modal } from "../..";
 import { Flex, Text } from "../../..";
+import { TextWriterGroup } from "../../../Generic/TextWriterGroup";
 
 export function WelcomeModal() {
   return (
     <Modal title="Seja bem vindo">
       <Flex direction="column" align="start" gap="8px">
-        <Text>Saudacões viajante! </Text>
-        <Text>Sua jornada pela rotina perfeita está prestes a começar.</Text>
+        <TextWriterGroup>
+          <Text>Saudacões viajante!</Text>
+          <Text>A sua jornada está prestes a comecar.</Text>
+        </TextWriterGroup>
       </Flex>
     </Modal>
   );
