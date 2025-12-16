@@ -1,7 +1,7 @@
 .quest-card {
   border: 2px solid var(--white);
   padding: 8px;
-  width: 334px;
+  width: 100%;
   background-color: var(--white);
   display: flex;
   align-items: start;
@@ -17,6 +17,10 @@
 .checkbox-area {
   height: 100%;
   align-items: center;
+}
+
+.quest-card-edit-button {
+  cursor: pointer;
 }
 
 .quest-card-content {
@@ -47,10 +51,6 @@
 }
 
 @media (max-width: 768px) {
-  .quest-card {
-    width: 100%;
-  }
-
   .checkbox-area {
     padding-right: 4px;
   }

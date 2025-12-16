@@ -1,13 +1,18 @@
-import { useQuestStore } from "../../../store/quests/quests.store";
-import { FloatingPoints, QuestCard } from "../../Quest";
-import { Text } from "../../Generic";
+import { FloatingPoints, NewQuestCard, QuestCard } from "../../Quest";
+import { Flex, RenderIf, Text } from "../../Generic";
 import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";
 import { useState } from "react";
 import type { QuestTogglePayload } from "../QuestCard/QuestCard.types";
+import { Button } from "@joacod/pixel-ui";
+import { useNavigate } from "react-router-dom";
 
-export function QuestCardList({ questType }: QuestCardListProps) {
-  const { quests } = useQuestStore();
+export function QuestCardList({
+  questType,
+  quests,
+  editingMode = false,
+}: QuestCardListProps) {
+  const navigate = useNavigate();
   const [floatingEffect, setFloatingEffect] =
     useState<QuestTogglePayload | null>(null);
 
@@ -17,6 +22,10 @@ export function QuestCardList({ questType }: QuestCardListProps) {
   }) => {
     setFloatingEffect(payload);
     setTimeout(() => setFloatingEffect(null), 1000);
+  };
+
+  const goToQuestsPage = () => {
+    navigate("/quests");
   };
 
   return (
@@ -32,15 +41,35 @@ export function QuestCardList({ questType }: QuestCardListProps) {
           )}
         </div>
         <div className="list">
-          {quests
-            ?.filter((quest) => quest.type === questType)
-            .map((quest) => (
-              <QuestCard
-                key={quest.title}
-                quest={quest}
-                onToggleQuest={handleToggleQuest}
-              />
-            ))}
+          <RenderIf condition={editingMode}>
+            <NewQuestCard />
+          </RenderIf>
+          {quests?.map((quest) => (
+            <QuestCard
+              key={quest.title}
+              quest={quest}
+              editingMode={editingMode}
+              onToggleQuest={handleToggleQuest}
+            />
+          ))}
+          <RenderIf condition={!quests?.length && !editingMode}>
+            <Flex
+              direction="column"
+              align="center"
+              justify="center"
+              height="100%"
+              padding="16px"
+            >
+              <Text align="center" color="#332c2cff" size="lg">
+                {`Você completou todas as quests ${
+                  questType === "daily" ? "de hoje" : "da semana"
+                }`}
+              </Text>
+              <Button onClick={goToQuestsPage} variant="ghost">
+                Novas {questType === "daily" ? "diárias" : "semanais"}
+              </Button>
+            </Flex>
+          </RenderIf>
         </div>
       </div>
     </div>

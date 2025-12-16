@@ -23,8 +23,9 @@
   --black: #1d1d1d;
   --light-gray: #a1a1a1;
 
-  --daily-list-bg-color: #41679c;
-  --weekly-list-bg-color: #ac5e1f;
+  --daily-list-bg-color: #4f7cbb;
+  --weekly-list-bg-color: #d3792f;
+  --card-title: #3b3b3bff;
 }
 
 body {

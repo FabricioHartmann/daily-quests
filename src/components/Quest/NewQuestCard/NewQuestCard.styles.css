@@ -1,0 +1,19 @@
+.new-quest-card {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  width: 100%;
+
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  cursor: pointer;
+  user-select: none;
+}
+
+.new-quest-card:hover {
+  background: var(--success-color);
+}
+
+.new-quest-card:active {
+  transform: translate(2px, 2px);
+}

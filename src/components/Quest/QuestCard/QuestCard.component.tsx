@@ -5,8 +5,12 @@ import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
-
-export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
+import { BsPencilSquare } from "react-icons/bs";
+export function QuestCard({
+  quest,
+  editingMode = false,
+  onToggleQuest,
+}: QuestCardProps) {
   const { completeQuest, openQuest } = useQuestStore();
   const { addExp, removeExp } = useProfileStore();
   const { playQuestMarkSound } = useQuestMarkSound();
@@ -15,7 +19,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
     if (!quest) return;
     let isCompleting = quest.status === "open";
 
-    onToggleQuest({
+    onToggleQuest?.({
       points: quest.points,
       variant: isCompleting ? "gain" : "loss",
     });
@@ -34,7 +38,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
     <div className={`quest-card status-${quest?.status}`}>
       <div className="quest-card-content">
         <div className="card-header">
-          <Text weight={600} color="#3b3b3bff">
+          <Text weight={600} color="var(--card-title)">
             {quest.title}
           </Text>
         </div>
@@ -42,7 +46,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
           {quest.description}
         </Text>
         <div className="card-footer">
-          <Text color="#3b3b3bff" italic>
+          <Text color="var(--card-title)" italic>
             {quest.category}
           </Text>
           <Text weight={"bold"} color="#888">
@@ -51,14 +55,20 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
         </div>
       </div>
       <div className="checkbox-area">
-        <Checkbox.Root
-          onCheckedChange={handleCheckboxChange}
-          size="xs"
-          variant="primary"
-          checked={quest?.status === "completed"}
-        >
-          <Checkbox.Indicator />
-        </Checkbox.Root>
+        {editingMode ? (
+          <div className="quest-card-edit-button">
+            <BsPencilSquare size={24} color="black" />
+          </div>
+        ) : (
+          <Checkbox.Root
+            onCheckedChange={handleCheckboxChange}
+            size="xs"
+            variant="primary"
+            checked={quest?.status === "completed"}
+          >
+            <Checkbox.Indicator />
+          </Checkbox.Root>
+        )}
       </div>
     </div>
   );
