@@ -1,0 +1,17 @@
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  padding: 16px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 8px;
+    padding-bottom: 72px;
+  }
+}

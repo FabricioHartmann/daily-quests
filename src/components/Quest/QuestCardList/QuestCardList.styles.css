@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 8px;
   overflow-y: scroll;
-  height: 440px;
+  height: 420px;
   border: 2px solid var(--white);
   background-color: var(--quest-bg-color);
 }
@@ -51,6 +51,8 @@
 
 @media (max-width: 768px) {
   .list {
-    height: 360px;
+    height: 340px;
+    width: 100%;
   }
 }
+

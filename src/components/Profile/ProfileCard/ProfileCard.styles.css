@@ -8,11 +8,12 @@
 
 .card-content {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  justify-content: space-around;
 }
 
-.header {
+.profile-card-header {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -22,12 +23,6 @@
 .photo-wrapper {
   background: var(--black);
   border: 2px solid var(--black);
-}
-
-@media (max-width: 340px) {
-  .photo-wrapper {
-    display: none;
-  }
 }
 
 .level-wrapper {
@@ -40,7 +35,7 @@
   margin-right: 8px;
 }
 
-.footer {
+.profile-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -60,4 +55,13 @@
 
 .achievments-wrapper {
   align-content: end;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    width: 100%;
+  }
+  .photo-wrapper {
+    display: none;
+  }
 }

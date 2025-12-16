@@ -7,8 +7,8 @@ export function WelcomeModal() {
     <Modal title="Seja bem vindo">
       <Flex direction="column" align="start" gap="8px">
         <TextWriterGroup>
-          <Text>Saudacões viajante!</Text>
-          <Text>A sua jornada está prestes a comecar.</Text>
+          <Text>Saudações viajante!</Text>
+          <Text>A sua jornada está prestes a começar.</Text>
         </TextWriterGroup>
       </Flex>
     </Modal>
