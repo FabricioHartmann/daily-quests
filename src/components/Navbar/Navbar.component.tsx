@@ -16,7 +16,7 @@ export function Navbar() {
         ) : (
           <>
             <FaTent size={14} />
-            <Text>HOME</Text>
+            <Text color="white">HOME</Text>
           </>
         )}
       </NavLink>

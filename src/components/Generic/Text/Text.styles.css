@@ -1,11 +1,10 @@
 .text-ui {
   text-align: var(--align, left);
   font-weight: var(--weight, normal);
-  color: var(--color, --text-primary);
+  color: var(--color, var(--text-primary));
   text-decoration: var(--underline, none);
   font-style: var(--italic, normal);
   font-size: var(--text-size, var(--text-md));
-  line-height: var(--text-size);
 }
 
 :root {

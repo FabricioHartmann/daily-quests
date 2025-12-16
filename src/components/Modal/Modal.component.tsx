@@ -1,7 +1,6 @@
 import { type ReactNode } from "react";
 import { useModalStore } from "../../store/modal/modal.store";
 import "./Modal.styles.css";
-import { Button } from "@joacod/pixel-ui";
 import { Text } from "../../components/Generic";
 
 type ModalProps = {
@@ -22,7 +21,7 @@ export function Modal({ title, children }: ModalProps) {
       </header>
       <main className="modal-content">{children}</main>
       <footer className="modal-footer">
-        <Button onClick={closeModal}>Fechar</Button>
+        <button onClick={closeModal}>Fechar</button>
       </footer>
     </div>
   );

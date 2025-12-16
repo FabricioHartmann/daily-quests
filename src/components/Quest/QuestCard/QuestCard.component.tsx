@@ -1,6 +1,5 @@
 import type { QuestCardProps } from "./QuestCard.types";
 import { Text } from "../../Generic";
-import { Checkbox } from "@joacod/pixel-ui";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
@@ -60,14 +59,16 @@ export function QuestCard({
             <BsPencilSquare size={24} color="black" />
           </div>
         ) : (
-          <Checkbox.Root
-            onCheckedChange={handleCheckboxChange}
-            size="xs"
-            variant="primary"
-            checked={quest?.status === "completed"}
-          >
-            <Checkbox.Indicator />
-          </Checkbox.Root>
+          <div className="checkbox-area">
+            x
+          </div>
+          // <checkbox
+          //   onCheckedChange={handleCheckboxChange}
+          //   size="xs"
+          //   variant="primary"
+          //   checked={quest?.status === "completed"}
+          // >
+          // </checkbox>
         )}
       </div>
     </div>

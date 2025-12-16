@@ -33,7 +33,7 @@ export function Home() {
   }, [openModal, closeModal]);
 
   return (
-    <Flex justify="center" align="center" direction="column" gap="16px">
+    <div className="home-page-container">
       <div className="header">
         <ProfileCard />
       </div>
@@ -41,6 +41,6 @@ export function Home() {
         <QuestCardList quests={avaliableDailyQuests} questType={"daily"} />
         <QuestCardList quests={avaliableWeeklyQuests} questType={"weekly"} />
       </div>
-    </Flex>
+    </div>
   );
 }

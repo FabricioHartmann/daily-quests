@@ -1,5 +1,4 @@
 .app-root {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -12,6 +11,6 @@
 @media (max-width: 768px) {
   .app-content {
     padding: 8px;
-    padding-bottom: 72px;
+    padding-bottom: 64px;
   }
 }

@@ -4,7 +4,6 @@ import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";
 import { useState } from "react";
 import type { QuestTogglePayload } from "../QuestCard/QuestCard.types";
-import { Button } from "@joacod/pixel-ui";
 import { useNavigate } from "react-router-dom";
 
 export function QuestCardList({
@@ -60,14 +59,11 @@ export function QuestCardList({
               height="100%"
               padding="16px"
             >
-              <Text align="center" color="#332c2cff" size="lg">
+              <Text align="center" color="#4d4d4dff" size="lg">
                 {`Você completou todas as quests ${
                   questType === "daily" ? "de hoje" : "da semana"
                 }`}
               </Text>
-              <Button onClick={goToQuestsPage} variant="ghost">
-                Novas {questType === "daily" ? "diárias" : "semanais"}
-              </Button>
             </Flex>
           </RenderIf>
         </div>
