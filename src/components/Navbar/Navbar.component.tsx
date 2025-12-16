@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
-import {
-  GiScrollUnfurled,
-  GiLightBackpack,
-  GiTrophy,
-} from "react-icons/gi";
+import { GiScrollUnfurled, GiHood, GiTrophy } from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { Text } from "../Generic";
@@ -36,11 +32,11 @@ export function Navbar() {
       </NavLink>
       <NavLink to="/inventario" className="navbar-item">
         {isMobile ? (
-          <GiLightBackpack size={20} />
+          <GiHood size={22} />
         ) : (
           <>
-            <GiLightBackpack size={16} />
-            <Text>INVENTÁRIO</Text>
+            <GiHood size={18} className="icon-fix-hood" />
+            <Text>PERFIL</Text>
           </>
         )}
       </NavLink>
