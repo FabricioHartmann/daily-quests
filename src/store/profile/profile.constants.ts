@@ -4,7 +4,7 @@ import profileImage from "../../assets/images/profile-test-image-2.svg";
 export const MOCKED_ACHIEVMENTS_LIST = [];
 
 export const MOCKED_PROFILE_DATA: Profile = {
-  name: "Fabrício",
+  name: "Fabrício Hartmann",
   experience: 0,
   level: 1,
   title: "Iniciante",

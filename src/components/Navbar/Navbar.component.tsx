@@ -1,20 +1,58 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
+import {
+  GiScrollUnfurled,
+  GiLightBackpack,
+  GiTrophy,
+} from "react-icons/gi";
+import { FaTent } from "react-icons/fa6";
+import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
+import { Text } from "../Generic";
 
 export function Navbar() {
+  const isMobile = useIsMobile();
+
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-item">
-        HOME
+        {isMobile ? (
+          <FaTent size={18} />
+        ) : (
+          <>
+            <FaTent size={14} />
+            <Text>HOME</Text>
+          </>
+        )}
       </NavLink>
       <NavLink to="/quests" className="navbar-item">
-        QUESTS
+        {isMobile ? (
+          <GiScrollUnfurled size={18} />
+        ) : (
+          <>
+            <GiScrollUnfurled size={14} />
+            <Text>QUESTS</Text>
+          </>
+        )}
       </NavLink>
       <NavLink to="/inventario" className="navbar-item">
-        INVENTÁRIO
+        {isMobile ? (
+          <GiLightBackpack size={20} />
+        ) : (
+          <>
+            <GiLightBackpack size={16} />
+            <Text>INVENTÁRIO</Text>
+          </>
+        )}
       </NavLink>
       <NavLink to="/conquistas" className="navbar-item">
-        CONQUISTAS
+        {isMobile ? (
+          <GiTrophy size={18} />
+        ) : (
+          <>
+            <GiTrophy size={14} />
+            <Text>CONQUISTAS</Text>
+          </>
+        )}
       </NavLink>
     </nav>
   );

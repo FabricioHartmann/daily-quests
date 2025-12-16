@@ -13,13 +13,6 @@
   width: 100%;
 }
 
-.profile-card-header {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .photo-wrapper {
   background: var(--black);
   border: 2px solid var(--black);
@@ -47,12 +40,6 @@
   gap: 4px;
 }
 
-.buff-icon {
-  width: 20px;
-  height: 20px;
-  background-color: rgb(57, 17, 235);
-}
-
 .achievments-wrapper {
   align-content: end;
 }
@@ -61,6 +48,9 @@
   .profile-card {
     width: 100%;
   }
+}
+
+@media (max-width: 348px) {
   .photo-wrapper {
     display: none;
   }

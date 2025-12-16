@@ -12,9 +12,9 @@
   "dependencies": {
     "@joacod/pixel-ui": "^0.13.0",
     "pixel-ui": "^0.0.57",
-    "pixelarticons": "^1.8.1",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.10.1",
     "use-sound": "^5.0.0",
     "zustand": "^5.0.9"

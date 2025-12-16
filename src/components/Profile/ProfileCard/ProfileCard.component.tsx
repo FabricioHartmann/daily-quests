@@ -1,6 +1,7 @@
 import { ExperienceBar } from "../";
 import { Text } from "../../Generic";
 import { useProfileStore } from "../../../store/profile/profile.store";
+import { GiFire, GiSparkles } from "react-icons/gi";
 import "./ProfileCard.styles.css";
 
 export function ProfileCard() {
@@ -17,12 +18,9 @@ export function ProfileCard() {
         />
       </div>
       <div className="card-content">
-        <div className="profile-card-header">
+        <div>
           <Text size="lg" color="var(--black)">
             {profile?.name}
-          </Text>
-          <Text size="sm" color="var(--black)" italic>
-            {profile?.title}
           </Text>
         </div>
 
@@ -39,13 +37,12 @@ export function ProfileCard() {
         </div>
         <div className="profile-footer">
           <div className="buffs-wrapper">
-            <div className="buff-icon" />
-            <div className="buff-icon" />
-            <div className="buff-icon" />
+            <GiFire size={20} color="var(--black)"/>
+            <GiSparkles size={20} color="var(--black)"/>
           </div>
           <div className="achievments-wrapper">
-            <Text size="sm" color="var(--black)">
-              Conquistas: {profile?.achievments?.length}
+            <Text italic color="var(--black)">
+              {profile?.title}
             </Text>
           </div>
         </div>
