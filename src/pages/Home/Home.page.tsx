@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import { QuestCardList } from "../../components/Quest";
 import { ProfileCard } from "../../components/Profile";
 import { Flex } from "../../components/Generic";
-import { useModalStore } from "../../store/modal/modalStore";
+import { useModalStore } from "../../store/modal/modal.store";
 import { WelcomeModal } from "../../components/Modal/variants/WelcomeModal";
 import { useProfileStore } from "../../store/profile/profile.store";
 import "./Home.styles.css";

@@ -1,15 +1,15 @@
 import { Text } from "../../Generic";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import "./NewQuestCard.styles.css";
-import { useModalStore } from "../../../store/modal/modalStore";
-import { WelcomeModal } from "../../Modal/variants/WelcomeModal";
+import { useModalStore } from "../../../store/modal/modal.store";
+import { QuestCreatingModal } from "../../Modal/variants/QuestCreatingModal";
 
 export function NewQuestCard() {
   const {} = useQuestStore();
-  const { openModal } = useModalStore();
+  const { openModal, closeModal } = useModalStore();
 
   const openNewCardModal = () => {
-    openModal(<WelcomeModal />);
+    openModal(<QuestCreatingModal onCreate={closeModal} />);
   };
 
   return (

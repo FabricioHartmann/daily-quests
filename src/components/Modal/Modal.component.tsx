@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { useModalStore } from "../../store/modal/modalStore";
+import { useModalStore } from "../../store/modal/modal.store";
 import "./Modal.styles.css";
 import { Button } from "@joacod/pixel-ui";
 import { Text } from "../../components/Generic";
