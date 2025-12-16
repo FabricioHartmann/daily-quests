@@ -5,13 +5,16 @@
 }
 
 .navbar-item {
-  padding: 4px 8px;
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
   border: transparent 2px solid;
+  align-items: center;
 }
 
 .navbar-item.active {
   border-color: #fff;
-  background: #111;
+  background: var(--bg-primary);
 }
 
 @media (max-width: 768px) {
@@ -21,5 +24,18 @@
     top: auto;
     width: 100%;
     z-index: 100;
+    padding: 0;
+  }
+  .navbar-item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 12px;
+    border: none;
+    color: #ffffff;
+  }
+  .navbar-item.active {
+    background: var(--bg-primary);
+    color: #afff9f;
   }
 }
