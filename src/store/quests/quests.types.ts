@@ -5,7 +5,8 @@ export type QuestProps = {
   status: "open" | "completed" | "canceled" | "failed";
   points: number;
   category: "Estudo" | "Saúde" | "Casa" | "Trabalho" | 'Outro';
-  createdAt: string;
+  createdAt: Date
+  completedAt: Date | null
   type: "daily" | "weekly";
 };
 

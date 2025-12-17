@@ -1,0 +1,47 @@
+.quests-progress-card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 8px;
+  width: 380px;
+  background-color: var(--white);
+}
+
+.quests-progress-header {
+  display: flex;
+  width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-title);
+}
+
+.quests-progress-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quests-progress-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quests-progress-data {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quests-progress-footer {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .quests-progress-card {
+    width: 100%;
+  }
+}

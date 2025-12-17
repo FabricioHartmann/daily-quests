@@ -32,11 +32,8 @@
 }
 
 .input-field-error {
-  font-size: 11px;
-  margin-top: 4px;
+  font-size: 14px;
   color: var(--fail-color);
-}
-
-.input-field-error::before {
-  content: "✖ ";
+  margin-left: 1px;
+  margin-top: -4px;
 }

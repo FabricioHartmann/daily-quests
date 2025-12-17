@@ -4,14 +4,12 @@ import type { QuestCardListProps } from "./QuestCardList.types";
 import "./QuestCardList.styles.css";
 import { useState } from "react";
 import type { QuestTogglePayload } from "../QuestCard/QuestCard.types";
-import { useNavigate } from "react-router-dom";
 
 export function QuestCardList({
   questType,
   quests,
   editingMode = false,
 }: QuestCardListProps) {
-  const navigate = useNavigate();
   const [floatingEffect, setFloatingEffect] =
     useState<QuestTogglePayload | null>(null);
 
@@ -21,10 +19,6 @@ export function QuestCardList({
   }) => {
     setFloatingEffect(payload);
     setTimeout(() => setFloatingEffect(null), 1000);
-  };
-
-  const goToQuestsPage = () => {
-    navigate("/quests");
   };
 
   return (

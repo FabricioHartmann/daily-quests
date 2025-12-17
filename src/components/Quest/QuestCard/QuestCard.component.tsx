@@ -5,34 +5,28 @@ import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 import { GiScrollQuill } from "react-icons/gi";
-import { GiSwordWound } from "react-icons/gi";
+import { GiSwordWound, GiFullWoodBucket } from "react-icons/gi";
 
 export function QuestCard({
   quest,
   editingMode = false,
   onToggleQuest,
 }: QuestCardProps) {
-  const { completeQuest, openQuest } = useQuestStore();
-  const { addExp, removeExp } = useProfileStore();
+  const { completeQuest } = useQuestStore();
+  const { addExp } = useProfileStore();
   const { playQuestMarkSound } = useQuestMarkSound();
 
   const handleCompleteQuest = () => {
     if (!quest) return;
-    let isCompleting = quest.status === "open";
 
     onToggleQuest?.({
       points: quest.points,
-      variant: isCompleting ? "gain" : "loss",
+      variant: "gain",
     });
 
-    if (isCompleting) {
-      playQuestMarkSound();
-      completeQuest(quest.id);
-      addExp(quest.points);
-    } else {
-      removeExp(quest.points);
-      openQuest(quest.id);
-    }
+    playQuestMarkSound();
+    completeQuest(quest.id);
+    addExp(quest.points);
   };
 
   return (
@@ -43,7 +37,7 @@ export function QuestCard({
             {quest.title}
           </Text>
         </div>
-        <Text className="card-description" color="#4b4b4b">
+        <Text className="card-description" color="var(--black)">
           {quest.description}
         </Text>
         <div className="card-footer">
@@ -51,13 +45,13 @@ export function QuestCard({
             {quest.category}
           </Text>
           <Text weight={"bold"} color="#888">
-            {quest.points} pts
+            {quest.points} xp
           </Text>
         </div>
       </div>
       <div className="button-area">
         {editingMode ? (
-          <Button size="xs" variant="primary">
+          <Button size="xs">
             <GiScrollQuill size={24} color="white" />
           </Button>
         ) : (
