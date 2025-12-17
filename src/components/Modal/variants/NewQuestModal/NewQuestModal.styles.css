@@ -1,0 +1,11 @@
+.new-quest-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 16px;
+  row-gap: 4px;
+}
+
+.new-quest-form .full {
+  grid-column: 1 / -1;
+}

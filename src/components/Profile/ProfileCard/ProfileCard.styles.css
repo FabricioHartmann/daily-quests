@@ -16,6 +16,7 @@
 .photo-wrapper {
   background: var(--black);
   border: 2px solid var(--black);
+  display: flex;
 }
 
 .level-wrapper {

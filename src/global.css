@@ -1,34 +1,42 @@
-@import "@joacod/pixel-ui/components";
-@import "@joacod/pixel-ui/font";
-
 @font-face {
   font-family: "Unifontex";
   src: url("/src/assets/fonts/UnifontExMono.ttf") format("truetype");
 }
 
 :root {
-  --bg-primary: #090720;
-  --bg-secondary: #1a1925;
-
-  --text-primary: #ffffff;
-  --text-secondary: #a7a7a7;
-
-  min-height: 100vh;
   --font-main: "Unifontex", monospace;
 
+  --bg-primary: #090720;
+  --text-primary: #ffffff;
+  --text-secondary: #a7a7a7;
   --success-color: #51ff51;
   --fail-color: #ff4444;
 
   --white: #f7f7f7;
   --black: #1d1d1d;
   --light-gray: #a1a1a1;
-
-  --daily-list-bg-color: #41679c;
-  --weekly-list-bg-color: #ac5e1f;
 }
 
+html,
 body {
   background-color: var(--bg-primary);
   font-family: var(--font-main);
-  color: var(--text-primary);
+  margin: 0;
+}
+input, select {
+  font-family: "Unifontex", monospace;
+  font-size: 14px;
+}
+
+p,
+span,
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

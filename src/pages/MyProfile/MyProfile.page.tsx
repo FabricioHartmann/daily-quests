@@ -1,9 +1,9 @@
 import { Text } from "../../components/Generic";
 
-export function Inventory() {
+export function MyProfile() {
   return (
     <div>
-      <Text size="lg">Inventário</Text>
+      <Text size="lg">Perfil</Text>
     </div>
   );
 }

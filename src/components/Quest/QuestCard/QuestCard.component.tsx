@@ -1,21 +1,26 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Text } from "../../Generic";
-import { Checkbox } from "@joacod/pixel-ui";
+import { Button, Text } from "../../Generic";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
+import { GiScrollQuill } from "react-icons/gi";
+import { GiSwordWound } from "react-icons/gi";
 
-export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
+export function QuestCard({
+  quest,
+  editingMode = false,
+  onToggleQuest,
+}: QuestCardProps) {
   const { completeQuest, openQuest } = useQuestStore();
   const { addExp, removeExp } = useProfileStore();
   const { playQuestMarkSound } = useQuestMarkSound();
 
-  const handleCheckboxChange = () => {
+  const handleCompleteQuest = () => {
     if (!quest) return;
     let isCompleting = quest.status === "open";
 
-    onToggleQuest({
+    onToggleQuest?.({
       points: quest.points,
       variant: isCompleting ? "gain" : "loss",
     });
@@ -34,7 +39,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
     <div className={`quest-card status-${quest?.status}`}>
       <div className="quest-card-content">
         <div className="card-header">
-          <Text weight={600} color="#3b3b3bff">
+          <Text weight={600} color="var(--card-title)">
             {quest.title}
           </Text>
         </div>
@@ -42,7 +47,7 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
           {quest.description}
         </Text>
         <div className="card-footer">
-          <Text color="#3b3b3bff" italic>
+          <Text color="var(--card-title)" italic>
             {quest.category}
           </Text>
           <Text weight={"bold"} color="#888">
@@ -50,15 +55,16 @@ export function QuestCard({ quest, onToggleQuest }: QuestCardProps) {
           </Text>
         </div>
       </div>
-      <div className="checkbox-area">
-        <Checkbox.Root
-          onCheckedChange={handleCheckboxChange}
-          size="xs"
-          variant="primary"
-          checked={quest?.status === "completed"}
-        >
-          <Checkbox.Indicator />
-        </Checkbox.Root>
+      <div className="button-area">
+        {editingMode ? (
+          <Button size="xs" variant="primary">
+            <GiScrollQuill size={24} color="white" />
+          </Button>
+        ) : (
+          <Button onClick={handleCompleteQuest} size="xs" variant="primary">
+            <GiSwordWound size={24} color="white" />
+          </Button>
+        )}
       </div>
     </div>
   );

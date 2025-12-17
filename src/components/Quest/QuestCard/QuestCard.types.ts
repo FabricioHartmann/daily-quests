@@ -7,5 +7,6 @@ export type QuestTogglePayload = {
 
 export type QuestCardProps = {
   quest: QuestProps;
-  onToggleQuest: (payload: QuestTogglePayload) => void;
+  editingMode?: boolean
+  onToggleQuest?: (payload: QuestTogglePayload) => void;
 };

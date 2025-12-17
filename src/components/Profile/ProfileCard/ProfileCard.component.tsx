@@ -11,8 +11,8 @@ export function ProfileCard() {
     <div className={`profile-card`}>
       <div className="photo-wrapper">
         <img
-          height="112px"
-          width="112px"
+          height="84px"
+          width="84px"
           src={profile?.photo ?? ""}
           alt="profile-photo"
         />

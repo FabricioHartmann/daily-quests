@@ -1,29 +1,55 @@
-import { type ReactNode } from "react";
-import { useModalStore } from "../../store/modal/modalStore";
+import { useModalStore } from "../../store/modal/modal.store";
+import { Button, RenderIf, Text } from "../Generic";
+import type { ModalProps } from "./Modal.types";
 import "./Modal.styles.css";
-import { Button } from "@joacod/pixel-ui";
-import { Text } from "../../components/Generic";
+import { useCallback } from "react";
+import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 
-type ModalProps = {
-  title: string;
-  children: ReactNode;
-};
-
-export function Modal({ title, children }: ModalProps) {
+export function Modal({
+  title,
+  hasCutomFooter = false,
+  primaryButtonLabel,
+  primaryButtonAction,
+  children,
+}: ModalProps) {
   const closeModal = useModalStore((action) => action.closeModal);
+  const isMobile = useIsMobile();
+
+  const handlePrimaryAction = useCallback(() => {
+    primaryButtonAction?.();
+    closeModal();
+  }, [primaryButtonAction]);
 
   return (
     <div className="modal">
       <header className="modal-header">
         <Text>{title}</Text>
-        <button className="modal-close-btn" onClick={closeModal}>
-          X
-        </button>
+        <Button className="close-button" variant="ghost" onClick={closeModal}>
+          <Text size="lg">x</Text>
+        </Button>
       </header>
       <main className="modal-content">{children}</main>
-      <footer className="modal-footer">
-        <Button onClick={closeModal}>Fechar</Button>
-      </footer>
+      <RenderIf condition={!hasCutomFooter}>
+        <footer className="modal-footer">
+          <Button fullWidth={isMobile} variant="primary" onClick={closeModal}>
+            Fechar
+          </Button>
+        </footer>
+      </RenderIf>
+      <RenderIf condition={hasCutomFooter}>
+        <footer className="custom-modal-footer">
+          <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
+            Fechar
+          </Button>
+          <Button
+            fullWidth={isMobile}
+            variant="primary"
+            onClick={handlePrimaryAction}
+          >
+            {primaryButtonLabel ?? "OK"}
+          </Button>
+        </footer>
+      </RenderIf>
     </div>
   );
 }
