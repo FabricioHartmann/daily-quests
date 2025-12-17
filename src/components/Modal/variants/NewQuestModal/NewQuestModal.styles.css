@@ -1,7 +1,7 @@
 .new-quest-form {
   width: 100%;
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 6.5fr 3.5fr;
   gap: 16px;
   row-gap: 4px;
 }

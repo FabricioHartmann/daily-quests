@@ -8,11 +8,11 @@ export function Quests() {
   const { quests } = useQuestStore();
 
   const dailyQuests = useMemo(() => {
-    return quests?.filter((quest) => quest.type === "daily");
+    return quests?.filter((quest) => quest.type === "daily")?.reverse();
   }, [quests]);
 
   const weeklyQuests = useMemo(() => {
-    return quests?.filter((quest) => quest.type === "weekly");
+    return quests?.filter((quest) => quest.type === "weekly")?.reverse();
   }, [quests]);
 
   return (

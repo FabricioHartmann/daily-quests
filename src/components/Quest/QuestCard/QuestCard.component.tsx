@@ -5,7 +5,7 @@ import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 import { GiScrollQuill } from "react-icons/gi";
-import { GiSwordWound } from "react-icons/gi";
+import { GiSwordWound, GiFullWoodBucket } from "react-icons/gi";
 
 export function QuestCard({
   quest,
@@ -57,9 +57,9 @@ export function QuestCard({
       </div>
       <div className="button-area">
         {editingMode ? (
-          <Button size="xs" variant="primary">
-            <GiScrollQuill size={24} color="white" />
-          </Button>
+            <Button size="xs">
+              <GiScrollQuill size={24} color="white" />
+            </Button>
         ) : (
           <Button onClick={handleCompleteQuest} size="xs" variant="primary">
             <GiSwordWound size={24} color="white" />

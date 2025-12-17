@@ -17,7 +17,6 @@ export function Modal({
 
   const handlePrimaryAction = useCallback(() => {
     primaryButtonAction?.();
-    closeModal();
   }, [primaryButtonAction]);
 
   return (
