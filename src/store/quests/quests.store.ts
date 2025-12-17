@@ -13,7 +13,9 @@ export const useQuestStore = create(
       completeQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.id === id ? { ...quest, status: "completed" } : quest
+            quest.id === id
+              ? { ...quest, status: "completed", completedAt: new Date() }
+              : quest
           ),
         })),
 

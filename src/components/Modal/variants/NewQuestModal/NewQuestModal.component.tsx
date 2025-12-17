@@ -25,7 +25,8 @@ export function NewQuestModal({ questType }: NewQuestModalProps) {
       let questObject: QuestProps = {
         id: lastId + 1,
         ...data,
-        createdAt: new Date().toString(),
+        createdAt: new Date(),
+        completedAt: null,
         status: "open",
         type: questType,
       };
