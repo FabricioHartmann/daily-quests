@@ -23,6 +23,10 @@ body {
   font-family: var(--font-main);
   margin: 0;
 }
+input {
+  font-family: "Unifontex", monospace;
+  font-size: 14px;
+}
 
 p,
 span,

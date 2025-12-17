@@ -6,7 +6,7 @@ import "./FloatingPoints.styles.css";
 export function FloatingPoints({ points, variant }: FloatingPointsProps) {
   const pointsLabel = useMemo(() => {
     let operator = variant === "gain" ? "+" : "-";
-    return `${operator} ${points} pts`;
+    return `${operator} ${points} xp`;
   }, [points]);
 
   return (

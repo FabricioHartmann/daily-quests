@@ -30,7 +30,7 @@ export function QuestCardList({
   return (
     <div className="list-wrapper">
       <Text size="lg">{questType === "daily" ? "Diárias" : "Semanais"}</Text>
-      <div className={`quest-board ${questType}-bg-color`}>
+      <div className={`quest-board list-bg-color`}>
         <div className="effects-layer">
           {floatingEffect !== null && (
             <FloatingPoints
@@ -59,7 +59,7 @@ export function QuestCardList({
               height="100%"
               padding="16px"
             >
-              <Text align="center" color="#4d4d4dff" size="lg">
+              <Text align="center" color="#c4c1c1ff" size="lg">
                 {`Você completou todas as quests ${
                   questType === "daily" ? "do dia" : "da semana"
                 }`}

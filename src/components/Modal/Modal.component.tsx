@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 import { useModalStore } from "../../store/modal/modal.store";
 import "./Modal.styles.css";
-import { Button, Text } from "../../components/Generic";
+import { Button, Text } from "../Generic";
 
 type ModalProps = {
   title: string;

@@ -1,0 +1,54 @@
+.quest-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quest-label {
+  align-self: flex-start;
+  color: white;
+  margin-left: 2px;
+  transform: translateY(50%);
+  font-size: 14px;
+}
+
+.quest-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f0e0;
+  border: 1px solid var(--black);
+  color: var(--black);
+  outline: none;
+}
+
+.quest-input-wrapper {
+  position: relative;
+}
+
+.quest-input-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--black);
+  pointer-events: none;
+}
+
+.quest-input:focus + .focus-indicator {
+  opacity: 1;
+}
+
+.quest-input:disabled {
+  background-color: #c2c2c2;
+  color: #414141;
+  cursor: not-allowed;
+}
+
+.quest-input-error {
+  font-size: 11px;
+  margin-top: 4px;
+  color: var(--fail-color);
+}
+
+.quest-input-error::before {
+  content: "✖ ";
+}

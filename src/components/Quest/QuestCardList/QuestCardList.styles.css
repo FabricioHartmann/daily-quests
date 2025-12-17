@@ -43,11 +43,8 @@
   border-left: 2px solid #fff;
 }
 
-.daily-bg-color {
-  background-color: var(--daily-list-bg-color);
-}
-.weekly-bg-color {
-  background-color: var(--weekly-list-bg-color);
+.list-bg-color {
+  background-color: var(--list-bg-color);
 }
 
 @media (max-width: 768px) {
@@ -57,7 +54,6 @@
   }
 }
 :root {
-  --daily-list-bg-color: #a7a1ff;
-  --weekly-list-bg-color: #d3792f;
+  --list-bg-color: #fda863a1;
   --card-title: #3b3b3bff;
 }
