@@ -1,10 +1,12 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Text } from "../../Generic";
+import { Button, Text } from "../../Generic";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
-import { BsPencilSquare } from "react-icons/bs";
+import { GiScrollQuill } from "react-icons/gi";
+import { GiSwordWound } from "react-icons/gi";
+
 export function QuestCard({
   quest,
   editingMode = false,
@@ -14,7 +16,7 @@ export function QuestCard({
   const { addExp, removeExp } = useProfileStore();
   const { playQuestMarkSound } = useQuestMarkSound();
 
-  const handleCheckboxChange = () => {
+  const handleCompleteQuest = () => {
     if (!quest) return;
     let isCompleting = quest.status === "open";
 
@@ -53,22 +55,15 @@ export function QuestCard({
           </Text>
         </div>
       </div>
-      <div className="checkbox-area">
+      <div className="button-area">
         {editingMode ? (
-          <div className="quest-card-edit-button">
-            <BsPencilSquare size={24} color="black" />
-          </div>
+          <Button size="xs" variant="primary">
+            <GiScrollQuill size={24} color="white" />
+          </Button>
         ) : (
-          <div className="checkbox-area">
-            x
-          </div>
-          // <checkbox
-          //   onCheckedChange={handleCheckboxChange}
-          //   size="xs"
-          //   variant="primary"
-          //   checked={quest?.status === "completed"}
-          // >
-          // </checkbox>
+          <Button onClick={handleCompleteQuest} size="xs" variant="primary">
+            <GiSwordWound size={24} color="white" />
+          </Button>
         )}
       </div>
     </div>

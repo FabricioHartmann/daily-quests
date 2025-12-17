@@ -61,7 +61,7 @@ export function QuestCardList({
             >
               <Text align="center" color="#4d4d4dff" size="lg">
                 {`Você completou todas as quests ${
-                  questType === "daily" ? "de hoje" : "da semana"
+                  questType === "daily" ? "do dia" : "da semana"
                 }`}
               </Text>
             </Flex>

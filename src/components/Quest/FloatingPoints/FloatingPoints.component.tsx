@@ -15,6 +15,9 @@ export function FloatingPoints({ points, variant }: FloatingPointsProps) {
         size="lg"
         weight={"bold"}
         italic
+        color={
+          variant === "gain" ? "var(--success-color)" : "var(--fail-color)"
+        }
       >
         {pointsLabel}
       </Text>

@@ -1,4 +1,4 @@
-import { Text } from "../../Generic";
+import { Button, Text } from "../../Generic";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import "./NewQuestCard.styles.css";
 import { useModalStore } from "../../../store/modal/modal.store";
@@ -13,10 +13,10 @@ export function NewQuestCard() {
   };
 
   return (
-    <div onClick={openNewCardModal} className={`new-quest-card`}>
-      <Text weight={600} color="var(--card-title)">
-        ADICIONAR NOVA QUEST
-      </Text>
+    <div onClick={openNewCardModal}>
+      <Button variant="primary" size="lg" fullWidth>
+        <Text>INICIAR NOVA QUEST</Text>
+      </Button>
     </div>
   );
 }

@@ -14,9 +14,8 @@
   border-color: var(--black);
 }
 
-.checkbox-area {
-  height: 100%;
-  align-items: center;
+.button-area {
+  margin-left: 4px;
 }
 
 .quest-card-edit-button {

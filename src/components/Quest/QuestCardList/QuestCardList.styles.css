@@ -56,4 +56,8 @@
     width: 100%;
   }
 }
-
+:root {
+  --daily-list-bg-color: #a7a1ff;
+  --weekly-list-bg-color: #d3792f;
+  --card-title: #3b3b3bff;
+}

@@ -1,0 +1,88 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Unifontex", monospace;
+  background: var(--btn-bg, var(--btn-bg-default));
+  color: var(--btn-color, var(--text-primary));
+  border: var(--btn-border-size, 2px) solid var(--btn-border, #000);
+  padding: var(--btn-padding, 4px 10px);
+  font-size: var(--btn-font-size, var(--text-md));
+  font-weight: var(--btn-weight, normal);
+
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.05s;
+}
+
+.button:hover {
+  transform: translate(var(--btn-hover-x, -1px), var(--btn-hover-y, -1px));
+  box-shadow: 1px 1px 0 var(--btn-shadow, #000);
+}
+
+.button:active {
+  transform: translate(var(--btn-active-x, 1px), var(--btn-active-y, 1px));
+}
+
+.button:disabled {
+  opacity: var(--btn-opacity-disabled, 0.6);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 1px 1px 0 var(--btn-shadow, #000);
+}
+
+.button[data-variant="ghost"] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.button[data-variant="ghost"]:hover {
+  transform: none;
+}
+
+.button[data-fullwidth="true"] {
+  width: 100%;
+}
+
+.button[data-fullwidth="true"] {
+  justify-content: center;
+}
+
+.button[data-size="xs"] {
+  --btn-font-size: var(--text-xs);
+  --btn-padding: 4px 4px;
+  --btn-shadow-size: 0;
+}
+.button[data-size="sm"] {
+  --btn-font-size: var(--text-sm);
+  --btn-padding: 4px 12px;
+  --btn-shadow-size: 1px;
+}
+.button[data-size="md"] {
+  --btn-font-size: var(--text-md);
+  --btn-padding: 4px 16px;
+  --btn-shadow-size: 2px;
+}
+.button[data-size="lg"] {
+  --btn-font-size: var(--text-md);
+  --btn-padding: 12px 20px;
+  --btn-shadow-size: 3px;
+}
+
+:root {
+  --btn-border: #000;
+  --btn-shadow: #000;
+  --btn-color: var(--text-primary);
+
+  --btn-bg-default: #000000;
+  --btn-bg-primary: #1d71d1;
+  --btn-bg-success: #3dc933;
+  --btn-bg-danger: #b93a3a;
+
+  --btn-border-size: 2px;
+  --btn-shadow-size: 2px;
+  --btn-opacity-disabled: 0.6;
+}

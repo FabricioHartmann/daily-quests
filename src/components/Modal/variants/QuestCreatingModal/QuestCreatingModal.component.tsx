@@ -4,7 +4,7 @@ import type { QuestCreationModalProps } from "./QuestCreatingModal.types";
 export function QuestCreatingModal({ onCreate }: QuestCreationModalProps) {
 
   return (
-    <Modal title="Criacão de quest">
+    <Modal title="Nova quest">
       <div>.</div>
     </Modal>
   );

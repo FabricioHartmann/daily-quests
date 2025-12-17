@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
-import { GiScrollQuill , GiHood, GiTrophy } from "react-icons/gi";
+import { GiScrollUnfurled, GiHood, GiTrophy } from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { Text } from "../Generic";
@@ -22,10 +22,10 @@ export function Navbar() {
       </NavLink>
       <NavLink to="/quests" className="navbar-item">
         {isMobile ? (
-          <GiScrollQuill size={22} />
+          <GiScrollUnfurled size={20} />
         ) : (
           <>
-            <GiScrollQuill size={16} />
+            <GiScrollUnfurled size={14} />
             <Text>QUESTS</Text>
           </>
         )}
