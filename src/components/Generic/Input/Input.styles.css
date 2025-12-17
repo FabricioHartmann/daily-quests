@@ -1,10 +1,10 @@
-.quest-field {
+.input-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.quest-label {
+.input-label {
   align-self: flex-start;
   color: white;
   margin-left: 2px;
@@ -12,7 +12,7 @@
   font-size: 14px;
 }
 
-.quest-input {
+.input-field-inside {
   width: 100%;
   padding: 10px;
   background-color: #f8f0e0;
@@ -21,34 +21,22 @@
   outline: none;
 }
 
-.quest-input-wrapper {
+.input-field-wrapper {
   position: relative;
 }
 
-.quest-input-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border: 1px solid var(--black);
-  pointer-events: none;
-}
-
-.quest-input:focus + .focus-indicator {
-  opacity: 1;
-}
-
-.quest-input:disabled {
+.input-field:disabled {
   background-color: #c2c2c2;
   color: #414141;
   cursor: not-allowed;
 }
 
-.quest-input-error {
+.input-field-error {
   font-size: 11px;
   margin-top: 4px;
   color: var(--fail-color);
 }
 
-.quest-input-error::before {
+.input-field-error::before {
   content: "✖ ";
 }

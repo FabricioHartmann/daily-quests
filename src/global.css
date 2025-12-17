@@ -23,7 +23,7 @@ body {
   font-family: var(--font-main);
   margin: 0;
 }
-input {
+input, select {
   font-family: "Unifontex", monospace;
   font-size: 14px;
 }

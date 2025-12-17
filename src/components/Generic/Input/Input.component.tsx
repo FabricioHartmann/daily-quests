@@ -7,19 +7,19 @@ export function Input({
   error,
   ...inputProps
 }: InputProps) {
-  const inputId = id ?? `quest-input-${label.replace(/\s+/g, "-")}`;
+  const inputId = id ?? `input-field-${label.replace(/\s+/g, "-")}`;
 
   return (
-    <div className="quest-field">
-      <label className="quest-label" htmlFor={inputId}>
+    <div className="input-field">
+      <label className="input-label" htmlFor={inputId}>
         {label}
       </label>
 
-      <div className="quest-input-wrapper">
-        <input id={inputId} className="quest-input" {...inputProps} />
+      <div className="input-field-wrapper">
+        <input id={inputId} className="input-field-inside" {...inputProps} />
       </div>
 
-      {error && <span className="quest-input-error">{error}</span>}
+      {error && <span className="input-field-error">{error}</span>}
     </div>
   );
 }

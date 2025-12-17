@@ -4,7 +4,7 @@ export type QuestProps = {
   description: string;
   status: "open" | "completed" | "canceled" | "failed";
   points: number;
-  category: "Estudo" | "Saúde" | "Casa" | "Trabalho";
+  category: "Estudo" | "Saúde" | "Casa" | "Trabalho" | 'Outro';
   createdAt: string;
   type: "daily" | "weekly";
 };

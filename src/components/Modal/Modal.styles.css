@@ -8,7 +8,7 @@
 }
 
 .modal {
-  background: #222121;
+  background: #1d1b29;
   border: 2px solid var(--white);
   padding: 12px;
   width: 420px;
@@ -34,7 +34,13 @@
 
 .modal-footer {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  margin-top: 8px;
+}
+
+.custom-modal-footer {
+  display: flex;
+  justify-content: space-between;
   margin-top: 8px;
 }
 
@@ -47,7 +53,8 @@
     border: none;
     border-top: 2px solid var(--white);
   }
-  .modal-footer {
-    margin-top: 16px;
+  .custom-modal-footer {
+    flex-direction: column;
+    gap: 4px;
   }
 }

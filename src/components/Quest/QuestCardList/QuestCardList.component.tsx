@@ -41,7 +41,7 @@ export function QuestCardList({
         </div>
         <div className="list">
           <RenderIf condition={editingMode}>
-            <NewQuestCard />
+            <NewQuestCard questType={questType}/>
           </RenderIf>
           {quests?.map((quest) => (
             <QuestCard

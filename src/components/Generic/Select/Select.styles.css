@@ -1,0 +1,32 @@
+.select-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f0e0;
+  border: 1px solid var(--black);
+  color: var(--black);
+  outline: none;
+  appearance: none;
+}
+
+.select-input-wrapper::after {
+  content: "";
+  inset: 4px;
+  border: 1px solid var(--black);
+  pointer-events: none;
+}
+
+.select-input:disabled {
+  background-color: #c2c2c2;
+  color: #414141;
+  cursor: not-allowed;
+}
+
+.select-input-error {
+  font-size: 11px;
+  margin-top: 4px;
+  color: var(--fail-color);
+}
+
+.quest-input-error::before {
+  content: "✖ ";
+}
