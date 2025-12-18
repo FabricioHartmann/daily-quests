@@ -58,8 +58,8 @@ export function NewQuestModal({ questType }: NewQuestModalProps) {
             label="Título"
             placeholder="Ex: Estudar Nextjs"
             type="text"
-            error={errors.title?.message}
             {...register("title", questValidations.title)}
+            error={errors.title?.message}
           />
           <Input value={questTypeLabel} label="Tipo" type="text" readOnly />
           <div className="full">
@@ -67,15 +67,15 @@ export function NewQuestModal({ questType }: NewQuestModalProps) {
               label="Detalhes"
               placeholder="Ex: Estudar 1h de Nextjs e Typescript..."
               type="text"
-              error={errors.title?.message}
               {...register("description", questValidations.description)}
+              error={errors.description?.message}
             />
           </div>
           <Select
             label="Categoria"
-            error={errors.title?.message}
             options={QUESTS_CATEGORY_OPTIONS}
             {...register("category", questValidations.category)}
+            error={errors.category?.message}
           />
           <Input
             label="Pontos de xp"
