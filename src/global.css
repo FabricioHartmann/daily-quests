@@ -23,7 +23,8 @@ body {
   font-family: var(--font-main);
   margin: 0;
 }
-input, select {
+input,
+select {
   font-family: "Unifontex", monospace;
   font-size: 14px;
 }
@@ -33,6 +34,9 @@ span,
 a {
   margin: 0;
   text-decoration: none;
+}
+button {
+  font-family: "Unifontex", monospace;
 }
 
 *,

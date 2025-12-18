@@ -5,7 +5,7 @@ import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 import { GiScrollQuill } from "react-icons/gi";
-import { GiSwordWound, GiFullWoodBucket } from "react-icons/gi";
+import { GiSwordWound } from "react-icons/gi";
 
 export function QuestCard({
   quest,
