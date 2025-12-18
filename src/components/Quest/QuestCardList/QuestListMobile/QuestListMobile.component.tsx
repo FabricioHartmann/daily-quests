@@ -5,18 +5,21 @@ import { useState } from "react";
 import type { QuestTogglePayload } from "../../QuestCard/QuestCard.types";
 import { Tabs } from "../../../Generic/Tabs";
 import { QUEST_TABS } from "../constants";
-import type { QuestListMobileProps } from "./QuestListMobile.types";
+import type { QuestListMobileProps } from "../QuestListTypes";
 
 export function QuestListMobile({
-  allQuests,
+  quests,
   editingMode = false,
 }: QuestListMobileProps) {
   const [selectedQuestType, setSelectedQuestType] = useState<
     "daily" | "weekly"
   >("daily");
-
   const [floatingEffect, setFloatingEffect] =
     useState<QuestTogglePayload | null>(null);
+
+  const filteredQuests = quests?.filter(
+    (quest) => quest.type === selectedQuestType && quest.status === "open"
+  );
 
   const handleToggleQuest = (payload: {
     points: number;
@@ -47,17 +50,15 @@ export function QuestListMobile({
           <RenderIf condition={editingMode}>
             <NewQuestCard questType={selectedQuestType} />
           </RenderIf>
-          {allQuests
-            ?.filter((quest) => quest.type === selectedQuestType)
-            ?.map((quest) => (
-              <QuestCard
-                key={quest.title}
-                quest={quest}
-                editingMode={editingMode}
-                onToggleQuest={handleToggleQuest}
-              />
-            ))}
-          <RenderIf condition={!allQuests?.length && !editingMode}>
+          {filteredQuests?.map((quest) => (
+            <QuestCard
+              key={quest.title}
+              quest={quest}
+              editingMode={editingMode}
+              onToggleQuest={handleToggleQuest}
+            />
+          ))}
+          <RenderIf condition={!filteredQuests?.length && !editingMode}>
             <Flex
               direction="column"
               align="center"

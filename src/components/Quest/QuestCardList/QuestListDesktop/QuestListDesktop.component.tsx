@@ -3,7 +3,7 @@ import { Flex, RenderIf, Text } from "../../../Generic";
 import "../QuestCardList.styles.css";
 import { useState } from "react";
 import type { QuestTogglePayload } from "../../QuestCard/QuestCard.types";
-import type { QuestListDesktopProps } from "./QuestListDesktop.types";
+import type { QuestListDesktopProps } from "../QuestListTypes";
 
 export function QuestListDesktop({
   questType,
