@@ -4,8 +4,9 @@ import { RenderIf } from "../../Generic";
 import { QuestListDesktop } from "./QuestListDesktop/QuestListDesktop.component";
 import { QuestListMobile } from "./QuestListMobile/QuestListMobile.component";
 import { useQuestStore } from "../../../store/quests/quests.store";
+import type { QuestCardListProps } from "./QuestListTypes";
 
-export function QuestCardList() {
+export function QuestCardList({ editingMode }: QuestCardListProps) {
   const isMobile = useIsMobile();
   const { quests } = useQuestStore();
 
@@ -24,11 +25,19 @@ export function QuestCardList() {
   return (
     <div className="quests-wrapper">
       <RenderIf condition={isMobile}>
-        <QuestListMobile allQuests={quests} />
+        <QuestListMobile editingMode={editingMode} quests={quests} />
       </RenderIf>
       <RenderIf condition={!isMobile}>
-        <QuestListDesktop quests={avaliableDailyQuests} questType={"daily"} />
-        <QuestListDesktop quests={avaliableWeeklyQuests} questType={"weekly"} />
+        <QuestListDesktop
+          editingMode={editingMode}
+          quests={avaliableDailyQuests}
+          questType={"daily"}
+        />
+        <QuestListDesktop
+          editingMode={editingMode}
+          quests={avaliableWeeklyQuests}
+          questType={"weekly"}
+        />
       </RenderIf>
     </div>
   );
