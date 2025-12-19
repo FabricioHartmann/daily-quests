@@ -4,9 +4,9 @@ import { RenderIf } from "../../Generic";
 import { QuestListDesktop } from "./QuestListDesktop/QuestListDesktop.component";
 import { QuestListMobile } from "./QuestListMobile/QuestListMobile.component";
 import { useQuestStore } from "../../../store/quests/quests.store";
-import type { QuestCardListProps } from "./QuestListTypes";
+import type { QuestListProps } from "./QuestListTypes";
 
-export function QuestCardList({ editingMode }: QuestCardListProps) {
+export function QuestCardList({ editingMode }: QuestListProps) {
   const isMobile = useIsMobile();
   const { quests } = useQuestStore();
 

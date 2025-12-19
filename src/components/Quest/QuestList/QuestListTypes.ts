@@ -11,6 +11,6 @@ export type QuestListDesktopProps = BaseQuestListProps & {
   questType: QuestType;
 };
 
-export type QuestCardListProps = {
+export type QuestListProps = {
   editingMode?: boolean;
 };

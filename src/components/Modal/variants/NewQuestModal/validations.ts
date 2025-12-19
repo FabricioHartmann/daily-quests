@@ -5,10 +5,11 @@ export const questValidations = {
   },
   description: {
     required: "Campo obrigatório",
-    minLength: { value: 50, message: "Mínimo 50 caracteres" },
+    maxLength: { value: 50, message: "Máximo 50 caracteres" },
   },
   points: (maxPoints: number) => ({
     required: "Campo obrigatório",
+    valueAsNumber: true,
     min: { value: 1, message: "Tá me zoando?" },
     max: { value: maxPoints, message: `XP limite: ${maxPoints}` },
   }),
