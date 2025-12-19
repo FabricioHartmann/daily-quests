@@ -2,14 +2,16 @@ import { useModalStore } from "../../store/modal/modal.store";
 import { Button, RenderIf, Text } from "../Generic";
 import type { ModalProps } from "./Modal.types";
 import "./Modal.styles.css";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 
 export function Modal({
   title,
-  hasCutomFooter = false,
+  hasCustomFooter = false,
   primaryButtonLabel,
   primaryButtonAction,
+  primaryButtonVariant,
+  hideSecondaryButton,
   children,
 }: ModalProps) {
   const closeModal = useModalStore((action) => action.closeModal);
@@ -28,21 +30,27 @@ export function Modal({
         </Button>
       </header>
       <main className="modal-content">{children}</main>
-      <RenderIf condition={!hasCutomFooter}>
+      <RenderIf condition={!hasCustomFooter}>
         <footer className="modal-footer">
           <Button fullWidth={isMobile} variant="primary" onClick={closeModal}>
             Fechar
           </Button>
         </footer>
       </RenderIf>
-      <RenderIf condition={hasCutomFooter}>
-        <footer className="custom-modal-footer">
-          <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
-            Fechar
-          </Button>
+      <RenderIf condition={hasCustomFooter}>
+        <footer
+          className="custom-modal-footer"
+          style={{ flexDirection: hideSecondaryButton ? "row-reverse" : "row" }}
+        >
+          <RenderIf condition={!hasCustomFooter}>
+            <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
+              Fechar
+            </Button>
+          </RenderIf>
+
           <Button
             fullWidth={isMobile}
-            variant="primary"
+            variant={primaryButtonVariant ?? "primary"}
             onClick={handlePrimaryAction}
           >
             {primaryButtonLabel ?? "OK"}

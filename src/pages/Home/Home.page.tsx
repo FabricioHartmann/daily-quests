@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { QuestCardList } from "../../components/Quest";
+import { QuestList } from "../../components/Quest";
 import { ProfileCard } from "../../components/Profile";
 import { useModalStore } from "../../store/modal/modal.store";
 import { WelcomeModal } from "../../components/Modal/variants/WelcomeModal";
@@ -22,7 +22,7 @@ export function Home() {
       <div className="header">
         <ProfileCard />
       </div>
-      <QuestCardList />
+      <QuestList />
     </div>
   );
 }
