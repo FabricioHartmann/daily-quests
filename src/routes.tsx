@@ -12,6 +12,6 @@ export interface AppRoute {
 export const appRoutes: AppRoute[] = [
   { path: "/", element: <Home /> },
   { path: "/quests", element: <Quests /> },
-  { path: "/inventario", element: <MyProfile /> },
+  { path: "/perfil", element: <MyProfile /> },
   { path: "/conquistas", element: <Achievments /> },
 ];

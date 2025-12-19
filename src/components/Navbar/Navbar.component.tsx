@@ -30,7 +30,7 @@ export function Navbar() {
           </>
         )}
       </NavLink>
-      <NavLink to="/inventario" className="navbar-item">
+      <NavLink to="/perfil" className="navbar-item">
         {isMobile ? (
           <GiHood size={22} />
         ) : (

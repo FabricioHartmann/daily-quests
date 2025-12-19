@@ -20,7 +20,7 @@ export function Home() {
   return (
     <div className="home-page-container">
       <div className="header">
-        <ProfileCard />
+        <ProfileCard/>
       </div>
       <QuestList />
     </div>

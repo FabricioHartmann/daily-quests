@@ -2,7 +2,7 @@
   display: flex;
   padding: 8px;
   gap: 8px;
-  width: 378px;
+  width: 420px;
   background-color: var(--white);
 }
 
@@ -17,6 +17,11 @@
   background: var(--black);
   border: 2px solid var(--black);
   display: flex;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .level-wrapper {
@@ -41,8 +46,11 @@
   gap: 4px;
 }
 
-.achievments-wrapper {
+.profile-card-title-wrapper {
+  display: flex;
+  gap: 4px;
   align-content: end;
+  align-items: center;
 }
 
 @media (max-width: 768px) {

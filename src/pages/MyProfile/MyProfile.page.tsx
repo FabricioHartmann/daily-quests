@@ -1,9 +1,11 @@
-import { Text } from "../../components/Generic";
+import { ProfileCard } from "../../components/Profile";
 
 export function MyProfile() {
   return (
-    <div>
-      <Text size="lg">Perfil</Text>
-    </div>
-  );
+      <div className="profile-page-container">
+        <div className="header">
+          <ProfileCard canEdit/>
+        </div>
+      </div>
+    );
 }
