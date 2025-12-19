@@ -18,7 +18,12 @@ export const useQuestStore = create(
               : quest
           ),
         })),
-
+      updateQuest: (updatedQuest) =>
+        set((state) => ({
+          quests: state.quests.map((quest) =>
+            quest.id === updatedQuest.id ? updatedQuest : quest
+          ),
+        })),
       openQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
