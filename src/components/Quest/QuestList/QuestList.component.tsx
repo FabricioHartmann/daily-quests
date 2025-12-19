@@ -6,7 +6,7 @@ import { QuestListMobile } from "./QuestListMobile/QuestListMobile.component";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import type { QuestListProps } from "./QuestListTypes";
 
-export function QuestCardList({ editingMode }: QuestListProps) {
+export function QuestList({ editingMode }: QuestListProps) {
   const isMobile = useIsMobile();
   const { quests } = useQuestStore();
 

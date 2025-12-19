@@ -14,3 +14,10 @@ export type QuestListDesktopProps = BaseQuestListProps & {
 export type QuestListProps = {
   editingMode?: boolean;
 };
+
+export type QuestListBaseProps = {
+  quests: QuestProps[];
+  questType: "daily" | "weekly";
+  editingMode?: boolean;
+  title?: string;
+};

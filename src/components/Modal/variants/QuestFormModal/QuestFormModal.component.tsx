@@ -79,19 +79,19 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
         <div className="new-quest-form">
           <Input
             label="Título"
-            placeholder="Ex: Estudar Nextjs"
             type="text"
             {...register("title", questValidations.title)}
             error={errors.title?.message}
+            autoComplete="off"
           />
           <Input value={questTypeLabel} label="Tipo" type="text" readOnly />
           <div className="full">
             <Input
               label="Detalhes"
-              placeholder="Ex: Estudar 1h de Nextjs e Typescript..."
               type="text"
               {...register("description", questValidations.description)}
               error={errors.description?.message}
+              autoComplete="off"
             />
           </div>
           <Select
@@ -105,6 +105,7 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
             type="number"
             {...register("points", questValidations.points(maxPoints))}
             error={errors.points?.message}
+            autoComplete="off"
           />
         </div>
       </form>

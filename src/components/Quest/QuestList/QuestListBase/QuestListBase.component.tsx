@@ -6,13 +6,8 @@ import { NewQuestCard } from "../../NewQuestCard/NewQuestCard.component";
 import { QuestCard } from "../../QuestCard/QuestCard.component";
 import type { QuestTogglePayload } from "../../QuestCard/QuestCard.types";
 import "../QuestList.styles.css";
-
-type QuestListBaseProps = {
-  quests: QuestProps[];
-  questType: "daily" | "weekly";
-  editingMode?: boolean;
-  title?: string;
-};
+import type { QuestListBaseProps } from "../QuestListTypes";
+import { QuestListEmptyState } from "../QuestListEmptyState/QuestListBase.component";
 
 export function QuestListBase({
   quests,
@@ -56,19 +51,7 @@ export function QuestListBase({
           ))}
 
           {!quests.length && !editingMode && (
-            <Flex
-              direction="column"
-              align="center"
-              justify="center"
-              height="100%"
-              padding="16px"
-            >
-              <Text align="center" color="#c4c1c1ff" size="lg">
-                {`Você completou todas as quests ${
-                  questType === "daily" ? "do dia" : "da semana"
-                }`}
-              </Text>
-            </Flex>
+           <QuestListEmptyState questType={questType} />
           )}
         </div>
       </div>
