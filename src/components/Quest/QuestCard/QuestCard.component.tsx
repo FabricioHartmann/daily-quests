@@ -6,6 +6,8 @@ import { useProfileStore } from "../../../store/profile/profile.store";
 import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 import { GiScrollQuill } from "react-icons/gi";
 import { GiSwordWound } from "react-icons/gi";
+import { QuestFormModal } from "../../Modal/variants/QuestFormModal";
+import { useModalStore } from "../../../store/modal/modal.store";
 
 export function QuestCard({
   quest,
@@ -14,10 +16,11 @@ export function QuestCard({
 }: QuestCardProps) {
   const { completeQuest } = useQuestStore();
   const { addExp } = useProfileStore();
+  const { openModal } = useModalStore();
   const { playQuestMarkSound } = useQuestMarkSound();
 
   const handleCompleteQuest = () => {
-    if (!quest) return;
+    if (!quest || !quest.points) return;
 
     onToggleQuest?.({
       points: quest.points,
@@ -27,6 +30,10 @@ export function QuestCard({
     playQuestMarkSound();
     completeQuest(quest.id);
     addExp(quest.points);
+  };
+
+  const openEditCardModal = () => {
+    openModal(<QuestFormModal questType={quest.type} quest={quest} />);
   };
 
   return (
@@ -51,7 +58,7 @@ export function QuestCard({
       </div>
       <div className="button-area">
         {editingMode ? (
-          <Button size="xs">
+          <Button onClick={openEditCardModal} size="xs">
             <GiScrollQuill size={24} color="white" />
           </Button>
         ) : (

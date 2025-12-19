@@ -2,7 +2,7 @@ import { Button, Text } from "../../Generic";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import "./NewQuestCard.styles.css";
 import { useModalStore } from "../../../store/modal/modal.store";
-import { NewQuestModal } from "../../Modal/variants/NewQuestModal";
+import { QuestFormModal } from "../../Modal/variants/QuestFormModal";
 import type { NewQuestCardProps } from "./NewQuestCard.types";
 
 export function NewQuestCard({ questType }: NewQuestCardProps) {
@@ -10,7 +10,7 @@ export function NewQuestCard({ questType }: NewQuestCardProps) {
   const { openModal } = useModalStore();
 
   const openNewCardModal = () => {
-    openModal(<NewQuestModal questType={questType} />);
+    openModal(<QuestFormModal questType={questType} />);
   };
 
   return (
