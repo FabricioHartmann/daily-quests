@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# My Daily Quests
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My Daily Quests is a web application for creating, tracking, and completing daily and weekly tasks (quests). The project adopts a light gamification approach inspired by RPG systems to make routine activities more engaging.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Stack
 
-## React Compiler
+### Core
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* TypeScript
+* Vite
 
-## Expanding the ESLint configuration
+### State Management
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Zustand
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Forms
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React Hook Form
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Styling
+
+* CSS Variables
+
+
+## Running the project locally
+
+```bash
+# install dependencies
+npm install
+
+# start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application usually runs on port 5173.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Roadmap
+
+| Feature                         | Status |
+|---------------------------------|--------|
+| Quick quest list on home page   | ✅     |
+| Create and edit quests          | ✅     |
+| XP and leveling system          | ✅     |
+| Profile page and title system   | ❌     |
+| Achievements system             | ❌     |
+| Streaks system                  | ❌     |
+| Vercel deployment               | ❌     |
+| Firebase integration            | ❌     |
+| Daily and weekly quest resets   | ❌     |
+
+---
+
+## Project goals
+
+This project was created with a focus on:
+
+* Frontend architecture best practices
+* Reusable and scalable component design
+
+---
+
+## Screenshots
+<img width="319" height="669" alt="image" src="https://github.com/user-attachments/assets/f46ddf71-3dd5-476a-aa5d-519a684c90e0" />
+<img width="315" height="667" alt="image" src="https://github.com/user-attachments/assets/21b445fe-ef58-47da-8b74-46e989896ace" />
+<img width="318" height="667" alt="image" src="https://github.com/user-attachments/assets/593d54ed-c39a-4faa-b4b3-0619a7f68099" />
+<img width="960" height="799" alt="image" src="https://github.com/user-attachments/assets/02cac188-3e37-45cd-a765-ef951f279146" />
+
+
+
+---
+
+## Author
+
+Fabricio Hartmann
+
+---
+
+## License
+
+MIT
