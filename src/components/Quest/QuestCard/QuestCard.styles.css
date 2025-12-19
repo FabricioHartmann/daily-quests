@@ -16,16 +16,23 @@
 
 .button-area {
   margin-left: 4px;
+  height: 100%;
 }
 
-.quest-card-edit-button {
+.quest-edit-buttons {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  height: 100%;
 }
 
 .quest-card-content {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   gap: 8px;
 }
 
@@ -41,6 +48,8 @@
 .card-footer {
   width: 100%;
   display: flex;
+  margin-top: auto;
+
   justify-content: space-between;
 }
 

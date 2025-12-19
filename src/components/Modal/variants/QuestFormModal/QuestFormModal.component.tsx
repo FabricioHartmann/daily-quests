@@ -8,7 +8,6 @@ import { useEffect, useMemo } from "react";
 import { Input, Select } from "../../../Generic";
 import "./QuestFormModal.styles.css";
 import { useQuestStore } from "../../../../store/quests/quests.store";
-import type { QuestProps } from "../../../../store/quests/quests.types";
 import { useModalStore } from "../../../../store/modal/modal.store";
 import { QUESTS_CATEGORY_OPTIONS } from "./constants";
 import { questValidations } from "./validations";
@@ -70,7 +69,7 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
 
   return (
     <Modal
-      hasCutomFooter
+      hasCustomFooter
       primaryButtonLabel={isEditingMode ? "Salvar alterações" : "Iniciar"}
       primaryButtonAction={handleSubmit(onSubmit)}
       title={isEditingMode ? "Editar quest" : "Nova quest"}
