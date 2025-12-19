@@ -6,10 +6,16 @@ import "./ProfileCard.styles.css";
 import type { ProfileCardProps } from "./ProfileCard.types";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
-import { FaPencilRuler } from "react-icons/fa";
+import { Menu } from "../../Generic/Menu";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
-  const { profile, leveledUp } = useProfileStore();
+  const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
+
+  const menuItems = titleOptions.map((option) => ({
+    label: option.label,
+    disabled: option.disabled,
+    onClick: () => setTitle(option.label),
+  }));
 
   return (
     <div className={`profile-card`}>
@@ -27,7 +33,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
             {profile?.name}
           </Text>
           <RenderIf condition={canEdit}>
-            <HiPencilAlt size={28} color="black" />
+            <HiPencilAlt size={22} color="black" />
           </RenderIf>
         </div>
 
@@ -51,9 +57,10 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
             <Text italic color="var(--black)">
               {profile?.title}
             </Text>
-            <RenderIf condition={canEdit}>
-              <RiArrowDownSFill color="var(--black)" />
-            </RenderIf>
+            <Menu
+              trigger={<RiArrowDownSFill color="var(--black)" />}
+              items={menuItems}
+            />
           </div>
         </div>
       </div>
