@@ -21,11 +21,11 @@
 }
 
 .menu-content::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .menu-content::-webkit-scrollbar-thumb {
-  background: var(--white);
+  background: white;
 }
 
 .menu-content::-webkit-scrollbar-track {
@@ -64,4 +64,10 @@
 .menu-item:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-width: 348px) {
+  .menu-content {
+    min-width: 90vw;
+  }
 }

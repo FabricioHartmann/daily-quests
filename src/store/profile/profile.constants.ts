@@ -25,14 +25,56 @@ export const TITLE_OPTIONS: TitleOption[] = [
     disabled: true,
   },
   {
-    label: "Mestre da Consistência",
-    value: "mestre-da-consistencia",
+    label: "???",
+    value: "locked-1",
     disabled: true,
   },
-  { label: "Senhor do Tempo", value: "senhor-do-tempo", disabled: true },
+    {
+    label: "???",
+    value: "locked-2",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-3",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-4",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-5",
+    disabled: true,
+  },
   {
-    label: "Campeão da Disciplina",
-    value: "campeao-da-disciplina",
+    label: "???",
+    value: "locked-6",
     disabled: true,
   },
+    {
+    label: "???",
+    value: "locked-7",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-8",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-9",
+    disabled: true,
+  },
+    {
+    label: "???",
+    value: "locked-10",
+    disabled: true,
+  },
+  
+
+  
 ];

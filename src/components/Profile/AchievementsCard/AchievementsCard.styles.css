@@ -1,0 +1,17 @@
+.achievements-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+  height: auto;
+  width: 140px;
+  background-color: var(--white);
+}
+
+@media (max-width: 348px) {
+  .photo-wrapper {
+    display: none;
+  }
+}
