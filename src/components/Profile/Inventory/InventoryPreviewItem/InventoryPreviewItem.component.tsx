@@ -21,16 +21,16 @@ export function InventoryPreviewItem({ item }: InventoryPreviewItemProps) {
     <div className="inventory-preview">
       <div className="inventory-preview-item">
         <div className="preview-item-wrapper">
-          <Icon color="white" size={60} />
+          <Icon color="white" size={56} />
         </div>
-        <Text>{item.name}</Text>
+        <Text size="lg">{item.name}</Text>
       </div>
       <div className="inventory-preview-description">
         <div>
-          <Text>Efeitos</Text>
+          <Text italic>Efeitos:</Text>
           <div>
-            {item.effects.map(() => (
-              <Text>Quests diárias: +1</Text>
+            {item.effects.map((effect) => (
+              <Text italic>• {effect}</Text>
             ))}
           </div>
         </div>

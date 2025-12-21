@@ -11,7 +11,6 @@ export function Modal({
   primaryButtonLabel,
   primaryButtonAction,
   primaryButtonVariant,
-  hideSecondaryButton,
   children,
 }: ModalProps) {
   const closeModal = useModalStore((action) => action.closeModal);
@@ -40,13 +39,10 @@ export function Modal({
       <RenderIf condition={hasCustomFooter}>
         <footer
           className="custom-modal-footer"
-          style={{ flexDirection: hideSecondaryButton ? "row-reverse" : "row" }}
         >
-          <RenderIf condition={!hasCustomFooter}>
-            <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
-              Fechar
-            </Button>
-          </RenderIf>
+          <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
+            Fechar
+          </Button>
 
           <Button
             fullWidth={isMobile}
