@@ -1,0 +1,23 @@
+.inventory-item {
+  width: 44px;
+  height: 44px;
+  background: #383838;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.05s;
+}
+
+.inventory-item:hover {
+  filter: brightness(1.2);
+}
+
+.inventory-item.is-selected {
+  border: 2px solid var(--btn-bg-primary);
+}
+
+.inventory-item.is-equipped {
+  background: #2e6933;
+}

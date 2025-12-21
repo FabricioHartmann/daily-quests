@@ -11,11 +11,20 @@ export type Profile = {
   photo: string;
   achievments: Achievement[];
   firstAccess: boolean;
+  selectedTitle: string;
 };
+
+export type TitleOption = {
+  label: string;
+  value: string;
+  disabled: boolean
+}
 
 export type ProfileState = {
   profile: Profile;
   leveledUp: boolean;
+  titleOptions: TitleOption[];
+  setTitle: (title: string) => void;
   clearLevelUp: () => void;
   setProfile: (profile: Profile) => void;
   addExp: (points: number) => void;

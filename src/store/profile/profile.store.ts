@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { ProfileState } from "./profile.types";
-import { MOCKED_PROFILE_DATA } from "./profile.constants";
+import { MOCKED_PROFILE_DATA, TITLE_OPTIONS } from "./profile.constants";
 import { calculateExperience } from "../../domain/experience";
 
 export const useProfileStore = create<ProfileState>()(
@@ -47,6 +47,14 @@ export const useProfileStore = create<ProfileState>()(
           };
         }),
       clearLevelUp: () => set({ leveledUp: false }),
+      titleOptions: TITLE_OPTIONS,
+      setTitle: (title) =>
+        set((state) => ({
+          profile: {
+            ...state.profile,
+            title,
+          },
+        })),
     }),
     {
       name: "profile-store",

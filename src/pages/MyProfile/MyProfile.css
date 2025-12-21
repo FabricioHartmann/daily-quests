@@ -1,0 +1,22 @@
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.profile-page-header {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .profile-page-header {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-page-header {
+    flex-direction: column;
+  }
+}

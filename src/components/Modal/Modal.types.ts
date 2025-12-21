@@ -7,5 +7,4 @@ export type ModalProps = {
   primaryButtonLabel?: string;
   primaryButtonVariant?: "default" | "primary" | "success" | "danger" | "ghost";
   primaryButtonAction?: () => void;
-  hideSecondaryButton?: boolean
 };

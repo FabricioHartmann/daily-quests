@@ -1,0 +1,37 @@
+.inventory-preview {
+  display: flex;
+  flex-direction: column;
+  background-color: #5c3e33;
+  padding: 8px;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.inventory-preview-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--black);
+  gap: 4px;
+  height: 100px;
+}
+
+.preview-item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventory-preview-description {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+}
+.inventory-preview-footer {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}

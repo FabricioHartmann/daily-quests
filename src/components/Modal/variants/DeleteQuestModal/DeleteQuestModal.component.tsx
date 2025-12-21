@@ -18,7 +18,6 @@ export function DeleteQuestModal({ questId }: DeleteQuestModalProps) {
       primaryButtonLabel="Deletar"
       primaryButtonAction={handleRemoveQuest}
       primaryButtonVariant="danger"
-      hideSecondaryButton
       title="Deletar quest"
     >
       <Flex direction="column" align="start" gap="8px">

@@ -1,0 +1,11 @@
+import {
+  GiNinjaArmor,
+  GiBroadsword,
+  GiRing,
+} from "react-icons/gi";
+
+export const ITEM_ICONS = {
+  GiNinjaArmor,
+  GiBroadsword,
+  GiRing,
+} as const;

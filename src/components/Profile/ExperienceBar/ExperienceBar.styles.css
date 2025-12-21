@@ -8,10 +8,10 @@
   background-color: #463c38fd;
   border: 2px solid #463c38fd;
   overflow: hidden;
-  width: 180px;
+  width: 200px;
   height: 16px;
 }
-@media (max-width: 360px) {
+@media (max-width: 348px) {
   .exp-bar {
     width: 100%;
   }
