@@ -1,0 +1,17 @@
+.inventory-preview {
+  display: flex;
+  flex-direction: column;
+  background-color: #4d3025;
+  padding: 8px;
+  gap: 8px;
+  height: 100%;
+}
+
+.inventory-preview-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--black);
+  height: 100px;
+  width: 100%;
+}

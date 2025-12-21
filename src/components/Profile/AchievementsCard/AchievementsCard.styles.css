@@ -9,9 +9,3 @@
   width: 140px;
   background-color: var(--white);
 }
-
-@media (max-width: 348px) {
-  .photo-wrapper {
-    display: none;
-  }
-}

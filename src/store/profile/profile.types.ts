@@ -29,5 +29,4 @@ export type ProfileState = {
   setProfile: (profile: Profile) => void;
   addExp: (points: number) => void;
   removeExp: (points: number) => void;
-  
 };

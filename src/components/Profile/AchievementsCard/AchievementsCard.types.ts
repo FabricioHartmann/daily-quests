@@ -1,3 +1,4 @@
 export type AchievementsCardProps = {
-  canEdit?: boolean;
+  totalAchievements: number
+  achievementsAcquired: number
 };

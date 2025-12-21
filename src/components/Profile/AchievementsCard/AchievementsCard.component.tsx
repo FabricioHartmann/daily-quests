@@ -3,17 +3,18 @@ import { GiLaurelsTrophy } from "react-icons/gi";
 import { Text } from "../../Generic";
 import "./AchievementsCard.styles.css";
 
-export function AchievementsCard({}: AchievementsCardProps) {
+export function AchievementsCard({
+  totalAchievements,
+  achievementsAcquired,
+}: AchievementsCardProps) {
   return (
     <div className={`achievements-card`}>
       <div>
-        <Text color="var(--black)">
-          Conquistas
-        </Text>
+        <Text color="var(--black)">Conquistas</Text>
       </div>
       <GiLaurelsTrophy size={36} />
       <Text size="lg" color="var(--black)">
-        0/30
+        {achievementsAcquired}/{totalAchievements}
       </Text>
     </div>
   );
