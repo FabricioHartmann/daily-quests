@@ -7,7 +7,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     rarity: "common",
     type: "armor",
     icon: "GiNinjaArmor",
-    effects: ["Quests semanais +1"],
+    effects: ["Quests diárias +1"],
     description: "Veste leve simples para aventureiros iniciantes",
   },
 

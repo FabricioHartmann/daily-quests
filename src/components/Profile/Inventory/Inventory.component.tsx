@@ -27,9 +27,6 @@ export function Inventory() {
         <Text size="lg" color="var(--white)">
           Inventário
         </Text>
-        <Button onClick={addItemToInventory} size="sm" variant="primary">
-          add item test
-        </Button>
       </div>
       <div className="inventory-container">
         <div className="inventory-content">
