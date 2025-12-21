@@ -7,7 +7,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     rarity: "common",
     type: "armor",
     icon: "GiNinjaArmor",
-    effects: ["Quests diárias +1"],
+    effects: ["XP de quests diárias +1"],
     description: "Veste leve simples para aventureiros iniciantes",
   },
 
@@ -17,7 +17,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     rarity: "common",
     type: "weapon",
     icon: "GiBroadsword",
-    effects: ["Quests diárias +1"],
+    effects: ["XP de quests semanais +5"],
     description: "Espada de ferro padrão com cabo de madeira",
   },
 
@@ -27,7 +27,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     rarity: "common",
     type: "accessory",
     icon: "GiRing",
-    effects: ["XP de quests semanais +3"],
+    effects: ["Quests diárias +1"],
     description: "Anel simples. Dizem que traz sorte para quem usa",
   },
 } as const;

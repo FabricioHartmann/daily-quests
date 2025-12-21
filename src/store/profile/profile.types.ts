@@ -7,26 +7,38 @@ export type Profile = {
   name: string;
   level: number;
   experience: number;
-  title: string;
   photo: string;
   achievments: Achievement[];
   firstAccess: boolean;
-  selectedTitle: string;
+  selectedTitle: TitleId;
 };
 
 export type TitleOption = {
   label: string;
   value: string;
-  disabled: boolean
-}
+  disabled: boolean;
+};
 
 export type ProfileState = {
   profile: Profile;
   leveledUp: boolean;
   titleOptions: TitleOption[];
-  setTitle: (title: string) => void;
+  setTitle: (title: TitleId) => void;
+  unlockTitle: (title: TitleId) => void;
   clearLevelUp: () => void;
   setProfile: (profile: Profile) => void;
   addExp: (points: number) => void;
-  removeExp: (points: number) => void;
+};
+
+export type TitleId =
+  | "empty"
+  | "iniciante"
+  | "aventureiro"
+  | "amante-da-rotina"
+  | "forjador-de-habitos";
+
+export type CatalogTitle = {
+  value: TitleId;
+  label: string;
+  disabled: boolean;
 };
