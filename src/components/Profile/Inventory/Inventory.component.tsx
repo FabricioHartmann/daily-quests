@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Text } from "../../Generic";
+import { Button, RenderIf, Text } from "../../Generic";
 import { useInventoryStore } from "../../../store/inventory/inventory.store";
 import { InventoryItem } from "./InventoryItem/InventoryItem.component";
 import { InventoryPreviewItem } from "./InventoryPreviewItem/InventoryPreviewItem.component";
@@ -7,14 +7,24 @@ import type { ItemId } from "../../../store/inventory/inventory.types";
 import { InventoryPreviewEmptyState } from "./InventoryPreviewEmptyState/InventoryEmptyState.component";
 import { ITEMS_CATALOG } from "../../../store/inventory/itemsCatalog";
 import "./Inventory.styles.css";
+import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
+import { MobileItemPreview } from "../../Modal/variants/MobileItemPreviewModal";
+import { useModalStore } from "../../../store/modal/modal.store";
 
 export function Inventory() {
   const { items, itemsLimit } = useInventoryStore();
   const [selectedItemId, setSelectedItemId] = useState<ItemId>();
   const selectedItem = selectedItemId ? ITEMS_CATALOG[selectedItemId] : null;
+  const isMobile = useIsMobile(576);
+  const { openModal } = useModalStore();
 
   const handleSelectItem = (id: ItemId) => {
     setSelectedItemId(id);
+
+    if (isMobile) {
+      const item = ITEMS_CATALOG[id];
+      openModal(<MobileItemPreview item={item} />);
+    }
   };
 
   return (
@@ -37,19 +47,18 @@ export function Inventory() {
             ))}
           </div>
           <div>
-            <Text italic>
+            <Text size="sm" italic>
               capacidade: {items?.length}/{itemsLimit} itens
             </Text>
           </div>
         </div>
-        {selectedItem?.itemId ? (
-          <InventoryPreviewItem
-            key={selectedItem?.itemId}
-            item={selectedItem}
-          />
-        ) : (
-          <InventoryPreviewEmptyState />
-        )}
+        <RenderIf condition={!isMobile}>
+          {selectedItem?.itemId ? (
+            <InventoryPreviewItem item={selectedItem} />
+          ) : (
+            <InventoryPreviewEmptyState />
+          )}
+        </RenderIf>
       </div>
     </div>
   );

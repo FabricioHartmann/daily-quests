@@ -1,13 +1,9 @@
+import type { ITEM_ICONS } from "./inventoryIconsMapper";
 
-import { GiNinjaArmor, GiBroadsword, GiRing } from "react-icons/gi";
-
-export const ITEM_ICONS = {
-  GiNinjaArmor,
-  GiBroadsword,
-  GiRing,
-} as const;
-
-export type ItemId = "initial-light-armor" | "initial-iron-sword" | "initial-ring";
+export type ItemId =
+  | "initial-light-armor"
+  | "initial-iron-sword"
+  | "initial-ring";
 export type IconId = keyof typeof ITEM_ICONS;
 
 export type InventoryItemInstance = {

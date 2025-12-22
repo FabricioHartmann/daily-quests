@@ -10,9 +10,10 @@
 }
 
 @media (max-width: 768px) {
-  .profile-page-header {
+  .profile-page-container, .profile-page-header {
     gap: 8px;
   }
+
 }
 
 @media (max-width: 576px) {
