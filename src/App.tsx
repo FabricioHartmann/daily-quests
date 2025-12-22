@@ -5,6 +5,7 @@ import { EffectsLayer } from "./components/EffectsLayer/EffectsLayer.component";
 import { MainLayout } from "./layouts/MainLayout";
 import { useEffect } from "react";
 import { initRewardListener } from "./hooks/initRewardListener/initRewardListener";
+import { Toaster } from "sonner";
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Toaster position="top-right" duration={5000}/>
       <EffectsLayer />
       <ModalRoot />
       <Routes>

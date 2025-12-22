@@ -8,7 +8,7 @@ export function LevelUpModal({ level }: LevelUpModalProps) {
   const { playLevelUpSound } = useLevelUpSound();
 
   const memoedLevelText = useMemo(() => {
-    return `Você alcançou o LV ${level}`;
+    return `Parabéns, você alcançou o LV ${level}`;
   }, [level]);
 
   useEffect(() => {
