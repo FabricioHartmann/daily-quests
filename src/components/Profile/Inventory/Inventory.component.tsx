@@ -9,16 +9,12 @@ import { ITEMS_CATALOG } from "../../../store/inventory/itemsCatalog";
 import "./Inventory.styles.css";
 
 export function Inventory() {
-  const { items, addItem, itemsLimit } = useInventoryStore();
+  const { items, itemsLimit } = useInventoryStore();
   const [selectedItemId, setSelectedItemId] = useState<ItemId>();
   const selectedItem = selectedItemId ? ITEMS_CATALOG[selectedItemId] : null;
 
   const handleSelectItem = (id: ItemId) => {
     setSelectedItemId(id);
-  };
-
-  const addItemToInventory = () => {
-    addItem("initial-iron-sword");
   };
 
   return (
@@ -27,9 +23,6 @@ export function Inventory() {
         <Text size="lg" color="var(--white)">
           Inventário
         </Text>
-        <Button onClick={addItemToInventory} size="sm" variant="primary">
-          add item test
-        </Button>
       </div>
       <div className="inventory-container">
         <div className="inventory-content">

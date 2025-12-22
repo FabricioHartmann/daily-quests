@@ -1,0 +1,29 @@
+import type { CatalogTitle, TitleId } from "./profile.types";
+
+export const TITLES_CATALOG: Record<TitleId, CatalogTitle> = {
+  empty: {
+    value: "empty",
+    label: "",
+    disabled: false,
+  },
+  iniciante: {
+    value: "iniciante",
+    label: "Iniciante",
+    disabled: true,
+  },
+  aventureiro: {
+    value: "aventureiro",
+    label: "Aventureiro",
+    disabled: true,
+  },
+  "amante-da-rotina": {
+    value: "amante-da-rotina",
+    label: "Amante da rotina",
+    disabled: true,
+  },
+  "forjador-de-habitos": {
+    value: "forjador-de-habitos",
+    label: "Forjador de Hábitos",
+    disabled: true,
+  },
+};

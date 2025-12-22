@@ -8,8 +8,8 @@ export function LevelUpModal({ level }: LevelUpModalProps) {
   const { playLevelUpSound } = useLevelUpSound();
 
   const memoedLevelText = useMemo(() => {
-    return `LV ${level - 1} -> LV ${level}`;
-  }, []);
+    return `Parabéns, você alcançou o LV ${level}`;
+  }, [level]);
 
   useEffect(() => {
     playLevelUpSound();
@@ -19,7 +19,6 @@ export function LevelUpModal({ level }: LevelUpModalProps) {
     <Modal title="Level UP!">
       <Flex direction="column" align="start" gap="8px">
         <TextWriterGroup>
-          <Text>Você subiu de nível</Text>
           <Text>{memoedLevelText}</Text>
         </TextWriterGroup>
       </Flex>

@@ -11,7 +11,6 @@ export function InventoryItem({ item }: InventoryItemProps) {
   const Icon = ITEM_ICONS[data.icon];
 
   const isSelected = selectedItemId === item.itemId;
-  console.log(item)
   return (
     <div
       className={`inventory-item
