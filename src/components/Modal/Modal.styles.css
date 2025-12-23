@@ -28,14 +28,28 @@
 }
 
 .modal-content {
-  font-size: 10px;
-  padding: 16px 0;
+  margin-top: 16px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #2d2d64;
+  border: 1px solid #ffffff;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  border: 1px solid rgb(139, 139, 139);
 }
 
 .modal-footer {
   display: flex;
   justify-content: end;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 
 @media (max-width: 480px) {

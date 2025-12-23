@@ -1,20 +1,27 @@
-import type { AchievementCatalog } from "../store/profile/profile.types";
+import type { AchievementCatalog } from "../store/achievements/achievements.types";
 
 export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   // ===== LEVEL =====
+  {
+    id: "level-1-reached",
+    label: "Newbie",
+    description: "Seja bem vindo, newbie",
+    requirements: "Alcançar o nível 1",
+    reward: "",
+  },
   {
     id: "level-5-reached",
     label: "Primeiros Passos",
     description: "Toda grande jornada começa com coragem.",
     requirements: "Alcançar o nível 5",
-    reward: "",
+    reward: "title",
   },
   {
     id: "level-10-reached",
     label: "Aventureiro",
     description: "Você já sabe se virar por conta própria.",
     requirements: "Alcançar o nível 10",
-    reward: "",
+    reward: "item",
   },
   {
     id: "level-20-reached",
@@ -28,21 +35,21 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Herói em Ascensão",
     description: "Seu nome começa a ser conhecido.",
     requirements: "Alcançar o nível 30",
-    reward: "",
+    reward: "title",
   },
   {
     id: "level-50-reached",
     label: "Lenda Viva",
     description: "Poucos chegam tão longe.",
     requirements: "Alcançar o nível 50",
-    reward: "",
+    reward: "item",
   },
   {
     id: "level-100-reached",
     label: "Imortal",
     description: "Seu legado será lembrado.",
     requirements: "Alcançar o nível 100",
-    reward: "",
+    reward: "title",
   },
   // ===== QUESTS =====
   {
@@ -64,21 +71,21 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Executor Confiável",
     description: "Sempre entrega o que promete.",
     requirements: "Completar 50 quests",
-    reward: "",
+    reward: "item",
   },
   {
     id: "100-quests-completed",
     label: "Resolvedor de Problemas",
     description: "Nada fica pendente por muito tempo.",
     requirements: "Completar 100 quests",
-    reward: "",
+    reward: "title",
   },
   {
     id: "250-quests-completed",
     label: "Imparável",
     description: "A produtividade virou parte de você.",
     requirements: "Completar 250 quests",
-    reward: "",
+    reward: "item",
   },
   {
     id: "500-quests-completed",
@@ -92,7 +99,7 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Lenda das Quests",
     description: "Histórias serão contadas sobre isso.",
     requirements: "Completar 1000 quests",
-    reward: "",
+    reward: "title",
   },
 
   // ===== EXPEDIÇÕES =====
@@ -108,7 +115,7 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Explorador",
     description: "Você começa a gostar da jornada.",
     requirements: "Completar 10 expedições",
-    reward: "",
+    reward: "item",
   },
   {
     id: "25-expeditions-completed",
@@ -122,28 +129,28 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Desbravador",
     description: "Nenhuma rota é longa demais.",
     requirements: "Completar 50 expedições",
-    reward: "",
+    reward: "title",
   },
   {
     id: "100-expeditions-completed",
     label: "Explorador Incansável",
     description: "Sempre pronto para a próxima jornada.",
     requirements: "Completar 100 expedições",
-    reward: "",
+    reward: "item",
   },
   {
     id: "250-expeditions-completed",
     label: "Cartógrafo Lendário",
     description: "Você já mapeou o mundo inteiro.",
     requirements: "Completar 250 expedições",
-    reward: "",
+    reward: "title",
   },
   {
     id: "500-expeditions-completed",
     label: "Eterno Viajante",
     description: "A estrada nunca acaba.",
     requirements: "Completar 500 expedições",
-    reward: "",
+    reward: "item",
   },
 
   // ===== ITENS =====
@@ -152,7 +159,7 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Colecionador",
     description: "Todo item tem seu valor.",
     requirements: "Adquirir 5 itens",
-    reward: "",
+    reward: "title",
   },
   {
     id: "10-items-acquired",
@@ -166,14 +173,14 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Arsenal Básico",
     description: "Agora você está preparado.",
     requirements: "Adquirir 20 itens",
-    reward: "",
+    reward: "title",
   },
   {
     id: "30-items-acquired",
     label: "Mestre do Inventário",
     description: "Nada passa despercebido.",
     requirements: "Adquirir 30 itens",
-    reward: "",
+    reward: "item",
   },
   {
     id: "3-items-equipped",
@@ -187,6 +194,6 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     label: "Equipamento Épico",
     description: "Poder em cada detalhe.",
     requirements: "Equipar 3 itens épicos",
-    reward: "",
+    reward: "title",
   },
 ];
