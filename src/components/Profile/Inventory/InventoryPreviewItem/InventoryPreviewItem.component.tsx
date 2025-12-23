@@ -1,21 +1,28 @@
 import { Button, Text } from "../../../Generic";
-import type { InventoryPreviewItemProps } from "../Inventory.types";
 import { ITEM_ICONS } from "../../../../store/inventory/inventoryIconsMapper";
 import "./InventoryPreviewItem.styles.css";
 import { useInventoryStore } from "../../../../store/inventory/inventory.store";
+import type {
+  CatalogItem,
+  InventoryItem,
+} from "../../../../store/inventory/inventory.types";
 
-export function InventoryPreviewItem({ item }: InventoryPreviewItemProps) {
-  const { equipItem, unequipItem, items } = useInventoryStore();
+export function InventoryPreviewItem({
+  item,
+  onToggleEquip,
+}: {
+  item: CatalogItem & { equipped: boolean };
+  onToggleEquip: () => void;
+}) {
+  const { unequipByType } = useInventoryStore();
   const Icon = ITEM_ICONS[item.icon];
+  if (!Icon) {
+    return null;
+  }
 
-  const handleEquipItem = () => {
-    equipItem(item.itemId);
+  const handleUnequipItem = (type: InventoryItem["type"]) => {
+    unequipByType(type);
   };
-  const handleUnequipItem = () => {
-    unequipItem(item.itemId);
-  };
-
-  const selectedItem = items?.find((item) => item.itemId);
 
   return (
     <div className="inventory-preview">
@@ -29,20 +36,26 @@ export function InventoryPreviewItem({ item }: InventoryPreviewItemProps) {
         <div>
           <Text italic>Efeitos:</Text>
           <div>
-            {item.effects.map((effect) => (
-              <Text italic>• {effect}</Text>
+            {item?.effects?.map((effect) => (
+              <Text key={effect} italic>
+                • {effect}
+              </Text>
             ))}
           </div>
         </div>
         <Text italic>{item.description}</Text>
       </div>
       <div className="inventory-preview-footer">
-        {selectedItem?.equipped ? (
-          <Button onClick={handleUnequipItem} variant="danger" fullWidth>
+        {item?.equipped ? (
+          <Button
+            onClick={onToggleEquip}
+            variant="danger"
+            fullWidth
+          >
             Desequipar
           </Button>
         ) : (
-          <Button onClick={handleEquipItem} variant="primary" fullWidth>
+          <Button onClick={onToggleEquip} variant="primary" fullWidth>
             Equipar
           </Button>
         )}

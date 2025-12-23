@@ -21,17 +21,45 @@
 
 .inventory-content {
   padding: 8px;
-  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 300px;
+  gap: 8px;
 }
-
 .inventory-grid {
   display: inline-grid;
   grid-template-columns: repeat(6, 44px);
   grid-auto-rows: 44px;
   gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .inventory-card {
+    width: 100%;
+  }
+  .inventory-content {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .inventory-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: 180px;
+    gap: 8px;
+  }
+  .inventory-card {
+    height: auto;
+  }
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    gap: 8px;
+  }
 }
 
 @media (max-width: 348px) {

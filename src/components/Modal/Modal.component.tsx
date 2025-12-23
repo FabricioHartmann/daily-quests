@@ -37,13 +37,7 @@ export function Modal({
         </footer>
       </RenderIf>
       <RenderIf condition={hasCustomFooter}>
-        <footer
-          className="custom-modal-footer"
-        >
-          <Button fullWidth={isMobile} variant="danger" onClick={closeModal}>
-            Fechar
-          </Button>
-
+        <footer className="modal-footer">
           <Button
             fullWidth={isMobile}
             variant={primaryButtonVariant ?? "primary"}
