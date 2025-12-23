@@ -9,7 +9,7 @@ export const rewardRules = [
     condition: () =>
       useQuestStore
         .getState()
-        .quests.filter((quest) => quest.status === "completed").length === 1,
+        .quests.filter((quest) => quest.status === "completed").length >= 1,
     effect: () => {
       useProfileStore.getState().unlockTitle("iniciante");
       toast("Completou sua primeira quest!", {
@@ -19,7 +19,7 @@ export const rewardRules = [
   },
   {
     id: "level2-item-reward",
-    condition: () => useProfileStore.getState().profile.level === 2,
+    condition: () => useProfileStore.getState().profile.level >= 2,
     effect: () => {
       useInventoryStore.getState().addItem("initial-iron-sword");
       useInventoryStore.getState().addItem("initial-light-armor");
@@ -32,7 +32,7 @@ export const rewardRules = [
   },
   {
     id: "level3-item-reward",
-    condition: () => useProfileStore.getState().profile.level === 3,
+    condition: () => useProfileStore.getState().profile.level >= 3,
     effect: () => {
       useInventoryStore.getState().addItem("initial-ring");
       setTimeout(() => {
@@ -44,7 +44,7 @@ export const rewardRules = [
   },
   {
     id: "level5-achievement-reward",
-    condition: () => useProfileStore.getState().profile.level >= 3,
+    condition: () => useProfileStore.getState().profile.level >= 5,
     effect: () => {
       setTimeout(() => {
         toast.success("Nova conquista desbloqueada!", {
