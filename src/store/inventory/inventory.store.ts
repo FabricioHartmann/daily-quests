@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { InventoryItem, InventoryState, ItemId } from "./inventory.types";
 import { buildInventoryItem } from "./inventory.factory";
-import { ITEMS_CATALOG } from "./itemsCatalog";
+import { ITEMS_CATALOG } from "../../data/itemsCatalog";
 
 export const useInventoryStore = create<InventoryState>()(
   persist(

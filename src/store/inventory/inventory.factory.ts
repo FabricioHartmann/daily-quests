@@ -1,4 +1,4 @@
-import { ITEMS_CATALOG } from "./itemsCatalog";
+import { ITEMS_CATALOG } from "../../data/itemsCatalog";
 import type { InventoryItem, ItemId } from "./inventory.types";
 
 export function buildInventoryItem(itemId: ItemId): InventoryItem {
