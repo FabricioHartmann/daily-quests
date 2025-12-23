@@ -1,13 +1,13 @@
 import { ExperienceBar } from "../";
 import { RenderIf, Text } from "../../Generic";
 import { useProfileStore } from "../../../store/profile/profile.store";
-import { GiFire, GiSparkles } from "react-icons/gi";
 import "./ProfileCard.styles.css";
 import type { ProfileCardProps } from "./ProfileCard.types";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
 import { Menu } from "../../Generic/Menu";
 import { TITLES_CATALOG } from "../../../store/profile/titlesCatalog";
+import { Buffs } from "../Buffs/Buffs.component";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
   const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
@@ -51,10 +51,22 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           />
         </div>
         <div className="profile-footer">
-          <div className="buffs-wrapper">
-            <GiFire size={20} color="var(--black)" />
-            <GiSparkles size={20} color="var(--black)" />
-          </div>
+          <Buffs
+            allBuffs={[
+              {
+                effect: "20% de algo",
+                icon: "GiBroadsword",
+                id: "initial-iron-sword",
+                label: "Espada",
+              },
+              {
+                effect: "10% de algo",
+                icon: "GiNinjaArmor",
+                id: "initial-light-armor",
+                label: "Veste",
+              },
+            ]}
+          />
           <div className="profile-card-title-wrapper">
             <Text italic color="var(--black)">
               {selectedTitleObj.label}
