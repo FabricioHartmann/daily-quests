@@ -3,14 +3,13 @@ import { useInventoryStore } from "../../../store/inventory/inventory.store";
 import { InventoryItem } from "./InventoryItem/InventoryItem.component";
 import { InventoryPreviewItem } from "./InventoryPreviewItem/InventoryPreviewItem.component";
 import { type InventoryItem as InventoryItemType } from "../../../store/inventory/inventory.types";
-import type { ItemId } from "../../../store/inventory/inventory.types";
 import { InventoryPreviewEmptyState } from "./InventoryPreviewEmptyState/InventoryEmptyState.component";
 import { ITEMS_CATALOG } from "../../../store/inventory/itemsCatalog";
 import "./Inventory.styles.css";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { MobileItemPreview } from "../../Modal/variants/MobileItemPreviewModal";
 import { useModalStore } from "../../../store/modal/modal.store";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import type { InventoryPreviewItemProps } from "./Inventory.types";
 
 export function Inventory() {
@@ -74,6 +73,12 @@ export function Inventory() {
 
     openModal(<MobileItemPreview itemId={previewItem.itemId} />);
   };
+
+  useEffect(() => {
+    return () => {
+      selectItem(undefined);
+    };
+  }, []);
 
   return (
     <div className="inventory-card">

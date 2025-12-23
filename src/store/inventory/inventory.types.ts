@@ -26,7 +26,7 @@ export type InventoryState = {
   selectedItemId?: ItemId;
   addItem: (item: ItemId) => void;
   removeItem: (itemId: ItemId) => void;
-  selectItem: (itemId: ItemId) => void;
+  selectItem: (itemId: ItemId | undefined) => void;
   equipItem: (itemId: ItemId) => void;
   unequipByType: (itemType: InventoryItem["type"]) => void;
 };

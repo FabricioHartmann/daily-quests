@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { InventoryItem, InventoryState } from "./inventory.types";
+import type { InventoryItem, InventoryState, ItemId } from "./inventory.types";
 import { buildInventoryItem } from "./inventory.factory";
 import { ITEMS_CATALOG } from "./itemsCatalog";
 
@@ -10,7 +10,7 @@ export const useInventoryStore = create<InventoryState>()(
       items: [],
       itemsLimit: 30,
       selectedItemId: undefined,
-      selectItem: (itemId) => set({ selectedItemId: itemId }),
+      selectItem: (itemId?: ItemId) => set({ selectedItemId: itemId }),
       addItem: (itemId) =>
         set((state) => {
           if (state.items.length >= state.itemsLimit) return {};
