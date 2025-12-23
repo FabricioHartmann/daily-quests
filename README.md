@@ -46,12 +46,16 @@ The application usually runs on port 5173.
 | Quick quest list on home page   | ✅     |
 | Create and edit quests          | ✅     |
 | XP and leveling system          | ✅     |
-| Profile page and title system   | ❌     |
-| Achievements system             | ❌     |
-| Streaks system                  | ❌     |
+| Titles                          | ✅     |
+| Global notifications            | ✅     |
+| Inventory                       | ✅     |
+| Buffs                           | ❌     |
+| Achievements                    | ❌     |
+| Expeditions (pomodoro)          | ❌     |
 | Vercel deployment               | ❌     |
 | Firebase integration            | ❌     |
 | Daily and weekly quest resets   | ❌     |
+| Streaks system                  | ❌     |
 
 ---
 
@@ -65,11 +69,13 @@ This project was created with a focus on:
 ---
 
 ## Screenshots
-<img width="319" height="669" alt="image" src="https://github.com/user-attachments/assets/f46ddf71-3dd5-476a-aa5d-519a684c90e0" />
-<img width="315" height="667" alt="image" src="https://github.com/user-attachments/assets/21b445fe-ef58-47da-8b74-46e989896ace" />
-<img width="318" height="667" alt="image" src="https://github.com/user-attachments/assets/593d54ed-c39a-4faa-b4b3-0619a7f68099" />
-<img width="960" height="799" alt="image" src="https://github.com/user-attachments/assets/02cac188-3e37-45cd-a765-ef951f279146" />
+UI/UX design is a work in progress and may change frequently.
 
+
+<img width="315" height="666" alt="image" src="https://github.com/user-attachments/assets/a86169da-27e2-4d8e-919f-6a886250928f" />
+<img width="315" height="666" alt="image" src="https://github.com/user-attachments/assets/284bf74e-4276-44ec-824c-6ef6f3a82a5b" />
+<img width="315" height="666" alt="image" src="https://github.com/user-attachments/assets/7c6b041b-6b8f-4e71-96d2-8e2cf5e1f0cc" />
+<img width="738" height="638" alt="image" src="https://github.com/user-attachments/assets/f3df0765-acad-4c28-b4ec-b1545bd6d59f" />
 
 
 ---
