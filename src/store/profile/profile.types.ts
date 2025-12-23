@@ -15,7 +15,7 @@ export type Profile = {
 
 export type TitleOption = {
   label: string;
-  value: string;
+  value: TitleId;
   disabled: boolean;
 };
 
@@ -35,7 +35,8 @@ export type TitleId =
   | "iniciante"
   | "aventureiro"
   | "amante-da-rotina"
-  | "forjador-de-habitos";
+  | "forjador-de-habitos"
+  | "locked";
 
 export type CatalogTitle = {
   value: TitleId;

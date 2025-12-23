@@ -57,6 +57,6 @@
   }
 }
 :root {
-  --list-bg-color: #fda863a1;
-  --card-title: #3b3b3bff;
+  --list-bg-color: #3b3c3d;
+  --card-title: rgb(82, 82, 82);
 }
