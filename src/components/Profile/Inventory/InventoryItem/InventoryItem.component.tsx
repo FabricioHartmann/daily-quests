@@ -8,9 +8,14 @@ export function InventoryItem({ item }: InventoryItemProps) {
   const selectItem = useInventoryStore((s) => s.selectItem);
   const selectedItemId = useInventoryStore((s) => s.selectedItemId);
   const data = ITEMS_CATALOG[item.itemId];
-  const Icon = ITEM_ICONS[data.icon];
+  
+  if (!data) {
+    return null;
+  }
 
+  const Icon = ITEM_ICONS[data.icon];
   const isSelected = selectedItemId === item.itemId;
+
   return (
     <div
       className={`inventory-item

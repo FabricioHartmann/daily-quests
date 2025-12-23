@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { InventoryState } from "./inventory.types";
+import type { InventoryItem, InventoryState } from "./inventory.types";
+import { buildInventoryItem } from "./inventory.factory";
+import { ITEMS_CATALOG } from "./itemsCatalog";
 
 export const useInventoryStore = create<InventoryState>()(
   persist(
@@ -11,11 +13,10 @@ export const useInventoryStore = create<InventoryState>()(
       selectItem: (itemId) => set({ selectedItemId: itemId }),
       addItem: (itemId) =>
         set((state) => {
-          if (state.items.length >= 30) {
-            return state;
-          }
+          if (state.items.length >= state.itemsLimit) return {};
+          const item = buildInventoryItem(itemId);
           return {
-            items: [...state.items, { itemId }],
+            items: [...state.items, item],
           };
         }),
       removeItem: (itemId) =>
@@ -25,16 +26,32 @@ export const useInventoryStore = create<InventoryState>()(
             state.selectedItemId === itemId ? undefined : state.selectedItemId,
         })),
       equipItem: (itemId) =>
+        set((state) => {
+          const itemToEquip = state.items.find((i) => i.itemId === itemId);
+          if (!itemToEquip) return state;
+
+          const itemType = ITEMS_CATALOG[itemId].type;
+
+          return {
+            items: state.items.map((i) => {
+              const currentType = ITEMS_CATALOG[i.itemId].type;
+
+              if (currentType !== itemType) return i;
+
+              return {
+                ...i,
+                equipped: i.itemId === itemId,
+              };
+            }),
+          };
+        }),
+      unequipByType: (type: InventoryItem["type"]) =>
         set((state) => ({
           items: state.items.map((i) =>
-            i.itemId === itemId
-              ? { ...i, equipped: true }
-              : { ...i, equipped: false }
+            ITEMS_CATALOG[i.itemId].type === type
+              ? { ...i, equipped: false }
+              : i
           ),
-        })),
-      unequipItem: () =>
-        set((state) => ({
-          items: state.items.map((i) => ({ ...i, equipped: false })),
         })),
     }),
     {
