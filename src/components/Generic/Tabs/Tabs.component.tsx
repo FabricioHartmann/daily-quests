@@ -24,7 +24,7 @@ export function Tabs<T extends string>({
             }
             onClick={() => onChange(tab.value)}
           >
-            <Text weight={isActive ? 600 : 500} color={isActive ? "var(--black)" : "var(--white)"}>
+            <Text weight={500} color={"var(--white)"}>
               {tab.label}
             </Text>
           </button>

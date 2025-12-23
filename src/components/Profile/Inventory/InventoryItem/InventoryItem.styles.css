@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   cursor: pointer;
   transition: filter 0.15s, transform 0.05s;
 }
@@ -20,4 +21,9 @@
 
 .inventory-item.is-equipped {
   background: #2e6933;
+}
+.inventory-item-rarity {
+  position: absolute;
+  top: -5px;
+  left: 0;
 }

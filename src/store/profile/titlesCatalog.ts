@@ -26,4 +26,9 @@ export const TITLES_CATALOG: Record<TitleId, CatalogTitle> = {
     label: "Forjador de Hábitos",
     disabled: true,
   },
+  locked: {
+    value: "locked",
+    label: "???",
+    disabled: true,
+  },
 };

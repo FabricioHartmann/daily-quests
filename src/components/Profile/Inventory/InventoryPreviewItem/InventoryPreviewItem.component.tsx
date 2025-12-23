@@ -1,11 +1,7 @@
 import { Button, Text } from "../../../Generic";
 import { ITEM_ICONS } from "../../../../store/inventory/inventoryIconsMapper";
 import "./InventoryPreviewItem.styles.css";
-import { useInventoryStore } from "../../../../store/inventory/inventory.store";
-import type {
-  CatalogItem,
-  InventoryItem,
-} from "../../../../store/inventory/inventory.types";
+import type { CatalogItem } from "../../../../store/inventory/inventory.types";
 
 export function InventoryPreviewItem({
   item,
@@ -14,15 +10,10 @@ export function InventoryPreviewItem({
   item: CatalogItem & { equipped: boolean };
   onToggleEquip: () => void;
 }) {
-  const { unequipByType } = useInventoryStore();
   const Icon = ITEM_ICONS[item.icon];
   if (!Icon) {
     return null;
   }
-
-  const handleUnequipItem = (type: InventoryItem["type"]) => {
-    unequipByType(type);
-  };
 
   return (
     <div className="inventory-preview">
@@ -47,11 +38,7 @@ export function InventoryPreviewItem({
       </div>
       <div className="inventory-preview-footer">
         {item?.equipped ? (
-          <Button
-            onClick={onToggleEquip}
-            variant="danger"
-            fullWidth
-          >
+          <Button onClick={onToggleEquip} variant="danger" fullWidth>
             Desequipar
           </Button>
         ) : (

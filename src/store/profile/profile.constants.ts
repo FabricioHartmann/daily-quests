@@ -11,7 +11,7 @@ export const MOCKED_PROFILE_DATA: Profile = {
   photo: profileImage,
   achievments: MOCKED_ACHIEVMENTS_LIST,
   firstAccess: true,
-  selectedTitle: "iniciante",
+  selectedTitle: "empty",
 };
 
 export const TITLE_OPTIONS: TitleOption[] = (() => {
@@ -27,7 +27,7 @@ export const TITLE_OPTIONS: TitleOption[] = (() => {
   const lockedCount = TOTAL_SLOTS - unlockedTitles.length;
   const lockedTitles: TitleOption[] = Array.from({ length: lockedCount }, (_, i) => ({
     label: "???",
-    value: `locked-${i + 1}`,
+    value: "locked",
     disabled: true,
   }));
 

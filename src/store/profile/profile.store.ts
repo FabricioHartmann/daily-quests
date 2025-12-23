@@ -9,9 +9,7 @@ export const useProfileStore = create<ProfileState>()(
     (set) => ({
       profile: MOCKED_PROFILE_DATA,
       leveledUp: false,
-
       setProfile: (profile) => set({ profile }),
-
       addExp: (points) =>
         set((state) => {
           const { level, experience, leveledUp } = calculateExperience({
@@ -35,7 +33,7 @@ export const useProfileStore = create<ProfileState>()(
         set((state) => ({
           profile: {
             ...state.profile,
-            title,
+            selectedTitle: title,
           },
         })),
       unlockTitle: (titleId: TitleId) =>

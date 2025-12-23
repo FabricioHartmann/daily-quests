@@ -21,4 +21,7 @@
   .quests-wrapper {
     flex-direction: column;
   }
+  .home-page-container {
+    gap: 8px;
+  }
 }
