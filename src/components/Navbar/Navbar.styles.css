@@ -11,6 +11,7 @@
   border: transparent 2px solid;
   align-items: center;
   color: #ffffff;
+  position: relative;
 }
 
 .navbar-item.active {
@@ -18,8 +19,25 @@
   background: var(--bg-primary);
 }
 
+.navbar-required-level {
+  position: absolute;
+  top: -2px;
+  left: 12px;
+  z-index: 2;
+}
+
 .icon-fix-hood {
   transform: translateY(2px);
+}
+
+.icon-fix-compass {
+  transform: translateY(1px);
+}
+
+.navbar-item.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
