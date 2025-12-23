@@ -6,15 +6,24 @@ import { MainLayout } from "./layouts/MainLayout";
 import { useEffect } from "react";
 import { initRewardListener } from "./hooks/initRewardListener/initRewardListener";
 import { Toaster } from "sonner";
+import { WelcomeModal } from "./components/Modal/variants/WelcomeModal";
+import { useModalStore } from "./store/modal/modal.store";
+import { useProfileStore } from "./store/profile/profile.store";
 
 function App() {
+  const { openModal } = useModalStore();
+  const { profile } = useProfileStore();
+
   useEffect(() => {
     initRewardListener();
+    if (profile.firstAccess === true) {
+      openModal(<WelcomeModal />);
+    }
   }, []);
 
   return (
     <BrowserRouter>
-      <Toaster position="top-right" duration={5000}/>
+      <Toaster position="top-right" duration={5000} />
       <EffectsLayer />
       <ModalRoot />
       <Routes>

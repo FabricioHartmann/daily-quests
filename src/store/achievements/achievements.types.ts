@@ -1,10 +1,17 @@
+import type { ItemId } from "../inventory/inventory.types";
+import type { TitleId } from "../profile/profile.types";
+
 export type AchievementId =
-  | "level-1-reached"
+  | "level-2-reached"
   | "level-5-reached"
   | "level-10-reached"
+  | "level-15-reached"
   | "level-20-reached"
   | "level-30-reached"
+  | "level-40-reached"
   | "level-50-reached"
+  | "level-60-reached"
+  | "level-75-reached"
   | "level-100-reached"
   | "3-days-streak"
   | "7-days-streak"
@@ -35,12 +42,23 @@ export type AchievementId =
   | "3-epic-items-equipped"
   | "quest-at-midnight";
 
+export type AchievementReward =
+  | {
+      type: "title";
+      id: TitleId;
+      text?: string;
+    }
+  | {
+      type: "item";
+      id: ItemId;
+      text?: string;
+    };
+
 export type AchievementCatalog = {
   id: AchievementId;
   label: string;
-  description: string;
   requirements: string;
-  reward?: string;
+  reward?: AchievementReward;
   disabled?: boolean;
 };
 
