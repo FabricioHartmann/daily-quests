@@ -37,7 +37,7 @@ export function QuestProgressCard() {
       </div>
       <div className="quests-progress-content">
         <div className="quests-progress-label">
-          <Text color="var(--black)">Quests registradas:</Text>
+          <Text italic color="var(--black)">Quests registradas:</Text>
           <div className="quests-progress-data">
             <Text weight={600} color="var(--card-title)">
               Diárias: {dailyQuests?.length} (máx: X)
@@ -48,7 +48,7 @@ export function QuestProgressCard() {
           </div>
         </div>
         <div className="quests-progress-label">
-          <Text color="var(--black)">Última quest concluída:</Text>
+          <Text italic color="var(--black)">Última quest concluída:</Text>
           {!!lastCompletedQuest?.id ? (
             <div className="quests-progress-data">
               <Text weight={600} color="var(--card-title)">
