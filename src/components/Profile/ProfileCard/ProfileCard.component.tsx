@@ -6,7 +6,7 @@ import type { ProfileCardProps } from "./ProfileCard.types";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
 import { Menu } from "../../Generic/Menu";
-import { TITLES_CATALOG } from "../../../store/profile/titlesCatalog";
+import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs/Buffs.component";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {

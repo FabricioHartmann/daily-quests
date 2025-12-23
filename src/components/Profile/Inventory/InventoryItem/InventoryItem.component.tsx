@@ -1,6 +1,6 @@
+import { ITEMS_CATALOG } from "../../../../data/itemsCatalog";
 import { useInventoryStore } from "../../../../store/inventory/inventory.store";
 import { ITEM_ICONS } from "../../../../store/inventory/inventoryIconsMapper";
-import { ITEMS_CATALOG } from "../../../../store/inventory/itemsCatalog";
 import type { InventoryItemProps } from "../Inventory.types";
 import { RarityIcon } from "../RarityIcon/RarityIcon.component";
 import "./InventoryItem.styles.css";

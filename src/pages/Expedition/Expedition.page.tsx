@@ -1,9 +1,9 @@
 import { Text } from "../../components/Generic";
 
-export function Achievments() {
+export function Expedition() {
   return (
     <div>
-      <Text size="lg">Conquistas</Text>
+      <Text size="lg">Expedicao</Text>
     </div>
   );
 }

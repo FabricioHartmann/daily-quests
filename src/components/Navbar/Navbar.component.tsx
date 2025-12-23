@@ -1,12 +1,15 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
-import { GiScrollUnfurled, GiHood, GiTrophy } from "react-icons/gi";
+import { GiScrollUnfurled, GiHood, GiCompass } from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { Text } from "../Generic";
+import { useProfileStore } from "../../store/profile/profile.store";
 
 export function Navbar() {
+  const { profile } = useProfileStore();
   const isMobile = useIsMobile();
+  const isDisabled = profile.level === 0;
 
   return (
     <nav className="navbar">
@@ -40,13 +43,16 @@ export function Navbar() {
           </>
         )}
       </NavLink>
-      <NavLink to="/conquistas" className="navbar-item">
+      <NavLink
+        to="/expedicao"
+        className={`navbar-item ${isDisabled ? "disabled" : ""}`}
+      >
         {isMobile ? (
-          <GiTrophy size={18} />
+          <GiCompass size={22} />
         ) : (
           <>
-            <GiTrophy size={14} />
-            <Text>CONQUISTAS</Text>
+            <GiCompass className="icon-fix-compass" size={16} />
+            <Text>EXPEDIÇÃO</Text>
           </>
         )}
       </NavLink>

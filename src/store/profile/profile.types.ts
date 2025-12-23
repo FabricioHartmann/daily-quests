@@ -38,8 +38,9 @@ export type TitleId =
   | "forjador-de-habitos"
   | "locked";
 
-export type CatalogTitle = {
+export type TitleCatalog = {
   value: TitleId;
   label: string;
   disabled: boolean;
 };
+

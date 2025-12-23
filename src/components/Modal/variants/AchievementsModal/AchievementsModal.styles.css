@@ -1,0 +1,27 @@
+.single-achievement {
+  padding: 8px;
+  width: calc(100% - 4px);
+}
+
+.single-achievement.unlocked {
+  border: 2px solid var(--success-color);
+  background: #13334e;
+}
+.single-achievement.locked {
+  border: 2px solid rgb(112, 112, 112);
+  background: #212122;
+  opacity: 0.5;
+}
+
+.single-achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.single-achievement-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

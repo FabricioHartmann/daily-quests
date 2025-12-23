@@ -1,4 +1,4 @@
-import type { CatalogItem, ItemId } from "./inventory.types";
+import type { CatalogItem, ItemId } from "../store/inventory/inventory.types";
 
 export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
   "initial-light-armor": {

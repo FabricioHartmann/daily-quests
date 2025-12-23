@@ -1,6 +1,6 @@
-import type { CatalogTitle, TitleId } from "./profile.types";
+import type { TitleCatalog, TitleId } from "../store/profile/profile.types";
 
-export const TITLES_CATALOG: Record<TitleId, CatalogTitle> = {
+export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
   empty: {
     value: "empty",
     label: "",

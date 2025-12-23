@@ -1,6 +1,6 @@
 import type { Profile, TitleOption } from "./profile.types";
 import profileImage from "../../assets/images/profile-test-image-2.svg";
-import { TITLES_CATALOG } from "./titlesCatalog";
+import { TITLES_CATALOG } from "../../data/titlesCatalog";
 
 export const MOCKED_ACHIEVMENTS_LIST = [];
 
@@ -33,4 +33,3 @@ export const TITLE_OPTIONS: TitleOption[] = (() => {
 
   return [...unlockedTitles, ...lockedTitles];
 })();
-
