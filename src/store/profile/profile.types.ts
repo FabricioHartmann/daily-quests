@@ -34,8 +34,9 @@ export type TitleId =
   | "empty"
   | "iniciante"
   | "aventureiro"
-  | "amante-da-rotina"
-  | "forjador-de-habitos"
+  | "veterano"
+  | "heroi"
+  | "lendario"
   | "locked";
 
 export type TitleCatalog = {
@@ -43,4 +44,3 @@ export type TitleCatalog = {
   label: string;
   disabled: boolean;
 };
-

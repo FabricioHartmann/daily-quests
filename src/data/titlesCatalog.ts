@@ -16,14 +16,19 @@ export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
     label: "Aventureiro",
     disabled: true,
   },
-  "amante-da-rotina": {
-    value: "amante-da-rotina",
-    label: "Amante da rotina",
+  veterano: {
+    value: "veterano",
+    label: "Veterano",
     disabled: true,
   },
-  "forjador-de-habitos": {
-    value: "forjador-de-habitos",
-    label: "Forjador de Hábitos",
+  heroi: {
+    value: "heroi",
+    label: "Herói",
+    disabled: true,
+  },
+  lendario: {
+    value: "lendario",
+    label: "Lendário",
     disabled: true,
   },
   locked: {

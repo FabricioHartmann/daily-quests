@@ -1,6 +1,6 @@
 import { useProfileStore } from "../../store/profile/profile.store";
 import { useRewardStore } from "../../store/rewards/rewards.store";
-import { rewardRules } from "./rewardRules";
+import { rewardRules } from "../../domain/rewards/rewardRules";
 
 let listenerInitialized = false;
 
