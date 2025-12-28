@@ -3,7 +3,7 @@ import { AchievementsCard } from "../../components/Profile/AchievementsCard";
 import { Inventory } from "../../components/Profile/Inventory/Inventory.component";
 import { ACHIEVEMENTS_CATALOG } from "../../data/achievementsCatalog";
 import { useAchievementStore } from "../../store/achievements/achievements.store";
-import "./MyProfile.css";
+import "./MyProfile.styles.css";
 
 export function MyProfile() {
   const { achievements } = useAchievementStore();
