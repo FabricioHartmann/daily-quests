@@ -15,7 +15,6 @@
   height: 100%;
   background-size: cover;
   background-position: center 75%;
-
 }
 
 .expedition-resume-bg::after {
@@ -32,13 +31,14 @@
 }
 
 .expedition-resume-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2px;
   position: relative;
   z-index: 1;
   width: 100%;
   padding: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
 }
 
 .expedition-resume-progress {
@@ -47,15 +47,18 @@
 }
 
 .progress-resume-bar {
-  height: 8px;
+  height: 9px;
   width: 100%;
   background: var(--progress-empty);
 }
 
-.progress-resume-fill {
+.progress-resume-fill-journey {
   height: 100%;
-  background: var(--progress-color);
-  transition: width 0.4s ease;
+  background: var(--journey-progress-color);
+}
+.progress-resume-fill-rest {
+  height: 100%;
+  background: var(--rest-progress-color);
 }
 
 @media (max-width: 768px) {
@@ -74,8 +77,8 @@
     background: linear-gradient(
       to right,
       var(--white) 0%,
-      rgba(255, 255, 255, 0.85) 25%,
-      rgba(255, 255, 255, 0.322) 55%,
+      rgba(255, 255, 255, 0.85) 15%,
+      rgba(255, 255, 255, 0.322) 45%,
       rgba(255, 255, 255, 0) 100%
     );
   }

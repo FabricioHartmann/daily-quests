@@ -17,54 +17,50 @@ export const useExpeditionStore = create<ExpeditionState>()(
   persist(
     (set, get) => ({
       phase: "idle",
-      timeLeft: JOURNEY_TIME,
+      endsAt: null,
       weather: "clear",
       dayTime: "day",
 
       startJourney: () => {
+        let duration = JOURNEY_TIME * 1000;
+        let endsAt = Date.now() + duration;
         set({
           phase: "journey",
-          timeLeft: JOURNEY_TIME,
+          endsAt,
           weather: getRandomWeather(),
           dayTime: getDayTimeByLocalTime(),
         });
       },
-
       startCampfire: () => {
+        let duration = CAMPFIRE_TIME * 1000;
         set({
           phase: "campfire",
-          timeLeft: CAMPFIRE_TIME,
+          endsAt: Date.now() + duration,
+
           weather: "clear",
           dayTime: "night",
         });
       },
-
       stopExpedition: () => {
         set({
           phase: "idle",
-          timeLeft: JOURNEY_TIME,
-          weather: "clear",
-          dayTime: getDayTimeByLocalTime(),
+          endsAt: null,
         });
       },
+      checkPhaseTransition: () => {
+        const { phase, endsAt } = get();
+        if (!endsAt) return;
 
-      tick: () => {
-        const { timeLeft, phase } = get();
-        if (timeLeft < 1) {
+        if (Date.now() >= endsAt) {
           if (phase === "journey") get().startCampfire();
           else if (phase === "campfire") get().stopExpedition();
-          return;
         }
-        set({ timeLeft: timeLeft - 1 });
       },
+      getTimeLeft: () => {
+        let { endsAt } = get();
+        if (!endsAt) return 0;
 
-      reset: () => {
-        set({
-          phase: "idle",
-          timeLeft: 0,
-          weather: "clear",
-          dayTime: "day",
-        });
+        return Math.max(Math.ceil((endsAt - Date.now()) / 1000), 0);
       },
     }),
     {
@@ -73,7 +69,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
 
       partialize: (state) => ({
         phase: state.phase,
-        timeLeft: state.timeLeft,
+        endsAt: state.endsAt,
         weather: state.weather,
         dayTime: state.dayTime,
       }),

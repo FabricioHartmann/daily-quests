@@ -4,23 +4,12 @@ import { getBackgroundImage } from "../../../pages/Expedition/Expedition.helper"
 import { CentralHUD } from "../CentralHUD/CentralHUD.component";
 import "./ExpeditionCard.styles.css";
 import { ExpeditionLabels } from "../ExpeditionLabels/ExpeditionLabels.component";
-import { useEffect } from "react";
 
 export function ExpeditionCard() {
-  const { phase, dayTime, tick, startJourney, stopExpedition } =
+  const { phase, dayTime, startJourney, stopExpedition } =
     useExpeditionStore();
 
   const background = getBackgroundImage(phase, dayTime);
-
-  useEffect(() => {
-    if (phase !== "idle") {
-      const interval = setInterval(() => {
-        tick();
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-  }, [phase]);
 
   return (
     <div className="expedition-card">

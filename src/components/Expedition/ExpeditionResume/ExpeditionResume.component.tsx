@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { getBackgroundImage } from "../../../pages/Expedition/Expedition.helper";
 import {
   PHASE_TOTAL_TIME,
@@ -7,16 +8,13 @@ import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
 import { Text } from "../../Generic";
 import "./ExpeditionResume.styles.css";
+import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 
 export function ExpeditionResume() {
-  const timeLeft = useExpeditionStore((s) => s.timeLeft);
   const phase = useExpeditionStore((s) => s.phase);
   const dayTime = useExpeditionStore((s) => s.dayTime);
+  const { timeLeft, progress } = useExpeditionTimer();
   const background = getBackgroundImage(phase, dayTime);
-
-  const totalTime = PHASE_TOTAL_TIME[phase];
-  const progress =
-    totalTime > 0 ? ((totalTime - timeLeft) / totalTime) * 100 : 0;
 
   return (
     <div className="expedition-resume">
@@ -26,14 +24,17 @@ export function ExpeditionResume() {
       />
 
       <div className="expedition-resume-content">
-        <Text color="black" size="xs">
+        <Text color="#525252" size="xs" weight={600}>
           {phaseLabel[phase]}{" "}
           {phase !== "idle" ? `- ${formatTime(timeLeft)}` : ""}
         </Text>
 
         <div className="expedition-resume-progress">
           <div className="progress-resume-bar">
-            <div className="progress-resume-fill" style={{ width: progress }} />
+            <div
+              className={`progress-resume-fill-${phase === 'campfire' ? 'rest' : 'journey'}`}
+              style={{ width: `${progress}%` }}
+            />
           </div>
         </div>
       </div>

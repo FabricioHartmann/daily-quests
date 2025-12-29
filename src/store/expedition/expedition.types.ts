@@ -4,13 +4,13 @@ export type DayTime = "day" | "night";
 
 export type ExpeditionState = {
   phase: Phase;
-  timeLeft: number;
+  endsAt: number | null;
   weather: Weather;
   dayTime: DayTime;
 
   startJourney: () => void;
   startCampfire: () => void;
   stopExpedition: () => void;
-  tick: () => void;
-  reset: () => void;
+  getTimeLeft: () => number;
+  checkPhaseTransition: () => void
 };

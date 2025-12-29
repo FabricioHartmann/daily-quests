@@ -3,6 +3,7 @@ import type { CircularProgressProps } from "./CircularProgress.types";
 
 export function CircularProgress({
   value,
+  phase,
   size = 100,
   strokeWidth = 8,
 }: CircularProgressProps) {
@@ -22,7 +23,11 @@ export function CircularProgress({
       />
 
       <circle
-        stroke="var(--progress-color)"
+        stroke={
+          phase === "campfire"
+            ? "var(--rest-progress-color)"
+            : "var(--journey-progress-color)"
+        }
         fill="transparent"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}

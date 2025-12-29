@@ -3,24 +3,19 @@ import { formatTime } from "../../../utils/formatTime";
 import { Text } from "../../Generic";
 import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
-import {
-  PHASE_TOTAL_TIME,
-  phaseLabel,
-} from "../../../store/expedition/constants";
+import { phaseLabel } from "../../../store/expedition/constants";
+import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 
 export function CentralHUD() {
-  const timeLeft = useExpeditionStore((s) => s.timeLeft);
   const phase = useExpeditionStore((s) => s.phase);
-  const totalTime = PHASE_TOTAL_TIME[phase];
-  const progress =
-    totalTime > 0 ? ((totalTime - timeLeft) / totalTime) * 100 : 0;
+  const { timeLeft, progress } = useExpeditionTimer();
 
   return (
     <div className="expedition-hud-card">
       <Text>Fase: {phaseLabel[phase]} </Text>
 
       <div className="expedition-circular">
-        <CircularProgress value={progress} />
+        <CircularProgress phase={phase} value={progress} />
         <div className="expedition-circular-label">
           <Text>{formatTime(timeLeft)}</Text>
         </div>
