@@ -97,7 +97,7 @@ export function Inventory() {
             ))}
           </div>
           <div>
-            <Text size="sm" italic>
+            <Text size="xs" italic>
               capacidade: {items?.length}/{itemsLimit}
             </Text>
           </div>

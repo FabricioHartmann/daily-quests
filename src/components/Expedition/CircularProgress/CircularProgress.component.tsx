@@ -13,7 +13,7 @@ export function CircularProgress({
   return (
     <svg width={size} height={size} className="circular-progress">
       <circle
-        stroke="#ffffff33"
+        stroke="var(--progress-empty)"
         fill="transparent"
         strokeWidth={strokeWidth}
         r={radius}
@@ -22,7 +22,7 @@ export function CircularProgress({
       />
 
       <circle
-        stroke="#5fd3bc"
+        stroke="var(--progress-color)"
         fill="transparent"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}

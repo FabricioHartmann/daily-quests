@@ -1,0 +1,82 @@
+.expedition-resume {
+  position: relative;
+  display: flex;
+  background-color: var(--white);
+  height: 104px;
+  width: 284px;
+  border: 2px solid var(--white);
+}
+
+.expedition-resume-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 75%;
+
+}
+
+.expedition-resume-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--white) 40%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.322) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.expedition-resume-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.expedition-resume-progress {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-resume-bar {
+  height: 8px;
+  width: 100%;
+  background: var(--progress-empty);
+}
+
+.progress-resume-fill {
+  height: 100%;
+  background: var(--progress-color);
+  transition: width 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .expedition-resume {
+    width: 100%;
+    height: 44px;
+  }
+  .expedition-resume-bg {
+    width: 37%;
+  }
+  .expedition-resume-content {
+    justify-content: space-between;
+    width: 63%;
+  }
+  .expedition-resume-bg::after {
+    background: linear-gradient(
+      to right,
+      var(--white) 0%,
+      rgba(255, 255, 255, 0.85) 25%,
+      rgba(255, 255, 255, 0.322) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}

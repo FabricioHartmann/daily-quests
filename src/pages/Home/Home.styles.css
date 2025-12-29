@@ -6,7 +6,9 @@
 }
 
 .header {
+  display: flex;
   width: 100%;
+  gap: 8px;
 }
 
 .quests-wrapper {
@@ -23,5 +25,8 @@
   }
   .home-page-container {
     gap: 8px;
+  }
+  .header {
+    flex-direction: column;
   }
 }

@@ -8,16 +8,9 @@
   gap: 4px;
 }
 
-.progress-bar {
-  height: 8px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-}
-
 .progress-fill {
   height: 100%;
-  background: #2cc9d4;
+  background: var(--progress-color);
   width: 0%;
   transition: width 0.4s ease;
 }
