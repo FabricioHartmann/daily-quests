@@ -1,7 +1,6 @@
 import { LuClock5 } from "react-icons/lu";
 import { Text } from "../../Generic";
 import { GiChest } from "react-icons/gi";
-
 import "./ExpeditionLabels.styles.css";
 
 export function ExpeditionLabels() {

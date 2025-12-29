@@ -5,7 +5,12 @@ export type DayTime = "day" | "night";
 export type ExpeditionState = {
   phase: Phase;
   timeLeft: number;
-  expeditionStage: number;
   weather: Weather;
   dayTime: DayTime;
+
+  startJourney: () => void;
+  startCampfire: () => void;
+  stopExpedition: () => void;
+  tick: () => void;
+  reset: () => void;
 };
