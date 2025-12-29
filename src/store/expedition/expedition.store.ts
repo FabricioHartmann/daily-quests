@@ -53,7 +53,11 @@ export const useExpeditionStore = create<ExpeditionState>()(
 
         if (Date.now() >= endsAt) {
           if (phase === "journey") get().startCampfire();
-          else if (phase === "campfire") get().stopExpedition();
+          else if (phase === "campfire") {
+            set({
+              phase: "finished",
+            });
+          }
         }
       },
       getTimeLeft: () => {

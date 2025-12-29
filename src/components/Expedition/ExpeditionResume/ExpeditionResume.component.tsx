@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
 import { getBackgroundImage } from "../../../pages/Expedition/Expedition.helper";
-import {
-  PHASE_TOTAL_TIME,
-  phaseLabel,
-} from "../../../store/expedition/constants";
+import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
 import { Text } from "../../Generic";
@@ -32,7 +28,9 @@ export function ExpeditionResume() {
         <div className="expedition-resume-progress">
           <div className="progress-resume-bar">
             <div
-              className={`progress-resume-fill-${phase === 'campfire' ? 'rest' : 'journey'}`}
+              className={`progress-resume-fill-${
+                phase === "campfire" ? "rest" : "journey"
+              }`}
               style={{ width: `${progress}%` }}
             />
           </div>

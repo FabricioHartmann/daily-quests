@@ -1,4 +1,4 @@
-export type Phase = "idle" | "journey" | "campfire";
+export type Phase = "idle" | "journey" | "campfire" | "finished";
 export type Weather = "clear" | "rain";
 export type DayTime = "day" | "night";
 
@@ -12,5 +12,5 @@ export type ExpeditionState = {
   startCampfire: () => void;
   stopExpedition: () => void;
   getTimeLeft: () => number;
-  checkPhaseTransition: () => void
+  checkPhaseTransition: () => void;
 };
