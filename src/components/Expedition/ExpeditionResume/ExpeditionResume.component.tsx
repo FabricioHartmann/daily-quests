@@ -5,15 +5,28 @@ import { formatTime } from "../../../utils/formatTime";
 import { Text } from "../../Generic";
 import "./ExpeditionResume.styles.css";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
+import { useNavigate } from "react-router-dom";
 
 export function ExpeditionResume() {
+  const navigate = useNavigate()
   const phase = useExpeditionStore((s) => s.phase);
   const dayTime = useExpeditionStore((s) => s.dayTime);
   const { timeLeft, progress } = useExpeditionTimer();
   const background = getBackgroundImage(phase, dayTime);
 
+  const getPhaseLabelAndTimer = () => {
+    let label = phaseLabel[phase];
+    if (phase === "journey" || phase === "campfire")
+      return label + " " + formatTime(timeLeft);
+    return label;
+  };
+
+  const goToExpeditionPage = () => {
+    navigate('/expedicao')
+  }
+
   return (
-    <div className="expedition-resume">
+    <div className="expedition-resume" onClick={goToExpeditionPage}>
       <div
         className="expedition-resume-bg"
         style={{ backgroundImage: `url(${background})` }}
@@ -21,12 +34,15 @@ export function ExpeditionResume() {
 
       <div className="expedition-resume-content">
         <Text color="#525252" size="xs" weight={600}>
-          {phaseLabel[phase]}{" "}
-          {phase !== "idle" ? `- ${formatTime(timeLeft)}` : ""}
+          {getPhaseLabelAndTimer()}
         </Text>
 
         <div className="expedition-resume-progress">
-          <div className="progress-resume-bar">
+          <div
+            className={`progress-resume-bar${
+              phase === "finished" ? "-finished" : ""
+            }`}
+          >
             <div
               className={`progress-resume-fill-${
                 phase === "campfire" ? "rest" : "journey"

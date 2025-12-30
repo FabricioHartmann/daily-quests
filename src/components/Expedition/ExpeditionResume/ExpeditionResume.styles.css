@@ -38,7 +38,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 8px;
+  padding: 6px;
 }
 
 .expedition-resume-progress {
@@ -47,9 +47,14 @@
 }
 
 .progress-resume-bar {
-  height: 9px;
+  height: 8px;
   width: 100%;
   background: var(--progress-empty);
+}
+.progress-resume-bar-finished {
+  height: 8px;
+  width: 100%;
+  background: var(--rest-progress-color);
 }
 
 .progress-resume-fill-journey {
@@ -64,7 +69,7 @@
 @media (max-width: 768px) {
   .expedition-resume {
     width: 100%;
-    height: 44px;
+    height: auto;
   }
   .expedition-resume-bg {
     width: 37%;
@@ -72,8 +77,10 @@
   .expedition-resume-content {
     justify-content: space-between;
     width: 63%;
+    gap: 4px;
   }
   .expedition-resume-bg::after {
+    margin-left: -1px;
     background: linear-gradient(
       to right,
       var(--white) 0%,
