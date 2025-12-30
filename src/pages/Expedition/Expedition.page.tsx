@@ -1,4 +1,3 @@
-
 import { Text } from "../../components/Generic";
 import { ExpeditionCard } from "../../components/Expedition/ExpeditionCard/ExpeditionCard.component";
 import "./Expedition.styles.css";

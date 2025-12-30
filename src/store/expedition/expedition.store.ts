@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { DayTime, ExpeditionState, Weather } from "./expedition.types";
 import { JOURNEY_TIME, CAMPFIRE_TIME } from "./constants";
+import { getRandomBiome } from "../../utils/expeditionImage";
 
 const getRandomWeather = (): Weather =>
   Math.random() < 0.3 ? "rain" : "clear";
@@ -17,16 +18,22 @@ export const useExpeditionStore = create<ExpeditionState>()(
   persist(
     (set, get) => ({
       phase: "idle",
+      biome: null,
       endsAt: null,
       weather: "clear",
       dayTime: getDayTimeByLocalTime(),
       totalExpeditions: 0,
+      actualExpedition: {
+        phase: "idle",
+        biome: null,
+      },
 
       startJourney: () => {
         let duration = JOURNEY_TIME * 1000;
         let endsAt = Date.now() + duration;
         set({
           phase: "journey",
+          biome: getRandomBiome(),
           endsAt,
           weather: getRandomWeather(),
         });
@@ -35,6 +42,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
         let duration = CAMPFIRE_TIME * 1000;
         set({
           phase: "campfire",
+          biome: get().biome,
           endsAt: Date.now() + duration,
           weather: "clear",
         });
@@ -42,12 +50,14 @@ export const useExpeditionStore = create<ExpeditionState>()(
       cancelExpedition: () => {
         set({
           phase: "idle",
+          biome: null,
           endsAt: null,
         });
       },
       finishExpedition: () => {
         set({
           phase: "idle",
+          biome: null,
           totalExpeditions: get().totalExpeditions + 1,
         });
       },
@@ -67,7 +77,6 @@ export const useExpeditionStore = create<ExpeditionState>()(
       getTimeLeft: () => {
         let { endsAt } = get();
         if (!endsAt) return 0;
-
         return Math.max(Math.ceil((endsAt - Date.now()) / 1000), 0);
       },
     }),
@@ -77,6 +86,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
 
       partialize: (state) => ({
         phase: state.phase,
+        biome: state.biome,
         endsAt: state.endsAt,
         weather: state.weather,
         dayTime: state.dayTime,

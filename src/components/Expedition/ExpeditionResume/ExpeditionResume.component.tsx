@@ -1,4 +1,3 @@
-import { getBackgroundImage } from "../../../pages/Expedition/getBackgroundImage";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
@@ -6,13 +5,14 @@ import { Text } from "../../Generic";
 import "./ExpeditionResume.styles.css";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 import { useNavigate } from "react-router-dom";
+import { getBackgroundImage } from "../../../utils/expeditionImage";
 
 export function ExpeditionResume() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const phase = useExpeditionStore((s) => s.phase);
   const dayTime = useExpeditionStore((s) => s.dayTime);
+  const biome = useExpeditionStore((s) => s.biome);
   const { timeLeft, progress } = useExpeditionTimer();
-  const background = getBackgroundImage(phase, dayTime);
 
   const getPhaseLabelAndTimer = () => {
     let label = phaseLabel[phase];
@@ -22,14 +22,16 @@ export function ExpeditionResume() {
   };
 
   const goToExpeditionPage = () => {
-    navigate('/expedicao')
-  }
+    navigate("/expedicao");
+  };
 
   return (
     <div className="expedition-resume" onClick={goToExpeditionPage}>
       <div
         className="expedition-resume-bg"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{
+          backgroundImage: `url(${getBackgroundImage(biome, phase, dayTime)})`,
+        }}
       />
 
       <div className="expedition-resume-content">

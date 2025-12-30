@@ -3,14 +3,16 @@
   flex-direction: column;
   align-self: center;
   align-items: center;
-  justify-content: space-between;
   width: 80%;
-  height: 200px;
-  max-width: 320px;
+  max-width: 240px;
   padding: 12px;
-  background: #00000080;
-  border: 2px solid black;
+  background: #000000be;
   gap: 8px;
+}
+
+.expedition-hud-timer {
+  align-self: center;
+  margin: auto;
 }
 
 .expedition-circular {

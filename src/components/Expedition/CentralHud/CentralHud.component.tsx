@@ -5,7 +5,7 @@ import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
-import { GiOpenChest } from "react-icons/gi";
+import { GiLockedChest } from "react-icons/gi";
 
 export function CentralHUD() {
   const phase = useExpeditionStore((s) => s.phase);
@@ -14,17 +14,19 @@ export function CentralHUD() {
   return (
     <div className="expedition-hud-card">
       <Text>{phaseLabel[phase]} </Text>
-      {phase === "finished" ? (
-        <GiOpenChest size={80} color="var(--white)" />
-      ) : (
-        <div className="expedition-circular">
-          <CircularProgress phase={phase} value={progress} />
-          <div className="expedition-circular-label">
-            <Text>{formatTime(timeLeft)}</Text>
+      <div className="expedition-hud-timer">
+        {phase === "finished" ? (
+          <GiLockedChest size={80} color="var(--white)" />
+        ) : (
+          <div className="expedition-circular">
+            <CircularProgress phase={phase} value={progress} />
+            <div className="expedition-circular-label">
+              <Text>{formatTime(timeLeft)}</Text>
+            </div>
           </div>
-        </div>
-      )}
-      <Text size="xs">Expedições concluídas hoje: 0</Text>
+        )}
+      </div>
+      <Text size="sm">Recompensas disponíveis: ∞</Text>
     </div>
   );
 }
