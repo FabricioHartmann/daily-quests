@@ -1,0 +1,10 @@
+.expedition-hud-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expedition-label {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

@@ -1,3 +1,9 @@
+.quests-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .quests-controller-wrapper {
   display: flex;
   flex-direction: column;
@@ -9,4 +15,13 @@
   flex-direction: column;
   width: 100%;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .quests-page-header {
+    gap: 8px;
+  }
+  .quests-page {
+    gap: 8px;
+  }
 }

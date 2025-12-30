@@ -12,7 +12,7 @@
   height: 16px;
   flex: 1;
 }
-@media (max-width: 348px) {
+@media (max-width: 768px) {
   .exp-bar {
     width: 100%;
   }

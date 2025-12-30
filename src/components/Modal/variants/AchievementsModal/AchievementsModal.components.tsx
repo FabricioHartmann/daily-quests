@@ -30,19 +30,19 @@ export function AchievementsModal() {
                     color={
                       unlocked ? "var(--success-color)" : "var(--fail-color)"
                     }
-                    size="sm"
+                    size="xs"
                   >
                     {unlocked ? "conquistado" : "não conquistado"}
                   </Text>
                 </div>
                 <div className="single-achievement-description">
-                  <Text size="sm" italic>
+                  <Text size="xs" italic>
                     {achievement.requirements}
                   </Text>
                   <RenderIf condition={!!achievement.reward}>
-                    <Text size="sm">
+                    <Text size="xs">
                       recompensa:{" "}
-                      {achievement.reward === "title" ? "título" : "item"}
+                      {achievement.reward?.type === "title" ? "título" : "item"}
                     </Text>
                   </RenderIf>
                 </div>

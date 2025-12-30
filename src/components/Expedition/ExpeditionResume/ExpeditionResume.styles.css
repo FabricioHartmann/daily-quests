@@ -1,0 +1,92 @@
+.expedition-resume {
+  position: relative;
+  display: flex;
+  background-color: var(--white);
+  height: 104px;
+  width: 284px;
+  border: 2px solid var(--white);
+}
+
+.expedition-resume-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 75%;
+}
+
+.expedition-resume-bg::after {
+  margin: -1px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--white) 40%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.322) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.expedition-resume-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 6px;
+}
+
+.expedition-resume-progress {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-resume-bar {
+  height: 8px;
+  width: 100%;
+  background: var(--progress-empty);
+}
+.progress-resume-bar-finished {
+  height: 8px;
+  width: 100%;
+  background: var(--rest-progress-color);
+}
+
+.progress-resume-fill-journey {
+  height: 100%;
+  background: var(--journey-progress-color);
+}
+.progress-resume-fill-rest {
+  height: 100%;
+  background: var(--rest-progress-color);
+}
+
+@media (max-width: 768px) {
+  .expedition-resume {
+    width: 100%;
+    height: auto;
+  }
+  .expedition-resume-bg {
+    width: 37%;
+  }
+  .expedition-resume-content {
+    justify-content: space-between;
+    width: 63%;
+    gap: 4px;
+  }
+  .expedition-resume-bg::after {
+    background: linear-gradient(
+      to right,
+      var(--white) 0%,
+      rgba(255, 255, 255, 0.85) 15%,
+      rgba(255, 255, 255, 0.322) 45%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
