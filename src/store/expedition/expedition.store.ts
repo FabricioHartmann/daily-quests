@@ -19,7 +19,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
       phase: "idle",
       endsAt: null,
       weather: "clear",
-      dayTime: "day",
+      dayTime: getDayTimeByLocalTime(),
 
       startJourney: () => {
         let duration = JOURNEY_TIME * 1000;
@@ -28,7 +28,6 @@ export const useExpeditionStore = create<ExpeditionState>()(
           phase: "journey",
           endsAt,
           weather: getRandomWeather(),
-          dayTime: getDayTimeByLocalTime(),
         });
       },
       startCampfire: () => {
@@ -36,9 +35,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
         set({
           phase: "campfire",
           endsAt: Date.now() + duration,
-
           weather: "clear",
-          dayTime: "night",
         });
       },
       stopExpedition: () => {

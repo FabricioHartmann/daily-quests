@@ -13,7 +13,7 @@ export function CentralHUD() {
 
   return (
     <div className="expedition-hud-card">
-      <Text>Fase: {phaseLabel[phase]} </Text>
+      <Text>{phaseLabel[phase]} </Text>
       {phase === "finished" ? (
         <GiOpenChest size={80} color="var(--white)" />
       ) : (

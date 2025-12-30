@@ -5,9 +5,18 @@ import forestTrailNight from "../../assets/images/expedition/forest-trail-night.
 import forestCampfireNight from "../../assets/images/expedition/forest-campfire-night.png";
 
 export const getBackgroundImage = (phase: Phase, dayTime: DayTime) => {
-  if (dayTime === "night" && phase !== "campfire") return forestTrailNight;
-  if (dayTime === "night" && phase === "campfire") return forestCampfireNight;
-  if (dayTime === "day" && phase !== "campfire") return forestTrailDay;
-  if (dayTime === "day" && phase === "campfire") return forestCampfireDay;
-  return forestTrailDay;
+  const isCampfire = phase === "campfire" || phase === "finished";
+
+  const backgrounds: Record<DayTime, { campfire: string; journey: string }> = {
+    night: {
+      journey: forestTrailNight,
+      campfire: forestCampfireNight,
+    },
+    day: {
+      journey: forestTrailDay,
+      campfire: forestCampfireDay,
+    },
+  };
+
+  return backgrounds[dayTime][isCampfire ? "campfire" : "journey"];
 };
