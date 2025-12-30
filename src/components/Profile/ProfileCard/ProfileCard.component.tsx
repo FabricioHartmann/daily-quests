@@ -41,7 +41,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
 
         <div className="level-wrapper">
           <Text color="var(--black)" renderAs="span">
-            Lv: {profile?.level}
+            Lv: <Text renderAs="span" weight={600}>{profile?.level}</Text>
           </Text>
 
           <ExperienceBar
