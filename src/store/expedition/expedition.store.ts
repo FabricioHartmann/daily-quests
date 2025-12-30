@@ -23,10 +23,6 @@ export const useExpeditionStore = create<ExpeditionState>()(
       weather: "clear",
       dayTime: getDayTimeByLocalTime(),
       totalExpeditions: 0,
-      actualExpedition: {
-        phase: "idle",
-        biome: null,
-      },
 
       startJourney: () => {
         let duration = JOURNEY_TIME * 1000;
