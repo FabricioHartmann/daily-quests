@@ -2,8 +2,9 @@ import { LuClock5 } from "react-icons/lu";
 import { Text } from "../../Generic";
 import { GiChest } from "react-icons/gi";
 import "./ExpeditionLabels.styles.css";
+import type { ExpeditionLabelsProps } from "./ExpeditionLabels.types";
 
-export function ExpeditionLabels() {
+export function ExpeditionLabels({ minExp, maxExp }: ExpeditionLabelsProps) {
   return (
     <div className="expedition-hud-info">
       <div className="expedition-label">
@@ -12,7 +13,7 @@ export function ExpeditionLabels() {
       </div>
       <div className="expedition-label">
         <GiChest size={16} color="var(--white)" />
-        <Text>100{"-"}200 XP</Text>
+        <Text>{`${minExp}-${maxExp} XP`}</Text>
       </div>
     </div>
   );

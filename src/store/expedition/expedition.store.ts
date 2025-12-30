@@ -20,6 +20,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
       endsAt: null,
       weather: "clear",
       dayTime: getDayTimeByLocalTime(),
+      totalExpeditions: 0,
 
       startJourney: () => {
         let duration = JOURNEY_TIME * 1000;
@@ -38,10 +39,16 @@ export const useExpeditionStore = create<ExpeditionState>()(
           weather: "clear",
         });
       },
-      stopExpedition: () => {
+      cancelExpedition: () => {
         set({
           phase: "idle",
           endsAt: null,
+        });
+      },
+      finishExpedition: () => {
+        set({
+          phase: "idle",
+          totalExpeditions: get().totalExpeditions + 1,
         });
       },
       checkPhaseTransition: () => {
@@ -73,6 +80,7 @@ export const useExpeditionStore = create<ExpeditionState>()(
         endsAt: state.endsAt,
         weather: state.weather,
         dayTime: state.dayTime,
+        totalExpeditions: state.totalExpeditions,
       }),
     }
   )

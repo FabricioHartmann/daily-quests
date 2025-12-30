@@ -1,4 +1,4 @@
-import { getBackgroundImage } from "../../../pages/Expedition/Expedition.helper";
+import { getBackgroundImage } from "../../../pages/Expedition/getBackgroundImage";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";

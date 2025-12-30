@@ -7,10 +7,12 @@ export type ExpeditionState = {
   endsAt: number | null;
   weather: Weather;
   dayTime: DayTime;
+  totalExpeditions: number;
 
   startJourney: () => void;
   startCampfire: () => void;
-  stopExpedition: () => void;
+  cancelExpedition: () => void;
+  finishExpedition: () => void;
   getTimeLeft: () => number;
   checkPhaseTransition: () => void;
 };
