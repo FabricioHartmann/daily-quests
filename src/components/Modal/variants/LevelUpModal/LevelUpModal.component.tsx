@@ -2,10 +2,9 @@ import { useEffect, useMemo } from "react";
 import { Modal } from "../..";
 import { Flex, Text, TextWriterGroup } from "../../../Generic";
 import type { LevelUpModalProps } from "./LevelUpModal.types";
-import { useLevelUpSound } from "../../../../hooks/sounds/levelUpSound/useLevelUpSound";
+import { playLevelUpSound } from "../../../../utils/sounds/soundPlayer";
 
 export function LevelUpModal({ level }: LevelUpModalProps) {
-  const { playLevelUpSound } = useLevelUpSound();
 
   const memoedLevelText = useMemo(() => {
     return `Parabéns, você alcançou o LV ${level} !!!`;
