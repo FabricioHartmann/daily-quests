@@ -2,7 +2,6 @@
   position: relative;
   width: 480px;
   overflow: hidden;
-  border: 2px solid black;
 }
 
 .expedition-bg {
@@ -30,7 +29,9 @@
 
 .expedition-card-footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 8px;
 }
 
 @media (max-width: 768px) {

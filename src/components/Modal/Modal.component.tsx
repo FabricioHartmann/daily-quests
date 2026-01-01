@@ -2,7 +2,7 @@ import { useModalStore } from "../../store/modal/modal.store";
 import { Button, RenderIf, Text } from "../Generic";
 import type { ModalProps } from "./Modal.types";
 import "./Modal.styles.css";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 
 export function Modal({

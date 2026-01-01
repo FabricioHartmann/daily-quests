@@ -5,12 +5,15 @@
   text-decoration: var(--underline, none);
   font-style: var(--italic, normal);
   font-size: var(--text-size, var(--text-md));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.1);
 }
 
 :root {
-  --text-xs: 12px;
-  --text-sm: 14px;
-  --text-md: 16px;
-  --text-lg: 20px;
-  --text-xl: 28px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1.02rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
 }
