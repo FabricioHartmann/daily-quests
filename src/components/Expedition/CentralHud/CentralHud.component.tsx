@@ -1,19 +1,40 @@
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
-import { Text } from "../../Generic";
+import { RenderIf, Text } from "../../Generic";
 import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
-import { GiLockedChest } from "react-icons/gi";
+import { GiInfo, GiLockedChest } from "react-icons/gi";
+import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
+import { useModalStore } from "../../../store/modal/modal.store";
+import { ExpeditionInformationModal } from "../../Modal/variants/ExpeditionInformationModal/ExpeditionInformationModal.component";
 
 export function CentralHUD() {
-  const phase = useExpeditionStore((s) => s.phase);
   const { timeLeft, progress } = useExpeditionTimer();
+  const isMobile = useIsMobile();
+  const phase = useExpeditionStore((s) => s.phase);
+  const { openModal } = useModalStore();
+
+  const openInformationModal = () => {
+    openModal(
+      <ExpeditionInformationModal />
+    );
+  };
 
   return (
     <div className="expedition-hud-card">
-      <Text>{phaseLabel[phase]} </Text>
+      <div className="expedition-hud-title">
+        <Text>{phaseLabel[phase]}</Text>
+        <RenderIf condition={isMobile}>
+          <GiInfo
+            onClick={openInformationModal}
+            color="white"
+            className="hud-info-icon"
+          />
+        </RenderIf>
+      </div>
+
       <div className="expedition-hud-timer">
         {phase === "finished" ? (
           <GiLockedChest size={80} color="var(--white)" />
