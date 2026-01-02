@@ -1,14 +1,8 @@
-export type Achievement = {
-  acquireDate: string;
-  name: string;
-};
-
 export type Profile = {
   name: string;
   level: number;
   experience: number;
   photo: string;
-  achievments: Achievement[];
   firstAccess: boolean;
   selectedTitle: TitleId;
 };

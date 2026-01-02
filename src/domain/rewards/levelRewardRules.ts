@@ -1,8 +1,5 @@
 import { useProfileStore } from "../../store/profile/profile.store";
-import {
-  unlockAchievement,
-  unlockItems,
-} from "./rewardRules.helper";
+import { unlockAchievement, unlockItems } from "./rewardRules.helper";
 import type { RewardRule } from "./rewardRules.types";
 
 export const levelRewardRules: RewardRule[] = [
@@ -41,7 +38,7 @@ export const levelRewardRules: RewardRule[] = [
       unlockAchievement("level-20-reached");
     },
   },
-    {
+  {
     id: "level-25-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 25,
     effect: () => {
@@ -55,7 +52,7 @@ export const levelRewardRules: RewardRule[] = [
       unlockAchievement("level-30-reached");
     },
   },
-    {
+  {
     id: "level-35-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 35,
     effect: () => {
@@ -69,7 +66,7 @@ export const levelRewardRules: RewardRule[] = [
       unlockAchievement("level-40-reached");
     },
   },
-    {
+  {
     id: "level-45-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 45,
     effect: () => {
@@ -81,6 +78,13 @@ export const levelRewardRules: RewardRule[] = [
     condition: () => useProfileStore.getState().profile.level >= 50,
     effect: () => {
       unlockAchievement("level-50-reached");
+    },
+  },
+  {
+    id: "level-55-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 55,
+    effect: () => {
+      unlockAchievement("level-55-reached");
     },
   },
   {
@@ -97,7 +101,7 @@ export const levelRewardRules: RewardRule[] = [
       unlockAchievement("level-70-reached");
     },
   },
-    {
+  {
     id: "level-80-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 80,
     effect: () => {
@@ -112,4 +116,3 @@ export const levelRewardRules: RewardRule[] = [
     },
   },
 ];
-

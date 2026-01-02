@@ -2,7 +2,7 @@ export const generateExpeditionExp = (playerLevel: number) => {
   const baseMin = 57;
   const baseMax = 89;
 
-  const FIXED_PER_LEVEL = 500;
+  const FIXED_PER_LEVEL = 2;
   const PERCENT_PER_LEVEL = 0.01;
 
   const fixedBonus = playerLevel * FIXED_PER_LEVEL;

@@ -4,17 +4,7 @@ import { Text } from "../../Generic";
 import "./QuestProgressCard.styles.css";
 
 export function QuestProgressCard() {
-  const { quests } = useQuestStore();
-
-  const dailyQuests = useMemo(() => {
-    if (!quests?.length) return null;
-    return quests.filter((quest) => quest.type === "daily");
-  }, [quests]);
-
-  const weeklyQuests = useMemo(() => {
-    if (!quests?.length) return null;
-    return quests.filter((quest) => quest.type === "weekly");
-  }, [quests]);
+  const { quests, totalQuestsCompleted } = useQuestStore();
 
   const lastCompletedQuest = useMemo(() => {
     if (!quests?.length) return null;
@@ -37,21 +27,17 @@ export function QuestProgressCard() {
       </div>
       <div className="quests-progress-content">
         <div className="quests-progress-label">
-          <Text italic color="var(--black)">Quests registradas:</Text>
-          <div className="quests-progress-data">
-            <Text weight={600} color="var(--card-title)">
-              Diárias: {dailyQuests?.length} (máx: X)
-            </Text>
-            <Text weight={600} color="var(--card-title)">
-              Semanais: {weeklyQuests?.length} (máx: Y)
-            </Text>
-          </div>
+          <Text color="var(--black)">
+            Total de quests concluídas: {totalQuestsCompleted}
+          </Text>
         </div>
         <div className="quests-progress-label">
-          <Text italic color="var(--black)">Última quest concluída:</Text>
+          <Text color="var(--black)">
+            Última quest concluída:
+          </Text>
           {!!lastCompletedQuest?.id ? (
             <div className="quests-progress-data">
-              <Text weight={600} color="var(--card-title)">
+              <Text italic color="var(--card-title)">
                 {lastCompletedQuest?.title} (+{lastCompletedQuest?.points} xp)
               </Text>
             </div>

@@ -10,17 +10,15 @@ export function QuestList({ editingMode }: QuestListProps) {
   const isMobile = useIsMobile();
   const { quests } = useQuestStore();
 
-  const avaliableDailyQuests = useMemo(() => {
-    return quests?.filter(
-      (quest) => quest.type === "daily" && quest.status === "open"
+  const getQuestsByType = (type: "daily" | "weekly") => {
+    return quests.filter(
+      (quest) =>
+        quest.type === type && (!editingMode || quest.status === "open")
     );
-  }, [quests]);
+  };
 
-  const avaliableWeeklyQuests = useMemo(() => {
-    return quests?.filter(
-      (quest) => quest.type === "weekly" && quest.status === "open"
-    );
-  }, [quests]);
+  const dailyQuests = getQuestsByType("daily");
+  const weeklyQuests = getQuestsByType("weekly");
 
   return (
     <div className="quests-wrapper">
@@ -30,12 +28,12 @@ export function QuestList({ editingMode }: QuestListProps) {
       <RenderIf condition={!isMobile}>
         <QuestListDesktop
           editingMode={editingMode}
-          quests={avaliableDailyQuests}
+          quests={dailyQuests}
           questType={"daily"}
         />
         <QuestListDesktop
           editingMode={editingMode}
-          quests={avaliableWeeklyQuests}
+          quests={weeklyQuests}
           questType={"weekly"}
         />
       </RenderIf>
