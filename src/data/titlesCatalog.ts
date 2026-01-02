@@ -1,14 +1,15 @@
 import type { TitleCatalog, TitleId } from "../store/profile/profile.types";
 
 export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
+  // ===== LEVEL =====
   empty: {
     value: "empty",
     label: "",
     disabled: false,
   },
-  iniciante: {
-    value: "iniciante",
-    label: "Iniciante",
+  aprendiz: {
+    value: "aprendiz",
+    label: "Aprendiz",
     disabled: true,
   },
   aventureiro: {
@@ -31,6 +32,40 @@ export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
     label: "Lendário",
     disabled: true,
   },
+
+  // ===== EXPEDIÇÕES =====
+  andarilho: {
+    value: "andarilho",
+    label: "Andarilho",
+    disabled: true,
+  },
+  explorador: {
+    value: "explorador",
+    label: "Explorador",
+    disabled: true,
+  },
+  expedicionario: {
+    value: "expedicionario",
+    label: "Expedicionário",
+    disabled: true,
+  },
+  // ===== QUESTS =====
+  determinado: {
+    value: "determinado",
+    label: "Determinado",
+    disabled: true,
+  },
+  disciplinado: {
+    value: "disciplinado",
+    label: "Disciplinado",
+    disabled: true,
+  },
+  juramentado: {
+    value: "juramentado",
+    label: "Juramentado",
+    disabled: true,
+  },
+
   locked: {
     value: "locked",
     label: "???",

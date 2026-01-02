@@ -4,41 +4,72 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   // ===== LEVEL =====
   {
     id: "level-5-reached",
-    label: "Aventureiro",
+    label: "Aprendiz",
     requirements: "Alcançar o nível 5",
+    reward: {
+      id: "aprendiz",
+      type: "title",
+    },
+  },
+  {
+    id: "level-10-reached",
+    label: "Aprendiz II",
+    requirements: "Alcançar o nível 10",
+  },
+  {
+    id: "level-15-reached",
+    label: "Aprendiz III",
+    requirements: "Alcançar o nível 15",
+    // reward: {
+    //   id: "novice-sword",
+    //   type: "item",
+    // },
+  },
+  {
+    id: "level-20-reached",
+    label: "Aventureiro",
+    requirements: "Alcançar o nível 20",
     reward: {
       id: "aventureiro",
       type: "title",
     },
   },
   {
-    id: "level-10-reached",
+    id: "level-25-reached",
     label: "Aventureiro II",
-    requirements: "Alcançar o nível 10",
+    requirements: "Alcançar o nível 25",
   },
   {
-    id: "level-15-reached",
+    id: "level-30-reached",
     label: "Aventureiro III",
-    requirements: "Alcançar o nível 15",
+    requirements: "Alcançar o nível 30",
+    // reward: {
+    //   id: "adventurer-sword",
+    //   type: "item",
+    // },
   },
   {
-    id: "level-20-reached",
+    id: "level-35-reached",
     label: "Veterano",
-    requirements: "Alcançar o nível 20",
+    requirements: "Alcançar o nível 35",
     reward: {
       id: "veterano",
       type: "title",
     },
   },
   {
-    id: "level-30-reached",
+    id: "level-40-reached",
     label: "Veterano II",
-    requirements: "Alcançar o nível 30",
+    requirements: "Alcançar o nível 40",
   },
   {
-    id: "level-40-reached",
+    id: "level-45-reached",
     label: "Veterano III",
-    requirements: "Alcançar o nível 40",
+    requirements: "Alcançar o nível 45",
+    // reward: {
+    //   id: "black-iron-sword",
+    //   type: "item",
+    // },
   },
   {
     id: "level-50-reached",
@@ -50,45 +81,89 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
   {
-    id: "level-60-reached",
+    id: "level-55-reached",
     label: "Herói II",
-    requirements: "Alcançar o nível 60",
+    requirements: "Alcançar o nível 55",
   },
   {
-    id: "level-75-reached",
+    id: "level-60-reached",
     label: "Herói III",
-    requirements: "Alcançar o nível 75",
+    requirements: "Alcançar o nível 60",
+    // reward: {
+    //   id: "silver-sword",
+    //   type: "item",
+    // },
+  },
+  {
+    id: "level-70-reached",
+    label: "Lendário",
+    requirements: "Alcançar o nível 70",
+    reward: {
+      id: "lendario",
+      type: "title",
+    },
+  },
+  {
+    id: "level-80-reached",
+    label: "Lendário II",
+    requirements: "Alcançar o nível 80",
   },
   {
     id: "level-100-reached",
-    label: "Lendário",
+    label: "Lendário III",
     requirements: "Alcançar o nível 100",
+    // reward: {
+    //   id: "arcane-sword",
+    //   type: "item",
+    // },
   },
   // ===== QUESTS =====
   {
     id: "10-quests-completed",
-    label: "Cumpridor de Tarefas",
+    label: "Mais que obrigação",
     requirements: "Completar 10 quests",
   },
   {
     id: "50-quests-completed",
-    label: "Executor Confiável",
+    label: "Aplicado",
     requirements: "Completar 50 quests",
   },
   {
     id: "100-quests-completed",
-    label: "Resolvedor de Problemas",
+    label: "Dedicado",
     requirements: "Completar 100 quests",
   },
   {
     id: "250-quests-completed",
-    label: "Imparável",
+    label: "Determinado",
     requirements: "Completar 250 quests",
+    reward: {
+      id: "determinado",
+      type: "title",
+    },
+  },
+  {
+    id: "350-quests-completed",
+    label: "Comprometido",
+    requirements: "Completar 350 quests",
   },
   {
     id: "500-quests-completed",
-    label: "Máquina de Resultados",
+    label: "Disciplinado",
     requirements: "Completar 500 quests",
+    reward: {
+      id: "disciplinado",
+      type: "title",
+    },
+  },
+  {
+    id: "1000-quests-completed",
+    label: "Juramentado",
+    requirements: "Completar 1000 quests",
+    reward: {
+      id: "juramentado",
+      type: "title",
+    },
   },
 
   // ===== EXPEDIÇÕES =====
@@ -99,33 +174,45 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   },
   {
     id: "10-expeditions-completed",
-    label: "Explorador",
+    label: "Andarilho",
     requirements: "Completar 10 expedições",
   },
   {
     id: "25-expeditions-completed",
-    label: "Viajante Experiente",
+    label: "Viajante",
     requirements: "Completar 25 expedições",
+    reward: {
+      type: "title",
+      id: "andarilho",
+    },
   },
   {
     id: "50-expeditions-completed",
-    label: "Desbravador",
+    label: "Explorador",
     requirements: "Completar 50 expedições",
   },
   {
     id: "100-expeditions-completed",
-    label: "Explorador Incansável",
+    label: "Nômade",
     requirements: "Completar 100 expedições",
+    reward: {
+      type: "title",
+      id: "explorador",
+    },
   },
   {
     id: "250-expeditions-completed",
-    label: "Cartógrafo Lendário",
+    label: "Intrépido",
     requirements: "Completar 250 expedições",
   },
   {
     id: "500-expeditions-completed",
-    label: "Eterno Viajante",
+    label: "Expedicionário",
     requirements: "Completar 500 expedições",
+    reward: {
+      type: "title",
+      id: "expedicionario",
+    },
   },
 
   // ===== ITENS =====

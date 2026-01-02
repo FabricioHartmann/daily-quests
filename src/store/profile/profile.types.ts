@@ -32,11 +32,21 @@ export type ProfileState = {
 
 export type TitleId =
   | "empty"
-  | "iniciante"
+  // level
+  | "aprendiz"
   | "aventureiro"
   | "veterano"
   | "heroi"
   | "lendario"
+  // expedicoes
+  | "andarilho"
+  | "explorador"
+  | "expedicionario"
+  // quests
+  | "determinado"
+  | "disciplinado"
+  | "juramentado"
+  //
   | "locked";
 
 export type TitleCatalog = {
