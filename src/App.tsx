@@ -4,11 +4,12 @@ import { ModalRoot } from "./components/Modal/ModalRoot";
 import { EffectsLayer } from "./components/EffectsLayer/EffectsLayer.component";
 import { MainLayout } from "./layouts/MainLayout";
 import { useEffect } from "react";
-import { initRewardListener } from "./hooks/initRewardListener/initRewardListener";
+import { initRewardListener } from "./utils/initRewardListener/initRewardListener";
 import { Toaster } from "sonner";
 import { WelcomeModal } from "./components/Modal/variants/WelcomeModal";
 import { useModalStore } from "./store/modal/modal.store";
 import { useProfileStore } from "./store/profile/profile.store";
+import { initExpeditionListener } from "./utils/initExpeditionListener/initExpeditionListener";
 
 function App() {
   const { openModal } = useModalStore();
@@ -16,6 +17,7 @@ function App() {
 
   useEffect(() => {
     initRewardListener();
+    initExpeditionListener()
     if (profile.firstAccess === true) {
       openModal(<WelcomeModal />);
     }

@@ -3,11 +3,11 @@ import { Button, Text } from "../../Generic";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { useProfileStore } from "../../../store/profile/profile.store";
-import { useQuestMarkSound } from "../../../hooks/sounds/questMarkSound/useQuestMarkSound";
 import { GiScrollQuill, GiSwordWound, GiCancel } from "react-icons/gi";
 import { QuestFormModal } from "../../Modal/variants/QuestFormModal";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { DeleteQuestModal } from "../../Modal/variants/DeleteQuestModal";
+import { playQuestMarkSound } from "../../../utils/sounds/soundPlayer";
 
 export function QuestCard({
   quest,
@@ -17,7 +17,6 @@ export function QuestCard({
   const { completeQuest } = useQuestStore();
   const { addExp } = useProfileStore();
   const { openModal } = useModalStore();
-  const { playQuestMarkSound } = useQuestMarkSound();
 
   const handleCompleteQuest = () => {
     if (!quest || !quest.points) return;

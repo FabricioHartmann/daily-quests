@@ -1,6 +1,6 @@
 import { Button, RenderIf } from "../../Generic";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
-import { CentralHUD } from "../CentralHUD/CentralHUD.component";
+import { CentralHUD } from "../CentralHud/CentralHud.component";
 import "./ExpeditionCard.styles.css";
 import { ExpeditionLabels } from "../ExpeditionLabels/ExpeditionLabels.component";
 import { useProfileStore } from "../../../store/profile/profile.store";
