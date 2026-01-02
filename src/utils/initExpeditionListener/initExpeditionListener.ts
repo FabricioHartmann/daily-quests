@@ -18,14 +18,14 @@ export const initExpeditionListener = () => {
 
     if (previousPhase === "journey" && phase === "campfire") {
       playExpeditionCampfireSound();
-      toast("Expedição", {
-        description: "Jornada encerrada, hora de descansar"
+      toast("Expedição atualizada", {
+        description: "Hora de descansar"
       });
     }
     if (previousPhase === "campfire" && phase === "finished") {
       playExpeditionFinishedSound();
-      toast("Expedição", {
-        description: "Descanso encerrado, resgate seu prêmio."
+      toast("Expedição encerrada", {
+        description: "Resgate sua recompensa."
       });
     }
 

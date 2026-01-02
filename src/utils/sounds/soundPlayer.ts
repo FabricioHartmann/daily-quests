@@ -4,7 +4,7 @@ import restSound from "../../assets/sounds/restSound.mp3";
 import finishedSound from "../../assets/sounds/expeditionFinishedSound.mp3";
 
 const levelUpAudio = new Audio(levelUpSound);
-levelUpAudio.volume = 0.02;
+levelUpAudio.volume = 0.05;
 
 const questMarkAudio = new Audio(questMarkSound);
 questMarkAudio.volume = 0.1;
@@ -13,7 +13,7 @@ const expeditionCampfireAudio = new Audio(restSound);
 expeditionCampfireAudio.volume = 0.3;
 
 const expeditionFinishedAudio = new Audio(finishedSound);
-expeditionFinishedAudio.volume = 0.3;
+expeditionFinishedAudio.volume = 0.2;
 
 export function playLevelUpSound() {
   levelUpAudio.currentTime = 0;
