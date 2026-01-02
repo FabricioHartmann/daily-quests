@@ -2,16 +2,20 @@ import type { ItemId } from "../inventory/inventory.types";
 import type { TitleId } from "../profile/profile.types";
 
 export type AchievementId =
-  | "level-2-reached"
   | "level-5-reached"
   | "level-10-reached"
   | "level-15-reached"
   | "level-20-reached"
+  | "level-25-reached"
   | "level-30-reached"
+  | "level-35-reached"
   | "level-40-reached"
+  | "level-45-reached"
   | "level-50-reached"
+  | "level-55-reached"
   | "level-60-reached"
-  | "level-75-reached"
+  | "level-70-reached"
+  | "level-80-reached"
   | "level-100-reached"
   | "3-days-streak"
   | "7-days-streak"
@@ -24,7 +28,9 @@ export type AchievementId =
   | "50-quests-completed"
   | "100-quests-completed"
   | "250-quests-completed"
+  | "350-quests-completed"
   | "500-quests-completed"
+  | "750-quests-completed"
   | "1000-quests-completed"
   | "1-expedition-started"
   | "10-expeditions-completed"
@@ -38,9 +44,8 @@ export type AchievementId =
   | "10-items-acquired"
   | "20-items-acquired"
   | "30-items-acquired"
-  | "3-items-equipped"
-  | "3-epic-items-equipped"
-  | "quest-at-midnight";
+  | "50-items-acquired"
+  | "4-items-equipped";
 
 export type AchievementReward =
   | {

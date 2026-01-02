@@ -6,6 +6,7 @@ import { MOCKED_QUESTS } from "./quests.constants";
 export const useQuestStore = create(
   persist<QuestState>(
     (set) => ({
+      totalQuestsCompleted: 0,
       quests: MOCKED_QUESTS,
       addQuest: (quest) =>
         set((state) => ({ quests: [...state.quests, quest] })),
@@ -17,6 +18,7 @@ export const useQuestStore = create(
               ? { ...quest, status: "completed", completedAt: new Date() }
               : quest
           ),
+          totalQuestsCompleted: state.totalQuestsCompleted + 1,
         })),
       updateQuest: (updatedQuest) =>
         set((state) => ({
@@ -44,7 +46,7 @@ export const useQuestStore = create(
         })),
     }),
     {
-      name: "quest-store",
+      name: "quests",
       storage: createJSONStorage(() => sessionStorage),
     }
   )

@@ -11,6 +11,7 @@ export type QuestProps = {
 };
 
 export type QuestState = {
+  totalQuestsCompleted: number
   quests: QuestProps[];
   addQuest: (quest: QuestProps) => void;
   completeQuest: (id: number) => void;

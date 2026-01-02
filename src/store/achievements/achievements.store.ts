@@ -21,7 +21,7 @@ export const useAchievementStore = create<AchievementState>()(
       isUnlocked: (id) => !!get().achievements[id]?.unlocked,
     }),
     {
-      name: "rpg-achievements", // chave no sessionStorage
+      name: "achievements",
       storage: createJSONStorage(() => sessionStorage),
     }
   )

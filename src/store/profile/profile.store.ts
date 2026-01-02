@@ -44,9 +44,12 @@ export const useProfileStore = create<ProfileState>()(
         })),
     }),
     {
-      name: "profile-store",
+      name: "profile",
       storage: createJSONStorage(() => sessionStorage),
-      partialize: (state) => ({ profile: state.profile }),
+      partialize: (state) => ({
+        profile: state.profile,
+        titleOptions: state.titleOptions,
+      }),
     }
   )
 );

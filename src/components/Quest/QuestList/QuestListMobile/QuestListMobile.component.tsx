@@ -14,7 +14,10 @@ export function QuestListMobile({
   >("daily");
 
   const filteredQuests = quests.filter(
-    (quest) => quest.type === selectedQuestType && quest.status === "open"
+    (quest) => quest.type === selectedQuestType 
+  );
+  const filteredOpenQuests = filteredQuests.filter(
+    (quest) => quest.status === "open"
   );
 
   return (
@@ -27,7 +30,7 @@ export function QuestListMobile({
       />
 
       <QuestListBase
-        quests={filteredQuests}
+        quests={editingMode ? filteredQuests : filteredOpenQuests}
         questType={selectedQuestType}
         editingMode={editingMode}
       />

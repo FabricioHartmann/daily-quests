@@ -1,14 +1,8 @@
-export type Achievement = {
-  acquireDate: string;
-  name: string;
-};
-
 export type Profile = {
   name: string;
   level: number;
   experience: number;
   photo: string;
-  achievments: Achievement[];
   firstAccess: boolean;
   selectedTitle: TitleId;
 };
@@ -32,11 +26,21 @@ export type ProfileState = {
 
 export type TitleId =
   | "empty"
-  | "iniciante"
+  // level
+  | "aprendiz"
   | "aventureiro"
   | "veterano"
   | "heroi"
   | "lendario"
+  // expedicoes
+  | "andarilho"
+  | "explorador"
+  | "expedicionario"
+  // quests
+  | "determinado"
+  | "disciplinado"
+  | "juramentado"
+  //
   | "locked";
 
 export type TitleCatalog = {

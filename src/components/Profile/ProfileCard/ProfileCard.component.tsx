@@ -13,11 +13,14 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
   const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
   const selectedTitleObj = TITLES_CATALOG[profile.selectedTitle];
 
-  const menuItems = titleOptions.map((option) => ({
-    label: option.label,
-    disabled: option.disabled,
-    onClick: () => setTitle(option.value),
-  }));
+  const menuItems = titleOptions
+    .slice()
+    .sort((a, b) => Number(a.disabled) - Number(b.disabled))
+    .map((option) => ({
+      label: option.label,
+      disabled: option.disabled,
+      onClick: () => setTitle(option.value),
+    }));
 
   return (
     <div className={`profile-card`}>
@@ -41,7 +44,10 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
 
         <div className="level-wrapper">
           <Text color="var(--black)" renderAs="span">
-            Lv: <Text renderAs="span" weight={600}>{profile?.level}</Text>
+            Lv:{" "}
+            <Text renderAs="span" weight={600}>
+              {profile?.level}
+            </Text>
           </Text>
 
           <ExperienceBar
