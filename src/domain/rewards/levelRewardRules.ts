@@ -1,25 +1,16 @@
 import { useProfileStore } from "../../store/profile/profile.store";
-import { useQuestStore } from "../../store/quests/quests.store";
 import {
   unlockAchievement,
   unlockItems,
-  unlockTitle,
 } from "./rewardRules.helper";
 import type { RewardRule } from "./rewardRules.types";
 
-const levelRewards: RewardRule[] = [
+export const levelRewardRules: RewardRule[] = [
   {
     id: "level2-item-reward",
     condition: () => useProfileStore.getState().profile.level >= 2,
     effect: () => {
       unlockItems(["initial-iron-sword", "initial-light-armor"]);
-    },
-  },
-  {
-    id: "level3-item-reward",
-    condition: () => useProfileStore.getState().profile.level >= 3,
-    effect: () => {
-      unlockItems(["initial-ring"]);
     },
   },
   {
@@ -50,6 +41,13 @@ const levelRewards: RewardRule[] = [
       unlockAchievement("level-20-reached");
     },
   },
+    {
+    id: "level-25-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 25,
+    effect: () => {
+      unlockAchievement("level-25-reached");
+    },
+  },
   {
     id: "level-30-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 30,
@@ -57,11 +55,25 @@ const levelRewards: RewardRule[] = [
       unlockAchievement("level-30-reached");
     },
   },
+    {
+    id: "level-35-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 35,
+    effect: () => {
+      unlockAchievement("level-35-reached");
+    },
+  },
   {
     id: "level-40-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 40,
     effect: () => {
       unlockAchievement("level-40-reached");
+    },
+  },
+    {
+    id: "level-45-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 45,
+    effect: () => {
+      unlockAchievement("level-45-reached");
     },
   },
   {
@@ -79,10 +91,17 @@ const levelRewards: RewardRule[] = [
     },
   },
   {
-    id: "level-75-achievement-reward",
-    condition: () => useProfileStore.getState().profile.level >= 75,
+    id: "level-70-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 70,
     effect: () => {
-      unlockAchievement("level-75-reached");
+      unlockAchievement("level-70-reached");
+    },
+  },
+    {
+    id: "level-80-achievement-reward",
+    condition: () => useProfileStore.getState().profile.level >= 80,
+    effect: () => {
+      unlockAchievement("level-80-reached");
     },
   },
   {
@@ -94,17 +113,3 @@ const levelRewards: RewardRule[] = [
   },
 ];
 
-const questRewards = [
-  {
-    id: "1-quest-completed",
-    condition: () =>
-      useQuestStore
-        .getState()
-        .quests.filter((quest) => quest.status === "completed").length >= 1,
-    effect: () => {
-      unlockTitle("iniciante");
-    },
-  },
-];
-
-export const rewardRules = [...levelRewards, ...questRewards];

@@ -132,6 +132,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "100-quests-completed",
     label: "Dedicado",
     requirements: "Completar 100 quests",
+    // reward: {
+    //   id: "copper-bracelet",
+    //   type: "item",
+    // },
   },
   {
     id: "250-quests-completed",
@@ -146,6 +150,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "350-quests-completed",
     label: "Comprometido",
     requirements: "Completar 350 quests",
+    // reward: {
+    //   id: "silver-necklace",
+    //   type: "item",
+    // },
   },
   {
     id: "500-quests-completed",
@@ -155,6 +163,15 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
       id: "disciplinado",
       type: "title",
     },
+  },
+  {
+    id: "750-quests-completed",
+    label: "Devoto",
+    requirements: "Completar 750 quests",
+    // reward: {
+    //   id: "gold-ring",
+    //   type: "item",
+    // },
   },
   {
     id: "1000-quests-completed",
@@ -174,12 +191,16 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   },
   {
     id: "10-expeditions-completed",
-    label: "Andarilho",
+    label: "Errante",
     requirements: "Completar 10 expedições",
+    // reward: {
+    //   id: "leather-backpack",
+    //   type: "item",
+    // },
   },
   {
     id: "25-expeditions-completed",
-    label: "Viajante",
+    label: "Andarilho",
     requirements: "Completar 25 expedições",
     reward: {
       type: "title",
@@ -188,12 +209,16 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   },
   {
     id: "50-expeditions-completed",
-    label: "Explorador",
+    label: "Viajante",
     requirements: "Completar 50 expedições",
+    // reward: {
+    //   id: "leather-backpack",
+    //   type: "item",
+    // },
   },
   {
     id: "100-expeditions-completed",
-    label: "Nômade",
+    label: "Explorador",
     requirements: "Completar 100 expedições",
     reward: {
       type: "title",
@@ -202,8 +227,12 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   },
   {
     id: "250-expeditions-completed",
-    label: "Intrépido",
+    label: "Nômade",
     requirements: "Completar 250 expedições",
+    // reward: {
+    //   id: "reinforced-leather-backpack",
+    //   type: "item",
+    // },
   },
   {
     id: "500-expeditions-completed",
@@ -218,32 +247,36 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   // ===== ITENS =====
   {
     id: "5-items-acquired",
-    label: "Colecionador",
+    label: "Portador",
     requirements: "Adquirir 5 itens",
   },
   {
     id: "10-items-acquired",
-    label: "Acumulador",
+    label: "Colecionador",
     requirements: "Adquirir 10 itens",
   },
   {
     id: "20-items-acquired",
-    label: "Arsenal Básico",
+    label: "Acumulador",
     requirements: "Adquirir 20 itens",
   },
   {
     id: "30-items-acquired",
-    label: "Mestre do Inventário",
+    label: "Relicário",
     requirements: "Adquirir 30 itens",
   },
   {
-    id: "3-items-equipped",
-    label: "Totalmente Equipado",
-    requirements: "Equipar 3 itens",
+    id: "50-items-acquired",
+    label: "Inventário perfeito",
+    requirements: "Adquirir 50 itens",
+    // reward: {
+    //   id: "inventario perfeito",
+    //   type: "title",
+    // },
   },
   {
-    id: "3-epic-items-equipped",
-    label: "Equipamento Épico",
-    requirements: "Equipar 3 itens épicos",
+    id: "4-items-equipped",
+    label: "Totalmente Equipado",
+    requirements: "Equipar 4 itens",
   },
 ];

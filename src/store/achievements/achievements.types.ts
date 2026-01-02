@@ -30,6 +30,7 @@ export type AchievementId =
   | "250-quests-completed"
   | "350-quests-completed"
   | "500-quests-completed"
+  | "750-quests-completed"
   | "1000-quests-completed"
   | "1-expedition-started"
   | "10-expeditions-completed"
@@ -43,9 +44,8 @@ export type AchievementId =
   | "10-items-acquired"
   | "20-items-acquired"
   | "30-items-acquired"
-  | "3-items-equipped"
-  | "3-epic-items-equipped"
-  | "quest-at-midnight";
+  | "50-items-acquired"
+  | "4-items-equipped";
 
 export type AchievementReward =
   | {
