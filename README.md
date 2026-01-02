@@ -50,7 +50,7 @@ The application usually runs on port 5173.
 | Global notifications            | ✅     |
 | Inventory                       | ✅     |
 | Buffs                           | ❌     |
-| Achievements                    | ❌     |
+| Achievements                    | ✅     |
 | Expeditions (pomodoro)          | ✅     |
 | Rituals                         | ❌     |
 | Vercel deployment               | ❌     |
