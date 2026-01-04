@@ -4,7 +4,7 @@ import type {
   QuestFormInputs,
   QuestFormModalProps,
 } from "./QuestFormModal.types";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { Input, Select } from "../../../Generic";
 import "./QuestFormModal.styles.css";
 import { useQuestStore } from "../../../../store/quests/quests.store";
@@ -23,15 +23,12 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
       title: "",
       description: "",
       category: null,
-      points: null,
     },
   });
   const { addQuest, updateQuest, quests } = useQuestStore();
   const { closeModal } = useModalStore();
   const isEditingMode = Boolean(quest);
-  const questTypeLabel = useMemo(() => {
-    return questType === "daily" ? "Diária" : "Semanal";
-  }, [questType]);
+  const questTypeLabel = questType === "daily" ? "Diária" : "Semanal";
 
   const onSubmit: SubmitHandler<QuestFormInputs> = (data) => {
     try {
@@ -50,6 +47,7 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
           completedAt: null,
           status: "open",
           type: questType,
+          points: questType === "daily" ? 20 : 100,
         });
       }
 
@@ -58,10 +56,6 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
       console.error("Erro ao salvar quest:", error);
     }
   };
-
-  const maxPoints = useMemo(() => {
-    return questType === "daily" ? 20 : 100;
-  }, [questType]);
 
   useEffect(() => {
     if (quest) reset(quest);
@@ -76,14 +70,16 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
     >
       <form>
         <div className="new-quest-form">
-          <Input
-            label="Título"
-            type="text"
-            {...register("title", questValidations.title)}
-            error={errors.title?.message}
-            autoComplete="off"
-          />
-          <Input value={questTypeLabel} label="Tipo" type="text" readOnly />
+          <div className="full">
+            <Input
+              label="Título"
+              type="text"
+              {...register("title", questValidations.title)}
+              error={errors.title?.message}
+              autoComplete="off"
+            />
+          </div>
+
           <div className="full">
             <Input
               label="Detalhes"
@@ -99,13 +95,7 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
             {...register("category", questValidations.category)}
             error={errors.category?.message}
           />
-          <Input
-            label="Pontos de xp"
-            type="number"
-            {...register("points", questValidations.points(maxPoints))}
-            error={errors.points?.message}
-            autoComplete="off"
-          />
+          <Input value={questTypeLabel} label="Tipo" type="text" disabled />
         </div>
       </form>
     </Modal>

@@ -1,13 +1,31 @@
+import type { QuestType } from "../quests/quests.types";
 import type { ITEM_ICONS, ItemIconName } from "./inventoryIconsMapper";
 
 export type ItemId =
   | "initial-light-armor"
   | "initial-iron-sword"
   | "initial-ring";
-export type IconId = keyof typeof ITEM_ICONS;
 
+export type IconId = keyof typeof ITEM_ICONS;
 export type ItemRarity = "common" | "rare" | "epic";
 
+export type XpMultiplierEffect = {
+  kind: "xp_multiplier";
+  multiplier: number;
+  appliesTo: QuestType | "all";
+  active: boolean;
+  description: string;
+};
+
+export type XpBonusEffect = {
+  kind: "xp_bonus";
+  amount: number;
+  appliesTo: QuestType | "all";
+  active: boolean;
+  description: string;
+};
+
+export type ItemEffect = XpBonusEffect | XpMultiplierEffect;
 
 export type InventoryItem = {
   itemId: ItemId;
@@ -15,7 +33,7 @@ export type InventoryItem = {
   icon: ItemIconName;
   description: string;
   type: "weapon" | "armor" | "accessory";
-  effects: string[];
+  effects: ItemEffect[];
   rarity: ItemRarity;
   equipped: boolean;
 };
@@ -37,6 +55,6 @@ export type CatalogItem = {
   icon: IconId;
   description: string;
   type: "weapon" | "armor" | "accessory";
-  effects: string[];
+  effects: ItemEffect[];
   rarity: ItemRarity;
 };

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import type { QuestProps } from "../../../../store/quests/quests.types";
-import { Text, Flex, RenderIf } from "../../../Generic";
+import { Text, RenderIf } from "../../../Generic";
 import { FloatingPoints } from "../../FloatingPoints/FloatingPoints.component";
 import { NewQuestCard } from "../../NewQuestCard/NewQuestCard.component";
 import { QuestCard } from "../../QuestCard/QuestCard.component";

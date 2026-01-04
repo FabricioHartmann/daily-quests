@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { RenderIf } from "../../Generic";
 import { QuestListDesktop } from "./QuestListDesktop/QuestListDesktop.component";
@@ -11,14 +10,10 @@ export function QuestList({ editingMode }: QuestListProps) {
   const { quests } = useQuestStore();
 
   const getQuestsByType = (type: "daily" | "weekly") => {
-    return quests.filter(
-      (quest) =>
-        quest.type === type && (!editingMode || quest.status === "open")
-    );
+    const questList = quests.filter((quest) => quest.type === type);
+    if (editingMode) return questList;
+    return questList.filter((quest) => quest.status === "open");
   };
-
-  const dailyQuests = getQuestsByType("daily");
-  const weeklyQuests = getQuestsByType("weekly");
 
   return (
     <div className="quests-wrapper">
@@ -28,12 +23,12 @@ export function QuestList({ editingMode }: QuestListProps) {
       <RenderIf condition={!isMobile}>
         <QuestListDesktop
           editingMode={editingMode}
-          quests={dailyQuests}
+          quests={getQuestsByType("daily")}
           questType={"daily"}
         />
         <QuestListDesktop
           editingMode={editingMode}
-          quests={weeklyQuests}
+          quests={getQuestsByType("weekly")}
           questType={"weekly"}
         />
       </RenderIf>

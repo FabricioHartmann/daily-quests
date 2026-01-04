@@ -3,7 +3,7 @@ import { useExpeditionStore } from "../../store/expedition/expedition.store";
 import {
   playExpeditionCampfireSound,
   playExpeditionFinishedSound,
-} from "../sounds/soundPlayer";
+} from "../soundPlayer/soundPlayer";
 
 let listenerInitialized = false;
 

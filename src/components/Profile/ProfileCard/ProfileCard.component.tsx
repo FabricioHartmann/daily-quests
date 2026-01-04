@@ -7,7 +7,7 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
 import { Menu } from "../../Generic/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
-import { Buffs } from "../Buffs/Buffs.component";
+import { Buffs } from "../Buffs";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
   const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
@@ -44,7 +44,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
 
         <div className="level-wrapper">
           <Text color="var(--black)" renderAs="span">
-            Lv:{" "}
+            Lv:
             <Text renderAs="span" weight={600}>
               {profile?.level}
             </Text>
@@ -57,22 +57,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           />
         </div>
         <div className="profile-footer">
-          <Buffs
-            allBuffs={[
-              {
-                effect: "20% de algo",
-                icon: "GiBroadsword",
-                id: "initial-iron-sword",
-                label: "Espada",
-              },
-              {
-                effect: "10% de algo",
-                icon: "GiNinjaArmor",
-                id: "initial-light-armor",
-                label: "Veste",
-              },
-            ]}
-          />
+          <Buffs />
           <div className="profile-card-title-wrapper">
             <Text italic color="var(--black)">
               {selectedTitleObj.label}

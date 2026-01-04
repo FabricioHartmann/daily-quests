@@ -11,6 +11,7 @@ import { useModalStore } from "../../../store/modal/modal.store";
 import { useEffect, useMemo } from "react";
 import type { InventoryPreviewItemProps } from "./Inventory.types";
 import { ITEMS_CATALOG } from "../../../data/itemsCatalog";
+import { playItemEquipSound } from "../../../utils/soundPlayer/soundPlayer";
 
 export function Inventory() {
   const isMobile = useIsMobile(576);
@@ -40,6 +41,7 @@ export function Inventory() {
 
   const handleToggleEquip = () => {
     if (!selectedItem) return;
+    playItemEquipSound()
     if (selectedItem.equipped) unequipByType(selectedItem.type);
     else equipItem(selectedItem.itemId);
   };

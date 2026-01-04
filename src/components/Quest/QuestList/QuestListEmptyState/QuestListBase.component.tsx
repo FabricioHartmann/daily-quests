@@ -1,7 +1,8 @@
-import { Text, Flex, Button } from "../../../Generic";
+import type { QuestType } from "../../../../store/quests/quests.types";
+import { Text, Flex } from "../../../Generic";
 
 type QuestListEmptyStateProps = {
-  questType: "daily" | "weekly";
+  questType: QuestType;
 };
 
 export function QuestListEmptyState({ questType }: QuestListEmptyStateProps) {
