@@ -12,11 +12,12 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
         kind: "xp_bonus",
         amount: 5,
         active: true,
-        appliesTo: 'weekly',
+        appliesTo: "weekly",
         description: "+5 XP em quests semanais",
-      }, 
+      },
     ],
-    description: "Veste simples para iniciantes",
+    description:
+      "Veste simples feita de tecido com detalhes em couro, ideal para iniciantes.",
   },
 
   "initial-iron-sword": {
@@ -30,11 +31,12 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
         kind: "xp_bonus",
         amount: 2,
         active: true,
-        appliesTo: 'daily',
+        appliesTo: "daily",
         description: "+2 XP em quests diárias",
       },
     ],
-    description: "Espada de ferro com cabo de madeira",
+    description:
+      "Espada de ferro simples com cabo de madeira resistente.",
   },
 
   "initial-ring": {

@@ -21,20 +21,20 @@ export function InventoryPreviewItem({
         <div className="preview-item-wrapper">
           <Icon color="white" size={56} />
         </div>
-        <Text size="lg">{item.name}</Text>
+        <Text>{item.name}</Text>
       </div>
       <div className="inventory-preview-description">
         <div>
-          <Text italic>Efeitos:</Text>
+          <Text>Efeitos:</Text>
           <div>
             {item?.effects?.map((effect) => (
-              <Text key={effect} italic>
-                • {effect}
+              <Text key={effect.description}>
+                • {effect.description}
               </Text>
             ))}
           </div>
         </div>
-        <Text italic>{item.description}</Text>
+        <Text italic size="sm">{item.description}</Text>
       </div>
       <div className="inventory-preview-footer">
         {item?.equipped ? (
