@@ -1,6 +1,5 @@
-import type { QuestProps } from "../../../store/quests/quests.types";
+import type { QuestProps, QuestType } from "../../../store/quests/quests.types";
 
-type QuestType = "daily" | "weekly";
 type BaseQuestListProps = {
   quests: QuestProps[];
   editingMode?: boolean;

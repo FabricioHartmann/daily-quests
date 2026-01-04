@@ -1,3 +1,5 @@
+import type { QuestType } from "../../../store/quests/quests.types";
+
 export type NewQuestCardProps = {
-  questType: "daily" | "weekly";
+  questType: QuestType
 };

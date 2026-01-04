@@ -4,17 +4,17 @@ import { Tabs } from "../../../Generic/Tabs";
 import { QUEST_TABS } from "../constants";
 import { QuestListBase } from "../QuestListBase/QuestListBase.component";
 import "../QuestList.styles.css";
+import type { QuestType } from "../../../../store/quests/quests.types";
 
 export function QuestListMobile({
   quests,
   editingMode = false,
 }: QuestListMobileProps) {
-  const [selectedQuestType, setSelectedQuestType] = useState<
-    "daily" | "weekly"
-  >("daily");
+  const [selectedQuestType, setSelectedQuestType] =
+    useState<QuestType>("daily");
 
   const filteredQuests = quests.filter(
-    (quest) => quest.type === selectedQuestType 
+    (quest) => quest.type === selectedQuestType
   );
   const filteredOpenQuests = filteredQuests.filter(
     (quest) => quest.status === "open"

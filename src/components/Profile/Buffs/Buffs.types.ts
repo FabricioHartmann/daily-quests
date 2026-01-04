@@ -1,7 +1,7 @@
-import type { IconId, ItemId } from "../../../store/inventory/inventory.types"
+import type { IconId, ItemEffect } from "../../../store/inventory/inventory.types"
 
 export type BuffType = {
-  id: ItemId
+  id: ItemEffect
   effect: string
   icon: IconId
   label: string

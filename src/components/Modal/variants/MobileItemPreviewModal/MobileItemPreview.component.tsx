@@ -25,7 +25,7 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
   const handleToggleEquip = () => {
     if (item.equipped) unequipByType(item.type);
     else equipItem(item.itemId);
-    closeModal()
+    closeModal();
   };
 
   return (
@@ -42,11 +42,11 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
             <Icon color="white" size={56} />
           </div>
           <div className="mobile-item-effects">
-            <Text italic>Efeitos:</Text>
+            <Text>Efeitos:</Text>
             <div className="mobile-item-single-effect">
               {item?.effects?.map((effect) => (
-                <Text key={effect} italic>
-                  • {effect}
+                <Text key={effect.description}>
+                  • {effect.description}
                 </Text>
               ))}
             </div>

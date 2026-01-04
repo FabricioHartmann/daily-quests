@@ -2,12 +2,14 @@ import type { QuestCardProps } from "./QuestCard.types";
 import { Button, Text } from "../../Generic";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
-import { useProfileStore } from "../../../store/profile/profile.store";
 import { GiScrollQuill, GiSwordWound, GiCancel } from "react-icons/gi";
 import { QuestFormModal } from "../../Modal/variants/QuestFormModal";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { DeleteQuestModal } from "../../Modal/variants/DeleteQuestModal";
 import { playQuestMarkSound } from "../../../utils/sounds/soundPlayer";
+import { useMemo } from "react";
+import { calculateQuestXP } from "../../../domain/quest/questExperience.calculator";
+import { useInventoryStore } from "../../../store/inventory/inventory.store";
 
 export function QuestCard({
   quest,
@@ -15,20 +17,22 @@ export function QuestCard({
   onToggleQuest,
 }: QuestCardProps) {
   const { completeQuest } = useQuestStore();
-  const { addExp } = useProfileStore();
+  const items = useInventoryStore((state) => state.items);
   const { openModal } = useModalStore();
+
+  const questExpPoints = useMemo(() => {
+    return calculateQuestXP(quest.type, items);
+  }, [quest.type, items]);
 
   const handleCompleteQuest = () => {
     if (!quest || !quest.points) return;
 
     onToggleQuest?.({
-      points: quest.points,
-      variant: "gain",
+      points: questExpPoints,
     });
 
     playQuestMarkSound();
     completeQuest(quest.id);
-    addExp(quest.points);
   };
 
   const openEditCardModal = () => {
@@ -36,7 +40,7 @@ export function QuestCard({
   };
 
   const openDeleteCardModal = () => {
-    openModal(<DeleteQuestModal questId={quest.id}/>);
+    openModal(<DeleteQuestModal questId={quest.id} />);
   };
 
   return (
@@ -55,7 +59,7 @@ export function QuestCard({
             {quest.category}
           </Text>
           <Text weight={"bold"} color="#888">
-            {quest.points} xp
+            {questExpPoints} xp
           </Text>
         </div>
       </div>
