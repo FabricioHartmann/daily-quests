@@ -2,7 +2,7 @@ import levelUp from "../../assets/sounds/levelUp.mp3";
 import questMark from "../../assets/sounds/questMark.mp3";
 import rest from "../../assets/sounds/rest.mp3";
 import finished from "../../assets/sounds/expeditionFinished.mp3";
-import itemEquip from "../../assets/sounds/itemEquip.mp3";
+import itemEquipOrUnequip from "../../assets/sounds/itemEquipOrUnequip.mp3";
 
 const levelUpAudio = new Audio(levelUp);
 levelUpAudio.volume = 0.05;
@@ -16,8 +16,8 @@ expeditionCampfireAudio.volume = 0.3;
 const expeditionFinishedAudio = new Audio(finished);
 expeditionFinishedAudio.volume = 0.2;
 
-const itemEquipAudio = new Audio(itemEquip);
-itemEquipAudio.volume = 0.1;
+const itemEquipOrUnequipAudio = new Audio(itemEquipOrUnequip);
+itemEquipOrUnequipAudio.volume = 0.2;
 
 export function playLevelUpSound() {
   levelUpAudio.currentTime = 0;
@@ -40,6 +40,6 @@ export function playExpeditionFinishedSound() {
 }
 
 export function playItemEquipSound() {
-  itemEquipAudio.currentTime = 0;
-  itemEquipAudio.play();
+  itemEquipOrUnequipAudio.currentTime = 0;
+  itemEquipOrUnequipAudio.play();
 }
