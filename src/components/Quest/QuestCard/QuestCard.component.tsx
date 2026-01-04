@@ -6,7 +6,7 @@ import { GiScrollQuill, GiSwordWound, GiCancel } from "react-icons/gi";
 import { QuestFormModal } from "../../Modal/variants/QuestFormModal";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { DeleteQuestModal } from "../../Modal/variants/DeleteQuestModal";
-import { playQuestMarkSound } from "../../../utils/sounds/soundPlayer";
+import { playQuestMarkSound } from "../../../utils/soundPlayer/soundPlayer";
 import { useMemo } from "react";
 import { calculateQuestXP } from "../../../domain/quest/questExperience.calculator";
 import { useInventoryStore } from "../../../store/inventory/inventory.store";
