@@ -16,7 +16,11 @@ export type ItemId =
   | "leather-armor"
   | "cape-armor"
   //accessories
-  | "initial-ring";
+  | "initial-ring"
+  | "antique-poncho"
+  | "sun-goggles"
+  | "lantern"
+  | "initial-ring"
 
 export type IconId = keyof typeof ITEM_ICONS;
 export type ItemRarity = "common" | "rare" | "epic";

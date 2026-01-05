@@ -9,13 +9,20 @@ export const levelRewardRules: RewardRule[] = [
     effect: () => {
       unlockItems([
         "iron-sword",
-        "runed-blade",
-        "initial-light-armor",
         "cape-armor",
+        "runed-blade",
+        "antique-poncho",
+        "lantern",
+        "sun-goggles",
+        "initial-ring",
         "chest-armor",
-        "heart-armor",
+        "croc-sword",
         "leather-armor",
-        "shoulder-armor",
+        "heart-armor",
+        "relic-blade",
+        "runed-blade",
+        "two-handed-sword",
+        
       ]);
     },
   },

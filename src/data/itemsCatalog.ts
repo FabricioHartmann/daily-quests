@@ -268,7 +268,6 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     description:
       "Uma armadura feita em eras esquecidas, capaz de resistir ao tempo e ao aço.",
   },
-
   // accessory
   "initial-ring": {
     itemId: "initial-ring",
@@ -277,6 +276,33 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     type: "accessory",
     icon: "GiRing",
     effects: [],
-    description: "Anel simples. Dizem que traz sorte para quem usa",
+    description: "Dizem que traz sorte para quem usa",
+  },
+  "antique-poncho": {
+    itemId: "antique-poncho",
+    name: "Poncho antigo",
+    rarity: "rare",
+    type: "accessory",
+    icon: "GiPoncho",
+    effects: [],
+    description: "Protege da chuva e do frio.",
+  },
+  "sun-goggles": {
+    itemId: "sun-goggles",
+    name: "Óculos protetores",
+    rarity: "rare",
+    type: "accessory",
+    icon: "GiSteampunkGoggles",
+    effects: [],
+    description: "Comum entre viajantes que cruzam distâncias sob o sol.",
+  },
+  "lantern": {
+    itemId: "lantern",
+    name: "Lanterna",
+    rarity: "rare",
+    type: "accessory",
+    icon: "GiOldLantern",
+    effects: [],
+    description: "Uma fonte de luz confiável para avançar no escuro.",
   },
 } as const;

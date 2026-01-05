@@ -11,6 +11,9 @@ import {
   GiLeatherArmor,
   GiShoulderArmor,
   GiRing,
+  GiPoncho,
+  GiSteampunkGoggles,
+  GiOldLantern,
 } from "react-icons/gi";
 
 export const ITEM_ICONS = {
@@ -29,6 +32,9 @@ export const ITEM_ICONS = {
   GiShoulderArmor,
   // accessories
   GiRing,
+  GiPoncho,
+  GiSteampunkGoggles,
+  GiOldLantern,
 } as const;
 
 export type ItemIconName = keyof typeof ITEM_ICONS;
