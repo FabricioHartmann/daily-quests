@@ -111,8 +111,8 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       //   kind: "xp_multiplier",
       //   amount: 1.1,
       //   active: true,
-      //   appliesTo: "weekly",
-      //   description: "+10% XP em quests semanais",
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
       // },
     ],
     description:
@@ -128,7 +128,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 5,
+        amount: 2,
         active: true,
         appliesTo: "weekly",
         description: "+2 XP em quests diárias",
@@ -146,10 +146,10 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 8,
+        amount: 6,
         active: true,
         appliesTo: "weekly",
-        description: "+8 XP em quests semanais",
+        description: "+6 XP em quests semanais",
       },
     ],
     description: "Veste do aventureiro, possui proteção básica.",
@@ -261,8 +261,8 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       //   kind: "xp_multiplier",
       //   amount: 1.1,
       //   active: true,
-      //   appliesTo: "daily",
-      //   description: "+10% XP em quests diárias",
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
       // },
     ],
     description:

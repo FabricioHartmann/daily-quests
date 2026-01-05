@@ -12,6 +12,7 @@ import { useEffect, useMemo } from "react";
 import type { InventoryPreviewItemProps } from "./Inventory.types";
 import { ITEMS_CATALOG } from "../../../data/itemsCatalog";
 import { playItemEquipSound } from "../../../utils/soundPlayer/soundPlayer";
+import { sortInventory } from "./inventory.helper";
 
 export function Inventory() {
   const isMobile = useIsMobile(576);
@@ -24,6 +25,10 @@ export function Inventory() {
     unequipByType,
     selectItem,
   } = useInventoryStore();
+
+  const sortedItems = useMemo(() => {
+    return sortInventory(items);
+  }, [items]);
 
   const selectedItem = useMemo(() => {
     if (!selectedItemId) return null;
@@ -41,7 +46,7 @@ export function Inventory() {
 
   const handleToggleEquip = () => {
     if (!selectedItem) return;
-    playItemEquipSound()
+    playItemEquipSound();
     if (selectedItem.equipped) unequipByType(selectedItem.type);
     else equipItem(selectedItem.itemId);
   };
@@ -92,7 +97,7 @@ export function Inventory() {
       <div className="inventory-container">
         <div className="inventory-content">
           <div className="inventory-grid">
-            {items.map((item) => (
+            {sortedItems.map((item) => (
               <div onClick={() => handleSelectItem(item)} key={item.itemId}>
                 <InventoryItem item={item} />
               </div>

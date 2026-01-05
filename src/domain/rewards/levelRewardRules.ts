@@ -20,9 +20,7 @@ export const levelRewardRules: RewardRule[] = [
         "leather-armor",
         "heart-armor",
         "relic-blade",
-        "runed-blade",
         "two-handed-sword",
-        
       ]);
     },
   },
