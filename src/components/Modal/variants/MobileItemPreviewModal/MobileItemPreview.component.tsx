@@ -44,8 +44,8 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
           <div className="mobile-item-effects">
             <Text>Efeitos:</Text>
             <div className="mobile-item-single-effect">
-              {item?.effects?.map((effect) => (
-                <Text key={effect.description}>
+              {item?.effects?.map((effect, index) => (
+                <Text key={index}>
                   • {effect.description}
                 </Text>
               ))}
