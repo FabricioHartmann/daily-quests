@@ -1,0 +1,21 @@
+.rituals-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rituals-page-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .rituals-page-header {
+    gap: 8px;
+  }
+  .rituals-page {
+    gap: 8px;
+  }
+}
