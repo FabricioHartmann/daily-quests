@@ -49,7 +49,7 @@ The application usually runs on port 5173.
 | Titles                          | ✅     |
 | Global notifications            | ✅     |
 | Inventory                       | ✅     |
-| Buffs                           | ❌     |
+| Buffs                           | ✅     |
 | Achievements                    | ✅     |
 | Expeditions (pomodoro)          | ✅     |
 | Rituals                         | ❌     |
