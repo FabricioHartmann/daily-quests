@@ -7,6 +7,7 @@ import "./MobileItemPreview.styles.css";
 import { useInventoryStore } from "../../../../store/inventory/inventory.store";
 import { useModalStore } from "../../../../store/modal/modal.store";
 import { ITEMS_CATALOG } from "../../../../data/itemsCatalog";
+import { playItemEquipSound } from "../../../../utils/soundPlayer/soundPlayer";
 
 export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
   const { items, equipItem, unequipByType } = useInventoryStore();
@@ -25,6 +26,7 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
   const handleToggleEquip = () => {
     if (item.equipped) unequipByType(item.type);
     else equipItem(item.itemId);
+    playItemEquipSound();
     closeModal();
   };
 
@@ -44,8 +46,8 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
           <div className="mobile-item-effects">
             <Text>Efeitos:</Text>
             <div className="mobile-item-single-effect">
-              {item?.effects?.map((effect) => (
-                <Text key={effect.description}>
+              {item?.effects?.map((effect, index) => (
+                <Text key={index}>
                   • {effect.description}
                 </Text>
               ))}

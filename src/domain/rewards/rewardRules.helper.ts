@@ -33,7 +33,7 @@ export const unlockItems = (ids: ItemId[]) => {
       ids.length > 1 ? "Novos itens desbloqueados" : "Novo item desbloqueado"
     }`,
     {
-      description: "Verifique o inventário no seu Perfil",
+      description: "Verifique o seu inventário.",
     }
   );
 };

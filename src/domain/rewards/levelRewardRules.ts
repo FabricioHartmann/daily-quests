@@ -7,7 +7,21 @@ export const levelRewardRules: RewardRule[] = [
     id: "level2-item-reward",
     condition: () => useProfileStore.getState().profile.level >= 2,
     effect: () => {
-      unlockItems(["initial-iron-sword", "initial-light-armor"]);
+      unlockItems([
+        "iron-sword",
+        "cape-armor",
+        "runed-blade",
+        "antique-poncho",
+        "lantern",
+        "sun-goggles",
+        "initial-ring",
+        "chest-armor",
+        "croc-sword",
+        "leather-armor",
+        "heart-armor",
+        "relic-blade",
+        "two-handed-sword",
+      ]);
     },
   },
   {

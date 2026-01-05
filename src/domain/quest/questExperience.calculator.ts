@@ -20,7 +20,7 @@ export const calculateQuestXP = (
     for (const effect of item.effects) {
       if (!effect.active) continue;
 
-      if (effect.appliesTo !== "all" && effect.appliesTo !== questType) {
+      if (effect.appliesTo !== questType) {
         continue;
       }
 

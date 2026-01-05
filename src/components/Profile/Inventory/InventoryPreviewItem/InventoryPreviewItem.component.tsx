@@ -27,8 +27,8 @@ export function InventoryPreviewItem({
         <div>
           <Text>Efeitos:</Text>
           <div>
-            {item?.effects?.map((effect) => (
-              <Text key={effect.description}>
+            {item?.effects?.map((effect, index) => (
+              <Text key={index}>
                 • {effect.description}
               </Text>
             ))}
