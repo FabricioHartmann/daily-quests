@@ -8,7 +8,7 @@ type RitualProps = {
 
 export function RitualCard({ ritual }: RitualProps) {
   return (
-    <button className="ritual-card">
+    <div className="ritual-card">
       <div className="ritual-card-header">
         <Text>{ritual.name}</Text>
       </div>
@@ -21,6 +21,6 @@ export function RitualCard({ ritual }: RitualProps) {
         <Text italic size="sm">cooldown: {ritual.cooldownMinutes}m</Text>
         <Text size="sm">+{ritual.xp} XP</Text>
       </div>
-    </button>
+    </div>
   );
 }

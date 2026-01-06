@@ -29,7 +29,6 @@
 
 .expedition-card-footer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   gap: 8px;
 }

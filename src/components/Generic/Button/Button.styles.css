@@ -25,7 +25,7 @@
 }
 
 .button:disabled {
-  opacity: var(--btn-opacity-disabled, 0.6);
+  opacity: var(--btn-opacity-disabled, 0.7);
   cursor: not-allowed;
   transform: none;
   box-shadow: 1px 1px 0 var(--btn-shadow, #000);
@@ -85,5 +85,5 @@
 
   --btn-border-size: 2px;
   --btn-shadow-size: 2px;
-  --btn-opacity-disabled: 0.6;
+  --btn-opacity-disabled: 0.7;
 }

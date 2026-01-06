@@ -1,6 +1,6 @@
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
-import { RenderIf, Text } from "../../Generic";
+import { Button, RenderIf, Text } from "../../Generic";
 import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";
@@ -17,22 +17,13 @@ export function CentralHUD() {
   const { openModal } = useModalStore();
 
   const openInformationModal = () => {
-    openModal(
-      <ExpeditionInformationModal />
-    );
+    openModal(<ExpeditionInformationModal />);
   };
 
   return (
     <div className="expedition-hud-card">
       <div className="expedition-hud-title">
         <Text>{phaseLabel[phase]}</Text>
-        <RenderIf condition={isMobile}>
-          <GiInfo
-            onClick={openInformationModal}
-            color="white"
-            className="hud-info-icon"
-          />
-        </RenderIf>
       </div>
 
       <div className="expedition-hud-timer">
@@ -48,6 +39,16 @@ export function CentralHUD() {
         )}
       </div>
       <Text size="sm">Recompensas disponíveis: ∞</Text>
+      <RenderIf condition={isMobile}>
+        <Button
+          onClick={openInformationModal}
+          size="sm"
+          variant="outlined"
+          fullWidth
+        >
+          Como funciona?
+        </Button>
+      </RenderIf>
     </div>
   );
 }
