@@ -1,0 +1,19 @@
+.ritual-card {
+  background: #1c6b57;
+  width: 360px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+}
+
+.ritual-icon {
+  color: var(--ritual-accent);
+}
+
+.ritual-meta {
+  display: flex;
+  justify-content: space-between;
+}

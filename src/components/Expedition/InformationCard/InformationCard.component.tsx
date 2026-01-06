@@ -4,7 +4,7 @@ import "./InformationCard.styles.css";
 
 export function InformationCard() {
   return (
-    <div className="expedition-information-card">
+    <div className="information-card">
       <div>
         <Text>- Como funciona?</Text>
       </div>
