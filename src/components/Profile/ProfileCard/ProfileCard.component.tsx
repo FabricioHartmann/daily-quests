@@ -23,11 +23,9 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
     }));
 
   return (
-    <div className={`profile-card`}>
+    <div className="profile-card">
       <div className="photo-wrapper">
         <img
-          height="84px"
-          width="84px"
           src={profile?.photo ?? ""}
           alt="profile-photo"
         />
@@ -37,19 +35,17 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           <Text size="lg" color="var(--black)">
             {profile?.name}
           </Text>
+          <Text size="lg" color="var(--black)" >
+            <Text weight={600}>
+              Lv: {profile?.level}
+            </Text>
+          </Text>
           <RenderIf condition={canEdit}>
             <HiPencilAlt size={22} color="black" />
           </RenderIf>
         </div>
 
         <div className="level-wrapper">
-          <Text color="var(--black)" renderAs="span">
-            Lv:
-            <Text renderAs="span" weight={600}>
-              {profile?.level}
-            </Text>
-          </Text>
-
           <ExperienceBar
             experience={profile?.experience}
             level={profile?.level}

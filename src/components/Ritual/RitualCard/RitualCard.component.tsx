@@ -1,6 +1,6 @@
 import "./RitualCard.styles.css";
-import type { Ritual } from "../../../pages/Rituals/Rituals.types";
 import { Text } from "../../../components/Generic";
+import type { Ritual } from "../../../store/rituals/rituals.types";
 
 type RitualProps = {
   ritual: Ritual;

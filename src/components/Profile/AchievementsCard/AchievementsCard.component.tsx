@@ -17,7 +17,6 @@ export function AchievementsCard({
 
   return (
     <div className="achievements-card" onClick={openAchievementsModal}>
-      <Text color="var(--black)">Conquistas</Text>
       <GiLaurelsTrophy size={36} />
       <Text size="lg" color="var(--black)">
         {achievementsAcquired}/{totalAchievements}

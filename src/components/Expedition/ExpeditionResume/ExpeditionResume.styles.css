@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   background-color: var(--white);
-  height: 104px;
   width: 284px;
   border: 2px solid var(--white);
   cursor: pointer;

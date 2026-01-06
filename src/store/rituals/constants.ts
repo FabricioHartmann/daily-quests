@@ -1,4 +1,4 @@
-import type { Ritual } from "../../pages/Rituals/Rituals.types";
+import type { Ritual } from "./rituals.types";
 
 export const MOCKED_RITUALS: Ritual[] = [
   {
@@ -13,7 +13,7 @@ export const MOCKED_RITUALS: Ritual[] = [
   {
     id: "stretch_ritual",
     name: "Alongar-se",
-    icon: "GiStretching",
+    icon: "GiStrong",
     description:
       "Fique de pé e se alongue por 30 ~ 60 segundos, ou caminhe um pouco.",
     cooldownMinutes: 60,
@@ -23,7 +23,7 @@ export const MOCKED_RITUALS: Ritual[] = [
   {
     id: "breath_ritual",
     name: "Rito do Fôlego",
-    icon: "GiWindyStripes",
+    icon: "GiRearAura",
     description: "Pare um minuto para respirar de forma consciente. Como o corpo, a mente também precisa descansar.",
     cooldownMinutes: 60,
     xp: 20,
