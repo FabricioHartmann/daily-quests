@@ -10,10 +10,6 @@
   overflow: visible;
 }
 
-.quest-card:hover {
-  border-color: var(--black);
-}
-
 .button-area {
   margin-left: 4px;
   height: 100%;

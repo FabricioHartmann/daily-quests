@@ -1,7 +1,7 @@
 .ritual-card {
   display: flex;
   background: var(--ritual-card-color);
-  width: 360px;
+  width: 480px;
   padding: 8px;
   height: 100%;
 }
