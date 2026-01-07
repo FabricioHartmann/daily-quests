@@ -37,7 +37,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           </Text>
           <Text size="lg" color="var(--black)" >
             <Text weight={600}>
-              Lv: {profile?.level}
+              Lv {profile?.level}
             </Text>
           </Text>
           <RenderIf condition={canEdit}>

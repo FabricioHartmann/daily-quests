@@ -1,14 +1,17 @@
-.home-page-container {
+.home-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
 }
 
-.header {
+.home-header {
   display: flex;
   width: 100%;
   gap: 8px;
+}
+
+.home-ritual-wrapper {
+  display: flex;
 }
 
 .quests-wrapper {
@@ -23,10 +26,10 @@
   .quests-wrapper {
     flex-direction: column;
   }
-  .home-page-container {
+  .home-container {
     gap: 8px;
   }
-  .header {
+  .home-header {
     flex-direction: column;
   }
 }

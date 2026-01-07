@@ -1,9 +1,9 @@
-import { GiPotionBall, GiStrong, GiRearAura } from "react-icons/gi";
+import { GiPotionBall, GiStrong, GiAura } from "react-icons/gi";
 
 export const RITUAL_ICONS = {
   GiPotionBall,
   GiStrong,
-  GiRearAura,
+  GiAura,
 } as const;
 
 export type RitualIconName = keyof typeof RITUAL_ICONS;

@@ -1,0 +1,14 @@
+.ritual-resume-item {
+  display: flex;
+  flex: 1 1 0%;
+  min-width: 0;
+  gap: 8px;
+  padding: 8px;
+  background: var(--ritual-card-color);
+  border: 2px solid var(--white);
+}
+
+.ritual-resume-icon {
+  display: flex;
+  align-items: center;
+}

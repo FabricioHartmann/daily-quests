@@ -1,7 +1,21 @@
 .ritual-card {
-  background: #1c6b57;
+  display: flex;
+  background: var(--ritual-card-color);
   width: 360px;
   padding: 8px;
+  height: 100%;
+}
+
+.ritual-card-icon {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px 0 8px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ritual-card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

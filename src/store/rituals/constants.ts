@@ -3,7 +3,7 @@ import type { Ritual } from "./rituals.types";
 export const MOCKED_RITUALS: Ritual[] = [
   {
     id: "water_ritual",
-    name: "Beber água",
+    name: "Hidratar",
     icon: "GiPotionBall",
     description: "Normalmente o ideal é beber aproximadamente 3L por dia, dependendo do peso, idade e atividade.",
     cooldownMinutes: 60,
@@ -12,7 +12,7 @@ export const MOCKED_RITUALS: Ritual[] = [
   },
   {
     id: "stretch_ritual",
-    name: "Alongar-se",
+    name: "Alongar",
     icon: "GiStrong",
     description:
       "Fique de pé e se alongue por 30 ~ 60 segundos, ou caminhe um pouco.",
@@ -22,8 +22,8 @@ export const MOCKED_RITUALS: Ritual[] = [
   },
   {
     id: "breath_ritual",
-    name: "Rito do Fôlego",
-    icon: "GiRearAura",
+    name: "Respirar",
+    icon: "GiAura",
     description: "Pare um minuto para respirar de forma consciente. Como o corpo, a mente também precisa descansar.",
     cooldownMinutes: 60,
     xp: 20,
