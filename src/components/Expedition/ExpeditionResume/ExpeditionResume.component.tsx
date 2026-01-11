@@ -46,9 +46,7 @@ export function ExpeditionResume() {
             }`}
           >
             <div
-              className={`progress-resume-fill-${
-                phase === "campfire" ? "rest" : "journey"
-              }`}
+              className="progress-resume-fill"
               style={{ width: `${progress}%` }}
             />
           </div>

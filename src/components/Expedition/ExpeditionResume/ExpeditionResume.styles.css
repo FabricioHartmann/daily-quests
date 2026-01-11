@@ -58,13 +58,9 @@
   background: var(--rest-progress-color);
 }
 
-.progress-resume-fill-journey {
+.progress-resume-fill{
   height: 100%;
   background: var(--journey-progress-color);
-}
-.progress-resume-fill-rest {
-  height: 100%;
-  background: var(--rest-progress-color);
 }
 
 @media (max-width: 768px) {

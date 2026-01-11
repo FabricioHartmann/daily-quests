@@ -1,14 +1,37 @@
 .ritual-resume-item {
+  position: relative;
   display: flex;
   flex: 1 1 0%;
   min-width: 0;
-  gap: 8px;
   padding: 8px;
-  background: var(--ritual-card-color);
   border: 2px solid var(--white);
+  overflow: hidden;
+  align-items: center;
 }
 
-.ritual-resume-icon {
+.ritual-resume-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
+  gap: 8px;
+}
+
+.ritual-progress-bar {
+  position: absolute;
+  inset: 0;
+  background: var(--progress-empty);
+}
+
+.ritual-progress-fill {
+  height: 100%;
+  background: var(--ritual-card-color);
+}
+
+.ritual-resume-item.finished {
+  border: 2px solid #fbff17;
+}
+
+.ritual-progress-fill.finished {
+   background: var(--ritual-card-color);
 }
