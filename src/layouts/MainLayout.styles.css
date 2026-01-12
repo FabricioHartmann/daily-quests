@@ -4,8 +4,10 @@
 }
 
 .app-content {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  padding: 16px;
 }
 
 @media (max-width: 768px) {

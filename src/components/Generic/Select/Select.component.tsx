@@ -6,18 +6,26 @@ export function Select({
   options,
   error,
   id,
+  value,
   ...props
 }: QuestSelectProps) {
-  const selectId = id ?? `select-field-${label.replace(/\s+/g, "-")}`;
+  const selectId = id ?? `select-field-${label?.replace(/\s+/g, "-")}`;
 
   return (
     <div className="input-field">
-      <label className="input-label" htmlFor={selectId}>
-        {label}
-      </label>
+      {label && (
+        <label className="input-label" htmlFor={selectId}>
+          {label}
+        </label>
+      )}
 
       <div className="select-input-wrapper">
-        <select id={selectId} className="select-input" {...props}>
+        <select
+          id={selectId}
+          className="select-input"
+          value={value}
+          {...props}
+        >
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}

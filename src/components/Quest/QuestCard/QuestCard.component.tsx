@@ -67,15 +67,15 @@ export function QuestCard({
         {editingMode ? (
           <div className="quest-edit-buttons">
             <Button onClick={openEditCardModal} size="xs">
-              <GiScrollQuill size={24} color="white" />
+              <GiScrollQuill size={20} color="white" />
             </Button>
             <Button onClick={openDeleteCardModal} size="xs">
-              <GiCancel size={24} color="red" />
+              <GiCancel size={20} color="red" />
             </Button>
           </div>
         ) : (
           <Button onClick={handleCompleteQuest} size="xs" variant="primary">
-            <GiSwordWound size={24} color="white" />
+            <GiSwordWound size={20} color="white" />
           </Button>
         )}
       </div>

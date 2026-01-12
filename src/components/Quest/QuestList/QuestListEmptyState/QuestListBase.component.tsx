@@ -14,7 +14,7 @@ export function QuestListEmptyState({ questType }: QuestListEmptyStateProps) {
       height="100%"
       padding="16px"
     >
-      <Text align="center" color="#c5c5c5ff" size="lg">
+      <Text align="center" color="rgb(151, 151, 151)" size="lg">
         {`Você completou todas as quests ${
           questType === "daily" ? "do dia" : "da semana"
         }`}

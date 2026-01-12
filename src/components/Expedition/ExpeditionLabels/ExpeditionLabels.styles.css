@@ -1,6 +1,9 @@
 .expedition-hud-info {
   display: flex;
   justify-content: space-between;
+  padding: 8px;
+  margin: -8px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .expedition-label {

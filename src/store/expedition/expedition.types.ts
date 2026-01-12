@@ -16,6 +16,5 @@ export type ExpeditionState = {
   startCampfire: () => void;
   cancelExpedition: () => void;
   finishExpedition: () => void;
-  getTimeLeft: () => number;
   checkPhaseTransition: () => void;
 };

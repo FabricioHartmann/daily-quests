@@ -1,0 +1,22 @@
+.ritual-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ritual-progress {
+  height: 10px;
+  width: 100%;
+  background: var(--progress-empty);
+}
+
+.ritual-bar-finished {
+  height: 10px;
+  width: 100%;
+  background: var(--fill-progress-color);
+}
+
+.ritual-bar-fill {
+  height: 10px;
+  background: var(--fill-progress-color);
+}

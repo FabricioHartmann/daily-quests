@@ -1,0 +1,39 @@
+.ritual-card {
+  display: flex;
+  background: var(--ritual-card-color);
+  width: 480px;
+  padding: 8px;
+}
+
+.ritual-card-icon {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px 0 8px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ritual-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.ritual-card-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ritual-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .ritual-card {
+    width: 100%;
+  }
+}

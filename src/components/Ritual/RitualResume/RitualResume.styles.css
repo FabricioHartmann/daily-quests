@@ -1,0 +1,11 @@
+.ritual-resume-wrapper {
+  display: flex;
+  gap: 8px;
+  width: 712px;
+}
+
+@media (max-width: 768px) {
+  .ritual-resume-wrapper  {
+     width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+.ritual-tips {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  height: auto;
+  width: 268px;
+  border: 1px solid white;
+}

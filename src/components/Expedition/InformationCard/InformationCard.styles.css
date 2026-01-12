@@ -1,8 +1,8 @@
-.expedition-information-card {
+.information-card {
   display: flex;
   flex-direction: column;
   padding: 8px;
   height: auto;
   width: 268px;
-  background-color: var(--black);
+  border: 1px solid white;
 }

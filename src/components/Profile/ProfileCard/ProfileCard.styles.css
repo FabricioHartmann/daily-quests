@@ -17,11 +17,14 @@
   background: var(--black);
   border: 2px solid var(--black);
   display: flex;
+  height: 72px;
+  width: 72px;
 }
 
 .profile-card-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .level-wrapper {
@@ -57,5 +60,8 @@
 @media (max-width: 348px) {
   .photo-wrapper {
     display: none;
+  }
+  .card-content {
+    gap: 4px;
   }
 }

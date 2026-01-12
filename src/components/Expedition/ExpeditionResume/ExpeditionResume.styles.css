@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   background-color: var(--white);
-  height: 104px;
   width: 284px;
   border: 2px solid var(--white);
   cursor: pointer;
@@ -56,16 +55,12 @@
 .progress-resume-bar-finished {
   height: 8px;
   width: 100%;
-  background: var(--rest-progress-color);
+  background: var(--fill-progress-color);
 }
 
-.progress-resume-fill-journey {
+.progress-resume-fill{
   height: 100%;
-  background: var(--journey-progress-color);
-}
-.progress-resume-fill-rest {
-  height: 100%;
-  background: var(--rest-progress-color);
+  background: var(--fill-progress-color);
 }
 
 @media (max-width: 768px) {

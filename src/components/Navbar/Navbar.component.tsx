@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
-import { GiScrollUnfurled, GiHood, GiCompass } from "react-icons/gi";
+import {
+  GiScrollUnfurled,
+  GiHood,
+  GiCompass,
+  GiSpellBook,
+} from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { Text } from "../Generic";
@@ -23,16 +28,6 @@ export function Navbar() {
           </>
         )}
       </NavLink>
-      <NavLink to="/quests" className="navbar-item">
-        {isMobile ? (
-          <GiScrollUnfurled size={20} />
-        ) : (
-          <>
-            <GiScrollUnfurled size={14} />
-            <Text>QUESTS</Text>
-          </>
-        )}
-      </NavLink>
       <NavLink to="/perfil" className="navbar-item">
         {isMobile ? (
           <GiHood size={22} />
@@ -40,6 +35,27 @@ export function Navbar() {
           <>
             <GiHood size={18} className="icon-fix-hood" />
             <Text>PERFIL</Text>
+          </>
+        )}
+      </NavLink>
+      <NavLink to="/quests" className="navbar-item">
+        {isMobile ? (
+          <GiScrollUnfurled size={18} />
+        ) : (
+          <>
+            <GiScrollUnfurled size={14} />
+            <Text>QUESTS</Text>
+          </>
+        )}
+      </NavLink>
+
+      <NavLink to="/rituais" className="navbar-item">
+        {isMobile ? (
+          <GiSpellBook size={22} className="icon-fix-spellbook" />
+        ) : (
+          <>
+            <GiSpellBook size={18} className="icon-fix-spellbook" />
+            <Text>RITUAIS</Text>
           </>
         )}
       </NavLink>
