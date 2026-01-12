@@ -23,6 +23,7 @@ export type RitualsState = {
   phase: RitualPhase;
   endsAt: number | null;
   cooldownInMinutes: number
+  xpPerHour: number
   toggleRitualActive: (id: RitualId) => void;
   startRitual: () => void;
   cancelRitual: () => void;
