@@ -1,0 +1,57 @@
+.ritual-config {
+  display: flex;
+  flex-direction: column;
+  background: #332636;
+  width: 480px;
+  padding: 8px;
+}
+
+.ritual-config-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.ritual-config-action {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.ritual-cd-select {
+  width: 180px;
+  margin-top: 2px;
+}
+
+.ritual-checkboxes {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .ritual-config {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ritual-config-content {
+    flex-direction: column;
+  }
+  .ritual-cd-select {
+    width: 100%;
+  }
+  .ritual-config-action {
+    margin-top: 6px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .ritual-checkboxes {
+    flex-direction: column;
+  }
+}

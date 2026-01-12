@@ -9,22 +9,15 @@ export function RitualCard({ ritual }: RitualProps) {
   return (
     <div className="ritual-card">
       <div className="ritual-card-icon">
-        <Icon size={24} color="white"/>
+        <Icon size={24} color="white" />
       </div>
       <div className="ritual-card-content">
         <div className="ritual-card-header">
           <Text>{ritual.name}</Text>
         </div>
 
-        <div className="ritual-card-info">
+        <div>
           <Text size="sm">{ritual.description}</Text>
-        </div>
-
-        <div className="ritual-card-meta">
-          <Text italic size="sm">
-            cooldown: {ritual.cooldownMinutes}m
-          </Text>
-          <Text size="sm">+{ritual.xp} XP</Text>
         </div>
       </div>
     </div>

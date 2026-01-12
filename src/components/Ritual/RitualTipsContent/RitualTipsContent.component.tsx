@@ -12,12 +12,15 @@ export function RitualTipsContent() {
         momento que o ritual indica.
       </Text>
       <Text size="sm">
-        Você pode personalizar o cooldown do ritual para que se adeque à sua
-        realidade ou para concluir todos juntos num só momento.
+        Você NÃO precisa ativar todos os rituais. Para ganhar a xp basta apenas
+        ativar um.
+      </Text>
+      <Text size="sm">
+        Personalize o cooldown dos rituais para que se adeque à sua realidade.
       </Text>
       <Text italic size="xs">
-        Dica: Você pode integrar RITUAIS e EXPEDIÇÕES, basta lembrar de
-        realizá-los na etapa de Descanso.
+        Dica: Você pode realizar os rituals na etapa de Descanso das expedições,
+        quando os horários baterem.
       </Text>
     </div>
   );

@@ -1,26 +1,32 @@
-import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
+import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
-import { useExpeditionStore } from "../../../store/expedition/expedition.store";
+import { useRitualTimer } from "../../../hooks/useRitualTimer/useRitualTimer";
 import { RITUAL_ICONS } from "../../../store/rituals/ritualIconsMapper";
+import { useRitualsStore } from "../../../store/rituals/rituals.store";
 import type { RitualProps } from "../../../store/rituals/rituals.types";
 import { RenderIf, Text } from "../../Generic";
 import "./RitualResumeItem.styles.css";
 
 export function RitualResumeItem({ ritual }: RitualProps) {
   const Icon = RITUAL_ICONS[ritual.icon];
-  const { phase } = useExpeditionStore();
-  const { progress } = useExpeditionTimer();
-
+  const { progress } = useRitualTimer();
+  const phase = useRitualsStore((store) => store.phase);
   const isMobile = useIsMobile();
   const isMobileXs = useIsMobile(348);
+  const navigate = useNavigate();
+
+  const goToRitualsPage = () => {
+    navigate("/rituais");
+  };
 
   return (
     <div
+      onClick={goToRitualsPage}
       className={`ritual-resume-item${phase === "finished" ? " finished" : ""}`}
     >
-      <div className="ritual-progress-bar">
+      <div className="ritual-resume-progress-bar">
         <div
-          className={`ritual-progress-fill${
+          className={`ritual-resume-progress-fill${
             phase === "finished" ? " finished" : ""
           }`}
           style={{ width: `${progress}%` }}
@@ -29,7 +35,7 @@ export function RitualResumeItem({ ritual }: RitualProps) {
 
       <div className="ritual-resume-content">
         <div className="ritual-resume-icon">
-          <Icon size={isMobile ? 14 : 18} color="white" />
+          <Icon size={16} color="white" />
         </div>
 
         <RenderIf condition={!isMobileXs}>
@@ -38,14 +44,4 @@ export function RitualResumeItem({ ritual }: RitualProps) {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="expedition-resume-progress">
-  <div
-    className={`progress-resume-bar${phase === "finished" ? "-finished" : ""}`}
-  >
-    <div className="progress-resume-fill" style={{ width: `${progress}%` }} />
-  </div>
-</div>; */
 }

@@ -7,6 +7,7 @@
   border: 2px solid var(--white);
   overflow: hidden;
   align-items: center;
+  cursor: pointer;
 }
 
 .ritual-resume-content {
@@ -17,21 +18,17 @@
   gap: 8px;
 }
 
-.ritual-progress-bar {
+.ritual-resume-progress-bar {
   position: absolute;
   inset: 0;
-  background: var(--progress-empty);
+  background: var(--ritual-card-color);
 }
 
-.ritual-progress-fill {
+.ritual-resume-progress-fill {
   height: 100%;
-  background: var(--ritual-card-color);
+  background: var(--fill-progress-color);
 }
 
 .ritual-resume-item.finished {
   border: 2px solid #fbff17;
-}
-
-.ritual-progress-fill.finished {
-   background: var(--ritual-card-color);
 }

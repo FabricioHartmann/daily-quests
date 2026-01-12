@@ -70,11 +70,6 @@ export const useExpeditionStore = create<ExpeditionState>()(
           }
         }
       },
-      getTimeLeft: () => {
-        let { endsAt } = get();
-        if (!endsAt) return 0;
-        return Math.max(Math.ceil((endsAt - Date.now()) / 1000), 0);
-      },
     }),
     {
       name: "expedition",

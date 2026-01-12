@@ -10,6 +10,7 @@ import { WelcomeModal } from "./components/Modal/variants/WelcomeModal";
 import { useModalStore } from "./store/modal/modal.store";
 import { useProfileStore } from "./store/profile/profile.store";
 import { initExpeditionListener } from "./utils/initExpeditionListener/initExpeditionListener";
+import { initRitualListener } from "./utils/initRitualListener/initRitualListener";
 
 function App() {
   const { openModal } = useModalStore();
@@ -17,7 +18,8 @@ function App() {
 
   useEffect(() => {
     initRewardListener();
-    initExpeditionListener()
+    initRitualListener();
+    initExpeditionListener();
     if (profile.firstAccess === true) {
       openModal(<WelcomeModal />);
     }

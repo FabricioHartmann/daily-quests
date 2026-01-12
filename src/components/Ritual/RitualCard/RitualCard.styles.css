@@ -3,7 +3,6 @@
   background: var(--ritual-card-color);
   width: 480px;
   padding: 8px;
-  height: 100%;
 }
 
 .ritual-card-icon {
@@ -18,12 +17,17 @@
 .ritual-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 8px;
   text-align: left;
+  width: 100%;
 }
 
 .ritual-card-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ritual-card-header {
   display: flex;
   justify-content: space-between;
 }

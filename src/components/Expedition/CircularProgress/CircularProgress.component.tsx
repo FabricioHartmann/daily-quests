@@ -23,11 +23,7 @@ export function CircularProgress({
       />
 
       <circle
-        stroke={
-          phase === "campfire"
-            ? "var(--rest-progress-color)"
-            : "var(--journey-progress-color)"
-        }
+        stroke="var(--fill-progress-color)"
         fill="transparent"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}

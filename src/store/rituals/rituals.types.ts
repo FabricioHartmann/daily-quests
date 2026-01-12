@@ -6,18 +6,27 @@ export type RitualProps = {
   ritual: Ritual;
 };
 
+export type RitualPhase = "idle" | "started" | "finished";
+
 export type Ritual = {
   id: RitualId;
   name: string;
   icon: RitualIconName;
   description: string;
-  cooldownMinutes: number;
-  xp: number;
   category: string;
+  isActive: boolean;
 };
 
 export type RitualsState = {
-  totalRitualsCompleted: number;
   rituals: Ritual[];
-  updateRitual: (ritual: Ritual) => void;
+  totalRitualsCompleted: number;
+  phase: RitualPhase;
+  endsAt: number | null;
+  cooldownInMinutes: number
+  toggleRitualActive: (id: RitualId) => void;
+  startRitual: () => void;
+  cancelRitual: () => void;
+  finishRitual: () => void;
+  setCooldownInMinutes: (minutes: number) => void;
+  checkRitualTransitions: () => void;
 };
