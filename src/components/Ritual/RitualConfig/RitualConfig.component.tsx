@@ -31,8 +31,10 @@ export function RitualConfig() {
     if (phase !== "finished") return;
     finishRitual();
     addExp(expGained);
-    startRitual()
-  }, [phase, expGained])
+    startRitual();
+  }, [phase, expGained]);
+
+  const hasAnyRitualActive = rituals.some((item) => item.isActive);
 
   return (
     <div className="ritual-config">
@@ -42,7 +44,7 @@ export function RitualConfig() {
             <div className="ritual-checkboxes">
               {rituals.map((ritual) => (
                 <Checkbox
-                  disabled
+                  disabled={phase === "started"}
                   key={ritual.id}
                   checked={ritual.isActive}
                   label={ritual.name}
@@ -72,6 +74,7 @@ export function RitualConfig() {
               fullWidth={isMobile}
               variant="primary"
               size="sm"
+              disabled={!hasAnyRitualActive}
             >
               Iniciar ritual
             </Button>

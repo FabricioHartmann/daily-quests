@@ -11,7 +11,7 @@ export const useRitualsStore = create<RitualsState>()(
       xpPerHour: 30,
       phase: "idle",
       endsAt: null,
-      cooldownInMinutes: 120,
+      cooldownInMinutes: 60,
 
       toggleRitualActive: (id) =>
         set((state) => ({

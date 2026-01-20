@@ -1,17 +1,17 @@
 import { Button, RenderIf, Text } from "../../components/Generic";
 import { RitualTipsModal } from "../../components/Modal/variants/RitualTipsModal/RitualTipsModal.component";
-import { RitualProgress } from "../../components/Ritual/RitualProgress/RitualProgress.component";
 import { RitualCard } from "../../components/Ritual/RitualCard/RitualCard.component";
 import { RitualConfig } from "../../components/Ritual/RitualConfig/RitualConfig.component";
 import { RitualTips } from "../../components/Ritual/RitualTips/RitualTips.component";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { useModalStore } from "../../store/modal/modal.store";
-import { MOCKED_RITUALS } from "../../store/rituals/constants";
 import "./Rituals.style.css";
+import { useRitualsStore } from "../../store/rituals/rituals.store";
 
 export function Rituals() {
   const isMobile = useIsMobile();
   const { openModal } = useModalStore();
+  const rituals = useRitualsStore(s => s.rituals)
 
   const openInformationModal = () => {
     openModal(<RitualTipsModal />);
@@ -24,10 +24,9 @@ export function Rituals() {
       </div>
       <div className="ritual-page-content">
         <div className="ritual-cards-wrapper">
-          {MOCKED_RITUALS.map((ritual) => (
+          {rituals.map((ritual) => (
             <RitualCard key={ritual.id} ritual={ritual} />
           ))}
-          <RitualProgress />
           <RitualConfig />
         </div>
         <RenderIf condition={isMobile}>

@@ -1,11 +1,12 @@
 .ritual-resume-wrapper {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   width: 712px;
 }
 
 @media (max-width: 768px) {
-  .ritual-resume-wrapper  {
-     width: 100%;
+  .ritual-resume-wrapper {
+    width: 100%;
+    gap: 8px;
   }
 }

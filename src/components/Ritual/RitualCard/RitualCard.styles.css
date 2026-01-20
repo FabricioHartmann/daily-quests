@@ -1,6 +1,13 @@
 .ritual-card {
   display: flex;
-  background: var(--ritual-card-color);
+  background: var(--list-bg-color);
+  width: 480px;
+  padding: 8px;
+}
+
+.ritual-card-inactive {
+  display: flex;
+  background: #797979;
   width: 480px;
   padding: 8px;
 }
@@ -33,7 +40,7 @@
 }
 
 @media (max-width: 768px) {
-  .ritual-card {
+  .ritual-card, .ritual-card-inactive {
     width: 100%;
   }
 }

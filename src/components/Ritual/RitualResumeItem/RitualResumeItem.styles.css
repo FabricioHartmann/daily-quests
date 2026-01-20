@@ -8,23 +8,32 @@
   overflow: hidden;
   align-items: center;
   cursor: pointer;
+  max-width: 348px;
+  background: var(--list-bg-color);
 }
 
 .ritual-resume-content {
   position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 2px 0;
 }
 
-.ritual-resume-progress-bar {
+.ritual-resume-timer {
   position: absolute;
-  inset: 0;
-  background: var(--ritual-card-color);
+  right: 2px;
+  bottom: 0px;
 }
 
-.ritual-resume-progress-fill {
-  height: 100%;
-  background: var(--fill-progress-color);
+@media (max-width: 768px) {
+  .ritual-resume-item {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 348px) {
+  .ritual-resume-item {
+    max-width: 100%;
+  }
 }
