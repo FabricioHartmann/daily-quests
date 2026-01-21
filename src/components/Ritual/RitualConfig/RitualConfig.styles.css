@@ -1,7 +1,8 @@
 .ritual-config {
   display: flex;
   flex-direction: column;
-  background: #332636;
+  background: var(--black);
+  border: 1px solid white;
   width: 480px;
   padding: 8px;
 }

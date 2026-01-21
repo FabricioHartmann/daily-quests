@@ -7,6 +7,7 @@ import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { generateRitualExp } from "../../../domain/ritual/ritualExp";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useCallback } from "react";
+import { toast } from "sonner";
 
 export function RitualConfig() {
   const isMobile = useIsMobile();
@@ -31,8 +32,12 @@ export function RitualConfig() {
     if (phase !== "finished") return;
     finishRitual();
     addExp(expGained);
-    startRitual()
-  }, [phase, expGained])
+    toast("Ritual concluído", {
+      description: `Você adquiriu ${expGained} XP`,
+    });
+  }, [phase, expGained]);
+
+  const hasAnyRitualActive = rituals.some((item) => item.isActive);
 
   return (
     <div className="ritual-config">
@@ -42,7 +47,7 @@ export function RitualConfig() {
             <div className="ritual-checkboxes">
               {rituals.map((ritual) => (
                 <Checkbox
-                  disabled
+                  disabled={phase !== "idle"}
                   key={ritual.id}
                   checked={ritual.isActive}
                   label={ritual.name}
@@ -55,7 +60,7 @@ export function RitualConfig() {
                 label="Cooldown"
                 options={RITUAL_COOLDOWN_OPTIONS}
                 value={String(cooldownInMinutes)}
-                disabled={phase === "started"}
+                disabled={phase !== "idle"}
                 onChange={(e) => {
                   const value = Number(e.target.value);
                   setCooldownInMinutes(value);
@@ -65,13 +70,14 @@ export function RitualConfig() {
           </div>
         </div>
         <div className="ritual-config-action">
-          <Text size="sm">XP/hora: 30</Text>
+          <Text size="sm">XP/hora: 20</Text>
           <RenderIf condition={phase === "idle"}>
             <Button
               onClick={startRitual}
               fullWidth={isMobile}
               variant="primary"
               size="sm"
+              disabled={!hasAnyRitualActive}
             >
               Iniciar ritual
             </Button>

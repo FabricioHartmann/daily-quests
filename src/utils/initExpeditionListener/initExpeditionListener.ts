@@ -1,6 +1,9 @@
 import { toast } from "sonner";
 import { useExpeditionStore } from "../../store/expedition/expedition.store";
-import { playExpeditionCampfireSound, playExpeditionFinishedSound } from "../soundPlayer/soundPlayer";
+import {
+  playExpeditionCampfireSound,
+  playExpeditionFinishedSound,
+} from "../soundPlayer";
 
 let expeditionInterval: number | null = null;
 
@@ -9,14 +12,13 @@ export function initExpeditionListener() {
 
   expeditionInterval = window.setInterval(() => {
     const store = useExpeditionStore.getState();
-
     const previousPhase = store.phase;
-
-    if (previousPhase === "idle") return;
-
     store.checkPhaseTransition();
 
     const { phase } = useExpeditionStore.getState();
+    if (previousPhase === "idle" && phase === "journey") {
+      playExpeditionCampfireSound();
+    }
 
     if (previousPhase === "journey" && phase === "campfire") {
       playExpeditionCampfireSound();

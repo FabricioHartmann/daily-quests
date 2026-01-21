@@ -8,10 +8,10 @@ export const useRitualsStore = create<RitualsState>()(
     (set, get) => ({
       rituals: MOCKED_RITUALS,
       totalRitualsCompleted: 0,
-      xpPerHour: 30,
+      xpPerHour: 20,
       phase: "idle",
       endsAt: null,
-      cooldownInMinutes: 120,
+      cooldownInMinutes: 60,
 
       toggleRitualActive: (id) =>
         set((state) => ({

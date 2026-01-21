@@ -17,16 +17,7 @@ export const MOCKED_RITUALS: Ritual[] = [
     description:
       "Fique de pé e se alongue por 30 ~ 60 segundos, ou caminhe um pouco.",
     category: "maintenance",
-    isActive: true,
-  },
-  {
-    id: "breath_ritual",
-    name: "Respirar",
-    icon: "GiAura",
-    description:
-      "Pare um minuto para respirar de forma consciente. Assim como o corpo, a mente também precisa descansar.",
-    category: "maintenance",
-    isActive: true,
+    isActive: false,
   },
 ];
 

@@ -11,7 +11,7 @@ import { useModalStore } from "../../../store/modal/modal.store";
 import { useEffect, useMemo } from "react";
 import type { InventoryPreviewItemProps } from "./Inventory.types";
 import { ITEMS_CATALOG } from "../../../data/itemsCatalog";
-import { playItemEquipSound } from "../../../utils/soundPlayer/soundPlayer";
+import { playItemEquipSound } from "../../../utils/soundPlayer";
 import { sortInventory } from "./inventory.helper";
 
 export function Inventory() {
