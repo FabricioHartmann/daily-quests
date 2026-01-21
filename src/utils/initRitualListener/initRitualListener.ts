@@ -1,6 +1,6 @@
 import { useRitualsStore } from "../../store/rituals/rituals.store";
 import { toast } from "sonner";
-// import { playRitualFinishedSound } from "../sounds/ritualSounds";
+import { playRitualSound } from "../soundPlayer";
 
 let ritualInterval: number | null = null;
 
@@ -19,10 +19,9 @@ export function initRitualListener() {
     const { phase } = useRitualsStore.getState();
 
     if (previousPhase === "started" && phase === "finished") {
-      // import { playRitualFinishedSound } from "../sounds/ritualSounds";
-
-      toast("Rituais concluídos", {
-        description: "Você completou seus rituais ativos.",
+      playRitualSound()
+      toast("Lembrete de ritual", {
+        description: "Conclua o ritual e resgate a XP",
       });
     }
   }, 1000);

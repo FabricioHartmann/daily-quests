@@ -7,7 +7,7 @@ import "./MobileItemPreview.styles.css";
 import { useInventoryStore } from "../../../../store/inventory/inventory.store";
 import { useModalStore } from "../../../../store/modal/modal.store";
 import { ITEMS_CATALOG } from "../../../../data/itemsCatalog";
-import { playItemEquipSound } from "../../../../utils/soundPlayer/soundPlayer";
+import { playItemEquipSound } from "../../../../utils/soundPlayer";
 
 export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
   const { items, equipItem, unequipByType } = useInventoryStore();

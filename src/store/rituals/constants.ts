@@ -19,15 +19,6 @@ export const MOCKED_RITUALS: Ritual[] = [
     category: "maintenance",
     isActive: false,
   },
-  {
-    id: "breath_ritual",
-    name: "Respirar",
-    icon: "GiAura",
-    description:
-      "Pare um minuto para respirar de forma consciente. Assim como o corpo, a mente também precisa descansar.",
-    category: "maintenance",
-    isActive: false,
-  },
 ];
 
 export const RITUAL_COOLDOWN_MINUTES = [60, 90, 120, 180] as const;

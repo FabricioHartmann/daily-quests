@@ -4,10 +4,12 @@ import type { RitualProps } from "../../../store/rituals/rituals.types";
 import { RITUAL_ICONS } from "../../../store/rituals/ritualIconsMapper";
 import { formatTime } from "../../../utils/formatTime";
 import { useRitualTimer } from "../../../hooks/useRitualTimer/useRitualTimer";
+import { useRitualsStore } from "../../../store/rituals/rituals.store";
 
 export function RitualCard({ ritual }: RitualProps) {
   const Icon = RITUAL_ICONS[ritual.icon];
-  const { progress, timeLeft } = useRitualTimer();
+  const { timeLeft } = useRitualTimer();
+  const phase = useRitualsStore((s) => s.phase);
 
   return (
     <div className={`ritual-card${ritual.isActive ? "" : "-inactive"}`}>
@@ -18,9 +20,15 @@ export function RitualCard({ ritual }: RitualProps) {
         <div className="ritual-card-header">
           <Text>{ritual.name}</Text>
           <RenderIf condition={ritual.isActive}>
-            <Text size="xs">
-              {formatTime(timeLeft)}
-            </Text>
+            <RenderIf condition={phase === "finished"}>
+              <Text italic size="sm">Finalizado</Text>
+            </RenderIf>
+            <RenderIf condition={phase === "idle"}>
+              <Text italic size="sm">Não iniciado</Text>
+            </RenderIf>
+            <RenderIf condition={phase === "started"}>
+              <Text italic size="sm">{formatTime(timeLeft)}</Text>
+            </RenderIf>
           </RenderIf>
         </div>
 

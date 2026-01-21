@@ -8,37 +8,35 @@ import "./RitualResumeItem.styles.css";
 import { formatTime } from "../../../utils/formatTime";
 import type { RitualResumeProps } from "./RitualResume.types";
 
-export function RitualResumeItem({ ritual, activeRiualsLength }: RitualResumeProps) {
+export function RitualResumeItem({ ritual }: RitualResumeProps) {
   const Icon = RITUAL_ICONS[ritual.icon];
-  const { progress, timeLeft } = useRitualTimer();
+  const { timeLeft } = useRitualTimer();
   const phase = useRitualsStore((store) => store.phase);
   const isMobile = useIsMobile();
-  const isMobileXs = useIsMobile(348);
   const navigate = useNavigate();
 
   const goToRitualsPage = () => {
     navigate("/rituais");
   };
 
-  const showRitualName =
-   activeRiualsLength === 1 || !isMobileXs;
-
   return (
-    <div
-      onClick={goToRitualsPage}
-      className="ritual-resume-item"
-    >
+    <div onClick={goToRitualsPage} className={`ritual-resume-item ${phase}`}>
       <div className="ritual-resume-content">
         <div className="ritual-resume-icon">
           <Icon size={14} color="white" />
         </div>
-
-        <RenderIf condition={showRitualName}>
-          <Text size={isMobile ? "sm" : "md"}>{ritual.name}</Text>
-        </RenderIf>
+        <Text size={isMobile ? "sm" : "md"}>{ritual.name}</Text>
       </div>
       <div className="ritual-resume-timer">
-        <Text size="xs">{formatTime(timeLeft)}</Text>
+        <RenderIf condition={phase === "finished"}>
+          <Text italic size="xs">Finalizado</Text>
+        </RenderIf>
+        <RenderIf condition={phase === "idle"}>
+          <Text italic size="xs">Não iniciado</Text>
+        </RenderIf>
+        <RenderIf condition={phase === "started"}>
+          <Text italic size="xs">{formatTime(timeLeft)}</Text>
+        </RenderIf>
       </div>
     </div>
   );
