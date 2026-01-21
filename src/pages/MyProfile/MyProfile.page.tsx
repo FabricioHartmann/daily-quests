@@ -9,9 +9,8 @@ export function MyProfile() {
   const { achievements } = useAchievementStore();
 
   const unlockedAchievements = ACHIEVEMENTS_CATALOG.filter(
-    (a) => achievements[a.id]?.unlocked
+    (a) => achievements[a.id]?.unlocked,
   ).length;
-
 
   return (
     <div className="profile-page-container">
@@ -22,9 +21,7 @@ export function MyProfile() {
           totalAchievements={ACHIEVEMENTS_CATALOG.length}
         />
       </div>
-      <div className="profile-page-content">
-        <Inventory />
-      </div>
+      <Inventory />
     </div>
   );
 }

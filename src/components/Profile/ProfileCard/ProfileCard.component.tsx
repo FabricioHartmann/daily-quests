@@ -8,10 +8,12 @@ import { HiPencilAlt } from "react-icons/hi";
 import { Menu } from "../../Generic/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs";
+import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
   const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
   const selectedTitleObj = TITLES_CATALOG[profile.selectedTitle];
+  const isMobile = useIsMobile()
 
   const menuItems = titleOptions
     .slice()
@@ -29,14 +31,14 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
       </div>
       <div className="card-content">
         <div className="profile-card-header">
-          <Text size="lg" color="var(--black)">
+          <Text size={isMobile ? 'md' : 'lg'} color="var(--black)">
             {profile?.name}
           </Text>
-          <Text size="lg" color="var(--black)">
+          <Text size={isMobile ? 'md' : 'lg'} color="var(--black)">
             Lv {profile?.level}
           </Text>
           <RenderIf condition={canEdit}>
-            <HiPencilAlt size={22} color="black" />
+            <HiPencilAlt size={18} color="black" />
           </RenderIf>
         </div>
 

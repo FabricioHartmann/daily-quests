@@ -42,13 +42,13 @@
   display: flex;
   justify-content: space-between;
   gap: 4px;
+  height: 20px;
 }
 
 .profile-card-title-wrapper {
   display: flex;
-  gap: 4px;
-  align-content: end;
   align-items: center;
+  margin-top: 4px;
 }
 
 @media (max-width: 768px) {

@@ -13,7 +13,7 @@
 }
 
 .ritual-resume-item.finished {
-  --ritual-card-color: #1f5f3a;
+  background: #1f5f3a;
 }
 
 .ritual-resume-content {
@@ -31,12 +31,6 @@
 }
 
 @media (max-width: 768px) {
-  .ritual-resume-item {
-    max-width: 50%;
-  }
-}
-
-@media (max-width: 348px) {
   .ritual-resume-item {
     max-width: 100%;
   }

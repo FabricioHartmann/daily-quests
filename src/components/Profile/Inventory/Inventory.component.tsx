@@ -19,7 +19,6 @@ export function Inventory() {
   const { openModal } = useModalStore();
   const {
     items,
-    itemsLimit,
     selectedItemId,
     equipItem,
     unequipByType,
@@ -88,7 +87,7 @@ export function Inventory() {
   }, []);
 
   return (
-    <div className="inventory-card">
+    <div className="inventory">
       <div className="inventory-header">
         <Text size="lg" color="var(--white)">
           Inventário
@@ -102,11 +101,6 @@ export function Inventory() {
                 <InventoryItem item={item} />
               </div>
             ))}
-          </div>
-          <div>
-            <Text size="xs" italic>
-              capacidade: {items?.length}/{itemsLimit}
-            </Text>
           </div>
         </div>
         <RenderIf condition={!isMobile}>
