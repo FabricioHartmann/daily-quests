@@ -34,12 +34,9 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           <Text size={isMobile ? 'md' : 'lg'} color="var(--black)">
             {profile?.name}
           </Text>
-          <Text size={isMobile ? 'md' : 'lg'} color="var(--black)">
+          <Text weight={600} size={isMobile ? 'md' : 'lg'} color="var(--black)">
             Lv {profile?.level}
           </Text>
-          <RenderIf condition={canEdit}>
-            <HiPencilAlt size={18} color="black" />
-          </RenderIf>
         </div>
 
         <div className="level-wrapper">

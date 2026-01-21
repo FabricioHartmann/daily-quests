@@ -180,7 +180,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       "Armadura pesada que oferece boa proteção para um confronto prolongado.",
   },
   "leather-armor": {
-    itemId: "chest-armor",
+    itemId: "leather-armor",
     name: "Veste de couro reforçado",
     rarity: "rare",
     type: "armor",

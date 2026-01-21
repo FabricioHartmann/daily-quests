@@ -17,13 +17,8 @@ import { sortInventory } from "./inventory.helper";
 export function Inventory() {
   const isMobile = useIsMobile(576);
   const { openModal } = useModalStore();
-  const {
-    items,
-    selectedItemId,
-    equipItem,
-    unequipByType,
-    selectItem,
-  } = useInventoryStore();
+  const { items, selectedItemId, equipItem, unequipByType, selectItem } =
+    useInventoryStore();
 
   const sortedItems = useMemo(() => {
     return sortInventory(items);
@@ -89,7 +84,7 @@ export function Inventory() {
   return (
     <div className="inventory">
       <div className="inventory-header">
-        <Text size="lg" color="var(--white)">
+        <Text size={isMobile ? "md" : "lg"} color="var(--white)">
           Inventário
         </Text>
       </div>

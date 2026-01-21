@@ -47,7 +47,7 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
             <Text>Efeitos:</Text>
             <div className="mobile-item-single-effect">
               {item?.effects?.map((effect, index) => (
-                <Text key={index}>
+                <Text size="sm" key={index}>
                   • {effect.description}
                 </Text>
               ))}
@@ -55,7 +55,7 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
           </div>
         </div>
 
-        <Text italic>{item?.description}</Text>
+        <Text size="sm" italic>{item?.description}</Text>
       </Flex>
     </Modal>
   );

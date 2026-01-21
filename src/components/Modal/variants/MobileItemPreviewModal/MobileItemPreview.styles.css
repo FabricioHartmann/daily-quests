@@ -8,6 +8,7 @@
 .mobile-preview-item {
   border: 2px solid black;
   padding: 8px;
+  align-content: center;
 }
 
 .mobile-item-effects {
