@@ -25,7 +25,7 @@ export function RitualResumeItem({ ritual }: RitualResumeProps) {
     <div onClick={goToRitualsPage} className={`ritual-resume-item ${phase}`}>
       <div className="ritual-resume-content">
         <div className="ritual-resume-icon">
-          <Icon size={14} color="white" />
+          <Icon size={16} color="white" />
         </div>
         <RenderIf condition={!isMobileXs}>
           <Text size={isMobile ? "sm" : "md"}>{ritual.name}</Text>

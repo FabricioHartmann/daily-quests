@@ -16,14 +16,14 @@
   --ritual-card-color: #253169;
   --ritual-card-color-finished: #1f521e;
 
-
   --white: #f7f7f7;
   --black: #1d1d1d;
   --light-gray: #b1b1b1;
 
-  --sonner-bg: #000;
-  --sonner-text: #00ff88;
-  --sonner-border: #00ff88;
+  --sonner-bg: #d3fff2;
+  [data-sonner-toast] {
+    background: var(--sonner-bg) !important;
+  }
 }
 
 html,
