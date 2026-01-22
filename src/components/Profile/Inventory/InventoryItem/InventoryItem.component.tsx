@@ -28,7 +28,7 @@ export function InventoryItem({ item }: InventoryItemProps) {
       <div className="inventory-item-rarity">
         <RarityIcon rarity={item.rarity} />
       </div>
-      <Icon color="var(--white)" size={24} />
+      <Icon color="var(--white)" size={28} />
     </div>
   );
 }

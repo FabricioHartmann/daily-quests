@@ -40,7 +40,7 @@ export function ExperienceBar({
       <div className={`exp-bar ${reseting ? "no-transition" : ""}`}>
         <div className="exp-bar__fill" style={{ width: `${fill}%` }} />
       </div>
-      <Text weight={"bold"} size="xs" color="var(--black)">
+      <Text weight={"bold"} size="xs" color="#636363">
         {experience}/{maxExperience} xp
       </Text>
     </div>

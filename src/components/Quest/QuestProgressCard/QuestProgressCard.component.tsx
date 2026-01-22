@@ -21,7 +21,7 @@ export function QuestProgressCard() {
   return (
     <div className="quests-progress-card">
       <div className="quests-progress-header">
-        <Text color="var(--black)">Progresso</Text>
+        <Text size="sm" color="var(--black)">Progresso</Text>
       </div>
       <div className="quests-progress-content">
         <div className="quests-progress-label">
@@ -31,7 +31,7 @@ export function QuestProgressCard() {
           {!!lastCompletedQuest?.id ? (
             <div className="quests-progress-data">
               <Text size="sm" color="var(--card-title)">
-                * {lastCompletedQuest?.title} (+{lastCompletedQuest?.points} xp)
+                {lastCompletedQuest?.title}
               </Text>
             </div>
           ) : (
@@ -40,7 +40,7 @@ export function QuestProgressCard() {
         </div>
         <div className="quests-progress-label">
           <Text size="sm" color="var(--black)">
-            Total de quests concluídas: {totalQuestsCompleted}
+            Quests concluídas: {totalQuestsCompleted}
           </Text>
         </div>
       </div>
