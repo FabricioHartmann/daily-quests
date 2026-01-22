@@ -11,7 +11,8 @@ import { useRitualsStore } from "../../store/rituals/rituals.store";
 export function Rituals() {
   const isMobile = useIsMobile();
   const { openModal } = useModalStore();
-  const rituals = useRitualsStore(s => s.rituals)
+  const rituals = useRitualsStore((s) => s.rituals);
+  const totalRitualsCompleted = useRitualsStore((s) => s.totalRitualsCompleted);
 
   const openInformationModal = () => {
     openModal(<RitualTipsModal />);
@@ -26,7 +27,8 @@ export function Rituals() {
         <div className="ritual-cards-wrapper">
           {rituals.map((ritual) => (
             <RitualCard key={ritual.id} ritual={ritual} />
-          ))}
+          ))}{" "}
+          <Text size="sm">Rituais concluídos: {totalRitualsCompleted}</Text>
           <RitualConfig />
         </div>
         <RenderIf condition={isMobile}>
