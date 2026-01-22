@@ -11,7 +11,7 @@
 
 @media (max-width: 768px) {
   .profile-page-container {
-    height: calc(100dvh - 64px);
+    height: calc(100dvh - 62px);
     gap: 8px;
   }
   .profile-page-header {

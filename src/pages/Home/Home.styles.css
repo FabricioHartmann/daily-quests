@@ -20,17 +20,17 @@
   justify-content: start;
   width: 100%;
   gap: 16px;
+  flex: 1;
+  min-height: 0;
 }
 
 @media (max-width: 768px) {
   .quests-wrapper {
     flex-direction: column;
-    flex: 1;
-    min-height: 0;
   }
   .home-page-container {
     gap: 8px;
-    height: calc(100dvh - 64px);
+    height: calc(100dvh - 62px);
   }
   .home-header {
     flex-direction: column;
