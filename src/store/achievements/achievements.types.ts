@@ -40,12 +40,19 @@ export type AchievementId =
   | "250-expeditions-completed"
   | "500-expeditions-completed"
   | "5-expeditions-in-a-day"
+  | "1-ritual-completed"
+  | "5-rituals-completed"
+  | "15-rituals-completed"
+  | "30-rituals-completed"
+  | "50-rituals-completed"
+  | "100-rituals-completed"
+  | "5-expeditions-in-a-day"
   | "5-items-acquired"
   | "10-items-acquired"
   | "20-items-acquired"
   | "30-items-acquired"
   | "50-items-acquired"
-  | "4-items-equipped";
+  | "3-items-equipped";
 
 export type AchievementReward =
   | {

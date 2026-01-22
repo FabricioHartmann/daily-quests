@@ -31,10 +31,10 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
       </div>
       <div className="card-content">
         <div className="profile-card-header">
-          <Text size={isMobile ? 'md' : 'lg'} color="var(--black)">
+          <Text size="md" color="var(--black)">
             {profile?.name}
           </Text>
-          <Text weight={600} size={isMobile ? 'md' : 'lg'} color="var(--black)">
+          <Text size="md" color="var(--black)">
             Lv {profile?.level}
           </Text>
         </div>

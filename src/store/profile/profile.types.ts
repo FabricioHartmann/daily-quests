@@ -36,6 +36,9 @@ export type TitleId =
   | "andarilho"
   | "explorador"
   | "expedicionario"
+  // rituais
+  | "ritualista"
+  | "ritualista-mestre"
   // quests
   | "determinado"
   | "disciplinado"

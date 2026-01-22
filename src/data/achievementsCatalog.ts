@@ -244,6 +244,58 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
 
+  // ===== EXPEDIÇÕES =====
+  {
+    id: "1-ritual-completed",
+    label: "Primeiro ritual",
+    requirements: "Concluir seu primeiro ritual",
+        // reward: {
+    //   id: "leather-backpack",
+    //   type: "item",
+    // },
+  },
+  {
+    id: "5-rituals-completed",
+    label: "Ritualista I",
+    requirements: "Concluir 5 rituais",
+    reward: {
+      id: "ritualista",
+      type: "title",
+    },
+  },
+  {
+    id: "15-rituals-completed",
+    label: "Ritualista II",
+    requirements: "Concluir 15 rituais",
+    reward: {
+      type: "title",
+      id: "andarilho",
+    },
+  },
+  {
+    id: "30-rituals-completed",
+    label: "Ritualista III",
+    requirements: "Concluir 30 rituais",
+    // reward: {
+    //   id: "leather-backpack",
+    //   type: "item",
+    // },
+  },
+  {
+    id: "50-rituals-completed",
+    label: "Ritualista Experiente",
+    requirements: "Concluir 50 rituais",
+  },
+  {
+    id: "100-rituals-completed",
+    label: "Ritualista Mestre",
+    requirements: "Concluir 100 rituais",
+    reward: {
+      type: "title",
+      id: "ritualista-mestre",
+    },
+  },
+
   // ===== ITENS =====
   {
     id: "5-items-acquired",
@@ -275,7 +327,7 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     // },
   },
   {
-    id: "4-items-equipped",
+    id: "3-items-equipped",
     label: "Totalmente Equipado",
     requirements: "Equipar 4 itens",
   },

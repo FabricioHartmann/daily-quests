@@ -49,6 +49,17 @@ export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
     label: "Expedicionário",
     disabled: true,
   },
+  // ===== RITUAIS =====
+  ritualista: {
+    value: "ritualista",
+    label: "Ritualista",
+    disabled: true,
+  },
+  'ritualista-mestre': {
+    value: "ritualista-mestre",
+    label: "Ritualista Mestre",
+    disabled: true,
+  },
   // ===== QUESTS =====
   determinado: {
     value: "determinado",
@@ -62,7 +73,7 @@ export const TITLES_CATALOG: Record<TitleId, TitleCatalog> = {
   },
   juramentado: {
     value: "juramentado",
-    label: "Juramentado",
+    label: "O Juramentado",
     disabled: true,
   },
 

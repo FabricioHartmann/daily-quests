@@ -4,25 +4,41 @@ import {
   GiTwoHandedSword,
   GiRelicBlade,
   GiRuneSword,
+  GiShatteredSword,
+  GiSacrificialDagger,
+  GiPocketBow,
+  GiCrossedSwords,
+  GiWizardStaff,
   GiNinjaArmor,
   GiChestArmor,
   GiHeartArmor,
   GiCapeArmor,
   GiLeatherArmor,
   GiShoulderArmor,
+  GiRobe,
   GiRing,
+  GiPowerRing,
   GiPoncho,
-  GiSteampunkGoggles,
+  GiEmeraldNecklace,
+  GiPrimitiveNecklace,
+  GiBracers,
   GiOldLantern,
+  GiQuiver,
+  GiFishingPole,
 } from "react-icons/gi";
 
 export const ITEM_ICONS = {
-  //swords
+  //weapons
   GiBroadsword,
   GiCrocSword,
   GiTwoHandedSword,
   GiRelicBlade,
   GiRuneSword,
+  GiShatteredSword,
+  GiSacrificialDagger,
+  GiPocketBow,
+  GiCrossedSwords,
+  GiWizardStaff,
   //armors
   GiNinjaArmor,
   GiChestArmor,
@@ -30,11 +46,17 @@ export const ITEM_ICONS = {
   GiCapeArmor,
   GiLeatherArmor,
   GiShoulderArmor,
+  GiRobe,
   // accessories
   GiRing,
+  GiPowerRing,
   GiPoncho,
-  GiSteampunkGoggles,
+  GiEmeraldNecklace,
+  GiPrimitiveNecklace,
+  GiBracers,
   GiOldLantern,
+  GiQuiver,
+  GiFishingPole,
 } as const;
 
 export type ItemIconName = keyof typeof ITEM_ICONS;

@@ -10,13 +10,30 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 1,
+        amount: 2,
         active: true,
         appliesTo: "daily",
-        description: "+1 XP em quests diárias",
+        description: "+2 XP em quests diárias",
       },
     ],
-    description: "Espada de ferro simples com cabo de madeira resistente.",
+    description: "Espada de ferro simples com cabo de madeira resistente",
+  },
+  "broken-sword": {
+    itemId: "broken-sword",
+    name: "Espada quebrada",
+    rarity: "common",
+    type: "weapon",
+    icon: "GiShatteredSword",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 0,
+        active: true,
+        appliesTo: "daily",
+        description: "+0 XP em quests diárias",
+      },
+    ],
+    description: "Imprestável, não te ajuda em quase nada",
   },
   "croc-sword": {
     itemId: "croc-sword",
@@ -27,6 +44,31 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
+        amount: 3,
+        active: true,
+        appliesTo: "daily",
+        description: "+3 XP em quests diárias",
+      },
+    ],
+    description:
+      "Uma lâmina serrilhada capaz de causar sérios danos ao inimigo",
+  },
+  dagger: {
+    itemId: "dagger",
+    name: "Adaga abissal",
+    rarity: "rare",
+    type: "weapon",
+    icon: "GiSacrificialDagger",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 4,
+        active: true,
+        appliesTo: "daily",
+        description: "+4 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
         amount: 2,
         active: true,
         appliesTo: "daily",
@@ -34,7 +76,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       },
     ],
     description:
-      "Uma lâmina serrilhada capaz de causar sérios danos ao inimigo.",
+      "Fácil de esconder e útil em combates de curto alcance, essa adaga foi encontrada em águas profundas",
   },
   "two-handed-sword": {
     itemId: "two-handed-sword",
@@ -45,21 +87,21 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 2,
-        active: true,
-        appliesTo: "daily",
-        description: "+3 XP em quests diárias",
-      },
-      {
-        kind: "xp_bonus",
         amount: 4,
         active: true,
         appliesTo: "weekly",
-        description: "+8 XP em quests semanais",
+        description: "+4 XP em quests semanais",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 7,
+        active: true,
+        appliesTo: "weekly",
+        description: "+7 XP em quests semanais",
       },
     ],
     description:
-      "Uma espada que exige espaço e controle, mas possui um impacto avassalador.",
+      "Uma espada que exige espaço e controle, mas possui um impacto avassalador",
   },
   "relic-blade": {
     itemId: "relic-blade",
@@ -70,42 +112,42 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 5,
+        amount: 4,
         active: true,
         appliesTo: "daily",
-        description: "+5 XP em quests diárias",
+        description: "+4 XP em quests diárias",
       },
       {
         kind: "xp_bonus",
-        amount: 2,
+        amount: 5,
         active: true,
-        appliesTo: "daily",
-        description: "+5 XP em quests diárias",
+        appliesTo: "weekly",
+        description: "+5 XP em quests semanais",
       },
     ],
     description:
-      "Uma arma de eras esquecidas, empunhada apenas por aqueles que provaram seu valor ao longo do tempo.",
+      "Uma arma de eras esquecidas, empunhada apenas por aqueles que provaram seu valor ao longo do tempo",
   },
-  "runed-blade": {
-    itemId: "runed-blade",
-    name: "Lâmina Runada",
+  "double-swords": {
+    itemId: "double-swords",
+    name: "Espadas duplas",
     rarity: "epic",
     type: "weapon",
-    icon: "GiRuneSword",
+    icon: "GiCrossedSwords",
     effects: [
       {
         kind: "xp_bonus",
-        amount: 5,
+        amount: 6,
         active: true,
         appliesTo: "daily",
-        description: "+5 XP em quests diárias",
+        description: "+6 XP em quests diárias",
       },
       {
         kind: "xp_bonus",
-        amount: 20,
+        amount: 22,
         active: true,
         appliesTo: "weekly",
-        description: "+20 XP em quests semanais",
+        description: "+22 XP em quests semanais",
       },
       // {
       //   kind: "xp_multiplier",
@@ -116,8 +158,105 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       // },
     ],
     description:
-      "Runas antigas brilham ao empunhar essa lâmina. Quanto maior a dedicação, mais forte se torna.",
+      "Um par de lâminas equilibradas para combate ágil e preciso. Apenas espadachins habilidosos conseguem usá-las",
   },
+  staff: {
+    itemId: "staff",
+    name: "Cajado da natureza",
+    rarity: "epic",
+    type: "weapon",
+    icon: "GiWizardStaff",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 6,
+        active: true,
+        appliesTo: "daily",
+        description: "+6 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 22,
+        active: true,
+        appliesTo: "weekly",
+        description: "+22 XP em quests semanais",
+      },
+      // {
+      //   kind: "xp_multiplier",
+      //   amount: 1.1,
+      //   active: true,
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
+      // },
+    ],
+    description:
+      "Imbuído com energia mágica, este cajado fortalece feitiços e facilita a canalização contínua de mana",
+  },
+  "runed-blade": {
+    itemId: "runed-blade",
+    name: "Lâmina Runada",
+    rarity: "epic",
+    type: "weapon",
+    icon: "GiRuneSword",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 6,
+        active: true,
+        appliesTo: "daily",
+        description: "+6 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 22,
+        active: true,
+        appliesTo: "weekly",
+        description: "+22 XP em quests semanais",
+      },
+      // {
+      //   kind: "xp_multiplier",
+      //   amount: 1.1,
+      //   active: true,
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
+      // },
+    ],
+    description:
+      "Runas antigas brilham ao empunhar essa lâmina. Quanto maior a dedicação, mais forte se torna",
+  },
+  bow: {
+    itemId: "bow",
+    name: "Arco de Caçador",
+    rarity: "epic",
+    type: "weapon",
+    icon: "GiPocketBow",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 6,
+        active: true,
+        appliesTo: "daily",
+        description: "+6 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 22,
+        active: true,
+        appliesTo: "weekly",
+        description: "+22 XP em quests semanais",
+      },
+      // {
+      //   kind: "xp_multiplier",
+      //   amount: 1.1,
+      //   active: true,
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
+      // },
+    ],
+    description:
+      "Talhado de madeira viva, responde à vontade do arqueiro. Suas flechas parecem guiar-se pelo vento entre as árvores",
+  },
+
   // armor
   "initial-light-armor": {
     itemId: "initial-light-armor",
@@ -135,7 +274,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       },
     ],
     description:
-      "Veste simples feita de tecido com detalhes em couro, ideal para iniciantes.",
+      "Veste simples feita de tecido com detalhes em couro, ideal para iniciantes",
   },
   "heart-armor": {
     itemId: "heart-armor",
@@ -152,7 +291,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
         description: "+6 XP em quests semanais",
       },
     ],
-    description: "Veste do aventureiro, possui proteção básica.",
+    description: "Veste do aventureiro, possui proteção básica",
   },
   "chest-armor": {
     itemId: "chest-armor",
@@ -163,21 +302,21 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 7,
+        amount: 6,
         active: true,
         appliesTo: "weekly",
         description: "+6 XP em quests semanais",
       },
       {
         kind: "xp_bonus",
-        amount: 7,
+        amount: 6,
         active: true,
         appliesTo: "weekly",
         description: "+6 XP em quests semanais",
       },
     ],
     description:
-      "Armadura pesada que oferece boa proteção para um confronto prolongado.",
+      "Armadura pesada que oferece boa proteção para um confronto prolongado",
   },
   "leather-armor": {
     itemId: "leather-armor",
@@ -188,21 +327,21 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 6,
+        amount: 3,
         active: true,
         appliesTo: "daily",
-        description: "+2 XP em quests diárias",
+        description: "+3 XP em quests diárias",
       },
       {
         kind: "xp_bonus",
-        amount: 2,
+        amount: 4,
         active: true,
         appliesTo: "daily",
-        description: "+2 XP em quests diárias",
+        description: "+4 XP em quests diárias",
       },
     ],
     description:
-      "Armadura versátil que oferece conforto e mobilidade, ideal para lutas rápidas.",
+      "Armadura versátil que oferece conforto e mobilidade, ideal para lutas rápidas",
   },
   "shoulder-armor": {
     itemId: "shoulder-armor",
@@ -213,17 +352,17 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 1,
+        amount: 4,
         active: true,
         appliesTo: "daily",
-        description: "+1 XP em quests diárias",
+        description: "+4 XP em quests diárias",
       },
       {
         kind: "xp_bonus",
-        amount: 10,
+        amount: 17,
         active: true,
         appliesTo: "weekly",
-        description: "+14 XP em quests semanais",
+        description: "+17 XP em quests semanais",
       },
       // {
       //   kind: "xp_multiplier",
@@ -234,7 +373,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       // },
     ],
     description:
-      "Marteladas por mestres antigos, suas placas nunca cederam completamente.",
+      "Marteladas por mestres antigos, suas placas nunca cederam completamente",
   },
   "cape-armor": {
     itemId: "cape-armor",
@@ -245,17 +384,17 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 1,
+        amount: 7,
         active: true,
         appliesTo: "daily",
-        description: "+5 XP em quests diárias",
+        description: "+7 XP em quests diárias",
       },
       {
         kind: "xp_bonus",
         amount: 10,
         active: true,
         appliesTo: "weekly",
-        description: "+10 XP em quests semanais",
+        description: "+12 XP em quests semanais",
       },
       // {
       //   kind: "xp_multiplier",
@@ -266,7 +405,39 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
       // },
     ],
     description:
-      "Uma armadura feita em eras esquecidas, capaz de resistir ao tempo e ao aço.",
+      "Uma armadura feita em eras esquecidas, capaz de resistir ao tempo e ao aço",
+  },
+  robe: {
+    itemId: "robe",
+    name: "Manto misterioso",
+    rarity: "epic",
+    type: "armor",
+    icon: "GiRobe",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 1,
+        active: true,
+        appliesTo: "daily",
+        description: "+1 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 1,
+        active: true,
+        appliesTo: "weekly",
+        description: "+1 XP em quests semanais",
+      },
+      // {
+      //   kind: "xp_multiplier",
+      //   amount: 1.1,
+      //   active: true,
+      //   appliesTo: "all",
+      //   description: "+10% XP em todas as quests",
+      // },
+    ],
+    description:
+      "Um manto antigo, provavelmente feito para quem dominava a arte das magias",
   },
   // accessory
   "initial-ring": {
@@ -278,6 +449,25 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [],
     description: "Dizem que traz sorte para quem usa",
   },
+  necklace: {
+    itemId: "necklace",
+    name: "Colar simples",
+    rarity: "epic",
+    type: "accessory",
+    icon: "GiEmeraldNecklace",
+    effects: [],
+    description:
+      "Imbuído com magia sutil, este colar fortalece atributos básicos e auxilia o fluxo de energia",
+  },
+  "fishing-rod": {
+    itemId: "fishing-rod",
+    name: "Vara de pesca",
+    rarity: "common",
+    type: "accessory",
+    icon: "GiFishingPole",
+    effects: [],
+    description: "Bem descritivo",
+  },
   "antique-poncho": {
     itemId: "antique-poncho",
     name: "Poncho antigo",
@@ -285,24 +475,53 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     type: "accessory",
     icon: "GiPoncho",
     effects: [],
-    description: "Protege da chuva e do frio.",
+    description: "Protege da chuva e do frio",
   },
-  "sun-goggles": {
-    itemId: "sun-goggles",
-    name: "Óculos protetores",
-    rarity: "rare",
-    type: "accessory",
-    icon: "GiSteampunkGoggles",
-    effects: [],
-    description: "Comum entre viajantes que cruzam distâncias sob o sol.",
-  },
-  "lantern": {
+  lantern: {
     itemId: "lantern",
     name: "Lanterna",
     rarity: "rare",
     type: "accessory",
     icon: "GiOldLantern",
     effects: [],
-    description: "Uma fonte de luz confiável para avançar no escuro.",
+    description: "Uma fonte de luz no escuro sombrio",
+  },
+  "primitive-necklace": {
+    itemId: "primitive-necklace",
+    name: "Colar primitivo",
+    rarity: "rare",
+    type: "accessory",
+    icon: "GiPrimitiveNecklace",
+    effects: [],
+    description: "Colar antigo que parece emanar algum tipo de poder",
+  },
+  bracers: {
+    itemId: "bracers",
+    name: "Braçadeiras de couro",
+    rarity: "epic",
+    type: "accessory",
+    icon: "GiBracers",
+    effects: [],
+    description: "Protegem os braços de quem as usa, sem perder mobilidade",
+  },
+  "power-ring": {
+    itemId: "bracers",
+    name: "Anel do juramento",
+    rarity: "epic",
+    type: "accessory",
+    icon: "GiPowerRing",
+    effects: [],
+    description:
+      "Feito por um artesão do sudoeste especialmente para quem honra seus juramentos",
+  },
+  quiver: {
+    itemId: "quiver",
+    name: "Aljave de couro",
+    rarity: "epic",
+    type: "accessory",
+    icon: "GiQuiver",
+    effects: [],
+    description:
+      "Mantém suas flechas seguras e sempre à mão. Fiel companheiro do arco",
   },
 } as const;
