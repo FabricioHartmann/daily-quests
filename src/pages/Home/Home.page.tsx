@@ -11,7 +11,7 @@ export function Home() {
   const filteredRituals = rituals.filter((ritual) => ritual.isActive);
 
   return (
-    <div className="home-container">
+    <div className="home-page-container">
       <div className="home-header">
         <ProfileCard />
         <ExpeditionResume />

@@ -5,11 +5,8 @@
   padding: 8px;
 }
 
-.ritual-card-inactive {
-  display: flex;
+.ritual-card.inactive {
   background: #797979;
-  width: 480px;
-  padding: 8px;
 }
 
 .ritual-card-icon {

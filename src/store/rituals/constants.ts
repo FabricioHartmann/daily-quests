@@ -6,16 +6,16 @@ export const MOCKED_RITUALS: Ritual[] = [
     name: "Hidratar",
     icon: "GiPotionBall",
     description:
-      "Normalmente o ideal é beber aproximadamente 3L por dia, dependendo do peso, idade e atividade.",
+      "Normalmente o ideal é beber aproximadamente 3L por dia (dependendo do peso, idade e atividade)",
     category: "maintenance",
-    isActive: true,
+    isActive: false,
   },
   {
     id: "stretch_ritual",
     name: "Alongar",
     icon: "GiStrong",
     description:
-      "Fique de pé e se alongue por 30 ~ 60 segundos, ou caminhe um pouco.",
+      "Fique de pé e se alongue por 30 ~ 60 segundos, caminhe um pouco ou faça algum outro exercício.",
     category: "maintenance",
     isActive: false,
   },

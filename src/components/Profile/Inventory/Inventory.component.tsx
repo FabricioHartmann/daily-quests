@@ -84,7 +84,7 @@ export function Inventory() {
   return (
     <div className="inventory">
       <div className="inventory-header">
-        <Text size={isMobile ? "md" : "lg"} color="var(--white)">
+        <Text color="var(--white)">
           Inventário
         </Text>
       </div>
