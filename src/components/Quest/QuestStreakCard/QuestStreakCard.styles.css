@@ -5,7 +5,7 @@
   align-items: center;
   padding: 8px;
   gap: 8px;
-  width: 348px;
+  flex: 1;
   background-color: #868686;
 }
 
