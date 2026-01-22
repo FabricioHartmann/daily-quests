@@ -1,8 +1,18 @@
-import { useQuestStore } from "../../store/quests/quests.store";
-import { unlockAchievement } from "./rewardRules.helper";
-import type { RewardRule } from "./rewardRules.types";
+import { useQuestStore } from "../../../store/quests/quests.store";
+import { unlockAchievement } from "../rewardRules.helper";
+import type { RewardRule } from "../rewardRules.types";
 
 export const questRewardRules: RewardRule[] = [
+  {
+    id: "1-quest-created",
+    condition: () =>
+      useQuestStore
+        .getState()
+        .quests.filter((quest) => quest.status === "open").length >= 1,
+    effect: () => {
+      unlockAchievement("1-quest-created");
+    },
+  },
   {
     id: "10-quest-completed",
     condition: () =>
@@ -11,6 +21,16 @@ export const questRewardRules: RewardRule[] = [
         .quests.filter((quest) => quest.status === "completed").length >= 10,
     effect: () => {
       unlockAchievement("10-quests-completed");
+    },
+  },
+  {
+    id: "25-quest-completed",
+    condition: () =>
+      useQuestStore
+        .getState()
+        .quests.filter((quest) => quest.status === "completed").length >= 25,
+    effect: () => {
+      unlockAchievement("25-quests-completed");
     },
   },
   {
@@ -61,6 +81,16 @@ export const questRewardRules: RewardRule[] = [
         .quests.filter((quest) => quest.status === "completed").length >= 500,
     effect: () => {
       unlockAchievement("500-quests-completed");
+    },
+  },
+  {
+    id: "750-quest-completed",
+    condition: () =>
+      useQuestStore
+        .getState()
+        .quests.filter((quest) => quest.status === "completed").length >= 750,
+    effect: () => {
+      unlockAchievement("750-quests-completed");
     },
   },
   {

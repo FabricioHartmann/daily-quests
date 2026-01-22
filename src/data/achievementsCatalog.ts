@@ -3,6 +3,15 @@ import type { AchievementCatalog } from "../store/achievements/achievements.type
 export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
   // ===== LEVEL =====
   {
+    id: "level-2-reached",
+    label: "Level UP!",
+    requirements: "Alcançar o nível 2",
+    reward: {
+      id: "initial-light-armor",
+      type: "item",
+    },
+  },
+  {
     id: "level-5-reached",
     label: "Aprendiz",
     requirements: "Alcançar o nível 5",
@@ -15,15 +24,19 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-10-reached",
     label: "Aprendiz II",
     requirements: "Alcançar o nível 10",
+    reward: {
+      id: "croc-sword",
+      type: "item",
+    },
   },
   {
     id: "level-15-reached",
     label: "Aprendiz III",
     requirements: "Alcançar o nível 15",
-    // reward: {
-    //   id: "novice-sword",
-    //   type: "item",
-    // },
+    reward: {
+      id: "fishing-rod",
+      type: "item",
+    },
   },
   {
     id: "level-20-reached",
@@ -38,15 +51,19 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-25-reached",
     label: "Aventureiro II",
     requirements: "Alcançar o nível 25",
+    reward: {
+      id: "relic-blade",
+      type: "item",
+    },
   },
   {
     id: "level-30-reached",
     label: "Aventureiro III",
     requirements: "Alcançar o nível 30",
-    // reward: {
-    //   id: "adventurer-sword",
-    //   type: "item",
-    // },
+    reward: {
+      id: "chest-armor",
+      type: "item",
+    },
   },
   {
     id: "level-35-reached",
@@ -61,15 +78,15 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-40-reached",
     label: "Veterano II",
     requirements: "Alcançar o nível 40",
+    reward: {
+      id: "antique-poncho",
+      type: "item",
+    },
   },
   {
     id: "level-45-reached",
     label: "Veterano III",
     requirements: "Alcançar o nível 45",
-    // reward: {
-    //   id: "black-iron-sword",
-    //   type: "item",
-    // },
   },
   {
     id: "level-50-reached",
@@ -84,15 +101,19 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-55-reached",
     label: "Herói II",
     requirements: "Alcançar o nível 55",
+    reward: {
+      id: "shoulder-armor",
+      type: "item",
+    },
   },
   {
     id: "level-60-reached",
     label: "Herói III",
     requirements: "Alcançar o nível 60",
-    // reward: {
-    //   id: "silver-sword",
-    //   type: "item",
-    // },
+    reward: {
+      id: "double-swords",
+      type: "item",
+    },
   },
   {
     id: "level-70-reached",
@@ -107,35 +128,57 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-80-reached",
     label: "Lendário II",
     requirements: "Alcançar o nível 80",
+    reward: {
+      id: "robe",
+      type: "item",
+    },
   },
   {
     id: "level-100-reached",
     label: "Lendário III",
     requirements: "Alcançar o nível 100",
-    // reward: {
-    //   id: "arcane-sword",
-    //   type: "item",
-    // },
+    reward: {
+      id: "power-ring",
+      type: "item",
+    },
   },
   // ===== QUESTS =====
   {
+    id: "1-quest-created",
+    label: "Boas vindas",
+    requirements: "Criar sua primeira quest",
+    reward: {
+      id: "broken-sword",
+      type: "item",
+    },
+  },
+  {
     id: "10-quests-completed",
-    label: "Mais que obrigação",
+    label: "Obrigação",
     requirements: "Completar 10 quests",
+  },
+  {
+    id: "25-quests-completed",
+    label: "Mais que obrigação",
+    requirements: "Completar 25 quests",
+    reward: {
+      id: "heart-armor",
+      type: "item",
+    },
   },
   {
     id: "50-quests-completed",
     label: "Aplicado",
     requirements: "Completar 50 quests",
+    reward: {
+      id: "lantern",
+      type: "item",
+    },
   },
   {
     id: "100-quests-completed",
     label: "Dedicado",
     requirements: "Completar 100 quests",
-    // reward: {
-    //   id: "copper-bracelet",
-    //   type: "item",
-    // },
   },
   {
     id: "250-quests-completed",
@@ -150,10 +193,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "350-quests-completed",
     label: "Comprometido",
     requirements: "Completar 350 quests",
-    // reward: {
-    //   id: "silver-necklace",
-    //   type: "item",
-    // },
+    reward: {
+      id: "cape-armor",
+      type: "item",
+    },
   },
   {
     id: "500-quests-completed",
@@ -168,10 +211,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "750-quests-completed",
     label: "Devoto",
     requirements: "Completar 750 quests",
-    // reward: {
-    //   id: "gold-ring",
-    //   type: "item",
-    // },
+    reward: {
+      id: "runed-blade",
+      type: "item",
+    },
   },
   {
     id: "1000-quests-completed",
@@ -185,36 +228,36 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
 
   // ===== EXPEDIÇÕES =====
   {
-    id: "1-expedition-started",
+    id: "1-expedition-completed",
     label: "Partida Inicial",
-    requirements: "Iniciar sua primeira expedição",
+    requirements: "Completar sua primeira expedição",
+    reward: {
+      id: "initial-ring",
+      type: "item",
+    },
   },
   {
     id: "10-expeditions-completed",
     label: "Errante",
     requirements: "Completar 10 expedições",
-    // reward: {
-    //   id: "leather-backpack",
-    //   type: "item",
-    // },
   },
   {
     id: "25-expeditions-completed",
-    label: "Andarilho",
+    label: "Viajante",
     requirements: "Completar 25 expedições",
     reward: {
-      type: "title",
-      id: "andarilho",
+      id: "two-handed-sword",
+      type: "item",
     },
   },
   {
     id: "50-expeditions-completed",
-    label: "Viajante",
+    label: "Andarilho",
     requirements: "Completar 50 expedições",
-    // reward: {
-    //   id: "leather-backpack",
-    //   type: "item",
-    // },
+    reward: {
+      type: "title",
+      id: "andarilho",
+    },
   },
   {
     id: "100-expeditions-completed",
@@ -229,10 +272,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "250-expeditions-completed",
     label: "Nômade",
     requirements: "Completar 250 expedições",
-    // reward: {
-    //   id: "reinforced-leather-backpack",
-    //   type: "item",
-    // },
+    reward: {
+      id: "bow",
+      type: "item",
+    },
   },
   {
     id: "500-expeditions-completed",
@@ -244,15 +287,15 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
 
-  // ===== EXPEDIÇÕES =====
+  // ===== RITUAIS =====
   {
     id: "1-ritual-completed",
     label: "Primeiro ritual",
     requirements: "Concluir seu primeiro ritual",
-        // reward: {
-    //   id: "leather-backpack",
-    //   type: "item",
-    // },
+    reward: {
+      id: "iron-sword",
+      type: "item",
+    },
   },
   {
     id: "5-rituals-completed",
@@ -264,35 +307,62 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
   {
-    id: "15-rituals-completed",
+    id: "10-rituals-completed",
     label: "Ritualista II",
-    requirements: "Concluir 15 rituais",
+    requirements: "Concluir 10 rituais",
+  },
+  {
+    id: "20-rituals-completed",
+    label: "Ritualista III",
+    requirements: "Concluir 20 rituais",
     reward: {
-      type: "title",
-      id: "andarilho",
+      id: "dagger",
+      type: "item",
     },
   },
   {
     id: "30-rituals-completed",
-    label: "Ritualista III",
+    label: "Ritualista IV",
     requirements: "Concluir 30 rituais",
-    // reward: {
-    //   id: "leather-backpack",
-    //   type: "item",
-    // },
+    reward: {
+      id: "leather-armor",
+      type: "item",
+    },
   },
   {
     id: "50-rituals-completed",
-    label: "Ritualista Experiente",
+    label: "Ritualista V",
     requirements: "Concluir 50 rituais",
+    reward: {
+      id: "primitive-necklace",
+      type: "item",
+    },
   },
   {
     id: "100-rituals-completed",
-    label: "Ritualista Mestre",
+    label: "Ritualista Consistente",
     requirements: "Concluir 100 rituais",
+    reward: {
+      id: "staff",
+      type: "item",
+    },
+  },
+  {
+    id: "200-rituals-completed",
+    label: "Ritualista Mestre",
+    requirements: "Concluir 200 rituais",
     reward: {
       type: "title",
       id: "ritualista-mestre",
+    },
+  },
+  {
+    id: "300-rituals-completed",
+    label: "Ritualista Imortal",
+    requirements: "Concluir 300 rituais",
+    reward: {
+      id: "necklace",
+      type: "item",
     },
   },
 
@@ -306,29 +376,23 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "10-items-acquired",
     label: "Colecionador",
     requirements: "Adquirir 10 itens",
+    reward: {
+      id: "quiver",
+      type: "item",
+    },
   },
   {
     id: "20-items-acquired",
     label: "Acumulador",
     requirements: "Adquirir 20 itens",
-  },
-  {
-    id: "30-items-acquired",
-    label: "Relicário",
-    requirements: "Adquirir 30 itens",
-  },
-  {
-    id: "50-items-acquired",
-    label: "Inventário perfeito",
-    requirements: "Adquirir 50 itens",
-    // reward: {
-    //   id: "inventario perfeito",
-    //   type: "title",
-    // },
+    reward: {
+      id: "bracers",
+      type: "item",
+    },
   },
   {
     id: "3-items-equipped",
     label: "Totalmente Equipado",
-    requirements: "Equipar 4 itens",
+    requirements: "Equipar 3 itens",
   },
 ];

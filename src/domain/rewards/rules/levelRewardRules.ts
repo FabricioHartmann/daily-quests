@@ -1,40 +1,13 @@
-import { useProfileStore } from "../../store/profile/profile.store";
-import { unlockAchievement, unlockItems } from "./rewardRules.helper";
-import type { RewardRule } from "./rewardRules.types";
+import { useProfileStore } from "../../../store/profile/profile.store";
+import { unlockAchievement } from "../rewardRules.helper";
+import type { RewardRule } from "../rewardRules.types";
 
 export const levelRewardRules: RewardRule[] = [
   {
-    id: "level2-item-reward",
+    id: "level-2-achievement-reward",
     condition: () => useProfileStore.getState().profile.level >= 2,
     effect: () => {
-      unlockItems([
-        "iron-sword",
-        "cape-armor",
-        "runed-blade",
-        "antique-poncho",
-        "lantern",
-        "initial-ring",
-        "chest-armor",
-        "croc-sword",
-        "leather-armor",
-        "heart-armor",
-        "initial-light-armor",
-        "shoulder-armor",
-        "relic-blade",
-        "two-handed-sword",
-        "bow",
-        "bracers",
-        "broken-sword",
-        "dagger",
-        "double-swords",
-        "fishing-rod",
-        "necklace",
-        "robe",
-        "staff",
-        "quiver",
-        "power-ring",
-        "primitive-necklace",
-      ]);
+      unlockAchievement("level-2-reached");
     },
   },
   {

@@ -1,7 +1,6 @@
 import { useAchievementStore } from "../../store/achievements/achievements.store";
 import { ACHIEVEMENTS_CATALOG } from "../../data/achievementsCatalog";
 import type { AchievementId } from "../../store/achievements/achievements.types";
-import type { ItemId } from "../../store/inventory/inventory.types";
 import type { TitleId } from "../../store/profile/profile.types";
 import { TITLES_CATALOG } from "../../data/titlesCatalog";
 import { toast } from "sonner";
@@ -11,31 +10,22 @@ import { useProfileStore } from "../../store/profile/profile.store";
 export const unlockAchievement = (id: AchievementId) => {
   const achievementStore = useAchievementStore.getState();
   if (achievementStore.isUnlocked(id)) return;
-
   achievementStore.unlockAchievement(id);
-  const achievement = ACHIEVEMENTS_CATALOG.find((a) => a.id === id);
-  toast("Conquista desbloqueada!", {
-    description: achievement?.label,
-  });
 
+  let achievementText = ``;
+
+  const achievement = ACHIEVEMENTS_CATALOG.find((a) => a.id === id);
   if (achievement?.reward?.type === "item") {
     useInventoryStore.getState().addItem(achievement?.reward?.id);
+    achievementText = 'Novo item adquirido';
   }
   if (achievement?.reward?.type === "title") {
     useProfileStore.getState().unlockTitle(achievement?.reward?.id);
+    achievementText = 'Novo título adquirido';
   }
-};
-
-export const unlockItems = (ids: ItemId[]) => {
-  ids.map((id) => useInventoryStore.getState().addItem(id));
-  toast(
-    `${
-      ids.length > 1 ? "Novos itens desbloqueados" : "Novo item desbloqueado"
-    }`,
-    {
-      description: "Verifique o seu inventário.",
-    }
-  );
+  toast(`Conquista: ${achievement?.label}`, {
+    description: achievementText || 'Nova conquista desbloqueada',
+  });
 };
 
 export const unlockTitle = (id: TitleId) => {

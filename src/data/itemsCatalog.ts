@@ -33,7 +33,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
         description: "+0 XP em quests diárias",
       },
     ],
-    description: "Imprestável, não te ajuda em quase nada",
+    description: "Imprestável, não te ajuda em nada",
   },
   "croc-sword": {
     itemId: "croc-sword",
@@ -501,18 +501,34 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     rarity: "epic",
     type: "accessory",
     icon: "GiBracers",
-    effects: [],
-    description: "Protegem os braços de quem as usa, sem perder mobilidade",
+    effects: [
+      {
+        kind: "xp_bonus",
+        amount: 4,
+        active: true,
+        appliesTo: "daily",
+        description: "+4 XP em quests diárias",
+      },
+      {
+        kind: "xp_bonus",
+        amount: 8,
+        active: true,
+        appliesTo: "weekly",
+        description: "+8 XP em quests semanais",
+      },
+    ],
+    description:
+      "Protegem os braços de quem as usa, sem perder mobilidade. Ideal para combate corpo a corpo",
   },
   "power-ring": {
-    itemId: "bracers",
-    name: "Anel do juramento",
+    itemId: "power-ring",
+    name: "Anel do poder",
     rarity: "epic",
     type: "accessory",
     icon: "GiPowerRing",
     effects: [],
     description:
-      "Feito por um artesão do sudoeste especialmente para quem honra seus juramentos",
+      "Feito por um artesão do sudoeste, esse anel esconde um poder que poucos entendem",
   },
   quiver: {
     itemId: "quiver",

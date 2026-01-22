@@ -2,6 +2,7 @@ import type { ItemId } from "../inventory/inventory.types";
 import type { TitleId } from "../profile/profile.types";
 
 export type AchievementId =
+  | "level-2-reached"
   | "level-5-reached"
   | "level-10-reached"
   | "level-15-reached"
@@ -25,6 +26,7 @@ export type AchievementId =
   | "90-days-streak"
   | "1-quest-created"
   | "10-quests-completed"
+  | "25-quests-completed"
   | "50-quests-completed"
   | "100-quests-completed"
   | "250-quests-completed"
@@ -32,7 +34,7 @@ export type AchievementId =
   | "500-quests-completed"
   | "750-quests-completed"
   | "1000-quests-completed"
-  | "1-expedition-started"
+  | "1-expedition-completed"
   | "10-expeditions-completed"
   | "25-expeditions-completed"
   | "50-expeditions-completed"
@@ -42,15 +44,17 @@ export type AchievementId =
   | "5-expeditions-in-a-day"
   | "1-ritual-completed"
   | "5-rituals-completed"
-  | "15-rituals-completed"
+  | "10-rituals-completed"
+  | "20-rituals-completed"
   | "30-rituals-completed"
   | "50-rituals-completed"
   | "100-rituals-completed"
+  | "200-rituals-completed"
+  | "300-rituals-completed"
   | "5-expeditions-in-a-day"
   | "5-items-acquired"
   | "10-items-acquired"
   | "20-items-acquired"
-  | "30-items-acquired"
   | "50-items-acquired"
   | "3-items-equipped";
 
