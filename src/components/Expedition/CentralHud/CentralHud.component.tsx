@@ -5,7 +5,7 @@ import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
-import { GiInfo, GiLockedChest } from "react-icons/gi";
+import { GiLockedChest } from "react-icons/gi";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { ExpeditionInformationModal } from "../../Modal/variants/ExpeditionInformationModal/ExpeditionInformationModal.component";
@@ -38,7 +38,6 @@ export function CentralHUD() {
           </div>
         )}
       </div>
-      <Text size="sm">Recompensas disponíveis: ∞</Text>
       <RenderIf condition={isMobile}>
         <Button
           onClick={openInformationModal}

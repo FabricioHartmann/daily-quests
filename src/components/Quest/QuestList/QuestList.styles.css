@@ -36,8 +36,7 @@
 }
 
 .quest-board::-webkit-scrollbar-track {
-  background: var(--list-bg-color);
-  border: none;
+  background: #5e5e5e;
   border: 2px solid #fff;
 }
 

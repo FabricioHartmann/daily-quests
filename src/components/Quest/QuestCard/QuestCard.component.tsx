@@ -55,10 +55,10 @@ export function QuestCard({
           {quest.description}
         </Text>
         <div className="card-footer">
-          <Text size="sm" color="var(--black)" italic>
+          <Text size="xs" weight={"bold"} color="#888" italic>
             {quest.category}
           </Text>
-          <Text size="sm" weight={"bold"} color="#888">
+          <Text size="xs" weight={"bold"} color="#888" italic>
             {questExpPoints} xp
           </Text>
         </div>

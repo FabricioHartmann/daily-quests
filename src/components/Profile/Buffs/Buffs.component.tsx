@@ -14,7 +14,7 @@ export function Buffs() {
   return (
     <div className="buffs-wrapper">
       {icons.map((Icon, index) => (
-        <Icon key={index} size={20} color="var(--black)" />
+        <Icon key={index} size={22} color="var(--black)" />
       ))}
     </div>
   );

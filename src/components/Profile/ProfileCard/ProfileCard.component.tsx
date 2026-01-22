@@ -49,7 +49,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
         <div className="profile-footer">
           <Buffs />
           <div className="profile-card-title-wrapper">
-            <Text italic color="var(--black)">
+            <Text size="sm" italic color="var(--black)">
               {selectedTitleObj.label}
             </Text>
             <Menu

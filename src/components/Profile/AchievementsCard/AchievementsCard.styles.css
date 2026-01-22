@@ -10,7 +10,3 @@
   background-color: var(--white);
   cursor: pointer;
 }
-
-.achievements-card:hover {
-  border: 1px solid black;
-}

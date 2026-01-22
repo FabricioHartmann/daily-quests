@@ -42,7 +42,6 @@
   display: flex;
   justify-content: space-between;
   gap: 4px;
-  height: 20px;
 }
 
 .profile-card-title-wrapper {
