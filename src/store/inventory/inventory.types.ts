@@ -8,6 +8,11 @@ export type ItemId =
   | "two-handed-sword"
   | "relic-blade"
   | "runed-blade"
+  | "broken-sword"
+  | "dagger"
+  | "double-swords"
+  | "bow"
+  | "staff"
   // armors
   | "initial-light-armor"
   | "heart-armor"
@@ -15,12 +20,17 @@ export type ItemId =
   | "chest-armor"
   | "leather-armor"
   | "cape-armor"
+  | "robe"
   //accessories
   | "initial-ring"
+  | "necklace"
   | "antique-poncho"
-  | "sun-goggles"
   | "lantern"
-  | "initial-ring"
+  | "bracers"
+  | "power-ring"
+  | "fishing-rod"
+  | "quiver"
+  | "primitive-necklace";
 
 export type IconId = keyof typeof ITEM_ICONS;
 export type ItemRarity = "common" | "rare" | "epic";

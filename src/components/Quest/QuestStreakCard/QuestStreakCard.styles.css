@@ -1,0 +1,16 @@
+.quests-streak-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 348px;
+  background-color: #868686;
+}
+
+@media (max-width: 768px) {
+  .quests-streak-card {
+    width: 40%;
+  }
+}

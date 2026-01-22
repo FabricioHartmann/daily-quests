@@ -1,7 +1,8 @@
-.quests-page {
+.quests-page-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
 }
 
 .quests-controller-wrapper {
@@ -12,7 +13,7 @@
 
 .quests-page-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   gap: 16px;
 }
@@ -21,7 +22,8 @@
   .quests-page-header {
     gap: 8px;
   }
-  .quests-page {
+  .quests-page-container {
+    height: calc(100dvh - 62px);
     gap: 8px;
   }
 }

@@ -27,7 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Toaster position="top-right" duration={5000} />
+      <Toaster position="top-right" duration={6000} />
       <EffectsLayer />
       <ModalRoot />
       <Routes>

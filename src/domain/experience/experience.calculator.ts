@@ -1,7 +1,7 @@
 import type { ExperienceTypes } from "./experience.types";
 
 export function expForNextLevel(level: number): number {
-  return 100 + (level - 1) * 22 + Math.floor(level * level * 0.2)
+  return Math.floor((80 + level * 15) * 1.15);
 }
 
 export function calculateExperience({

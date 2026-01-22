@@ -12,7 +12,7 @@ export function RitualCard({ ritual }: RitualProps) {
   const phase = useRitualsStore((s) => s.phase);
 
   return (
-    <div className={`ritual-card${ritual.isActive ? "" : "-inactive"}`}>
+    <div className={`ritual-card ${ritual.isActive ? "" : "inactive"}`}>
       <div className="ritual-card-icon">
         <Icon size={24} color="white" />
       </div>

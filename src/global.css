@@ -13,17 +13,21 @@
   --fail-color: #ff4444;
   --fill-progress-color: #269c26;
   --progress-empty: #4e4e4e;
-  --ritual-card-color: #3f2b50;
+  --ritual-card-color: #41728f;
   --ritual-card-color-finished: #1f521e;
-
 
   --white: #f7f7f7;
   --black: #1d1d1d;
   --light-gray: #b1b1b1;
 
-  --sonner-bg: #000;
-  --sonner-text: #00ff88;
-  --sonner-border: #00ff88;
+  --sonner-bg: #ddf0e3;
+  [data-sonner-toast]{
+    background: var(--sonner-bg) !important;
+    
+  }
+  [data-description] {
+    color: #272727 !important;
+  }
 }
 
 html,

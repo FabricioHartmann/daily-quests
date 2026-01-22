@@ -9,11 +9,11 @@ export function QuestProgressCard() {
   const lastCompletedQuest = useMemo(() => {
     if (!quests?.length) return null;
     const completedQuests = quests.filter(
-      (quest) => quest.status === "completed" && quest.completedAt
+      (quest) => quest.status === "completed" && quest.completedAt,
     );
     if (!completedQuests.length) return null;
     const mostRecentQuest = completedQuests.reduce((latest, quest) =>
-      quest.completedAt! > latest.completedAt! ? quest : latest
+      quest.completedAt! > latest.completedAt! ? quest : latest,
     );
     return mostRecentQuest;
   }, [quests]);
@@ -21,17 +21,17 @@ export function QuestProgressCard() {
   return (
     <div className="quests-progress-card">
       <div className="quests-progress-header">
-        <Text size="lg" color="var(--black)">
-          Progresso
-        </Text>
+        <Text size="sm" color="var(--black)">Progresso</Text>
       </div>
       <div className="quests-progress-content">
         <div className="quests-progress-label">
-          <Text color="var(--black)">Última quest concluída:</Text>
+          <Text size="sm" color="var(--black)">
+            Última quest concluída:
+          </Text>
           {!!lastCompletedQuest?.id ? (
             <div className="quests-progress-data">
-              <Text italic color="var(--card-title)">
-                {lastCompletedQuest?.title} (+{lastCompletedQuest?.points} xp)
+              <Text size="sm" color="var(--card-title)">
+                {lastCompletedQuest?.title}
               </Text>
             </div>
           ) : (
@@ -39,8 +39,8 @@ export function QuestProgressCard() {
           )}
         </div>
         <div className="quests-progress-label">
-          <Text color="var(--black)">
-            Total de quests concluídas: {totalQuestsCompleted}
+          <Text size="sm" color="var(--black)">
+            Quests concluídas: {totalQuestsCompleted}
           </Text>
         </div>
       </div>

@@ -41,7 +41,7 @@ export function AchievementsModal() {
                   </Text>
                   <RenderIf condition={!!achievement.reward}>
                     <Text size="xs">
-                      recompensa:{" "}
+                      +{" "}
                       {achievement.reward?.type === "title" ? "título" : "item"}
                     </Text>
                   </RenderIf>

@@ -37,7 +37,7 @@ export function Menu({ trigger, items, align = "right" }: MenuProps) {
               }}
               disabled={item.disabled}
             >
-              <Text italic color="var(--black)">{item.label}</Text>
+              <Text size="sm" italic color="var(--black)">{item.label}</Text>
             </button>
           ))}
         </div>

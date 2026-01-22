@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Text, RenderIf } from "../../../Generic";
-import { FloatingPoints } from "../../FloatingPoints/FloatingPoints.component";
 import { NewQuestCard } from "../../NewQuestCard/NewQuestCard.component";
 import { QuestCard } from "../../QuestCard/QuestCard.component";
 import type { QuestTogglePayload } from "../../QuestCard/QuestCard.types";
 import "../QuestList.styles.css";
 import type { QuestListBaseProps } from "../QuestListTypes";
 import { QuestListEmptyState } from "../QuestListEmptyState/QuestListBase.component";
+import { toast } from "sonner";
 
 export function QuestListBase({
   quests,
@@ -14,27 +14,23 @@ export function QuestListBase({
   editingMode = false,
   title,
 }: QuestListBaseProps) {
-  const [floatingEffect, setFloatingEffect] =
-    useState<QuestTogglePayload | null>(null);
-
   const handleToggleQuest = (payload: QuestTogglePayload) => {
-    setFloatingEffect(payload);
-    setTimeout(() => setFloatingEffect(null), 1000);
+    toast("Quest completada!", {
+      description: `Adquiriu ${payload.points} XP`,
+      duration: 3000,
+      position: "bottom-right"
+    });
   };
 
   return (
     <div className="list-wrapper">
       <RenderIf condition={!!title}>
         <div className="list-title">
-          <Text size="lg">{title}</Text>
+          <Text>{title}</Text>
         </div>
       </RenderIf>
 
       <div className="quest-board list-bg-color">
-        <div className="effects-layer">
-          {floatingEffect && <FloatingPoints {...floatingEffect} />}
-        </div>
-
         <div className="list">
           <RenderIf condition={editingMode}>
             <NewQuestCard questType={questType} />
@@ -50,7 +46,7 @@ export function QuestListBase({
           ))}
 
           {!quests.length && !editingMode && (
-           <QuestListEmptyState questType={questType} />
+            <QuestListEmptyState questType={questType} />
           )}
         </div>
       </div>

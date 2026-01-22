@@ -1,4 +1,4 @@
-.home-container {
+.home-page-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -20,14 +20,17 @@
   justify-content: start;
   width: 100%;
   gap: 16px;
+  flex: 1;
+  min-height: 0;
 }
 
 @media (max-width: 768px) {
   .quests-wrapper {
     flex-direction: column;
   }
-  .home-container {
+  .home-page-container {
     gap: 8px;
+    height: calc(100dvh - 62px);
   }
   .home-header {
     flex-direction: column;

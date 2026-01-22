@@ -43,7 +43,7 @@
     flex-direction: column;
   }
   .ritual-cd-select {
-    width: 100%;
+    width: 50%;
   }
   .ritual-config-action {
     margin-top: 6px;
@@ -54,5 +54,8 @@
 @media (max-width: 320px) {
   .ritual-checkboxes {
     flex-direction: column;
+  }
+  .ritual-cd-select {
+    width: 100%;
   }
 }

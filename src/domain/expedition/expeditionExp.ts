@@ -1,6 +1,6 @@
 export const generateExpeditionExp = (playerLevel: number) => {
-  const baseMin = 57;
-  const baseMax = 89;
+  const baseMin = 37;
+  const baseMax = 69;
 
   const FIXED_PER_LEVEL = 2;
   const PERCENT_PER_LEVEL = 0.01;

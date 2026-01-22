@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 8px;
   gap: 8px;
-  width: 320px;
+  width: 356px;
   background-color: var(--white);
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   width: 100%;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--card-title);
+  border-bottom: 1px solid rgb(189, 189, 189);
 }
 
 .quests-progress-label {
@@ -35,6 +35,6 @@
 
 @media (max-width: 768px) {
   .quests-progress-card {
-    width: 100%;
+    width: 60%;
   }
 }

@@ -1,5 +1,5 @@
 .quest-card {
-  border: 2px solid #f5f2fb;
+  border: 2px solid #000000;
   padding: 8px;
   width: 100%;
   background-color: #faf6f4;
@@ -51,11 +51,6 @@
 
 .quest-card.status-completed {
   background-color: var(--light-gray);
-  border-color: var(--light-gray);
-}
-
-.quest-card.daily-quest {
-  border-left: 4px solid rgb(97, 165, 255);
 }
 
 @media (max-width: 768px) {

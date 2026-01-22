@@ -47,18 +47,18 @@ export function QuestCard({
     <div className={`quest-card status-${quest?.status}`}>
       <div className="quest-card-content">
         <div className="card-header">
-          <Text weight={600} color="var(--card-title)">
+          <Text size="sm" weight={600} color="var(--card-title)">
             {quest.title}
           </Text>
         </div>
-        <Text className="card-description" color="var(--black)">
+        <Text size="sm" className="card-description" color="var(--black)">
           {quest.description}
         </Text>
         <div className="card-footer">
-          <Text color="var(--card-title)" italic>
+          <Text size="xs" weight={"bold"} color="#888" italic>
             {quest.category}
           </Text>
-          <Text weight={"bold"} color="#888">
+          <Text size="xs" weight={"bold"} color="#888" italic>
             {questExpPoints} xp
           </Text>
         </div>
