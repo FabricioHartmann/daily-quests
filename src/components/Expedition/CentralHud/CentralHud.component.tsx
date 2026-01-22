@@ -14,6 +14,7 @@ export function CentralHUD() {
   const { timeLeft, progress } = useExpeditionTimer();
   const isMobile = useIsMobile();
   const phase = useExpeditionStore((s) => s.phase);
+  const totalExpeditions = useExpeditionStore((s) => s.totalExpeditions);
   const { openModal } = useModalStore();
 
   const openInformationModal = () => {
@@ -37,6 +38,9 @@ export function CentralHUD() {
             </div>
           </div>
         )}
+      </div>
+      <div>
+        <Text size="xs">Expedições concluídas: {totalExpeditions}</Text>
       </div>
       <RenderIf condition={isMobile}>
         <Button
