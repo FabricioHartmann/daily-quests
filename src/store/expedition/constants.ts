@@ -1,7 +1,7 @@
 import type { Phase } from "./expedition.types";
 
-export const JOURNEY_TIME = 20;
-export const CAMPFIRE_TIME = 5;
+export const JOURNEY_TIME = 25 * 60;
+export const CAMPFIRE_TIME = 5 * 60;
 
 export const phaseLabel: Record<Phase, string> = {
   idle: "Não iniciada",
