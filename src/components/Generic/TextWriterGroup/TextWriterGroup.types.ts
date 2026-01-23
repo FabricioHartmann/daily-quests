@@ -10,4 +10,5 @@ export type TextWriterGroupProps = {
     | ReactElement<TextWriterGroupChild>[];
   onComplete?: () => void;
   className?: string;
+  size?: 'xs' | 'sm' | 'md'
 };

@@ -7,6 +7,7 @@ export function TextWriter({
   onComplete,
   active = true,
   classNameAndIndex,
+  size = 'md'
 }: TypewriterTextProps) {
   const [displayedText, setDisplayedText] = useState("");
 
@@ -30,7 +31,7 @@ export function TextWriter({
   }, [text, onComplete, active]);
 
   return (
-    <Text className={classNameAndIndex} style={{ position: "relative" }}>
+    <Text size={size} className={classNameAndIndex} style={{ position: "relative" }}>
       <span style={{ visibility: "hidden" }}>{text}</span>
       <span
         style={{

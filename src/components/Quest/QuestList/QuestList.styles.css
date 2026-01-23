@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 480px;
+  height: 460px;
   min-height: 280px;
   background-color: var(--list-bg-color);
   overflow: hidden;
@@ -27,6 +27,13 @@
   gap: 8px;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-gutter: auto;
+}
+
+@supports (overflow: overlay) {
+  .list {
+    overflow-y: overlay;
+  }
 }
 
 .list::-webkit-scrollbar {
@@ -35,12 +42,12 @@
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: var(--white);
+  background: #2d2d64;
+  border: 1px solid #ffffff;
 }
 
 .list::-webkit-scrollbar-track {
-  background: #5e5e5e;
-  border: 2px solid #fff;
+  border: 1px solid rgb(139, 139, 139);
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { QuestState } from "./quests.types";
-import { MOCKED_QUESTS } from "./quests.constants";
+import { DEFAULT_QUESTS } from "./quests.constants";
 import { calculateQuestXP } from "../../domain/quest/questExperience.calculator";
 import { useInventoryStore } from "../inventory/inventory.store";
 import { useProfileStore } from "../profile/profile.store";
@@ -10,7 +10,7 @@ export const useQuestStore = create(
   persist<QuestState>(
     (set) => ({
       totalQuestsCompleted: 0,
-      quests: MOCKED_QUESTS,
+      quests: DEFAULT_QUESTS,
       addQuest: (quest) =>
         set((state) => ({ quests: [...state.quests, quest] })),
 

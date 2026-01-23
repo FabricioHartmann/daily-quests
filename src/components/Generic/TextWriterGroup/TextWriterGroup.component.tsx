@@ -9,6 +9,7 @@ export function TextWriterGroup({
   children,
   onComplete,
   className,
+  size,
 }: TextWriterGroupProps) {
   const items = Children.toArray(
     children
@@ -25,6 +26,7 @@ export function TextWriterGroup({
           <TextWriter
             key={index}
             text={text}
+            size={size}
             active={index === currentIndex}
             onComplete={() => {
               if (index < items.length - 1) {

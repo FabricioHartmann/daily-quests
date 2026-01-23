@@ -19,12 +19,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 2.5px 0;
 }
 
 .ritual-resume-timer {
   position: absolute;
-  right: 3px;
+  right: 4px;
   bottom: 0px;
 }
 

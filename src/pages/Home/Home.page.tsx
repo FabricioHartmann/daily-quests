@@ -4,7 +4,6 @@ import { ExpeditionResume } from "../../components/Expedition";
 import { RitualResume } from "../../components/Ritual/RitualResume/RitualResume.component";
 import { useRitualsStore } from "../../store/rituals/rituals.store";
 import { RenderIf } from "../../components/Generic";
-import { Text } from "../../components/Generic";
 import "./Home.styles.css";
 
 export function Home() {
@@ -13,8 +12,6 @@ export function Home() {
 
   return (
     <div className="home-page-container">
-      <Text size="lg">My Daily Quests</Text>
-
       <div className="home-header">
         <ProfileCard />
         <ExpeditionResume />

@@ -27,13 +27,13 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     effects: [
       {
         kind: "xp_bonus",
-        amount: 0,
+        amount: 1,
         active: true,
         appliesTo: "daily",
-        description: "+0 XP em quests diárias",
+        description: "+1 XP em quests diárias",
       },
     ],
-    description: "Imprestável, não te ajuda em nada",
+    description: "Espada velha e danificada, não te ajuda em quase nada",
   },
   "croc-sword": {
     itemId: "croc-sword",
@@ -269,7 +269,7 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
         kind: "xp_bonus",
         amount: 2,
         active: true,
-        appliesTo: "weekly",
+        appliesTo: "daily",
         description: "+2 XP em quests diárias",
       },
     ],
