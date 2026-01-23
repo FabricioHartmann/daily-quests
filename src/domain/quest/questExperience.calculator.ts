@@ -1,8 +1,8 @@
 import type { InventoryItem } from "../../store/inventory/inventory.types";
 
 export const QUEST_BASE_XP = {
-  daily: 20,
-  weekly: 75,
+  daily: 25,
+  weekly: 80,
 } as const;
 
 export const calculateQuestXP = (
