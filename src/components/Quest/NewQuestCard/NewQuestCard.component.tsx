@@ -17,7 +17,7 @@ export function NewQuestCard({ questType }: NewQuestCardProps) {
     <div onClick={openNewCardModal}>
       <Button variant="primary" size="lg" fullWidth>
         <Text size="sm">
-          INICIAR NOVA QUEST
+          INICIAR QUEST {questType === "daily" ? "DIÁRIA" : "SEMANAL"}
         </Text>
       </Button>
     </div>

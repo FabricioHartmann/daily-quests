@@ -22,6 +22,7 @@ export function ExpeditionCard() {
     finishExpedition();
     toast("Recompensa resgatada!", {
       description: `Adquiriu ${expGained} XP`,
+      position: "bottom-right",
     });
   };
 

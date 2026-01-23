@@ -2,13 +2,11 @@
   position: relative;
   display: flex;
   flex: 1 1 0%;
-  min-width: 0;
   padding: 8px;
   border: 2px solid var(--white);
   overflow: hidden;
   align-items: center;
   cursor: pointer;
-  max-width: 348px;
   background: var(--ritual-card-color);
 }
 
@@ -21,17 +19,16 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 2.5px 0;
 }
 
 .ritual-resume-timer {
   position: absolute;
-  right: 3px;
+  right: 4px;
   bottom: 0px;
 }
 
 @media (max-width: 768px) {
   .ritual-resume-item {
-    max-width: 100%;
+    max-width: 50%;
   }
 }

@@ -6,8 +6,8 @@
 .app-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
   padding: 16px;
+  max-width: 812px;
 }
 
 @media (max-width: 768px) {

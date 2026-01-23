@@ -2,6 +2,7 @@
   border: 2px solid #000000;
   padding: 8px;
   width: 100%;
+  min-height: 74px;
   background-color: #faf6f4;
   display: flex;
   align-items: start;
@@ -16,12 +17,17 @@
 }
 
 .quest-edit-buttons {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;
   height: 100%;
+}
+
+.quest-complete-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .quest-card-content {
@@ -41,14 +47,6 @@
   width: 100%;
 }
 
-.card-footer {
-  width: 100%;
-  display: flex;
-  margin-top: auto;
-
-  justify-content: space-between;
-}
-
 .quest-card.status-completed {
   background-color: var(--light-gray);
 }
@@ -58,4 +56,3 @@
     padding-right: 4px;
   }
 }
-

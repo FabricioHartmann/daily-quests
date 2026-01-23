@@ -34,6 +34,7 @@ export function RitualConfig() {
     addExp(expGained);
     toast("Ritual concluído", {
       description: `Você adquiriu ${expGained} XP`,
+      position: "bottom-right",
     });
   }, [phase, expGained]);
 

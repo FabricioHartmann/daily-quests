@@ -50,33 +50,36 @@ export function QuestCard({
           <Text size="sm" weight={600} color="var(--card-title)">
             {quest.title}
           </Text>
+          {editingMode ? (
+            <Text size="sm" color="#6d6d6d" italic>
+              {quest.category}
+            </Text>
+          ) : (
+            <Text size="sm" weight={"bold"} color="#30860d" italic>
+              {questExpPoints} xp
+            </Text>
+          )}
         </div>
         <Text size="sm" className="card-description" color="var(--black)">
           {quest.description}
         </Text>
-        <div className="card-footer">
-          <Text size="xs" weight={"bold"} color="#888" italic>
-            {quest.category}
-          </Text>
-          <Text size="xs" weight={"bold"} color="#888" italic>
-            {questExpPoints} xp
-          </Text>
-        </div>
       </div>
       <div className="button-area">
         {editingMode ? (
           <div className="quest-edit-buttons">
             <Button onClick={openEditCardModal} size="xs">
-              <GiScrollQuill size={20} color="white" />
+              <GiScrollQuill size={15} color="white" />
             </Button>
             <Button onClick={openDeleteCardModal} size="xs">
-              <GiCancel size={20} color="red" />
+              <GiCancel size={15} color="red" />
             </Button>
           </div>
         ) : (
-          <Button onClick={handleCompleteQuest} size="xs" variant="primary">
-            <GiSwordWound size={20} color="white" />
-          </Button>
+          <div className="quest-complete-button">
+            <Button onClick={handleCompleteQuest} size="xs" variant="primary">
+              <GiSwordWound size={18} color="white" />
+            </Button>
+          </div>
         )}
       </div>
     </div>

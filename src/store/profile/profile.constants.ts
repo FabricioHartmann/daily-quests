@@ -1,5 +1,5 @@
 import type { Profile, TitleOption } from "./profile.types";
-import profileImage from "../../assets/images/profile-test-image-2.svg";
+import profileImage from "../../assets/images/profile-default-image.svg";
 import { TITLES_CATALOG } from "../../data/titlesCatalog";
 
 export const MOCKED_PROFILE_DATA: Profile = {

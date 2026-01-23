@@ -3,10 +3,11 @@ import { AchievementsCard } from "../../components/Profile/AchievementsCard";
 import { Inventory } from "../../components/Profile/Inventory/Inventory.component";
 import { ACHIEVEMENTS_CATALOG } from "../../data/achievementsCatalog";
 import { useAchievementStore } from "../../store/achievements/achievements.store";
+import { Text } from "../../components/Generic";
 import "./MyProfile.styles.css";
 
 export function MyProfile() {
-  const { achievements } = useAchievementStore();
+  const achievements = useAchievementStore((s) => s.achievements);
 
   const unlockedAchievements = ACHIEVEMENTS_CATALOG.filter(
     (a) => achievements[a.id]?.unlocked,
@@ -14,6 +15,7 @@ export function MyProfile() {
 
   return (
     <div className="profile-page-container">
+      <Text size="lg">Perfil</Text>
       <div className="profile-page-header">
         <ProfileCard canEdit />
         <AchievementsCard

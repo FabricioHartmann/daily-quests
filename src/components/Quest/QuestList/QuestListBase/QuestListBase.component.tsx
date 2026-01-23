@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Text, RenderIf } from "../../../Generic";
 import { NewQuestCard } from "../../NewQuestCard/NewQuestCard.component";
 import { QuestCard } from "../../QuestCard/QuestCard.component";
@@ -17,7 +16,7 @@ export function QuestListBase({
   const handleToggleQuest = (payload: QuestTogglePayload) => {
     toast("Quest completada!", {
       description: `Adquiriu ${payload.points} XP`,
-      duration: 3000,
+      duration: 2000,
       position: "bottom-right"
     });
   };
