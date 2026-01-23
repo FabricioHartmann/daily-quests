@@ -1,9 +1,9 @@
 import { toast } from "sonner";
-import { useExpeditionStore } from "../../store/expedition/expedition.store";
+import { useExpeditionStore } from "../store/expedition/expedition.store";
 import {
   playExpeditionCampfireSound,
   playExpeditionFinishedSound,
-} from "../soundPlayer";
+} from "./soundPlayer";
 
 let expeditionInterval: number | null = null;
 

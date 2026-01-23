@@ -1,6 +1,6 @@
-import { useRitualsStore } from "../../store/rituals/rituals.store";
+import { useRitualsStore } from "../store/rituals/rituals.store";
 import { toast } from "sonner";
-import { playRitualSound } from "../soundPlayer";
+import { playRitualSound } from "./soundPlayer";
 
 let ritualInterval: number | null = null;
 
