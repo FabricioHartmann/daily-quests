@@ -13,18 +13,21 @@
   width: 100%;
 }
 
-.photo-wrapper {
-  background: var(--black);
-  border: 2px solid var(--black);
-  display: flex;
-  height: 72px;
-  width: 72px;
-}
-
 .profile-card-header {
   display: flex;
+  height: 16px;
   justify-content: space-between;
   align-items: center;
+}
+
+.profile-card-name {
+  display: flex;
+  align-content: center;
+  gap: 8px;
+}
+
+.profile-card-name.edit{
+  cursor: pointer;
 }
 
 .level-wrapper {

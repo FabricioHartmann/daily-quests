@@ -3,7 +3,7 @@ import profileImage from "../../assets/images/profile-test-image-2.svg";
 import { TITLES_CATALOG } from "../../data/titlesCatalog";
 
 export const MOCKED_PROFILE_DATA: Profile = {
-  name: "Fabrício Hartmann",
+  name: "Fabrício",
   experience: 0,
   level: 1,
   photo: profileImage,

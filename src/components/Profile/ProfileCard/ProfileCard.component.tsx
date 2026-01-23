@@ -8,12 +8,15 @@ import { HiPencilAlt } from "react-icons/hi";
 import { Menu } from "../../Generic/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs";
-import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
+import { useModalStore } from "../../../store/modal/modal.store";
+import { ProfileEditModal } from "../../Modal/variants/ProfileEditModal";
+import { ProfilePhoto } from "../ProfilePhoto";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
-  const { profile, leveledUp, titleOptions, setTitle } = useProfileStore();
+  const { profile, leveledUp, titleOptions, setTitle, setProfile } =
+    useProfileStore();
+  const { openModal } = useModalStore();
   const selectedTitleObj = TITLES_CATALOG[profile.selectedTitle];
-  const isMobile = useIsMobile()
 
   const menuItems = titleOptions
     .slice()
@@ -24,16 +27,28 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
       onClick: () => setTitle(option.value),
     }));
 
+  const openProfileEditModal = () => {
+    if (!canEdit) return;
+    openModal(<ProfileEditModal />);
+  };
+
   return (
     <div className="profile-card">
       <div className="photo-wrapper">
-        <img src={profile?.photo ?? ""} alt="profile-photo" />
+        <ProfilePhoto canEdit={canEdit} />
       </div>
       <div className="card-content">
         <div className="profile-card-header">
-          <Text size="md" color="var(--black)">
-            {profile?.name}
-          </Text>
+          <div
+            onClick={openProfileEditModal}
+            className={`profile-card-name ${canEdit ? "edit" : ""}`}
+          >
+            <Text color="black">{profile?.name}</Text>
+            <RenderIf condition={canEdit}>
+              <HiPencilAlt />
+            </RenderIf>
+          </div>
+
           <Text size="md" color="var(--black)">
             Lv {profile?.level}
           </Text>

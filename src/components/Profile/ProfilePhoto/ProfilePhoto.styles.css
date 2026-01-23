@@ -1,0 +1,15 @@
+.profile-photo {
+  background: var(--black);
+  border: 2px solid var(--black);
+  display: flex;
+  height: 72px;
+  width: 72px;
+}
+
+.profile-photo.edit:hover {
+  opacity: 0.9;
+}
+
+.profile-photo.edit {
+  cursor: pointer;
+}
