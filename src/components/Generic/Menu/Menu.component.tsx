@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import type { MenuProps } from "./Menu.types";
-import { useClickOutside } from "../../../hooks/useClickOutside";
 import { Text } from "../../Generic";
 import "./Menu.styles.css";
+import { useClickOutside } from "../../../hooks/UseClickOutside";
 
 export function Menu({ trigger, items, align = "right" }: MenuProps) {
   const [open, setOpen] = useState(false);
