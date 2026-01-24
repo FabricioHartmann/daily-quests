@@ -8,10 +8,7 @@ export function RitualResume() {
   return (
     <div className="ritual-resume-wrapper">
       {filteredRituals.map((ritual) => (
-        <RitualResumeItem
-          ritual={ritual}
-          activeRiualsLength={filteredRituals.length}
-        />
+        <RitualResumeItem key={ritual.id} ritual={ritual} />
       ))}
     </div>
   );

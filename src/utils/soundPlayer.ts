@@ -1,9 +1,9 @@
-import levelUp from "../../assets/sounds/levelUp.mp3";
-import questMark from "../../assets/sounds/questMark.mp3";
-import rest from "../../assets/sounds/rest.mp3";
-import finished from "../../assets/sounds/expeditionFinished.mp3";
-import itemEquipOrUnequip from "../../assets/sounds/itemEquipOrUnequip.mp3";
-import ritual from "../../assets/sounds/ritualSound.mp3";
+import levelUp from "../assets/sounds/levelUp.mp3";
+import questMark from "../assets/sounds/questMark.mp3";
+import rest from "../assets/sounds/rest.mp3";
+import finished from "../assets/sounds/expeditionFinished.mp3";
+import itemEquipOrUnequip from "../assets/sounds/itemEquipOrUnequip.mp3";
+import ritual from "../assets/sounds/ritualSound.mp3";
 
 const levelUpAudio = new Audio(levelUp);
 levelUpAudio.volume = 0.05;

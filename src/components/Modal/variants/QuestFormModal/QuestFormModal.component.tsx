@@ -11,6 +11,7 @@ import { useQuestStore } from "../../../../store/quests/quests.store";
 import { useModalStore } from "../../../../store/modal/modal.store";
 import { QUESTS_CATEGORY_OPTIONS } from "./constants";
 import { questValidations } from "./validations";
+import { QUEST_BASE_XP } from "../../../../domain/quest/questExperience.calculator";
 
 export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
   const {
@@ -47,7 +48,7 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
           completedAt: null,
           status: "open",
           type: questType,
-          points: questType === "daily" ? 20 : 100,
+          points: QUEST_BASE_XP[questType],
         });
       }
 

@@ -1,11 +1,10 @@
-import type { QuestProps } from "./quests.types";
+import type { Quest } from "./quests.types";
 
-export const DEFAULT_QUESTS: QuestProps[] = [
+export const DEFAULT_QUESTS: Quest[] = [
   {
     id: 1,
     title: "Cantinho organizado",
-    description:
-      "Arrume sua cama, mesa e o que precisar para iniciar bem o dia.",
+    description: "Arrume sua cama, mesa ou o que mais precisar.",
     status: "open",
     points: 20,
     category: "Casa",
@@ -16,7 +15,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 2,
     title: "Leitura diária",
-    description: "Ler algumas páginas de um livro da sua escolha",
+    description: "Ler algumas páginas de um livro.",
     status: "open",
     points: 20,
     category: "Outro",
@@ -27,8 +26,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 3,
     title: "Aprendizado",
-    description:
-      "Separe um tempo para se desenvolver e estude algum tópico do seu interesse.",
+    description: "Estude algum tópico que seja do seu interesse.",
     status: "open",
     points: 20,
     category: "Estudo",
@@ -41,7 +39,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
     title: "Preparar a comida",
     description: "Fazer e guardar a comida da semana",
     status: "open",
-    points: 75,
+    points: 80,
     category: "Casa",
     createdAt: new Date(),
     completedAt: null,
@@ -52,7 +50,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
     title: "Lavar roupas",
     description: "Lavar, secar e guardar as roupas",
     status: "open",
-    points: 75,
+    points: 80,
     category: "Casa",
     createdAt: new Date(),
     completedAt: null,
@@ -61,7 +59,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 6,
     title: "Planejamento",
-    description: "Organize seu cronograma do dia com tudo que você irá fazer.",
+    description: "Organize seu cronograma do dia.",
     status: "open",
     points: 20,
     category: "Outro",
@@ -107,7 +105,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
     title: "Casa em ordem",
     description: "Limpar a casa, ou parte dela.",
     status: "open",
-    points: 75,
+    points: 80,
     category: "Casa",
     createdAt: new Date(),
     completedAt: null,
@@ -116,10 +114,9 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 11,
     title: "Revisão semanal",
-    description:
-      "Dedique um tempo para revisar sua semana e oganizar a próxima",
+    description: "Revisar a semana que passou e oganizar a próxima",
     status: "open",
-    points: 75,
+    points: 80,
     category: "Outro",
     createdAt: new Date(),
     completedAt: null,
@@ -128,8 +125,7 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 12,
     title: "Conexão social",
-    description:
-      "Se conecte com quem você se importa, converse um pouco ou fique junto.",
+    description: "Se conecte com quem você se importa de algum jeito.",
     status: "open",
     points: 20,
     category: "Outro",
@@ -140,10 +136,9 @@ export const DEFAULT_QUESTS: QuestProps[] = [
   {
     id: 13,
     title: "Praticar um esporte",
-    description:
-      "Tire pelo menos um dia na semana para praticar algum esporte.",
+    description: "Tire um dia na semana para praticar algum esporte.",
     status: "open",
-    points: 75,
+    points: 80,
     category: "Saúde",
     createdAt: new Date(),
     completedAt: null,

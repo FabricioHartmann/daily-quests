@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 460px;
+  height: 418px;
   min-height: 280px;
   background-color: var(--list-bg-color);
   overflow: hidden;
