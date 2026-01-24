@@ -22,7 +22,6 @@ export const MOCKED_RITUALS: Ritual[] = [
 ];
 
 export const RITUAL_COOLDOWN_MINUTES = [60, 90, 120, 180] as const;
-
 export const RITUAL_COOLDOWN_OPTIONS = RITUAL_COOLDOWN_MINUTES.map(
   (minutes) => ({
     value: String(minutes),

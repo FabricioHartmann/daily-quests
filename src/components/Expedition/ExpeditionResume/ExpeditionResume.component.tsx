@@ -35,7 +35,7 @@ export function ExpeditionResume() {
       />
 
       <div className="expedition-resume-content">
-        <Text color="#525252" size="xs" weight={600}>
+        <Text color="#6d6d6d" size="xs" weight={600}>
           Expedição: {getPhaseLabelAndTimer()}
         </Text>
 

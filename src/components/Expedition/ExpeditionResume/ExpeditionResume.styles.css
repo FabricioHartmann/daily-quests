@@ -69,11 +69,11 @@
     height: auto;
   }
   .expedition-resume-bg {
-    width: 37%;
+    width: 35%;
   }
   .expedition-resume-content {
     justify-content: space-between;
-    width: 63%;
+    width: 65%;
     gap: 4px;
   }
   .expedition-resume-bg::after {
@@ -84,5 +84,14 @@
       rgba(255, 255, 255, 0.322) 45%,
       rgba(255, 255, 255, 0) 100%
     );
+  }
+}
+
+@media (max-width: 348px) {
+  .expedition-resume-bg {
+    width: 25%;
+  }
+  .expedition-resume-content {
+    width: 75%;
   }
 }
