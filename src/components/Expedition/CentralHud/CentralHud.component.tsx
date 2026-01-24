@@ -2,13 +2,13 @@ import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
 import { Button, RenderIf, Text } from "../../GenericComponents";
 import { CircularProgress } from "../index";
-import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 import { GiLockedChest } from "react-icons/gi";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { ExpeditionInformationModal } from "../../Modal/variants/ExpeditionInformationModal/ExpeditionInformationModal.component";
+import "./CentralHud.styles.css";
 
 export function CentralHUD() {
   const { timeLeft, progress } = useExpeditionTimer();
