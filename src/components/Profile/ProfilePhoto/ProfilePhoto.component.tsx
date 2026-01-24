@@ -29,7 +29,7 @@ export function ProfilePhoto({ canEdit }: ProfilePhotoProps) {
     <>
       <img
         src={profile.photo || "/images/avatar-placeholder.png"}
-        alt="profile-photo"
+        alt="profile photo"
         onClick={openFilePicker}
         className={`profile-photo ${canEdit ? "edit" : ""}`}
       />

@@ -27,12 +27,16 @@ export function ExpeditionResume() {
 
   return (
     <div className="expedition-resume" onClick={goToExpeditionPage}>
-      <div
-        className="expedition-resume-bg"
-        style={{
-          backgroundImage: `url(${getBackgroundImage(biome, phase, dayTime)})`,
-        }}
-      />
+      <div className="expedition-resume-bg">
+        <img
+          src={getBackgroundImage(biome, phase, dayTime)}
+          alt="expedition resume image"
+          className="expedition-resume-img"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </div>
 
       <div className="expedition-resume-content">
         <Text color="#6d6d6d" size="xs" weight={600}>

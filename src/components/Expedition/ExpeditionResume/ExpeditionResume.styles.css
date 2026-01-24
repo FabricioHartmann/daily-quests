@@ -17,6 +17,14 @@
   background-position: center 75%;
 }
 
+.expedition-resume-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .expedition-resume-bg::after {
   margin: -1px;
   content: "";
@@ -69,11 +77,11 @@
     height: auto;
   }
   .expedition-resume-bg {
-    width: 35%;
+    width: 40%;
   }
   .expedition-resume-content {
     justify-content: space-between;
-    width: 65%;
+    width: 60%;
     gap: 4px;
   }
   .expedition-resume-bg::after {
