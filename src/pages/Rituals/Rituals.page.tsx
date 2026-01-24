@@ -27,7 +27,7 @@ export function Rituals() {
         <div className="ritual-cards-wrapper">
           {rituals.map((ritual) => (
             <RitualCard key={ritual.id} ritual={ritual} />
-          ))}{" "}
+          ))}
           <Text size="sm">Rituais concluídos: {totalRitualsCompleted}</Text>
           <RitualConfig />
         </div>

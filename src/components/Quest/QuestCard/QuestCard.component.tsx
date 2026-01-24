@@ -56,11 +56,11 @@ export function QuestCard({
             </Text>
           ) : (
             <Text size="sm" weight={"bold"} color="#30860d" italic>
-              {questExpPoints} xp
+              {questExpPoints}xp
             </Text>
           )}
         </div>
-        <Text size="sm" className="card-description" color="var(--black)">
+        <Text size="sm" color="var(--black)">
           {quest.description}
         </Text>
       </div>
