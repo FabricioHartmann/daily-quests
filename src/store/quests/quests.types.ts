@@ -1,26 +1,35 @@
 import type { QUEST_BASE_XP } from "../../domain/quest/questExperience.calculator";
 
 export type QuestType = keyof typeof QUEST_BASE_XP;
+export type QuestStatus = "open" | "completed" | "canceled" | "failed";
+export type QuestCategory =
+  | "Estudo"
+  | "Saúde"
+  | "Casa"
+  | "Trabalho"
+  | "Outro"
+  | null;
 
-export type QuestProps = {
+export type Quest = {
   id: number;
   title: string;
   description: string;
-  status: "open" | "completed" | "canceled" | "failed";
+  status: QuestStatus;
   points: number;
-  category: "Estudo" | "Saúde" | "Casa" | "Trabalho" | "Outro" | null ;
+  category: QuestCategory
   createdAt: Date;
   completedAt: Date | null;
   type: QuestType;
 };
 
 export type QuestState = {
-  totalQuestsCompleted: number
-  quests: QuestProps[];
-  addQuest: (quest: QuestProps) => void;
+  totalQuestsCompleted: number;
+  quests: Quest[];
+  addQuest: (quest: Quest) => void;
   completeQuest: (id: number) => void;
-  updateQuest: (quest: QuestProps) => void;
+  updateQuest: (quest: Quest) => void;
   openQuest: (id: number) => void;
   cancelQuest: (id: number) => void;
   removeQuest: (id: number) => void;
+  resetQuestsIfNeeded: () => void;
 };

@@ -1,12 +1,12 @@
-import type { QuestProps, QuestType } from "../../../../store/quests/quests.types";
+import type { Quest, QuestCategory, QuestType } from "../../../../store/quests/quests.types";
 
 export type QuestFormModalProps = {
   questType: QuestType;
-  quest?: QuestProps
+  quest?: Quest
 };
 
 export type QuestFormInputs = {
   title: string;
   description: string;
-  category: "Estudo" | "Saúde" | "Casa" | "Trabalho" | "Outro" | null;
+  category: QuestCategory;
 };

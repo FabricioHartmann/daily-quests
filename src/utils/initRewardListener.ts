@@ -8,7 +8,7 @@ import { rewardRules } from "../domain/rewards";
 
 let listenerInitialized = false;
 
-function evaluateRewards() {
+const evaluateRewards = () => {
   const rewardStore = useRewardStore.getState();
 
   rewardRules.forEach((rule) => {

@@ -25,7 +25,7 @@ export function TextWriter({
         clearInterval(interval);
         onComplete?.();
       }
-    }, 25);
+    }, 20);
 
     return () => clearInterval(interval);
   }, [text, onComplete, active]);

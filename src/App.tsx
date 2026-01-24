@@ -11,10 +11,11 @@ import { useModalStore } from "./store/modal/modal.store";
 import { useProfileStore } from "./store/profile/profile.store";
 import { initExpeditionListener } from "./utils/initExpeditionListener";
 import { initRitualListener } from "./utils/initRitualListener";
+import { useQuestStore } from "./store/quests/quests.store";
 
 function App() {
   const { openModal } = useModalStore();
-  const { profile } = useProfileStore();
+  const profile = useProfileStore((s) => s.profile);
 
   useEffect(() => {
     initRewardListener();
@@ -23,6 +24,10 @@ function App() {
     if (profile.firstAccess === true) {
       openModal(<WelcomeModal />);
     }
+  }, []);
+
+  useEffect(() => {
+    useQuestStore.getState().resetQuestsIfNeeded();
   }, []);
 
   return (

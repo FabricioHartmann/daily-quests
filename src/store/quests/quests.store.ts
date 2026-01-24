@@ -5,10 +5,13 @@ import { DEFAULT_QUESTS } from "./quests.constants";
 import { calculateQuestXP } from "../../domain/quest/questExperience.calculator";
 import { useInventoryStore } from "../inventory/inventory.store";
 import { useProfileStore } from "../profile/profile.store";
+import { normalizeQuestDates } from "../../domain/quest/questNormalize";
+import { applyQuestResets } from "../../domain/quest/questReset.rules";
+import { normalizeAndResetQuests } from "../../domain/quest/questReset.engine";
 
 export const useQuestStore = create(
   persist<QuestState>(
-    (set) => ({
+    (set, get) => ({
       totalQuestsCompleted: 0,
       quests: DEFAULT_QUESTS,
       addQuest: (quest) =>
@@ -34,7 +37,7 @@ export const useQuestStore = create(
                     completedAt: new Date(),
                     points: xpGained,
                   }
-                : q
+                : q,
             ),
             totalQuestsCompleted: state.totalQuestsCompleted + 1,
           };
@@ -44,31 +47,42 @@ export const useQuestStore = create(
       updateQuest: (updatedQuest) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.id === updatedQuest.id ? updatedQuest : quest
+            quest.id === updatedQuest.id ? updatedQuest : quest,
           ),
         })),
       openQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.id === id ? { ...quest, status: "open" } : quest
+            quest.id === id ? { ...quest, status: "open" } : quest,
           ),
         })),
 
       cancelQuest: (id) =>
         set((state) => ({
           quests: state.quests.map((quest) =>
-            quest.id === id ? { ...quest, status: "canceled" } : quest
+            quest.id === id ? { ...quest, status: "canceled" } : quest,
           ),
         })),
-
       removeQuest: (id) =>
         set((state) => ({
           quests: state.quests.filter((quest) => quest.id !== id),
         })),
+      resetQuestsIfNeeded: () => {
+        const { quests } = get();
+        const { updated, hasChanges } = normalizeAndResetQuests(quests);
+
+        if (hasChanges) set({ quests: updated });
+      },
     }),
+
     {
       name: "quests",
       storage: createJSONStorage(() => sessionStorage),
-    }
-  )
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+        const { updated, hasChanges } = normalizeAndResetQuests(state.quests);
+        if (hasChanges) state.quests = updated;
+      },
+    },
+  ),
 );
