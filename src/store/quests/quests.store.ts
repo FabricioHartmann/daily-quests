@@ -5,8 +5,6 @@ import { DEFAULT_QUESTS } from "./quests.constants";
 import { calculateQuestXP } from "../../domain/quest/questExperience.calculator";
 import { useInventoryStore } from "../inventory/inventory.store";
 import { useProfileStore } from "../profile/profile.store";
-import { normalizeQuestDates } from "../../domain/quest/questNormalize";
-import { applyQuestResets } from "../../domain/quest/questReset.rules";
 import { normalizeAndResetQuests } from "../../domain/quest/questReset.engine";
 
 export const useQuestStore = create(

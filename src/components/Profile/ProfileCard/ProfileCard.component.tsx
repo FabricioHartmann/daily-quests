@@ -13,8 +13,10 @@ import { ProfileEditModal } from "../../Modal/variants/ProfileEditModal";
 import { ProfilePhoto } from "../ProfilePhoto";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
-  const { profile, leveledUp, titleOptions, setTitle, setProfile } =
-    useProfileStore();
+  const profile = useProfileStore((state) => state.profile);
+  const leveledUp = useProfileStore((state) => state.leveledUp);
+  const titleOptions = useProfileStore((state) => state.titleOptions);
+  const setTitle = useProfileStore((state) => state.setTitle);
   const { openModal } = useModalStore();
   const selectedTitleObj = TITLES_CATALOG[profile.selectedTitle];
 

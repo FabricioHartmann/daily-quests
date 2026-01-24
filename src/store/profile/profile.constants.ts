@@ -17,16 +17,19 @@ export const TITLE_OPTIONS: TitleOption[] = (() => {
       label: title.label,
       value: title.value,
       disabled: title.disabled,
-    })
+    }),
   );
 
   const TOTAL_SLOTS = 25;
   const lockedCount = TOTAL_SLOTS - unlockedTitles.length;
-  const lockedTitles: TitleOption[] = Array.from({ length: lockedCount }, (_, i) => ({
-    label: "???",
-    value: "locked",
-    disabled: true,
-  }));
+  const lockedTitles: TitleOption[] = Array.from(
+    { length: lockedCount },
+    () => ({
+      label: "???",
+      value: "locked",
+      disabled: true,
+    }),
+  );
 
   return [...unlockedTitles, ...lockedTitles];
 })();

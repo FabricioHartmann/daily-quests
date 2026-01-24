@@ -3,7 +3,6 @@ import type { CircularProgressProps } from "./CircularProgress.types";
 
 export function CircularProgress({
   value,
-  phase,
   size = 100,
   strokeWidth = 8,
 }: CircularProgressProps) {
