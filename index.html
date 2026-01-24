@@ -1,13 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/images/expedition/expedition-idle.webp"
+    />
+    <link rel="icon" type="image/png" href="/src/assets/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>daily-quests</title>
+    <title>My Daily Quests</title>
   </head>
   <body>
     <div id="root"></div>
+    <div
+      id="initial-loader"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      "
+    >
+      <p style="color: white">Carregando...</p>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

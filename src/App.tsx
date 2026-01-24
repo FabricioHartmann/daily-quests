@@ -30,6 +30,11 @@ function App() {
     useQuestStore.getState().resetQuestsIfNeeded();
   }, []);
 
+  useEffect(() => {
+    const loader = document.getElementById("initial-loader");
+    if (loader) loader.remove();
+  }, []);
+
   return (
     <BrowserRouter>
       <Toaster position="top-right" duration={6000} />
