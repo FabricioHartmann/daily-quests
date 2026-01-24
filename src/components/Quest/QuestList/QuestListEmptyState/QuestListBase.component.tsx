@@ -14,7 +14,7 @@ export function QuestListEmptyState({ questType }: QuestListEmptyStateProps) {
       height="100%"
       padding="16px"
     >
-      <Text align="center" color="rgb(151, 151, 151)" size="lg">
+      <Text align="center" color="#a8a8a8" size="lg">
         {`Você não tem quests ${
           questType === "daily" ? "diárias" : "semanais"
         } disponíveis no momento`}

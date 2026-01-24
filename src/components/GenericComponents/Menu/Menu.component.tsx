@@ -13,6 +13,7 @@ export function Menu({ trigger, items, align = "right" }: MenuProps) {
   return (
     <div ref={menuRef} className="menu">
       <button
+        aria-label="titles-menu-button"
         type="button"
         className="menu-trigger"
         onClick={() => setOpen((prev) => !prev)}
