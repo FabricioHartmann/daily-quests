@@ -54,7 +54,7 @@ The application usually runs on port 5173.
 | Expeditions (pomodoro)          | ✅     |
 | Rituals                         | ✅     |
 | Daily and weekly quest resets   | ✅     |
-| Vercel deployment               | ❌     |
+| Vercel deployment               | ✅     |
 | Firebase integration            | ❌     |
 | Streaks system                  | ❌     |
 
