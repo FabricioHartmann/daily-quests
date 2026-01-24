@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { getBackgroundImage } from "../../../utils/expeditionImage";
 import type { ExpeditionResumeImageProps } from "./ExpeditionResumeImage.types";
 import './ExpeditionResumeImage.styles.css'
@@ -7,12 +6,7 @@ export function ExpeditionResumeImage({
   dayTime,
   phase,
 }: ExpeditionResumeImageProps) {
-  const [src, setSrc] = useState("../../../assets/images/expedition-idle.webp");
-
-  useEffect(() => {
-    const newSrc = getBackgroundImage(biome, phase, dayTime);
-    setSrc(newSrc);
-  }, [biome, phase, dayTime]);
+  const src = getBackgroundImage(biome, phase, dayTime);
 
   return (
     <div className="expedition-resume-bg">
