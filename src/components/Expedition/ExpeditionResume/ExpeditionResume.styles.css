@@ -7,38 +7,6 @@
   cursor: pointer;
 }
 
-.expedition-resume-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center 75%;
-}
-
-.expedition-resume-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.expedition-resume-bg::after {
-  margin: -1px;
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--white) 40%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(255, 255, 255, 0.322) 70%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
 .expedition-resume-content {
   display: flex;
   flex-direction: column;
@@ -72,13 +40,6 @@
 }
 
 @media (max-width: 768px) {
-  .expedition-resume {
-    width: 100%;
-    height: auto;
-  }
-  .expedition-resume-bg {
-    width: 40%;
-  }
   .expedition-resume-content {
     justify-content: space-between;
     width: 60%;
@@ -96,9 +57,6 @@
 }
 
 @media (max-width: 348px) {
-  .expedition-resume-bg {
-    width: 25%;
-  }
   .expedition-resume-content {
     width: 75%;
   }

@@ -6,6 +6,7 @@ import "./ExpeditionResume.styles.css";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 import { useNavigate } from "react-router-dom";
 import { getBackgroundImage } from "../../../utils/expeditionImage";
+import { ExpeditionResumeImage } from "../ExpeditionResumeImage";
 
 export function ExpeditionResume() {
   const navigate = useNavigate();
@@ -27,16 +28,7 @@ export function ExpeditionResume() {
 
   return (
     <div className="expedition-resume" onClick={goToExpeditionPage}>
-      <div className="expedition-resume-bg">
-        <img
-          src={getBackgroundImage(biome, phase, dayTime)}
-          alt="expedition resume image"
-          className="expedition-resume-img"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </div>
+      <ExpeditionResumeImage phase={phase} dayTime={dayTime} biome={biome} />
 
       <div className="expedition-resume-content">
         <Text color="#6d6d6d" size="xs" weight={600}>

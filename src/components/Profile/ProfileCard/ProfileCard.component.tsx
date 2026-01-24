@@ -2,8 +2,7 @@ import { ExperienceBar } from "../";
 import { RenderIf, Text } from "../../GenericComponents";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import type { ProfileCardProps } from "./ProfileCard.types";
-import { RiArrowDownSFill } from "react-icons/ri";
-import { HiPencilAlt } from "react-icons/hi";
+import { FaChevronDown, FaPenToSquare } from "react-icons/fa6";
 import { Menu } from "../../GenericComponents/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs";
@@ -52,7 +51,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
           >
             <Text color="black">{profile?.name}</Text>
             <RenderIf condition={canEdit}>
-              <HiPencilAlt />
+              <FaPenToSquare />
             </RenderIf>
           </div>
 
@@ -75,7 +74,7 @@ export function ProfileCard({ canEdit = false }: ProfileCardProps) {
               {selectedTitleObj.label}
             </Text>
             <Menu
-              trigger={<RiArrowDownSFill color="var(--black)" />}
+              trigger={<FaChevronDown color="var(--black)" />}
               items={menuItems}
             />
           </div>

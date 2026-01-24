@@ -14,8 +14,8 @@ export function Home() {
 
   return (
     <div className="home-page-container">
+      <Text size="lg">My Daily Quests</Text>
       <div className="home-header">
-        <Text size="lg">My Daily Quests</Text>
         <ProfileCard />
         <div className="expedition-and-ritual-wrapper">
           <ExpeditionResume />
