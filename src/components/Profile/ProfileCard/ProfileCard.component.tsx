@@ -1,9 +1,8 @@
 import { ExperienceBar } from "../";
-import { RenderIf, Text } from "../../GenericComponents";
+import { Menu, RenderIf, Text } from "../../GenericComponents";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import type { ProfileCardProps } from "./ProfileCard.types";
 import { FaChevronDown, FaPenToSquare } from "react-icons/fa6";
-import { Menu } from "../../GenericComponents/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs";
 import { useModalStore } from "../../../store/modal/modal.store";

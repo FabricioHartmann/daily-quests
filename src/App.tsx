@@ -11,6 +11,7 @@ import { useProfileStore } from "./store/profile/profile.store";
 import { initExpeditionListener } from "./utils/initExpeditionListener";
 import { initRitualListener } from "./utils/initRitualListener";
 import { useQuestStore } from "./store/quests/quests.store";
+import { Loader } from "./components/GenericComponents";
 import { appRoutes } from "./routes";
 
 function App() {
@@ -30,18 +31,13 @@ function App() {
     useQuestStore.getState().resetQuestsIfNeeded();
   }, []);
 
-  useEffect(() => {
-    const loader = document.getElementById("initial-loader");
-    if (loader) loader.remove();
-  }, []);
-
   return (
     <BrowserRouter>
-      <Toaster position="top-right" duration={6000} />
+      <Toaster position="top-right" />
       <EffectsLayer />
       <ModalRoot />
 
-      <Suspense fallback={<div>Carregando...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route element={<MainLayout />}>
             {appRoutes.map((route) => (

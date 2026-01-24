@@ -1,10 +1,10 @@
 import { useState } from "react";
 import type { QuestListMobileProps } from "../QuestListTypes";
-import { Tabs } from "../../../GenericComponents/Tabs";
 import { QUEST_TABS } from "../constants";
 import { QuestListBase } from "../QuestListBase/QuestListBase.component";
 import "../QuestList.styles.css";
 import type { QuestType } from "../../../../store/quests/quests.types";
+import { Tabs } from "../../../GenericComponents";
 
 export function QuestListMobile({
   quests,
