@@ -1,1 +1,1 @@
-export { Quests } from "./Quests.page";
+export { default } from "./Quests.page";

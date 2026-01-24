@@ -3,16 +3,18 @@ import { ProfileCard } from "../../components/Profile";
 import { ExpeditionResume } from "../../components/Expedition";
 import { useRitualsStore } from "../../store/rituals/rituals.store";
 import { RenderIf } from "../../components/GenericComponents";
-import "./Home.styles.css";
 import { RitualResume } from "../../components/Ritual";
+import { Text } from "../../components/GenericComponents";
+import "./Home.styles.css";
 
-export function Home() {
+export default function Home() {
   const rituals = useRitualsStore((s) => s.rituals);
   const phase = useRitualsStore((s) => s.phase);
   const filteredRituals = rituals.filter((ritual) => ritual.isActive);
 
   return (
     <div className="home-page-container">
+      <Text size="lg">My Daily Quests</Text>
       <div className="home-header">
         <ProfileCard />
         <div className="expedition-and-ritual-wrapper">

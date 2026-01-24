@@ -1,1 +1,1 @@
-export { Rituals } from "./Rituals.page";
+export { default } from "./Rituals.page";

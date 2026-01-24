@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useRitualTimer } from "../../../hooks/useRitualTimer/useRitualTimer";
 import { useRitualsStore } from "../../../store/rituals/rituals.store";
-import { RenderIf, Text } from "../../GenericComponents";
+import { Text } from "../../GenericComponents";
 import { formatTime } from "../../../utils/formatTime";
-import { GiPotionBall, GiSpellBook, GiStrong } from "react-icons/gi";
+import { GiSpellBook } from "react-icons/gi";
 import "./RitualResume.styles.css";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { RITUAL_ICONS } from "../../../store/rituals/ritualIconsMapper";

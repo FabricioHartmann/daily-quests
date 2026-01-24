@@ -9,4 +9,5 @@ export type ButtonProps = {
   className?: string;
   style?: CSSProperties;
   onClick?: () => void;
+  "aria-label"?: string;
 };

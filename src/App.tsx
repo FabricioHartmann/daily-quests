@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { appRoutes } from "./routes";
 import { ModalRoot } from "./components/Modal/ModalRoot";
 import { EffectsLayer } from "./components/EffectsLayer/EffectsLayer.component";
 import { MainLayout } from "./layouts/MainLayout";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { initRewardListener } from "./utils/initRewardListener";
 import { Toaster } from "sonner";
 import { WelcomeModal } from "./components/Modal/variants/WelcomeModal";
@@ -12,6 +11,7 @@ import { useProfileStore } from "./store/profile/profile.store";
 import { initExpeditionListener } from "./utils/initExpeditionListener";
 import { initRitualListener } from "./utils/initRitualListener";
 import { useQuestStore } from "./store/quests/quests.store";
+import { appRoutes } from "./routes";
 
 function App() {
   const openModal = useModalStore((s) => s.openModal);
@@ -35,13 +35,20 @@ function App() {
       <Toaster position="top-right" duration={6000} />
       <EffectsLayer />
       <ModalRoot />
-      <Routes>
-        <Route element={<MainLayout />}>
-          {appRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Route>
-      </Routes>
+
+      <Suspense fallback={<div>Carregando...</div>}>
+        <Routes>
+          <Route element={<MainLayout />}>
+            {appRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

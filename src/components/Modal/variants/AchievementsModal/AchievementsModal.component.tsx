@@ -5,7 +5,7 @@ import type { AchievementId } from "../../../../store/achievements/achievements.
 import { Flex, RenderIf, Text } from "../../../GenericComponents";
 import "./AchievementsModal.styles.css";
 
-export function AchievementsModal() {
+function AchievementsModal() {
   const achievements = useAchievementStore(s => s.achievements);
   const isUnlocked = (id: AchievementId) => !!achievements[id]?.unlocked;
 
@@ -53,3 +53,5 @@ export function AchievementsModal() {
     </Modal>
   );
 }
+
+export default AchievementsModal;

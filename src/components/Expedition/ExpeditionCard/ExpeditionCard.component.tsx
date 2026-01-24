@@ -34,6 +34,7 @@ export function ExpeditionCard() {
       <img
         src={getBackgroundImage(biome, phase, dayTime)}
         className="expedition-bg"
+        alt="expedition image"
       />
       <div className="expedition-hud">
         <ExpeditionLabels minExp={minExp} maxExp={maxExp} />

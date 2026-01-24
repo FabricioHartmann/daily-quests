@@ -1,10 +1,15 @@
+import React, { Suspense } from "react";
 import type { AchievementsCardProps } from "./AchievementsCard.types";
 import { GiLaurelsTrophy } from "react-icons/gi";
 import { Text } from "../../GenericComponents";
 import "./AchievementsCard.styles.css";
 import { useModalStore } from "../../../store/modal/modal.store";
-import { AchievementsModal } from "../../Modal/variants/AchievementsModal/AchievementsModal.components";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
+
+const AchievementsModal = React.lazy(
+  () =>
+    import("../../Modal/variants/AchievementsModal/AchievementsModal.component"),
+);
 
 export function AchievementsCard({
   totalAchievements,
@@ -14,7 +19,11 @@ export function AchievementsCard({
   const isMobile = useIsMobile();
 
   const openAchievementsModal = () => {
-    openModal(<AchievementsModal />);
+    openModal(
+      <Suspense fallback={<Text>Carregando conquistas...</Text>}>
+        <AchievementsModal />
+      </Suspense>,
+    );
   };
 
   return (
