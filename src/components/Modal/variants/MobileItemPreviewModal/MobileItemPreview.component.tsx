@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Modal } from "../..";
 import type { ItemId } from "../../../../store/inventory/inventory.types";
 import { ITEM_ICONS } from "../../../../store/inventory/inventoryIconsMapper";
-import { Flex, Text } from "../../../Generic";
+import { Flex, Text } from "../../../GenericComponents";
 import "./MobileItemPreview.styles.css";
 import { useInventoryStore } from "../../../../store/inventory/inventory.store";
 import { useModalStore } from "../../../../store/modal/modal.store";

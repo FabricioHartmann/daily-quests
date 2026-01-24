@@ -2,7 +2,7 @@ import { Modal } from "../..";
 import { ACHIEVEMENTS_CATALOG } from "../../../../data/achievementsCatalog";
 import { useAchievementStore } from "../../../../store/achievements/achievements.store";
 import type { AchievementId } from "../../../../store/achievements/achievements.types";
-import { Flex, RenderIf, Text } from "../../../Generic";
+import { Flex, RenderIf, Text } from "../../../GenericComponents";
 import "./AchievementsModal.styles.css";
 
 export function AchievementsModal() {

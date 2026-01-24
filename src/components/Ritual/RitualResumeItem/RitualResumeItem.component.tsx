@@ -3,7 +3,7 @@ import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { useRitualTimer } from "../../../hooks/useRitualTimer/useRitualTimer";
 import { RITUAL_ICONS } from "../../../store/rituals/ritualIconsMapper";
 import { useRitualsStore } from "../../../store/rituals/rituals.store";
-import { RenderIf, Text } from "../../Generic";
+import { RenderIf, Text } from "../../GenericComponents";
 import "./RitualResumeItem.styles.css";
 import { formatTime } from "../../../utils/formatTime";
 import type { RitualResumeProps } from "./RitualResume.types";

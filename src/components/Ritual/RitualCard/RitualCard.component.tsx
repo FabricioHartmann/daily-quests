@@ -1,5 +1,5 @@
 import "./RitualCard.styles.css";
-import { RenderIf, Text } from "../../../components/Generic";
+import { RenderIf, Text } from "../../../components/GenericComponents";
 import type { RitualProps } from "../../../store/rituals/rituals.types";
 import { RITUAL_ICONS } from "../../../store/rituals/ritualIconsMapper";
 import { formatTime } from "../../../utils/formatTime";

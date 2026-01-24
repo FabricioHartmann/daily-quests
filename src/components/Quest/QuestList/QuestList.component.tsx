@@ -1,5 +1,5 @@
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
-import { RenderIf } from "../../Generic";
+import { RenderIf } from "../../GenericComponents";
 import { QuestListDesktop } from "./QuestListDesktop/QuestListDesktop.component";
 import { QuestListMobile } from "./QuestListMobile/QuestListMobile.component";
 import { useQuestStore } from "../../../store/quests/quests.store";

@@ -1,4 +1,4 @@
-import { Button, Text } from "../../../Generic";
+import { Button, Text } from "../../../GenericComponents";
 import { ITEM_ICONS } from "../../../../store/inventory/inventoryIconsMapper";
 import "./InventoryPreviewItem.styles.css";
 import type { CatalogItem } from "../../../../store/inventory/inventory.types";

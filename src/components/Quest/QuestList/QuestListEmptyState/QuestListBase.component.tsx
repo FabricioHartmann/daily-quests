@@ -1,5 +1,5 @@
 import type { QuestType } from "../../../../store/quests/quests.types";
-import { Text, Flex } from "../../../Generic";
+import { Text, Flex } from "../../../GenericComponents";
 
 type QuestListEmptyStateProps = {
   questType: QuestType;

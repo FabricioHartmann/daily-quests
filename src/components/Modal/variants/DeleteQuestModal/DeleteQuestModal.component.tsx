@@ -1,7 +1,7 @@
 import { Modal } from "../..";
 import { useModalStore } from "../../../../store/modal/modal.store";
 import { useQuestStore } from "../../../../store/quests/quests.store";
-import { Flex, Text } from "../../../Generic";
+import { Flex, Text } from "../../../GenericComponents";
 import type { DeleteQuestModalProps } from "./DeleteQuestModal.types";
 
 export function DeleteQuestModal({ questId }: DeleteQuestModalProps) {

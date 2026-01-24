@@ -1,4 +1,4 @@
-import { RenderIf, Text } from "../../components/Generic";
+import { RenderIf, Text } from "../../components/GenericComponents";
 import { ExpeditionCard } from "../../components/Expedition/ExpeditionCard/ExpeditionCard.component";
 import "./Expedition.styles.css";
 import { InformationCard as ExpeditionInformationCard } from "../../components/Expedition/InformationCard/InformationCard.component";

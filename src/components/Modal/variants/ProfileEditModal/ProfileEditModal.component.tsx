@@ -1,6 +1,6 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Modal } from "../..";
-import { Input } from "../../../Generic";
+import { Input } from "../../../GenericComponents";
 import type { ProfileFormInputs } from "./ProfileEditModal.types";
 import { profileValidations } from "./validations";
 import { useModalStore } from "../../../../store/modal/modal.store";

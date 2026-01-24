@@ -1,6 +1,6 @@
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
-import { Button, RenderIf, Text } from "../../Generic";
+import { Button, RenderIf, Text } from "../../GenericComponents";
 import { CircularProgress } from "../index";
 import "./CentralHUD.styles.css";
 import { phaseLabel } from "../../../store/expedition/constants";

@@ -1,4 +1,4 @@
-import { Text, RenderIf } from "../../../Generic";
+import { Text, RenderIf } from "../../../GenericComponents";
 import { NewQuestCard } from "../../NewQuestCard/NewQuestCard.component";
 import { QuestCard } from "../../QuestCard/QuestCard.component";
 import type { QuestTogglePayload } from "../../QuestCard/QuestCard.types";

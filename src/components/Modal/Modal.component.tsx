@@ -1,5 +1,5 @@
 import { useModalStore } from "../../store/modal/modal.store";
-import { Button, RenderIf, Text } from "../Generic";
+import { Button, RenderIf, Text } from "../GenericComponents";
 import type { ModalProps } from "./Modal.types";
 import "./Modal.styles.css";
 import { useCallback } from "react";

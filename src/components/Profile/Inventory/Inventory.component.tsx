@@ -1,4 +1,4 @@
-import { RenderIf, Text } from "../../Generic";
+import { RenderIf, Text } from "../../GenericComponents";
 import { useInventoryStore } from "../../../store/inventory/inventory.store";
 import { InventoryItem } from "./InventoryItem/InventoryItem.component";
 import { InventoryPreviewItem } from "./InventoryPreviewItem/InventoryPreviewItem.component";

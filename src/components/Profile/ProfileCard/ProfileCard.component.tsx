@@ -1,11 +1,11 @@
 import { ExperienceBar } from "../";
-import { RenderIf, Text } from "../../Generic";
+import { RenderIf, Text } from "../../GenericComponents";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import "./ProfileCard.styles.css";
 import type { ProfileCardProps } from "./ProfileCard.types";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
-import { Menu } from "../../Generic/Menu";
+import { Menu } from "../../GenericComponents/Menu";
 import { TITLES_CATALOG } from "../../../data/titlesCatalog";
 import { Buffs } from "../Buffs";
 import { useModalStore } from "../../../store/modal/modal.store";

@@ -1,4 +1,4 @@
-import { Button, Text } from "../../Generic";
+import { Button, Text } from "../../GenericComponents";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import "./NewQuestCard.styles.css";
 import { useModalStore } from "../../../store/modal/modal.store";

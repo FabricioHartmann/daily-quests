@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import type { MenuProps } from "./Menu.types";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./Menu.styles.css";
 import { useClickOutside } from "../../../hooks/UseClickOutside";
 

@@ -1,4 +1,4 @@
-import { Button, RenderIf } from "../../Generic";
+import { Button, RenderIf } from "../../GenericComponents";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { CentralHUD } from "../CentralHud/CentralHud.component";
 import "./ExpeditionCard.styles.css";

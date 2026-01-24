@@ -1,4 +1,4 @@
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./RitualTipsContent.styles.css";
 
 export function RitualTipsContent() {

@@ -1,6 +1,6 @@
 import type { AchievementsCardProps } from "./AchievementsCard.types";
 import { GiLaurelsTrophy } from "react-icons/gi";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./AchievementsCard.styles.css";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { AchievementsModal } from "../../Modal/variants/AchievementsModal/AchievementsModal.components";

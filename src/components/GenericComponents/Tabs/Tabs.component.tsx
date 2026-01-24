@@ -1,5 +1,5 @@
 import type { TabsProps } from "./Tabs.types";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./Tabs.styles.css";
 
 export function Tabs<T extends string>({

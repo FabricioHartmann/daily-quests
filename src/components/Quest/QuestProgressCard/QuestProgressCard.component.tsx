@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useQuestStore } from "../../../store/quests/quests.store";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./QuestProgressCard.styles.css";
 
 export function QuestProgressCard() {

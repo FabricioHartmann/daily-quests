@@ -1,5 +1,5 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Button, Text } from "../../Generic";
+import { Button, Text } from "../../GenericComponents";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { GiScrollQuill, GiSwordWound, GiCancel } from "react-icons/gi";

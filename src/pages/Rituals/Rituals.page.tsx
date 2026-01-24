@@ -1,4 +1,4 @@
-import { Button, RenderIf, Text } from "../../components/Generic";
+import { Button, RenderIf, Text } from "../../components/GenericComponents";
 import { RitualTipsModal } from "../../components/Modal/variants/RitualTipsModal/RitualTipsModal.component";
 import { RitualCard } from "../../components/Ritual/RitualCard/RitualCard.component";
 import { RitualConfig } from "../../components/Ritual/RitualConfig/RitualConfig.component";

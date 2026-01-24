@@ -8,7 +8,7 @@ import {
 } from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
-import { Text } from "../Generic";
+import { Text } from "../GenericComponents";
 import { useProfileStore } from "../../store/profile/profile.store";
 
 export function Navbar() {

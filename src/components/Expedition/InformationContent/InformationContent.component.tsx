@@ -1,4 +1,4 @@
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./InformationContent.styles.css";
 
 export function InformationContent() {
