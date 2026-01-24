@@ -3,8 +3,9 @@ import { ProfileCard } from "../../components/Profile";
 import { ExpeditionResume } from "../../components/Expedition";
 import { useRitualsStore } from "../../store/rituals/rituals.store";
 import { RenderIf } from "../../components/GenericComponents";
-import "./Home.styles.css";
 import { RitualResume } from "../../components/Ritual";
+import { Text } from "../../components/GenericComponents";
+import "./Home.styles.css";
 
 export function Home() {
   const rituals = useRitualsStore((s) => s.rituals);
@@ -14,6 +15,7 @@ export function Home() {
   return (
     <div className="home-page-container">
       <div className="home-header">
+        <Text size="lg">My Daily Quests</Text>
         <ProfileCard />
         <div className="expedition-and-ritual-wrapper">
           <ExpeditionResume />

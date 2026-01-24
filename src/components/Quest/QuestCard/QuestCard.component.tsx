@@ -55,7 +55,7 @@ export function QuestCard({
               {quest.category}
             </Text>
           ) : (
-            <Text size="sm" weight={"bold"} color="#30860d" italic>
+            <Text size="sm" weight={"bold"} color="#164205" italic>
               {questExpPoints}xp
             </Text>
           )}
@@ -67,16 +67,16 @@ export function QuestCard({
       <div className="button-area">
         {editingMode ? (
           <div className="quest-edit-buttons">
-            <Button onClick={openEditCardModal} size="xs">
+            <Button onClick={openEditCardModal} size="xs" aria-label="editar quest" >
               <GiScrollQuill size={14} color="white" />
             </Button>
-            <Button onClick={openDeleteCardModal} size="xs">
+            <Button onClick={openDeleteCardModal} size="xs" aria-label="deletar quest" >
               <GiCancel size={14} color="red" />
             </Button>
           </div>
         ) : (
           <div className="quest-complete-button">
-            <Button onClick={handleCompleteQuest} size="xs" variant="primary">
+            <Button onClick={handleCompleteQuest} size="xs" variant="primary" aria-label="completar quest">
               <GiSwordWound size={18} color="white" />
             </Button>
           </div>

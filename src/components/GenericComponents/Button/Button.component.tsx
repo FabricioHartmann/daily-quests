@@ -9,8 +9,9 @@ export function Button({
   className = "",
   size = "md",
   style,
+  "aria-label": ariaLabel,
   ...props
-}: ButtonProps) {
+}: ButtonProps & { "aria-label"?: string }) {
   return (
     <button
       className={`button ${className}`}
@@ -20,12 +21,11 @@ export function Button({
       style={
         {
           "--btn-bg":
-            variant !== "ghost"
-              ? `var(--btn-bg-${variant})`
-              : undefined,
+            variant !== "ghost" ? `var(--btn-bg-${variant})` : undefined,
           ...style,
         } as CSSProperties
       }
+      aria-label={ariaLabel}
       {...props}
     >
       {children}
