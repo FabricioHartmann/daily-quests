@@ -5,7 +5,7 @@ export const CAMPFIRE_TIME = 5 * 60;
 
 export const phaseLabel: Record<Phase, string> = {
   idle: "Não iniciada",
-  journey: "Em jornada",
+  journey: "Jornada",
   campfire: "Descansando",
   finished: 'Finalizada'
 };

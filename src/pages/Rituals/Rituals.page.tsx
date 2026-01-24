@@ -1,8 +1,8 @@
 import { Button, RenderIf, Text } from "../../components/GenericComponents";
 import { RitualTipsModal } from "../../components/Modal/variants/RitualTipsModal/RitualTipsModal.component";
-import { RitualCard } from "../../components/Ritual/RitualCard/RitualCard.component";
-import { RitualConfig } from "../../components/Ritual/RitualConfig/RitualConfig.component";
-import { RitualTips } from "../../components/Ritual/RitualTips/RitualTips.component";
+import { RitualCard } from "../../components/Ritual";
+import { RitualConfig } from "../../components/Ritual";
+import { RitualTips } from "../../components/Ritual";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 import { useModalStore } from "../../store/modal/modal.store";
 import "./Rituals.style.css";

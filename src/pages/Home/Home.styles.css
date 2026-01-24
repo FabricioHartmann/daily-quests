@@ -7,11 +7,14 @@
 
 .home-header {
   display: flex;
-  gap: 8px;
+  gap: 16px;
+  width: 100%;
 }
 
-.home-ritual-wrapper {
+.expedition-and-ritual-wrapper {
   display: flex;
+  gap: 8px;
+  width: 100%;
 }
 
 .quests-wrapper {
@@ -32,5 +35,6 @@
   }
   .home-header {
     flex-direction: column;
+    gap: 8px;
   }
 }

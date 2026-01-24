@@ -1,12 +1,33 @@
-.ritual-resume-wrapper {
+.ritual-resume-item {
+  position: relative;
   display: flex;
-  gap: 16px;
-  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 6px;
+  width: 52px;
+  border: 2px solid var(--white);
+  cursor: pointer;
+  background: var(--ritual-card-color);
+}
+
+.ritual-resume-item.finished {
+  background: #1f5f3a;
+}
+
+.ritual-resume-timer {
+  position: absolute;
+  right: 2px;
+  bottom: 0px;
+}
+
+.ritual-resume-icon.both {
+  margin-bottom: 4px;
 }
 
 @media (max-width: 768px) {
-  .ritual-resume-wrapper {
-    width: 100%;
-    gap: 8px;
+  .ritual-resume-item {
+    width: 72px;
+    align-items: start;
   }
 }

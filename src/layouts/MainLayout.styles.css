@@ -7,12 +7,13 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-  max-width: 812px;
+  width: 812px;
 }
 
 @media (max-width: 768px) {
   .app-content {
     padding: 8px;
     padding-bottom: 54px;
+    width: 100%;
   }
 }

@@ -11,22 +11,22 @@
   --text-secondary: #a7a7a7;
   --success-color: #51ff51;
   --fail-color: #ff4444;
-  --fill-progress-color: #269c26;
+  --fill-progress-color: #2fa72f;
   --progress-empty: #4e4e4e;
   --ritual-card-color: #41728f;
-  --ritual-card-color-finished: #1f521e;
+  --ritual-card-color-finished: #186118;
 
   --white: #f7f7f7;
   --black: #1d1d1d;
   --light-gray: #b1b1b1;
 
   --sonner-bg: #ddf0e3;
-  [data-sonner-toast]{
+  [data-sonner-toast] {
     background: var(--sonner-bg) !important;
-    
   }
   [data-description] {
-    color: #272727 !important;
+    color: #1f1f1f !important;
+    margin-left: 8px;
   }
 }
 

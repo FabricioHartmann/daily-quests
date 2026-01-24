@@ -1,4 +1,4 @@
-import { RitualTipsContent } from "../../../Ritual/RitualTipsContent/RitualTipsContent.component";
+import { RitualTipsContent } from "../../../Ritual";
 import { Modal } from "../../Modal.component";
 
 export function RitualTipsModal() {
