@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { Modal } from "../..";
-import { Flex, Text, TextWriterGroup } from "../../../Generic";
+import { Flex, Text, TextWriterGroup } from "../../../GenericComponents";
 import type { LevelUpModalProps } from "./LevelUpModal.types";
 import { playLevelUpSound } from "../../../../utils/soundPlayer";
 

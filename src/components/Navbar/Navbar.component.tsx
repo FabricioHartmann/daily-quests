@@ -8,13 +8,13 @@ import {
 } from "react-icons/gi";
 import { FaTent } from "react-icons/fa6";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
-import { Text } from "../Generic";
+import { Text } from "../GenericComponents";
 import { useProfileStore } from "../../store/profile/profile.store";
 
 export function Navbar() {
-  const { profile } = useProfileStore();
+  const { level } = useProfileStore((s) => s.profile);
   const isMobile = useIsMobile();
-  const isDisabled = profile.level === 0;
+  const isDisabled = level === 0;
 
   return (
     <nav className="navbar">

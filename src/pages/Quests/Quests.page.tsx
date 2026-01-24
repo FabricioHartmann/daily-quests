@@ -1,5 +1,5 @@
 import { QuestList, QuestProgressCard } from "../../components/Quest";
-import { Text } from "../../components/Generic";
+import { Text } from "../../components/GenericComponents";
 import "./Quests.style.css";
 import { QuestStreakCard } from "../../components/Quest/QuestStreakCard/QuestStreakCard.component";
 

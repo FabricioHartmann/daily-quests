@@ -1,5 +1,5 @@
 import type { QuestCardProps } from "./QuestCard.types";
-import { Button, Text } from "../../Generic";
+import { Button, Text } from "../../GenericComponents";
 import "./QuestCard.styles.css";
 import { useQuestStore } from "../../../store/quests/quests.store";
 import { GiScrollQuill, GiSwordWound, GiCancel } from "react-icons/gi";
@@ -16,9 +16,9 @@ export function QuestCard({
   editingMode = false,
   onToggleQuest,
 }: QuestCardProps) {
-  const { completeQuest } = useQuestStore();
+  const completeQuest = useQuestStore((s) => s.completeQuest);
+  const openModal = useModalStore((s) => s.openModal);
   const items = useInventoryStore((state) => state.items);
-  const { openModal } = useModalStore();
 
   const questExpPoints = useMemo(() => {
     return calculateQuestXP(quest.type, items);
@@ -56,11 +56,11 @@ export function QuestCard({
             </Text>
           ) : (
             <Text size="sm" weight={"bold"} color="#30860d" italic>
-              {questExpPoints} xp
+              {questExpPoints}xp
             </Text>
           )}
         </div>
-        <Text size="sm" className="card-description" color="var(--black)">
+        <Text size="sm" color="var(--black)">
           {quest.description}
         </Text>
       </div>

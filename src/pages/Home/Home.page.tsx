@@ -3,7 +3,7 @@ import { ProfileCard } from "../../components/Profile";
 import { ExpeditionResume } from "../../components/Expedition";
 import { RitualResume } from "../../components/Ritual/RitualResume/RitualResume.component";
 import { useRitualsStore } from "../../store/rituals/rituals.store";
-import { RenderIf } from "../../components/Generic";
+import { RenderIf } from "../../components/GenericComponents";
 import "./Home.styles.css";
 
 export function Home() {

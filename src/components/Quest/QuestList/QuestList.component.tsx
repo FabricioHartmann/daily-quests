@@ -1,5 +1,5 @@
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
-import { RenderIf } from "../../Generic";
+import { RenderIf } from "../../GenericComponents";
 import { QuestListDesktop } from "./QuestListDesktop/QuestListDesktop.component";
 import { QuestListMobile } from "./QuestListMobile/QuestListMobile.component";
 import { useQuestStore } from "../../../store/quests/quests.store";
@@ -7,7 +7,7 @@ import type { QuestListProps } from "./QuestListTypes";
 
 export function QuestList({ editingMode }: QuestListProps) {
   const isMobile = useIsMobile();
-  const { quests } = useQuestStore();
+  const quests = useQuestStore(s => s.quests);
 
   const getQuestsByType = (type: "daily" | "weekly") => {
     const questList = quests.filter((quest) => quest.type === type);

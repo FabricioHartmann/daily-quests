@@ -1,7 +1,7 @@
 import { phaseLabel } from "../../../store/expedition/constants";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { formatTime } from "../../../utils/formatTime";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import "./ExpeditionResume.styles.css";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 import { useNavigate } from "react-router-dom";

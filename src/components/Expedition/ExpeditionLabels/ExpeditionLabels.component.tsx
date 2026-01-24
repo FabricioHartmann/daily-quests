@@ -1,5 +1,5 @@
 import { LuClock5 } from "react-icons/lu";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import { GiChest } from "react-icons/gi";
 import "./ExpeditionLabels.styles.css";
 import type { ExpeditionLabelsProps } from "./ExpeditionLabels.types";

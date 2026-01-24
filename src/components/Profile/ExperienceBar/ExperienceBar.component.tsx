@@ -1,5 +1,5 @@
 import "./ExperienceBar.styles.css";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import { getExpProgress } from "../../../domain/experience/getExpProgress";
 import type { ExperienceBarProps } from "./ExperienceBar.types";
 import { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ export function ExperienceBar({
   leveledUp,
 }: ExperienceBarProps) {
   const { percentage, maxExperience } = getExpProgress(level, experience);
-  const { clearLevelUp } = useProfileStore();
+  const clearLevelUp = useProfileStore((s) => s.clearLevelUp);
   const [fill, setFill] = useState(0);
   const [reseting, setReseting] = useState(false);
 

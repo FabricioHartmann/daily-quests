@@ -1,4 +1,4 @@
-import { Button, RenderIf } from "../../Generic";
+import { Button, RenderIf } from "../../GenericComponents";
 import { useExpeditionStore } from "../../../store/expedition/expedition.store";
 import { CentralHUD } from "../CentralHud/CentralHud.component";
 import "./ExpeditionCard.styles.css";
@@ -11,8 +11,11 @@ import { getBackgroundImage } from "../../../utils/expeditionImage";
 
 export function ExpeditionCard() {
   const isMobile = useIsMobile(568);
-  const { phase, biome, dayTime, startJourney, finishExpedition } =
-    useExpeditionStore();
+  const phase = useExpeditionStore((s) => s.phase);
+  const biome = useExpeditionStore((s) => s.biome);
+  const dayTime = useExpeditionStore((s) => s.dayTime);
+  const startJourney = useExpeditionStore((s) => s.startJourney);
+  const finishExpedition = useExpeditionStore((s) => s.finishExpedition);
   const { level } = useProfileStore((s) => s.profile);
   const addExp = useProfileStore((s) => s.addExp);
   const { expGained, maxExp, minExp } = generateExpeditionExp(level);

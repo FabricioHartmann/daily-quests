@@ -1,4 +1,4 @@
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import { InformationContent } from "../InformationContent/InformationContent.component";
 import "./InformationCard.styles.css";
 

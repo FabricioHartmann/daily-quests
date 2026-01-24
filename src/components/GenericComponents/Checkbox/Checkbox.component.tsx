@@ -1,5 +1,5 @@
 import type { CheckboxProps } from "./Checkbox.types";
-import { Text } from "../../Generic";
+import { Text } from "../../GenericComponents";
 import './Checkbox.styles.css'
 
 export function Checkbox({
