@@ -4,7 +4,7 @@ import "./Expedition.styles.css";
 import { InformationCard as ExpeditionInformationCard } from "../../components/Expedition/InformationCard/InformationCard.component";
 import useIsMobile from "../../hooks/useIsMobile/useIsMobile";
 
-export function Expedition() {
+export default function Expedition() {
   const isMobile = useIsMobile();
 
   return (

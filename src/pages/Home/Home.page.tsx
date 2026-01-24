@@ -7,7 +7,7 @@ import { RitualResume } from "../../components/Ritual";
 import { Text } from "../../components/GenericComponents";
 import "./Home.styles.css";
 
-export function Home() {
+export default function Home() {
   const rituals = useRitualsStore((s) => s.rituals);
   const phase = useRitualsStore((s) => s.phase);
   const filteredRituals = rituals.filter((ritual) => ritual.isActive);

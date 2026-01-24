@@ -5,7 +5,6 @@ import { Text } from "../../GenericComponents";
 import "./ExpeditionResume.styles.css";
 import { useExpeditionTimer } from "../../../hooks/useExpeditionTimer/useExpeditionTimer";
 import { useNavigate } from "react-router-dom";
-import { getBackgroundImage } from "../../../utils/expeditionImage";
 import { ExpeditionResumeImage } from "../ExpeditionResumeImage";
 
 export function ExpeditionResume() {

@@ -1,14 +1,15 @@
-import type { JSX } from "react";
-import { Home } from "./pages/Home";
-import { Quests } from "./pages/Quests";
-import { MyProfile } from "./pages/MyProfile";
-import { Expedition } from "./pages/Expedition";
-import { Rituals } from "./pages/Rituals";
+import { lazy } from "react";
 
 export interface AppRoute {
   path: string;
-  element: JSX.Element;
+  element: React.ReactNode;
 }
+
+const Home = lazy(() => import("./pages/Home"));
+const MyProfile = lazy(() => import("./pages/MyProfile"));
+const Quests = lazy(() => import("./pages/Quests"));
+const Rituals = lazy(() => import("./pages/Rituals"));
+const Expedition = lazy(() => import("./pages/Expedition"));
 
 export const appRoutes: AppRoute[] = [
   { path: "/", element: <Home /> },

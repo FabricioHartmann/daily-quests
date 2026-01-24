@@ -8,7 +8,7 @@ import { useModalStore } from "../../store/modal/modal.store";
 import "./Rituals.style.css";
 import { useRitualsStore } from "../../store/rituals/rituals.store";
 
-export function Rituals() {
+export default function Rituals() {
   const isMobile = useIsMobile();
   const openModal = useModalStore((s) => s.openModal);
   const rituals = useRitualsStore((s) => s.rituals);

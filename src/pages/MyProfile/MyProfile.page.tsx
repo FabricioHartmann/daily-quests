@@ -6,7 +6,7 @@ import { useAchievementStore } from "../../store/achievements/achievements.store
 import { Text } from "../../components/GenericComponents";
 import "./MyProfile.styles.css";
 
-export function MyProfile() {
+export default function MyProfile() {
   const achievements = useAchievementStore((s) => s.achievements);
 
   const unlockedAchievements = ACHIEVEMENTS_CATALOG.filter(
