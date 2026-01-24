@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Modal } from "../..";
 import { Flex } from "../../../GenericComponents";
-import { TextWriterGroup } from "../../../GenericComponents/TextWriterGroup";
+import { TextWriterGroup } from "../../../GenericComponents";
 import { useProfileStore } from "../../../../store/profile/profile.store";
 
 export function WelcomeModal() {

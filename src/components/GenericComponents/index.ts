@@ -1,9 +1,12 @@
 export { Text } from "./Text/Text.component";
 export { Flex } from "./Flex/Flex.component";
-export { RenderIf } from "./RenderIf";
-export { TextWriter } from "./TextWriter";
-export { TextWriterGroup } from "./TextWriterGroup";
+export { RenderIf } from "./RenderIf/RenderIf.component";
+export { TextWriter } from "./TextWriter/TextWriter.component";
+export { TextWriterGroup } from "./TextWriterGroup/TextWriterGroup.component";
 export { Button } from "./Button/Button.component";
+export { Checkbox } from "./Checkbox/Checkbox.component";
 export { Input } from "./Input/Input.component";
+export { Menu } from "./Menu/Menu.component";
 export { Select } from "./Select/Select.component";
-
+export { Tabs } from "./Tabs/Tabs.component";
+export { Loader } from "./Loader/Loader.component";

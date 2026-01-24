@@ -1,5 +1,5 @@
 import { useState, Children, type ReactElement} from "react";
-import { TextWriter } from "../TextWriter";
+import { TextWriter } from "../../GenericComponents";
 import type {
   TextWriterGroupChild,
   TextWriterGroupProps,

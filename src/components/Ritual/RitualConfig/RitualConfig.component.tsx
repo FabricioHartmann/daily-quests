@@ -1,7 +1,7 @@
 import "./RitualConfig.styles.css";
 import { Button, RenderIf, Select, Text } from "../../GenericComponents";
 import { useRitualsStore } from "../../../store/rituals/rituals.store";
-import { Checkbox } from "../../GenericComponents/Checkbox/Checkbox.component";
+import { Checkbox } from "../../GenericComponents";
 import { RITUAL_COOLDOWN_OPTIONS } from "../../../store/rituals/constants";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { generateRitualExp } from "../../../domain/ritual/ritualExp";
