@@ -10,7 +10,7 @@ import { useRitualsStore } from "../../store/rituals/rituals.store";
 
 export function Rituals() {
   const isMobile = useIsMobile();
-  const { openModal } = useModalStore();
+  const openModal = useModalStore((s) => s.openModal);
   const rituals = useRitualsStore((s) => s.rituals);
   const totalRitualsCompleted = useRitualsStore((s) => s.totalRitualsCompleted);
 

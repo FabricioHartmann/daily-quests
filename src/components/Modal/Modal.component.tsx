@@ -13,7 +13,7 @@ export function Modal({
   primaryButtonVariant,
   children,
 }: ModalProps) {
-  const closeModal = useModalStore((action) => action.closeModal);
+  const closeModal = useModalStore((s) => s.closeModal);
   const isMobile = useIsMobile();
 
   const handlePrimaryAction = useCallback(() => {

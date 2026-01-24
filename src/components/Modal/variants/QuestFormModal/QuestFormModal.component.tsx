@@ -26,8 +26,10 @@ export function QuestFormModal({ questType, quest }: QuestFormModalProps) {
       category: null,
     },
   });
-  const { addQuest, updateQuest, quests } = useQuestStore();
-  const { closeModal } = useModalStore();
+  const quests = useQuestStore((s) => s.quests);
+  const addQuest = useQuestStore((s) => s.addQuest);
+  const updateQuest = useQuestStore((s) => s.updateQuest);
+  const closeModal = useModalStore((s) => s.closeModal);
   const isEditingMode = Boolean(quest);
   const questTypeLabel = questType === "daily" ? "Diária" : "Semanal";
 

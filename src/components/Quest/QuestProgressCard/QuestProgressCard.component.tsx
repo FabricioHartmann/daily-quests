@@ -4,7 +4,8 @@ import { Text } from "../../GenericComponents";
 import "./QuestProgressCard.styles.css";
 
 export function QuestProgressCard() {
-  const { quests, totalQuestsCompleted } = useQuestStore();
+  const quests = useQuestStore(s => s.quests);
+  const totalQuestsCompleted = useQuestStore(s => s.totalQuestsCompleted);
 
   const lastCompletedQuest = useMemo(() => {
     if (!quests?.length) return null;

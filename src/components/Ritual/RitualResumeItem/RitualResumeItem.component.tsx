@@ -13,8 +13,6 @@ export function RitualResumeItem({ ritual }: RitualResumeProps) {
   const { timeLeft } = useRitualTimer();
   const phase = useRitualsStore((store) => store.phase);
   const isMobile = useIsMobile();
-  const isMobileXs = useIsMobile(310);
-
   const navigate = useNavigate();
 
   const goToRitualsPage = () => {
@@ -27,9 +25,7 @@ export function RitualResumeItem({ ritual }: RitualResumeProps) {
         <div className="ritual-resume-icon">
           <Icon size={14} color="white" />
         </div>
-        <RenderIf condition={!isMobileXs}>
-          <Text size={isMobile ? "sm" : "md"}>{ritual.name}</Text>
-        </RenderIf>
+        <Text size={isMobile ? "sm" : "md"}>{ritual.name}</Text>
       </div>
       <div className="ritual-resume-timer">
         <RenderIf condition={phase === "finished"}>

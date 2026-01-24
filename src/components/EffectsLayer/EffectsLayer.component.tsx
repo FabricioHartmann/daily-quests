@@ -4,7 +4,8 @@ import { useProfileStore } from "../../store/profile/profile.store";
 import { LevelUpModal } from "../Modal/variants/LevelUpModal";
 
 export function EffectsLayer() {
-  const { leveledUp, profile } = useProfileStore();
+  const profile = useProfileStore(s => s.profile);
+  const leveledUp = useProfileStore(s => s.leveledUp);
   const openModal = useModalStore((s) => s.openModal);
 
   useEffect(() => {

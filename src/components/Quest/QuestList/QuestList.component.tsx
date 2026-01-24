@@ -7,7 +7,7 @@ import type { QuestListProps } from "./QuestListTypes";
 
 export function QuestList({ editingMode }: QuestListProps) {
   const isMobile = useIsMobile();
-  const { quests } = useQuestStore();
+  const quests = useQuestStore(s => s.quests);
 
   const getQuestsByType = (type: "daily" | "weekly") => {
     const questList = quests.filter((quest) => quest.type === type);

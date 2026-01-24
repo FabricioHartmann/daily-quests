@@ -6,7 +6,7 @@ import { Flex, RenderIf, Text } from "../../../GenericComponents";
 import "./AchievementsModal.styles.css";
 
 export function AchievementsModal() {
-  const { achievements } = useAchievementStore();
+  const achievements = useAchievementStore(s => s.achievements);
   const isUnlocked = (id: AchievementId) => !!achievements[id]?.unlocked;
 
   return (

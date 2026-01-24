@@ -10,8 +10,10 @@ import { ITEMS_CATALOG } from "../../../../data/itemsCatalog";
 import { playItemEquipSound } from "../../../../utils/soundPlayer";
 
 export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
-  const { items, equipItem, unequipByType } = useInventoryStore();
-  const { closeModal } = useModalStore();
+  const items = useInventoryStore((s) => s.items);
+  const equipItem = useInventoryStore((s) => s.equipItem);
+  const unequipByType = useInventoryStore((s) => s.unequipByType);
+  const closeModal = useModalStore((s) => s.closeModal);
 
   const item = useMemo(() => {
     const invItem = items.find((i) => i.itemId === itemId);
@@ -55,7 +57,9 @@ export function MobileItemPreview({ itemId }: { itemId: ItemId }) {
           </div>
         </div>
 
-        <Text size="sm" italic>{item?.description}</Text>
+        <Text size="sm" italic>
+          {item?.description}
+        </Text>
       </Flex>
     </Modal>
   );

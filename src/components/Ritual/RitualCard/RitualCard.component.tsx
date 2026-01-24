@@ -8,8 +8,8 @@ import { useRitualsStore } from "../../../store/rituals/rituals.store";
 
 export function RitualCard({ ritual }: RitualProps) {
   const Icon = RITUAL_ICONS[ritual.icon];
-  const { timeLeft } = useRitualTimer();
   const phase = useRitualsStore((s) => s.phase);
+  const { timeLeft } = useRitualTimer();
 
   return (
     <div className={`ritual-card ${ritual.isActive ? "" : "inactive"}`}>

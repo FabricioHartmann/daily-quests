@@ -11,7 +11,7 @@ export function ExperienceBar({
   leveledUp,
 }: ExperienceBarProps) {
   const { percentage, maxExperience } = getExpProgress(level, experience);
-  const { clearLevelUp } = useProfileStore();
+  const clearLevelUp = useProfileStore((s) => s.clearLevelUp);
   const [fill, setFill] = useState(0);
   const [reseting, setReseting] = useState(false);
 

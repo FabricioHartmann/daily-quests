@@ -8,6 +8,7 @@ import { generateRitualExp } from "../../../domain/ritual/ritualExp";
 import { useProfileStore } from "../../../store/profile/profile.store";
 import { useCallback } from "react";
 import { toast } from "sonner";
+import { useShallow } from "zustand/shallow";
 
 export function RitualConfig() {
   const isMobile = useIsMobile();
@@ -22,7 +23,19 @@ export function RitualConfig() {
     cancelRitual,
     finishRitual,
     toggleRitualActive,
-  } = useRitualsStore();
+  } = useRitualsStore(
+    useShallow((s) => ({
+      rituals: s.rituals,
+      phase: s.phase,
+      cooldownInMinutes: s.cooldownInMinutes,
+      xpPerHour: s.xpPerHour,
+      setCooldownInMinutes: s.setCooldownInMinutes,
+      startRitual: s.startRitual,
+      cancelRitual: s.cancelRitual,
+      finishRitual: s.finishRitual,
+      toggleRitualActive: s.toggleRitualActive,
+    })),
+  );
   const { expGained } = generateRitualExp({
     cooldownInMinutes,
     xpPerHour,

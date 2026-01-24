@@ -14,7 +14,7 @@ import { initRitualListener } from "./utils/initRitualListener";
 import { useQuestStore } from "./store/quests/quests.store";
 
 function App() {
-  const { openModal } = useModalStore();
+  const openModal = useModalStore((s) => s.openModal);
   const profile = useProfileStore((s) => s.profile);
 
   useEffect(() => {

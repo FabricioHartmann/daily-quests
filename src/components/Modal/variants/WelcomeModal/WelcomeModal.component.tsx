@@ -5,11 +5,14 @@ import { TextWriterGroup } from "../../../GenericComponents/TextWriterGroup";
 import { useProfileStore } from "../../../../store/profile/profile.store";
 
 export function WelcomeModal() {
-  const { profile, setProfile } = useProfileStore();
+  const setProfile = useProfileStore((s) => s.setProfile);
 
   useEffect(() => {
     return () => {
-      setProfile({ ...profile, firstAccess: false });
+      setProfile({
+        ...useProfileStore.getState().profile,
+        firstAccess: false,
+      });
     };
   }, []);
 

@@ -4,7 +4,6 @@ import { InventoryItem } from "./InventoryItem/InventoryItem.component";
 import { InventoryPreviewItem } from "./InventoryPreviewItem/InventoryPreviewItem.component";
 import { type InventoryItem as InventoryItemType } from "../../../store/inventory/inventory.types";
 import { InventoryPreviewEmptyState } from "./InventoryPreviewEmptyState/InventoryEmptyState.component";
-import "./Inventory.styles.css";
 import useIsMobile from "../../../hooks/useIsMobile/useIsMobile";
 import { MobileItemPreview } from "../../Modal/variants/MobileItemPreviewModal";
 import { useModalStore } from "../../../store/modal/modal.store";
@@ -13,12 +12,22 @@ import type { InventoryPreviewItemProps } from "./Inventory.types";
 import { ITEMS_CATALOG } from "../../../data/itemsCatalog";
 import { playItemEquipSound } from "../../../utils/soundPlayer";
 import { sortInventory } from "./inventory.helper";
+import { useShallow } from "zustand/shallow";
+import "./Inventory.styles.css";
 
 export function Inventory() {
   const isMobile = useIsMobile(576);
-  const { openModal } = useModalStore();
+  const openModal = useModalStore((s) => s.openModal);
   const { items, selectedItemId, equipItem, unequipByType, selectItem } =
-    useInventoryStore();
+    useInventoryStore(
+      useShallow((s) => ({
+        items: s.items,
+        selectedItemId: s.selectedItemId,
+        equipItem: s.equipItem,
+        unequipByType: s.unequipByType,
+        selectItem: s.selectItem,
+      })),
+    );
 
   const sortedItems = useMemo(() => {
     return sortInventory(items);
@@ -84,9 +93,7 @@ export function Inventory() {
   return (
     <div className="inventory">
       <div className="inventory-header">
-        <Text color="var(--white)">
-          Inventário
-        </Text>
+        <Text color="var(--white)">Inventário</Text>
       </div>
       <div className="inventory-container">
         <div className="inventory-content">

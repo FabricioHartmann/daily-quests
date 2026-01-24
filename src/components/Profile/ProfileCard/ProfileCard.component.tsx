@@ -1,7 +1,6 @@
 import { ExperienceBar } from "../";
 import { RenderIf, Text } from "../../GenericComponents";
 import { useProfileStore } from "../../../store/profile/profile.store";
-import "./ProfileCard.styles.css";
 import type { ProfileCardProps } from "./ProfileCard.types";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiPencilAlt } from "react-icons/hi";
@@ -11,13 +10,19 @@ import { Buffs } from "../Buffs";
 import { useModalStore } from "../../../store/modal/modal.store";
 import { ProfileEditModal } from "../../Modal/variants/ProfileEditModal";
 import { ProfilePhoto } from "../ProfilePhoto";
+import { useShallow } from "zustand/shallow";
+import "./ProfileCard.styles.css";
 
 export function ProfileCard({ canEdit = false }: ProfileCardProps) {
-  const profile = useProfileStore((state) => state.profile);
-  const leveledUp = useProfileStore((state) => state.leveledUp);
-  const titleOptions = useProfileStore((state) => state.titleOptions);
-  const setTitle = useProfileStore((state) => state.setTitle);
-  const { openModal } = useModalStore();
+  const { profile, leveledUp, titleOptions, setTitle } = useProfileStore(
+    useShallow((s) => ({
+      profile: s.profile,
+      leveledUp: s.leveledUp,
+      titleOptions: s.titleOptions,
+      setTitle: s.setTitle,
+    })),
+  );
+  const openModal = useModalStore((s) => s.openModal);
   const selectedTitleObj = TITLES_CATALOG[profile.selectedTitle];
 
   const menuItems = titleOptions

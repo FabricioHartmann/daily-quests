@@ -15,7 +15,7 @@ export function CentralHUD() {
   const isMobile = useIsMobile();
   const phase = useExpeditionStore((s) => s.phase);
   const totalExpeditions = useExpeditionStore((s) => s.totalExpeditions);
-  const { openModal } = useModalStore();
+  const openModal = useModalStore(s => s.openModal);
 
   const openInformationModal = () => {
     openModal(<ExpeditionInformationModal />);

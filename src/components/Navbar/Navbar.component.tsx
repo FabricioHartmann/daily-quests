@@ -12,9 +12,9 @@ import { Text } from "../GenericComponents";
 import { useProfileStore } from "../../store/profile/profile.store";
 
 export function Navbar() {
-  const { profile } = useProfileStore();
+  const { level } = useProfileStore((s) => s.profile);
   const isMobile = useIsMobile();
-  const isDisabled = profile.level === 0;
+  const isDisabled = level === 0;
 
   return (
     <nav className="navbar">

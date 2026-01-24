@@ -10,7 +10,7 @@ export function AchievementsCard({
   totalAchievements,
   achievementsAcquired,
 }: AchievementsCardProps) {
-  const { openModal } = useModalStore();
+  const openModal = useModalStore((s) => s.openModal);
   const isMobile = useIsMobile();
 
   const openAchievementsModal = () => {

@@ -5,11 +5,11 @@ import { Flex, Text } from "../../../GenericComponents";
 import type { DeleteQuestModalProps } from "./DeleteQuestModal.types";
 
 export function DeleteQuestModal({ questId }: DeleteQuestModalProps) {
-  const { removeQuest } = useQuestStore();
+  const removeQuest = useQuestStore((s) => s.removeQuest);
   const { closeModal } = useModalStore();
   const handleRemoveQuest = () => {
     removeQuest(questId);
-    closeModal()
+    closeModal();
   };
 
   return (

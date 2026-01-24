@@ -16,9 +16,9 @@ export function QuestCard({
   editingMode = false,
   onToggleQuest,
 }: QuestCardProps) {
-  const { completeQuest } = useQuestStore();
+  const completeQuest = useQuestStore((s) => s.completeQuest);
+  const openModal = useModalStore((s) => s.openModal);
   const items = useInventoryStore((state) => state.items);
-  const { openModal } = useModalStore();
 
   const questExpPoints = useMemo(() => {
     return calculateQuestXP(quest.type, items);
