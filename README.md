@@ -52,10 +52,10 @@ The application usually runs on port 5173.
 | Buffs                           | ✅     |
 | Achievements                    | ✅     |
 | Expeditions (pomodoro)          | ✅     |
-| Rituals                         | ❌     |
+| Rituals                         | ✅     |
+| Daily and weekly quest resets   | ✅     |
 | Vercel deployment               | ❌     |
 | Firebase integration            | ❌     |
-| Daily and weekly quest resets   | ❌     |
 | Streaks system                  | ❌     |
 
 ---
