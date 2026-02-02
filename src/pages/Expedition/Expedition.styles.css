@@ -15,12 +15,11 @@
 @media (max-width: 768px) {
   .expedition-wrapper {
     flex-direction: column;
-    height: calc(100vh - 62px);
+    height: calc(100dvh - 92px);
   }
   .expedition-page {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: calc(100vh - 62px);
   }
 }

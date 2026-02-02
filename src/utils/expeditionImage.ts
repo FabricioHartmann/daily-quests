@@ -2,6 +2,7 @@ import { BACKGROUNDS, type Biome } from "../data/biomesCatalog";
 import type { DayTime, Phase } from "../store/expedition/expedition.types";
 
 const BIOMES: Biome[] = ["forest", "riverside", "mountain"];
+type ImageSize = "full" | "small";
 
 export const getRandomBiome = (): Biome => {
   const index = Math.floor(Math.random() * BIOMES.length);
@@ -11,7 +12,8 @@ export const getRandomBiome = (): Biome => {
 export const getBackgroundImage = (
   biome: Biome | null,
   phase: Phase,
-  dayTime: DayTime
+  dayTime: DayTime,
+  size: ImageSize = "full"
 ) => {
   const phaseKey =
     phase === "journey"
@@ -19,6 +21,14 @@ export const getBackgroundImage = (
       : phase === "campfire" || phase === "finished"
       ? "campfire"
       : "idle";
-  if (!biome) return BACKGROUNDS["forest"][phaseKey][dayTime];
-  return BACKGROUNDS[biome][phaseKey][dayTime];
+
+  const biomeKey = biome ?? "forest";
+
+  const image = BACKGROUNDS[biomeKey][phaseKey][dayTime];
+
+  if (size === "small") {
+    return image.replace(".webp", "-small.webp");
+  }
+
+  return image;
 };
