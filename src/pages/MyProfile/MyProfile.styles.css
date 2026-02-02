@@ -17,11 +17,6 @@
   }
   .profile-page-header {
     gap: 8px;
-  }
-}
-
-@media (max-width: 576px) {
-  .profile-page-header {
     flex-direction: column;
   }
 }
