@@ -6,7 +6,7 @@ export function ExpeditionResumeImage({
   dayTime,
   phase,
 }: ExpeditionResumeImageProps) {
-  const src = getBackgroundImage(biome, phase, dayTime);
+  const src = getBackgroundImage(biome, phase, dayTime, 'small');
 
   return (
     <div className="expedition-resume-bg">
