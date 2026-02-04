@@ -1,7 +1,4 @@
-import type { AchievementCatalog } from "../store/achievements/achievements.types";
-
-export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
-  // ===== LEVEL =====
+export const ACHIEVEMENTS_CATALOG = [
   {
     id: "level-2-reached",
     label: "Level UP!",
@@ -87,6 +84,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "level-45-reached",
     label: "Veterano III",
     requirements: "Alcançar o nível 45",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "level-50-reached",
@@ -142,7 +143,6 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
       type: "item",
     },
   },
-  // ===== QUESTS =====
   {
     id: "1-quest-created",
     label: "Boas vindas",
@@ -156,6 +156,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "10-quests-completed",
     label: "Obrigação",
     requirements: "Completar 10 quests",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "25-quests-completed",
@@ -179,6 +183,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "100-quests-completed",
     label: "Dedicado",
     requirements: "Completar 100 quests",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "250-quests-completed",
@@ -226,7 +234,6 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
 
-  // ===== EXPEDIÇÕES =====
   {
     id: "1-expedition-completed",
     label: "Partida Inicial",
@@ -240,6 +247,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "10-expeditions-completed",
     label: "Errante",
     requirements: "Completar 10 expedições",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "25-expeditions-completed",
@@ -287,7 +298,6 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
 
-  // ===== RITUAIS =====
   {
     id: "1-ritual-completed",
     label: "Primeiro ritual",
@@ -310,6 +320,10 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "10-rituals-completed",
     label: "Ritualista II",
     requirements: "Concluir 10 rituais",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "20-rituals-completed",
@@ -366,11 +380,14 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     },
   },
 
-  // ===== ITENS =====
   {
     id: "5-items-acquired",
     label: "Portador",
     requirements: "Adquirir 5 itens",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
   {
     id: "10-items-acquired",
@@ -394,5 +411,9 @@ export const ACHIEVEMENTS_CATALOG: AchievementCatalog[] = [
     id: "3-items-equipped",
     label: "Totalmente Equipado",
     requirements: "Equipar 3 itens",
+    reward: {
+      id: "",
+      type: "",
+    },
   },
 ];
