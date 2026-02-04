@@ -1,17 +1,21 @@
 import { ProfileCard } from "../../components/Profile";
 import { AchievementsCard } from "../../components/Profile/AchievementsCard";
 import { Inventory } from "../../components/Profile/Inventory/Inventory.component";
-import { ACHIEVEMENTS_CATALOG } from "../../data/achievementsCatalog";
-import { useAchievementStore } from "../../store/achievements/achievements.store";
-import { Text } from "../../components/GenericComponents";
+import { Loader, Text } from "../../components/GenericComponents";
 import "./MyProfile.styles.css";
+import { useAchievementsCatalog } from "../../queries/useAchievementsCatalog";
 
 export default function MyProfile() {
-  const achievements = useAchievementStore((s) => s.achievements);
+  const {
+    data: achievements,
+    isLoading,
+  } = useAchievementsCatalog();
 
-  const unlockedAchievements = ACHIEVEMENTS_CATALOG.filter(
-    (a) => achievements[a.id]?.unlocked,
-  ).length;
+  if (isLoading) return <Loader />;
+
+  const achievementsList = achievements ?? [];
+
+  const unlockedAchievements = 0;
 
   return (
     <div className="profile-page-container">
@@ -20,7 +24,7 @@ export default function MyProfile() {
         <ProfileCard canEdit />
         <AchievementsCard
           achievementsAcquired={unlockedAchievements}
-          totalAchievements={ACHIEVEMENTS_CATALOG.length}
+          totalAchievements={achievementsList.length}
         />
       </div>
       <Inventory />
