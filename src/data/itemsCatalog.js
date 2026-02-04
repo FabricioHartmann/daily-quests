@@ -1,6 +1,5 @@
-import type { CatalogItem, ItemId } from "../store/inventory/inventory.types";
 
-export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
+export const ITEMS_CATALOG = {
   "iron-sword": {
     itemId: "iron-sword",
     name: "Espada de ferro",
@@ -540,4 +539,4 @@ export const ITEMS_CATALOG: Record<ItemId, CatalogItem> = {
     description:
       "Mantém suas flechas seguras e sempre à mão. Fiel companheiro do arco",
   },
-} as const;
+}

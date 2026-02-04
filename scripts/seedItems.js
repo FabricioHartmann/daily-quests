@@ -2,7 +2,7 @@ import "dotenv/config";
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
-import { ACHIEVEMENTS_CATALOG } from "../src/data/achievementsCatalog.js";
+import { ITEMS_CATALOG } from "../src/data/itemsCatalog.js";
 
 const firebaseConfig = {
   apiKey: process.env.VITE_FIREBASE_API_KEY,
@@ -16,28 +16,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const seedAchievements = async () => {
-  console.log("seeding achievements...");
+const seedItems = async () => {
+  console.log("seeding items...");
 
-  for (const achievement of ACHIEVEMENTS_CATALOG) {
-    const data = {
-      label: achievement.label,
-      requirements: achievement.requirements,
-      reward: achievement.reward,
-    };
+  for (const [itemId, item] of Object.entries(ITEMS_CATALOG)) {
+    const { itemId: _, ...data } = item;
 
     await setDoc(
-      doc(db, "achievements", achievement.id),
+      doc(db, "items", itemId),
       data
     );
   }
 
-  console.log("achievements seeded");
+  console.log("items seeded");
 };
 
-seedAchievements()
+seedItems()
   .then(() => process.exit(0))
   .catch((err) => {
-    console.error("achievements seed failed", err);
+    console.error("items seed failed", err);
     process.exit(1);
   });
