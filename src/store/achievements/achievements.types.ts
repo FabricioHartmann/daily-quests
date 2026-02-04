@@ -71,7 +71,7 @@ export type AchievementReward =
     };
 
 export type AchievementCatalog = {
-  id: AchievementId;
+  id: string;
   label: string;
   requirements: string;
   reward?: AchievementReward;
